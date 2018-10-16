@@ -5,9 +5,9 @@ class TopBar:UIView{
    lazy var buttons:[UIButton] = createButtons()
    override init(frame: CGRect) {
       super.init(frame: frame)
-      self.backgroundColor = .purple
-      _ = buttons
-      applyButtonConstraints()
+      self.backgroundColor = .orange
+      //_ = buttons
+      //applyButtonConstraints()
    }
    required init?(coder aDecoder: NSCoder) {
       fatalError("init(coder:) has not been implemented")

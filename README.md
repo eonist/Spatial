@@ -94,3 +94,8 @@ let constraints: [NSLayoutConstraint] = group {
 ```
 
 - `view.edgesToSuperView(insets: .top(10) + .left(10))` and `view.center(in: superview, offset: CGPoint(x: 10, y: 10))`
+
+- Syntax like: `View.pin(to:parent,align:(lr,tb),offset:p)
+View.stretch(to:parent,hor)`
+
+- Maybe use Sindres with trick in this library, or maybe its perfect for Chaplin
