@@ -4,7 +4,7 @@ Definition: **Spatial** | ˈspeɪʃ(ə)l | adjective | **describes how objects f
 <img width="995" alt="img" src="https://rawgit.com/stylekit/img/master/IMG_5168.JPG">
 
 ### What is it
-Hassle-free AutoLayout, great for interactivity and animation.
+Hassle-free AutoLayout, tailored for interactivity and animation.
 
 ### How does it work
 - Spatial is just extensions and enums which enable you to write less boilerplate code
@@ -95,7 +95,7 @@ let constraints: [NSLayoutConstraint] = group {
 
 - `view.edgesToSuperView(insets: .top(10) + .left(10))` and `view.center(in: superview, offset: CGPoint(x: 10, y: 10))`
 
-- Syntax like: `View.pin(to:parent,align:(lr,tb),offset:p)
+- Syntax like: `View.pin(to:parent,align:(.lr,.tb),offset:p)
 View.stretch(to:parent,hor)`
 
 - Maybe use Sindres with trick in this library, or maybe its perfect for Chaplin

@@ -2,6 +2,7 @@ import UIKit
 
 /**
  * Move to own class, margins, insets etc
+ * TIPS: Access all colors via: Constants.Colors.allCases
  */
 class Constants{
    enum Colors:String,CaseIterable{
