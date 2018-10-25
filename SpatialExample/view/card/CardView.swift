@@ -4,7 +4,7 @@ class CardView:UIView{
    lazy var backgroundLayer:CALayer = createBackgroundLayer()
    lazy var maskLayer:CAShapeLayer = createMaskLayer()
    lazy var topBar:TopBar = createTopBar()
-    lazy var cardContent:CardContent = createCardContent()
+   lazy var cardContent:MiddleContent = createMiddleContent()
    lazy var bottomBar:BottomBar = createBottomBar()
   
    

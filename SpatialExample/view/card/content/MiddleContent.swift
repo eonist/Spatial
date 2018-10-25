@@ -1,7 +1,7 @@
 
 import UIKit
 
-class CardContent:UIView{
+class MiddleContent:UIView{
    override init(frame: CGRect) {
       super.init(frame: frame)
 //      self.layer.cornerRadius = 24

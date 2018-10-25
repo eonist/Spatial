@@ -1,5 +1,5 @@
 import UIKit
-@testable import Spatial
+import Spatial
 
 extension CardView{
    static let margin:UIEdgeInsets = .init(top: 24, left: 12, bottom: 24, right: 12)
@@ -44,10 +44,10 @@ extension CardView{
    /**
     * Creates the middle card content view
     */
-   func createCardContent() -> CardContent{
+   func createMiddleContent() -> MiddleContent{
       let width:CGFloat = self.frame.width - (CardView.margin.left+CardView.margin.right)
       let height:CGFloat = self.frame.height - (TopBar.topBarHeight + BottomBar.bottomBarHeight + CardView.margin.top + CardView.margin.bottom)
-      let cardContent = CardContent.init(frame: .zero)
+      let cardContent = MiddleContent.init(frame: .zero)
       self.addSubview(cardContent)
       cardContent.activateConstraint { view in
          let anchor = Constraint.anchor(view, to: topBar, align: .topLeft, alignTo: .bottomLeft, offset:.zero)
