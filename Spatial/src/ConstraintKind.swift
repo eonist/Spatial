@@ -3,39 +3,16 @@ import UIKit
 
 public typealias SizeConstraint = (w:NSLayoutConstraint,h:NSLayoutConstraint)
 public typealias AnchorConstraint = (x:NSLayoutConstraint,y:NSLayoutConstraint)
-
+/**
+ * UIViews that implement this protocol are able to store the anchor and size constraints
+ * NOTE: Storing Constraints is a must if you want to change the constraints at a later point in time
+ */
 public protocol ConstraintKind:class{
    var anchor:AnchorConstraint? {get set}
    var size:SizeConstraint? {get set}
 }
-extension ConstraintKind{
-   /**
-    * Convenient
-    */
-   public func setConstraint(anchor:AnchorConstraint,size:SizeConstraint) {
-      self.anchor = anchor
-      self.size = size
-   }
-}
 /**
- * Animation
- */
-extension ConstraintKind where Self:UIView{
-   /**
-    * Animates a UIView that adhers to ConstraintKind (hor)
-    */
-   public func animate(to:CGFloat, align:HorizontalAlign, alignTo:HorizontalAlign, onComplete:@escaping AnimComplete = Self.defaultOnComplete){
-      UIView.animate({self.update(offset: to, align: align, alignTo: alignTo)},onComplete:onComplete)
-   }
-   /**
-    * Anim for ver
-    */
-   public func animate(to:CGFloat, align:VerticalAlign = .top, alignTo:VerticalAlign = .top, onComplete:@escaping AnimComplete = Self.defaultOnComplete){
-      UIView.animate({self.update(offset: to, align: align, alignTo: alignTo)},onComplete:onComplete)
-   }
-}
-/**
- * Update
+ * Update constraints (For items that are of type ConstraintKind)
  */
 extension ConstraintKind where Self:UIView{
    public typealias UIViewConstraintKind = UIView & ConstraintKind
@@ -45,7 +22,7 @@ extension ConstraintKind where Self:UIView{
     * Same as UIView().activateConstraint... but also sets size and anchor constraints (ConstraintKind) (For animation etc)
     * TODO: ⚠️️ maybe reuse the code from activateConstraint, by forwarning the closure etc. Nope, cant call closure twice
     * TODO: ⚠️️ Could be possible to do something like: typealias UIViewConstraintKind = UIView & ConstraintKind, already done ✅
-    * TODO: ⚠️️ Rename to apply
+    * TODO: ⚠️️ Rename to apply, or better 👉 applyConstraint
     * Example:
     * sliderBar.setAndActivateConstraint { view in
     *      let anchor = Constraint.anchor(view, to: self, align: .topLeft, alignTo: .topLeft)
@@ -54,12 +31,18 @@ extension ConstraintKind where Self:UIView{
     * }
     * NOTE: this had to be renamed to setAndActivateConstraint, as overriding the default extension method didnt work so well when you passed the variable into a method
     */
-   public func setAndActivateConstraint(closure:ConstraintKindClosure) {
+   public func applyConstraint(closure:ConstraintKindClosure) {
       self.translatesAutoresizingMaskIntoConstraints = false
       let constraints:ReturnType = closure(self)/*the constraints is returned from the closure*/
-      self.size = constraints.size
-      self.anchor = constraints.anchor
+      setConstraint(anchor: constraints.anchor, size: constraints.size)
       NSLayoutConstraint.activate([constraints.anchor.x,constraints.anchor.y,constraints.size.w,constraints.size.h])
+   }
+   /**
+    * Convenient
+    */
+   public func setConstraint(anchor:AnchorConstraint,size:SizeConstraint) {
+      self.anchor = anchor
+      self.size = size
    }
    /**
     * Updates horizontal anchor
@@ -84,6 +67,23 @@ extension ConstraintKind where Self:UIView{
       NSLayoutConstraint.activate([newAnchorY])
       self.anchor?.y = newAnchorY
       superview.layoutIfNeeded()/*The superview is responsible for updating subView constraint updates*/
+   }
+}
+/**
+ * Animation
+ */
+extension ConstraintKind where Self:UIView{
+   /**
+    * Animates a UIView that adhers to ConstraintKind (hor)
+    */
+   public func animate(to:CGFloat, align:HorizontalAlign, alignTo:HorizontalAlign, onComplete:@escaping AnimComplete = Self.defaultOnComplete){
+      UIView.animate({self.update(offset: to, align: align, alignTo: alignTo)},onComplete:onComplete)
+   }
+   /**
+    * Anim for ver
+    */
+   public func animate(to:CGFloat, align:VerticalAlign = .top, alignTo:VerticalAlign = .top, onComplete:@escaping AnimComplete = Self.defaultOnComplete){
+      UIView.animate({self.update(offset: to, align: align, alignTo: alignTo)},onComplete:onComplete)
    }
 }
 /**
