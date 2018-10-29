@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F10213CD218756310038F496 /* Distribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10213CB218756310038F496 /* Distribution.swift */; };
-		F10213CE218756310038F496 /* Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10213CC218756310038F496 /* Extra.swift */; };
+		F10213CD218756310038F496 /* Constraint+Distribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10213CB218756310038F496 /* Constraint+Distribution.swift */; };
+		F10213CE218756310038F496 /* Constraint+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10213CC218756310038F496 /* Constraint+Extra.swift */; };
 		F14092F621760828005F44D3 /* CardView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14092F521760828005F44D3 /* CardView+Extension.swift */; };
 		F151DDA621737A6600AA0ABE /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151DDA521737A6600AA0ABE /* Extension.swift */; };
 		F151DDA921738B2C00AA0ABE /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151DDA821738B2C00AA0ABE /* TopBar.swift */; };
@@ -56,8 +56,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F10213CB218756310038F496 /* Distribution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Distribution.swift; sourceTree = "<group>"; };
-		F10213CC218756310038F496 /* Extra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extra.swift; sourceTree = "<group>"; };
+		F10213CB218756310038F496 /* Constraint+Distribution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Constraint+Distribution.swift"; sourceTree = "<group>"; };
+		F10213CC218756310038F496 /* Constraint+Extra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Constraint+Extra.swift"; sourceTree = "<group>"; };
 		F14092F521760828005F44D3 /* CardView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+Extension.swift"; sourceTree = "<group>"; };
 		F151DDA521737A6600AA0ABE /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		F151DDA821738B2C00AA0ABE /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
@@ -194,10 +194,10 @@
 			isa = PBXGroup;
 			children = (
 				F1D369FC2172039B00F498FA /* Alignment.swift */,
-				F1D369FF2172039B00F498FA /* Constraint.swift */,
 				F1D369FD2172039B00F498FA /* ConstraintKind.swift */,
-				F10213CB218756310038F496 /* Distribution.swift */,
-				F10213CC218756310038F496 /* Extra.swift */,
+				F1D369FF2172039B00F498FA /* Constraint.swift */,
+				F10213CB218756310038F496 /* Constraint+Distribution.swift */,
+				F10213CC218756310038F496 /* Constraint+Extra.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -327,8 +327,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1D36A012172039B00F498FA /* ConstraintKind.swift in Sources */,
-				F10213CD218756310038F496 /* Distribution.swift in Sources */,
-				F10213CE218756310038F496 /* Extra.swift in Sources */,
+				F10213CD218756310038F496 /* Constraint+Distribution.swift in Sources */,
+				F10213CE218756310038F496 /* Constraint+Extra.swift in Sources */,
 				F1D36A032172039B00F498FA /* Constraint.swift in Sources */,
 				F1D36A002172039B00F498FA /* Alignment.swift in Sources */,
 			);

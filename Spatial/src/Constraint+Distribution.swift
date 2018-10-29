@@ -2,7 +2,7 @@ import UIKit
 /**
  * Distribute items horizontally or vertically
  */
-class Spatial {
+extension Constraint {
    /**
     * Horizontal & Vertical Distribution
 	 * TODO: ⚠️️ Add support for spacing
@@ -12,7 +12,7 @@ class Spatial {
     * IMPORTANT ⚠️️ Sets only anchors not sizes
 	 * EXAMPLE:
 	 * [label1,label2,label3].activateConstraint { views in
-    *      let anchors = Spatial.distribute(vertically:views,align:.left)
+    *      let anchors = Constraint.distribute(vertically:views,align:.left)
     *      let sizes = Constraint.size(view, toView: self.frame.width, height: 48))
     *      return (anchors, sizes)
     * }
