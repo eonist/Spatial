@@ -1,6 +1,7 @@
 import Foundation
 /**
  * TODO: ⚠️️ add none?
+ * TODO: ⚠️️ remove string
  */
 public enum Alignment:String{/*Both axises*/
     case topLeft = "topLeft"
@@ -13,10 +14,17 @@ public enum Alignment:String{/*Both axises*/
     case centerRight = "centerRight"
     case centerCenter = "centerCenter"
 }
+/**
+ * TODO: ⚠️️ remove string
+ */
 public enum Axis:String{/*axis alignment*/
     case horizontal = "horizontal"
     case vertical = "vertical"
 }
+/**
+ * TODO: ⚠️️ Reference AlignType in HorAlign and VerAlign, and prob use CenterX,CenterY naming instead
+ * TODO: ⚠️️ remove string
+ */
 public enum AlignType:String{/*Single axis*/
     case left = "left"
     case right = "right"
@@ -25,11 +33,17 @@ public enum AlignType:String{/*Single axis*/
     case centerHor = "centerHorizontal"
     case centerVer = "centerVertical"
 }
+/**
+ * TODO: ⚠️️ remove string
+ */
 public enum HorizontalAlign:String{
     case left = "left"
     case right = "right"
-    case centerX = "center"/*use centerX or else .dot syntax fails*/
+    case centerX = "centerX"/*use centerX or else .dot syntax fails*/
 }
+/*
+ * TODO: ⚠️️ remove string
+ */
 public enum VerticalAlign:String{
     case top = "top"
     case bottom = "bottom"
@@ -51,6 +65,27 @@ extension Alignment{
         case .topRight,.topCenter,.topLeft: return .top
         case .bottomCenter,.bottomRight,.bottomLeft: return .bottom
         case .centerRight,.centerLeft,.centerCenter: return .centerY
+        }
+    }
+
+}
+public enum AxisType{/*axis type*/
+   case start//left,top
+   case middle//centerX,centerY
+   case end//right,bottom
+}
+extension AlignType{
+    public var axis:Axis {
+        switch self {
+        case .top,.bottom,.centerVer: return .vertical
+        case .left,.right,.centerHor: return .horizontal
+        }
+    }
+    public var axisType:AxisType {
+        switch self {
+        case .top,.left: return .start
+        case .centerHor, .centerVer: return .middle
+        case .bottom,.right: return .end
         }
     }
 }

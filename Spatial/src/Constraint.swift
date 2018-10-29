@@ -1,5 +1,8 @@
 #if os(iOS)
 import UIKit
+public typealias AnchorConstraint = (x:NSLayoutConstraint,y:NSLayoutConstraint)
+public typealias SizeConstraint = (w:NSLayoutConstraint,h:NSLayoutConstraint)
+public typealias AnchorConstraintsAndSizeConstraints = (anchorConstraints:[AnchorConstraint],sizeConstraints:[SizeConstraint])
 /**
  * Positional constraints
  * DESCRIPTION: (Aligning relative to another view (x,y))
@@ -12,7 +15,7 @@ public class Constraint{
     * Creates a positional constraint
     * TODO: ⚠️️ Rename to pin 👌, to differentiate from anchor, point, origin, position?
     */
-   public static func anchor(_ view:UIView,to:UIView,align:Alignment,alignTo:Alignment,offset:CGPoint = CGPoint(), useMargin:Bool = false) -> (x:NSLayoutConstraint,y:NSLayoutConstraint) {/*,offset:CGPoint = CGPoint()*/
+   public static func anchor(_ view:UIView, to:UIView, align:Alignment, alignTo:Alignment, offset:CGPoint = CGPoint(), useMargin:Bool = false) -> AnchorConstraint {/*,offset:CGPoint = CGPoint()*/
       let horConstraint = Constraint.anchor(view, to: to, align: align.horAlign, alignTo: alignTo.horAlign,offset:offset.x,useMargin:useMargin)
       let verConstraint = Constraint.anchor(view, to: to, align: align.verAlign, alignTo: alignTo.verAlign,offset:offset.y,useMargin:useMargin)
       return (horConstraint,verConstraint)
@@ -45,7 +48,7 @@ extension Constraint{
     * TODO: ⚠️️ Rename to dimension 👌, to differentiate from the Apple name convention of frame, size, bound etc
     * EXAMPLE: let widthConstraint = Constraint.size(square,to:canvas,axis:.horizontal).w
     */
-   public static func size(_ view:UIView, to:UIView) -> (w:NSLayoutConstraint,h:NSLayoutConstraint){
+   public static func size(_ view:UIView, to:UIView) -> SizeConstraint{
       let widthConstraint = Constraint.width(view,to:to)
       let heightConstraint = Constraint.height(view,to:to)
       return (widthConstraint,heightConstraint)
@@ -53,7 +56,7 @@ extension Constraint{
    /**
     * EXAMPLE: let sizeConstraint = Constraint.size(square,size:CGSize(100,100))
     */
-   public static func size(_ view:UIView, size:CGSize, multiplier:CGSize = CGSize(width:1,height:1)) -> (w:NSLayoutConstraint,h:NSLayoutConstraint){
+   public static func size(_ view:UIView, size:CGSize, multiplier:CGSize = CGSize(width:1,height:1)) -> SizeConstraint{
       let widthConstraint = Constraint.width(view, width: size.width, multiplier: multiplier.width)
       let heightConstraint = Constraint.height(view, height: size.height, multiplier: multiplier.height)
       return (widthConstraint,heightConstraint)
@@ -121,9 +124,11 @@ extension Constraint{
    }
 }
 /**
- * AutoLayout Sugar
+ * AutoLayout Sugar for UIView
  */
 extension UIView{
+   /*We keep AnchorsAndSizes in a tuple, because applyConstraints wouldn't work with just an array*/
+   public typealias AnchorsAndSizes = (anchors:[NSLayoutConstraint],sizes:[NSLayoutConstraint])//can this go to [UIView].AnchorsAndSizes  ?
    public typealias ConstraintClosure = (_ view:UIView) -> [NSLayoutConstraint]
    /**
     * EXAMPLE:
@@ -140,61 +145,33 @@ extension UIView{
    }
 }
 /**
- * Extra utilities
- * TODO: ⚠️️ Consider deprecating and removeing these, as they are not that much used (Its more useful to know absolute paths to constraints)
+ * AutoLayout Sugar for UIView's
+ * EXAMPLE:
+ * [label1,label2,label3].activateConstraint { views in
+ *      let anchors = []
+ *      let sizes = []
+ *      return (anchors, sizes)
+ * }
+ * NOTE: ⚠️️ You have to zip together anchors in some cases
  */
-extension UIView {
-   /**
-    * Deactivates immediate constraints that target this view (self + superview)
-    * TODO: ⚠️️ Consider removing this
-    */
-   public func deactivateImmediateConstraints(){
-      NSLayoutConstraint.deactivate(self.immediateConstraints)
-   }
-   /**
-    * Deactivates all constrains that target this view
-    * TODO: ⚠️️ Consider removing this
-    */
-   public func deactiveAllConstraints(){
-      NSLayoutConstraint.deactivate(self.allConstraints)
-   }
-   /**
-    * Gets self.constraints + superview?.constraints for this particular view
-    * NOTE: You can use immediateConstraints when you don't want to crawl entire hierarchies.
-    * TODO: ⚠️️ Consider removing this
-    */
-   public var immediateConstraints:[NSLayoutConstraint]{
-      let constraints = self.superview?.constraints.filter{
-         $0.firstItem as? UIView === self /*|| $0.secondItem as? UIView === self*/ //<- this removes constraints that other views might have to this view
-         } ?? []
-      return self.constraints + constraints
-   }
-   /**
-    * Crawls up superview hierarchy and gets all constraints that affect this view
-    * TODO: ⚠️️ Consider removing this
-    */
-   public var allConstraints:[NSLayoutConstraint] {
-      var view: UIView? = self
-      var constraints:[NSLayoutConstraint] = []
-      while let currentView = view {
-         constraints += currentView.constraints.filter {
-            return $0.firstItem as? UIView === self || $0.secondItem as? UIView === self //<- this removes constraints that other views might have to this view
-         }
-         view = view?.superview
-      }
-      return constraints
-   }
-   /**
-    * Returns all constraints of kinds
-    * EXAMPLE: NSLayoutConstraint.ofKind(rect.immediateConstraints, kinds: [.width,.height]) //width, height
-    */
-   public static func ofKind(_ constraints:[NSLayoutConstraint], kinds:[NSLayoutConstraint.Attribute]) -> [NSLayoutConstraint]{
-      return kinds.map { kind in
-         return constraints.filter { constraint in
-            return constraint.firstAttribute == kind
-         }
-         }.flatMap({$0})//flattens 2d array to 1d array
+extension Array where Element:UIView{
+   public typealias ConstraintClosure = (_ views:[UIView]) -> AnchorConstraintsAndSizeConstraints
+   public func activateConstraint(closure:ConstraintClosure) {
+      self.forEach{$0.translatesAutoresizingMaskIntoConstraints = false}
+      let constraints:[NSLayoutConstraint] = {
+         let constraints:AnchorConstraintsAndSizeConstraints = closure(self)
+         let anchors = constraints.anchorConstraints.reduce([]) { $0 + [$1.x,$1.y] }
+         let sizes = constraints.sizeConstraints.reduce([]) { $0 + [$1.w,$1.h] }
+         return anchors + sizes
+      }()
+      NSLayoutConstraint.activate(constraints)
    }
 }
+// self.enumerated().forEach { (view, i) in
+//    view.activateConstraint{ v in
+//       let anchor = constraints[i].anchor
+//       let size = constraints[i].size
+//       return [anchor.x,anchor.y,size.w,size.h]
+//    }
+// }
 #endif
-
