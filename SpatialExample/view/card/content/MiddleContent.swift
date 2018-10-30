@@ -18,8 +18,9 @@ class MiddleContent:UIView{
       fatalError("init(coder:) has not been implemented")
    }
 }
-
-//try labels 👈
+/**
+ *
+ */
 extension MiddleContent{
    /**
     * Create items
@@ -42,9 +43,11 @@ extension MiddleContent{
    }
 }
 class ItemView:UIView{
+   lazy var horizontalItems:[UIView] = createHorizontalItems()
    override init(frame: CGRect) {
       super.init(frame: frame)
-      backgroundColor = .purple
+      backgroundColor = .green
+      _ = horizontalItems
    }
    /**
     * Boilerplate
@@ -52,5 +55,22 @@ class ItemView:UIView{
    required init?(coder aDecoder: NSCoder) {
       fatalError("init(coder:) has not been implemented")
    }
+   /**
+    * Creates horizontal items
+    */
+   func createHorizontalItems() -> [UIView] {
+      let size:CGSize = CGSize.init(width: 32, height: 32)
+      let views:[UIView] = [UIColor.purple,.orange,.red,.blue].map{
+         let view = UIView.init(frame: .zero)//.init(origin: .zero, size: size)
+         self.addSubview(view)
+         view.backgroundColor = $0
+         return view
+      }
+      views.activateConstraint { views in
+         let anchors = Constraint.distribute(horizontally: views, align: .centerLeft)
+         let sizes = views.map{Constraint.size($0, size: size)}
+         return (anchors, sizes)
+      }
+      return views
+   }
 }
-
