@@ -45,13 +45,16 @@ extension CardView{
     * Creates the middle card content view
     */
    func createMiddleContent() -> MiddleContent{
-      let width:CGFloat = self.frame.width - (CardView.margin.left+CardView.margin.right)
-      let height:CGFloat = self.frame.height - (TopBar.topBarHeight + BottomBar.bottomBarHeight + CardView.margin.top + CardView.margin.bottom)
-      let cardContent = MiddleContent.init(frame: .zero)
+      let size:CGSize = {
+         let width:CGFloat = self.frame.width - (CardView.margin.left+CardView.margin.right)
+         let height:CGFloat = self.frame.height - (TopBar.topBarHeight + BottomBar.bottomBarHeight + CardView.margin.top + CardView.margin.bottom)
+         return CGSize.init(width: width, height: height)
+      }()
+      let cardContent = MiddleContent.init(frame: CGRect.init(origin: .zero, size: size))
       self.addSubview(cardContent)
       cardContent.activateConstraint { view in
          let anchor = Constraint.anchor(view, to: topBar, align: .topLeft, alignTo: .bottomLeft, offset:.zero)
-         let size = Constraint.size(view, size: CGSize.init(width: width, height: height))
+         let size = Constraint.size(view, size: size)
          return [anchor.x,anchor.y,size.w,size.h]
       }
       return cardContent
