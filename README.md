@@ -23,7 +23,15 @@ Hassle-free AutoLayout, tailored for interactivity and animation.
 - Apple NSLayoutConstraint SDK API, Pros: Raw power, Cons: Extremely verbose; tedious to write; difficult to read
 - Neon https://github.com/mamaral/Neon, great visual examples
 - Anchors https://github.com/onmyway133/Anchors, sickest layout DSL out there, but too magical and alien for some.
+### Example:
 
+```swift
+camTopBar.activateConstraint{ view in
+  let anchor = Constraint.anchor(view, to: self, align: .topLeft, alignTo: .topLeft)
+  let size = Constraint.size(view, size: CGSize.init(width: UIScreen.main.bounds.width, height: TopBar.topBarHeight))
+  return [anchor.x,anchor.y,size.w,size.h]
+}
+```
 ### Todo:
 - Complete the spaceAround and spaceBetween methods
 - Add one-liner accessors
