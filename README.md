@@ -23,13 +23,7 @@ Hassle-free AutoLayout, tailored for interactivity and animation.
 - Apple NSLayoutConstraint SDK API, Pros: Raw power, Cons: Extremely verbose; tedious to write; difficult to read
 - Neon https://github.com/mamaral/Neon, great visual examples
 - Anchors https://github.com/onmyway133/Anchors, sickest layout DSL out there, but too magical and alien for some.
-### Example:
 
-```swift
-button.constrain { view in
-	return (stretch:(w:100,h:100),pin:(to:view.parent, at:.topLeft, pivot:.topLeft,inset:UIEdgeInset))//x:.left, y:.top
-}
-```
 ### Todo:
 - Complete the spaceAround and spaceBetween methods
 - Add one-liner accessors
