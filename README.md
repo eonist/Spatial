@@ -21,9 +21,9 @@ Hassle-free AutoLayout, tailored for interactivity and animation.
 
 ```swift
 bt1.activateConstraint{ view in
-  let anchor = Constraint.anchor(view, to: self, align: .topLeft, alignTo: .topLeft)
-  let size = Constraint.size(view, size: CGSize.init(width: 96, height: 24))
-  return [anchor.x,anchor.y,size.w,size.h]
+	let anchor = Constraint.anchor(view, to: self, align: .topLeft, alignTo: .topLeft)
+	let size = Constraint.size(view, size: CGSize.init(width: 96, height: 24))
+	return [anchor.x,anchor.y,size.w,size.h]
 }
 ```
 
