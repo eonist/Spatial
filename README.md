@@ -21,17 +21,17 @@ Hassle-free AutoLayout, tailored for interactivity and animation.
 
 ```swift
 bt1.activateConstraint{ view in
-	let anchor = Constraint.anchor(view, to: self, align: .topLeft, alignTo: .topLeft)
-	let size = Constraint.size(view, size: CGSize.init(width: 96, height: 24))
-	return [anchor.x,anchor.y,size.w,size.h]
+   let anchor = Constraint.anchor(view, to: self, align: .topLeft, alignTo: .topLeft)
+   let size = Constraint.size(view, size: CGSize.init(width: 96, height: 24))
+   return [anchor.x,anchor.y,size.w,size.h]
 }
 ```
 
 ```swift
 [btn1,btn2,btn3].activateConstraint { views in
-	let anchors = Constraint.distribute(vertically: views, align: .topLeft)
-	let sizes = views.map{Constraint.size($0, size: CGSize(width:96,height:42))}
-	return (anchors, sizes)
+   let anchors = Constraint.distribute(vertically: views, align: .topLeft)
+   let sizes = views.map{Constraint.size($0, size: CGSize(width:96,height:42))}
+   return (anchors, sizes)
 }
 ```
 
