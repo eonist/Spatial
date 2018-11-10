@@ -44,13 +44,22 @@ public class Constraint{
  */
 extension Constraint{
    /**
-    * creates a dimensional constraint
-    * TODO: ⚠️️ Rename to dimension 👌, to differentiate from the Apple name convention of frame, size, bound etc
-    * EXAMPLE: let widthConstraint = Constraint.size(square,to:canvas,axis:.horizontal).w
+    * Creates a dimensional constraint
+    * TODO: ⚠️️ Rename to dimension 👌, to differentiate from the Apple name convention of frame, size, bound etc, dimension is so long 🤔
+    * EXAMPLE: let widthConstraint = Constraint.size(square,to:canvas).w
     */
    public static func size(_ view:UIView, to:UIView) -> SizeConstraint{
       let widthConstraint = Constraint.width(view,to:to)
       let heightConstraint = Constraint.height(view,to:to)
+      return (widthConstraint,heightConstraint)
+   }
+   /**
+    * Creates a dimensional constraint
+    * EXAMPLE: let sizeConstraint = Constraint.size(square,to:canvas,offset:.zero,multiplier:.init(x:1,y:0.5))
+    */
+   public static func size(_ view:UIView, to:UIView, offset:CGPoint = .zero, multiplier:CGPoint = .zero) -> SizeConstraint{
+      let widthConstraint = Constraint.width(view, to: to, offset: offset.x, multiplier: multiplier.x)
+      let heightConstraint = Constraint.height(view, to: to, offset: offset.y, multiplier: multiplier.y)
       return (widthConstraint,heightConstraint)
    }
    /**
