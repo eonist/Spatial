@@ -23,6 +23,7 @@ Hassle-free AutoLayout, tailored for interactivity and animation.
 ### Example:
 
 ```swift
+/*Single*/
 btn1.activateConstraint{ view in
    let anchor = Constraint.anchor(view, to: self, align: .topLeft, alignTo: .topLeft)
    let size = Constraint.size(view, size: CGSize.init(width: 96, height: 24))
@@ -31,6 +32,7 @@ btn1.activateConstraint{ view in
 ```
 
 ```swift
+/*Bulk*/
 [btn1,btn2,btn3].activateConstraint { views in
    let anchors = Constraint.distribute(vertically: views, align: .topLeft)
    let sizes = views.map{Constraint.size($0, size: CGSize(width:96,height:42))}
@@ -38,6 +40,10 @@ btn1.activateConstraint{ view in
 }
 ```
 
+```swift
+/*Animation*/
+btn.animate(to:100,align:left,alignTo:.left)
+```
 ### Todo:
 - Complete the spaceAround and spaceBetween methods
 - Add one-liner accessors
