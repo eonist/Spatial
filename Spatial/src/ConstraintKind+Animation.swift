@@ -81,6 +81,7 @@ extension ConstraintKind where Self:UIView{
       let newAnchor = Constraint.anchor(self, to: superview, align: align, alignTo: alignTo)
       let newSize = Constraint.size(self, to: superview, offset: CGPoint(x:offset.size.width,y:offset.size.height)/*, multiplier: multiplier*/)
       NSLayoutConstraint.activate([newAnchor.x,newAnchor.y,newSize.w,newSize.h])
+      self.anchor = newAnchor
       self.size = newSize
       superview.layoutIfNeeded()/*The superview is responsible for updating subView constraint updates*/
    }
