@@ -17,6 +17,7 @@
 		F151DDBC2173CABC00AA0ABE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151DDBB2173CABC00AA0ABE /* CardView.swift */; };
 		F151DDBE2173CBBE00AA0ABE /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151DDBD2173CBBE00AA0ABE /* BottomBar.swift */; };
 		F17E38732174C15D009C10B2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E38722174C15D009C10B2 /* MainView.swift */; };
+		F1BD0417219B06F200A4A46F /* ConstraintKind+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BD0416219B06F200A4A46F /* ConstraintKind+Animation.swift */; };
 		F1D369DC2171FCDC00F498FA /* Spatial.h in Headers */ = {isa = PBXBuildFile; fileRef = F1D369DA2171FCDC00F498FA /* Spatial.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F1D369E92171FDAE00F498FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D369E82171FDAE00F498FA /* AppDelegate.swift */; };
 		F1D369EB2171FDAE00F498FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D369EA2171FDAE00F498FA /* ViewController.swift */; };
@@ -65,6 +66,7 @@
 		F151DDBB2173CABC00AA0ABE /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		F151DDBD2173CBBE00AA0ABE /* BottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
 		F17E38722174C15D009C10B2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		F1BD0416219B06F200A4A46F /* ConstraintKind+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConstraintKind+Animation.swift"; sourceTree = "<group>"; };
 		F1D369D72171FCDC00F498FA /* Spatial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Spatial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1D369DA2171FCDC00F498FA /* Spatial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Spatial.h; sourceTree = "<group>"; };
 		F1D369DB2171FCDC00F498FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			children = (
 				F1D369FC2172039B00F498FA /* Alignment.swift */,
 				F1D369FD2172039B00F498FA /* ConstraintKind.swift */,
+				F1BD0416219B06F200A4A46F /* ConstraintKind+Animation.swift */,
 				F1D369FF2172039B00F498FA /* Constraint.swift */,
 				F10213CB218756310038F496 /* Constraint+Distribution.swift */,
 				F10213CC218756310038F496 /* Constraint+Extra.swift */,
@@ -329,6 +332,7 @@
 				F1D36A012172039B00F498FA /* ConstraintKind.swift in Sources */,
 				F10213CD218756310038F496 /* Constraint+Distribution.swift in Sources */,
 				F10213CE218756310038F496 /* Constraint+Extra.swift in Sources */,
+				F1BD0417219B06F200A4A46F /* ConstraintKind+Animation.swift in Sources */,
 				F1D36A032172039B00F498FA /* Constraint.swift in Sources */,
 				F1D36A002172039B00F498FA /* Alignment.swift in Sources */,
 			);
