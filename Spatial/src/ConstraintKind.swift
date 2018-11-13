@@ -111,6 +111,7 @@ extension ConstraintKind where Self:UIView{
 extension ConstraintKind where Self:UIView{//TODO ⚠️️ use UIViewConstraintKind
    /**
     * Animates a UIView that adhers to ConstraintKind (hor)
+    * Example: btn.animate(to:100,align:left,alignTo:.left)
     */
    public func animate(to:CGFloat, align:HorizontalAlign, alignTo:HorizontalAlign, onComplete:@escaping AnimComplete = Self.defaultOnComplete){
       UIView.animate({self.update(offset: to, align: align, alignTo: alignTo)},onComplete:onComplete)
@@ -131,10 +132,9 @@ extension UIView{
    public static func defaultOnComplete() {Swift.print("default anim completed closure")}
    /**
     * Animate
-    * Example:
     * PARAM: onUpdate is animateTo this and on every frame do this at the same time 🤔
     */
-   public static func animate(_ onUpdate:@escaping AnimUpdate,onComplete:@escaping AnimComplete = UIView.defaultOnComplete){
+   public static func animate(_ onUpdate:@escaping AnimUpdate,onComplete:@escaping AnimComplete = UIView.defaultOnComplete) {
       let anim = UIViewPropertyAnimator(duration: 0.3, curve: .easeOut, animations: {
          onUpdate()
       })

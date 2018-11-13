@@ -146,7 +146,7 @@ extension UIView{
    public typealias ConstraintsClosure = (_ view:UIView) -> AnchorAndSize
    /**
     * EXAMPLE:
-    * camTopBar.activateConstraint{ view in
+    * button.activateConstraint{ view in
     *      let anchor = Constraint.anchor(view, to: self, align: .topLeft, alignTo: .topLeft)
     *      let size = Constraint.size(view, size: CGSize.init(width: UIScreen.main.bounds.width, height: TopBar.topBarHeight))
     *      return [anchor.x,anchor.y,size.w,size.h]
