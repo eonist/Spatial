@@ -52,8 +52,8 @@ extension ConstraintKind where Self:UIView{
     */
    public func update(offset:CGPoint, align:Alignment, alignTo:Alignment){
       updateAnchor { (superview,oldAnchor) in
-         NSLayoutConstraint.deactivate([oldAnchor.y,oldAnchor.x])
-         let newAnchor = Constraint.anchor(self, to: superview, align: align, alignTo: alignTo)
+         NSLayoutConstraint.deactivate([oldAnchor.x,oldAnchor.y])
+         let newAnchor = Constraint.anchor(self, to: superview, align: align, alignTo: alignTo, offset:offset)
          NSLayoutConstraint.activate([newAnchor.x,newAnchor.y])
          self.anchor = newAnchor
       }
@@ -78,7 +78,7 @@ extension ConstraintKind where Self:UIView{
       guard let oldAnchor = self.anchor else {fatalError("err anchor not available")}
       guard let oldSize = self.size else {fatalError("err sice not available")}
       NSLayoutConstraint.deactivate([oldAnchor.y, oldAnchor.x, oldSize.w, oldSize.h])
-      let newAnchor = Constraint.anchor(self, to: superview, align: align, alignTo: alignTo)
+      let newAnchor = Constraint.anchor(self, to: superview, align: align, alignTo: alignTo,offset:offset.origin)
       let newSize = Constraint.size(self, to: superview, offset: CGPoint(x:offset.size.width,y:offset.size.height)/*, multiplier: multiplier*/)
       NSLayoutConstraint.activate([newAnchor.x,newAnchor.y,newSize.w,newSize.h])
       self.anchor = newAnchor
