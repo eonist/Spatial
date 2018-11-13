@@ -9,6 +9,13 @@ public protocol ConstraintKind:class{
    var size:SizeConstraint? {get set}
 }
 /**
+ * NOTE: Convenient UIView so you dont have to add anchor and size your self
+ */
+open class ConstraintView:UIView,ConstraintKind{
+   public var anchor: AnchorConstraint?
+   public var size: SizeConstraint?
+}
+/**
  * Update constraints (For items that are of type ConstraintKind)
  */
 extension ConstraintKind where Self:UIView{
@@ -142,4 +149,5 @@ extension UIView{
       anim.startAnimation()
    }
 }
+
 #endif
