@@ -141,6 +141,9 @@ extension UIView{
    /*We keep AnchorsAndSizes in a tuple, because applyConstraints wouldn't work with just an array*/
    public typealias AnchorsAndSizes = (anchors:[NSLayoutConstraint],sizes:[NSLayoutConstraint])//can this go to [UIView].AnchorsAndSizes  ?
    public typealias ConstraintClosure = (_ view:UIView) -> [NSLayoutConstraint]
+   /*Tuple*/
+   public typealias AnchorAndSize = (anchor:AnchorConstraint,size:SizeConstraint)
+   public typealias ConstraintsClosure = (_ view:UIView) -> AnchorAndSize
    /**
     * EXAMPLE:
     * camTopBar.activateConstraint{ view in
@@ -154,9 +157,18 @@ extension UIView{
       let constraints:[NSLayoutConstraint] = closure(self)/*the constraints is returned from the closure*/
       NSLayoutConstraint.activate(constraints)
    }
+   /**
+    * Same as activateConstraint, but returns a tuple in the closure instead of an array
+    */
+   public func activateConstraints(closure:ConstraintsClosure){
+      self.translatesAutoresizingMaskIntoConstraints = false
+      let anchorAndSize:AnchorAndSize = closure(self)
+      let constraints:[NSLayoutConstraint] = [anchorAndSize.anchor.x,anchorAndSize.anchor.y,anchorAndSize.size.w,anchorAndSize.size.h]/*the constraints is returned from the closure*/
+      NSLayoutConstraint.activate(constraints)
+   }
 }
 /**
- * AutoLayout Sugar for UIView's
+ * AutoLayout Sugar for UIView's (Multiple)
  * EXAMPLE:
  * [label1,label2,label3].activateConstraint { views in
  *      let anchors = []
