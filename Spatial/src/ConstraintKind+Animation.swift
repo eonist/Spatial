@@ -25,6 +25,7 @@ extension ConstraintKind where Self:UIView{
       closure(superview,oldSize)
       superview.layoutIfNeeded()/*The superview is responsible for updating subView constraint updates*/
    }
+   
    /**
     * Updates horizontal anchor
     */
@@ -61,10 +62,10 @@ extension ConstraintKind where Self:UIView{
    /**
     * Update (size offset)
     */
-   public func update(offset:CGSize/*,multiplier:CGPoint*/) {
+   public func update(size:CGSize/*,multiplier:CGPoint*/) {
       updateSize { (superview,oldSize) in
          NSLayoutConstraint.deactivate([oldSize.w,oldSize.h])
-         let newSize = Constraint.size(self, to: superview, offset: CGPoint(x:offset.width,y:offset.height)/*, multiplier: multiplier*/)
+         let newSize = Constraint.size(self, size: size/*, multiplier: */ )
          NSLayoutConstraint.activate([newSize.w,newSize.h])
          self.size = newSize
       }
@@ -72,6 +73,7 @@ extension ConstraintKind where Self:UIView{
    /**
     * Update (size & position) offset
     * PARAM: multiplier: only applies to the size (⚠️️ NOT IMPLEMENTED YET ⚠️️)
+    * IMPORTANT: ⚠️️ offset.size is actual size, not offset of the size ⚠️️
     */
    public func update(offset:CGRect, align:Alignment, alignTo:Alignment/*, multiplier:CGPoint*/){
       guard let superview:UIView = self.superview else {fatalError("err superview not available")}
@@ -79,7 +81,7 @@ extension ConstraintKind where Self:UIView{
       guard let oldSize = self.size else {fatalError("err sice not available")}
       NSLayoutConstraint.deactivate([oldAnchor.y, oldAnchor.x, oldSize.w, oldSize.h])
       let newAnchor = Constraint.anchor(self, to: superview, align: align, alignTo: alignTo,offset:offset.origin)
-      let newSize = Constraint.size(self, to: superview, offset: CGPoint(x:offset.size.width,y:offset.size.height)/*, multiplier: multiplier*/)
+      let newSize = Constraint.size(self, size: offset.size/*, multiplier: */ )
       NSLayoutConstraint.activate([newAnchor.x,newAnchor.y,newSize.w,newSize.h])
       self.anchor = newAnchor
       self.size = newSize
