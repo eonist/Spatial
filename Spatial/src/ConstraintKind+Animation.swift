@@ -50,7 +50,7 @@ extension ConstraintKind where Self:UIView{
    /**
     * Update (hor & ver)
     */
-   func update(offset:CGPoint, align:Alignment, alignTo:Alignment){
+   public func update(offset:CGPoint, align:Alignment, alignTo:Alignment){
       updateAnchor { (superview,oldAnchor) in
          NSLayoutConstraint.deactivate([oldAnchor.y,oldAnchor.x])
          let newAnchor = Constraint.anchor(self, to: superview, align: align, alignTo: alignTo)
@@ -61,7 +61,7 @@ extension ConstraintKind where Self:UIView{
    /**
     * Update (size offset)
     */
-   func update(offset:CGPoint/*,multiplier:CGPoint*/) {
+   public func update(offset:CGPoint/*,multiplier:CGPoint*/) {
       updateSize { (superview,oldSize) in
          NSLayoutConstraint.deactivate([oldSize.w,oldSize.h])
          let newSize = Constraint.size(self, to: superview, offset: offset/*, multiplier: multiplier*/)
@@ -73,7 +73,7 @@ extension ConstraintKind where Self:UIView{
     * Update (size & position) offset
     * PARAM: multiplier: only applies to the size (⚠️️ NOT IMPLEMENTED YET ⚠️️)
     */
-   func update(offset:CGRect, align:Alignment, alignTo:Alignment/*, multiplier:CGPoint*/){
+   public func update(offset:CGRect, align:Alignment, alignTo:Alignment/*, multiplier:CGPoint*/){
       guard let superview:UIView = self.superview else {fatalError("err superview not available")}
       guard let oldAnchor = self.anchor else {fatalError("err anchor not available")}
       guard let oldSize = self.size else {fatalError("err sice not available")}
@@ -122,8 +122,4 @@ extension UIView{
       anim.startAnimation()
    }
 }
-
 #endif
-
-
-
