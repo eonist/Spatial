@@ -61,10 +61,10 @@ extension ConstraintKind where Self:UIView{
    /**
     * Update (size offset)
     */
-   public func update(offset:CGPoint/*,multiplier:CGPoint*/) {
+   public func update(offset:CGSize/*,multiplier:CGPoint*/) {
       updateSize { (superview,oldSize) in
          NSLayoutConstraint.deactivate([oldSize.w,oldSize.h])
-         let newSize = Constraint.size(self, to: superview, offset: offset/*, multiplier: multiplier*/)
+         let newSize = Constraint.size(self, to: superview, offset: CGPoint(x:offset.width,y:offset.height)/*, multiplier: multiplier*/)
          NSLayoutConstraint.activate([newSize.w,newSize.h])
          self.size = newSize
       }
