@@ -162,6 +162,12 @@ extension UIView{
    }
    /**
     * Same as activateConstraint, but returns a tuple in the closure instead of an array
+    * EXAMPLE:
+    * label.activateConstraints { view in
+    *    let a = Constraint.anchor(view, to: self, align: .topLeft, alignTo:  .topLeft)
+    *    let s = Constraint.size(view, to: self)
+    *    return (a,s)
+    * }
     */
    public func activateConstraints(closure:ConstraintsClosure){
       self.translatesAutoresizingMaskIntoConstraints = false
