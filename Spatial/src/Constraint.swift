@@ -57,9 +57,9 @@ extension Constraint{
     * Creates a dimensional constraint
     * EXAMPLE: let sizeConstraint = Constraint.size(square,to:canvas,offset:.zero,multiplier:.init(x:1,y:0.5))
     * TODO: ⚠️️ offset should be CGSize
-    * TODO: ⚠️️ The offset is pointless ⚠️️ as it doesnt offset, it sets size directly with out taking in account of the to
+    * TODO: Wrong, it was just a bug that the multiplier was zero 👉 ⚠️️ The offset is pointless ⚠️️ as it doesnt offset, it sets size directly with out taking in account of the to, actually it works in some cases
     */
-   public static func size(_ view:UIView, to:UIView, offset:CGPoint = .zero, multiplier:CGPoint = .zero) -> SizeConstraint{
+   public static func size(_ view:UIView, to:UIView, offset:CGPoint = .zero, multiplier:CGPoint = CGPoint(x:1,y:1)) -> SizeConstraint{
       let widthConstraint = Constraint.width(view, to: to, offset: offset.x, multiplier: multiplier.x)
       let heightConstraint = Constraint.height(view, to: to, offset: offset.y, multiplier: multiplier.y)
       return (widthConstraint,heightConstraint)
