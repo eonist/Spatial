@@ -1,6 +1,7 @@
 # Spatial
 ![mit](https://img.shields.io/badge/License-MIT-brightgreen.svg) ![platform](https://img.shields.io/badge/Platform-iOS-blue.svg) ![Lang](https://img.shields.io/badge/Language-Swift%204.2-orange.svg)
 [![codebeat badge](https://codebeat.co/badges/b4ee0d27-b00c-464b-b9b2-c9906cb6c19f)](https://codebeat.co/projects/github-com-eonist-spatial-master)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 <img width="900" alt="img" src="https://rawgit.com/stylekit/img/master/spatial_github.svg">
 
@@ -16,7 +17,7 @@ Hassle-free AutoLayout, tailored for interactivity and animation.
 - Spatial uses plain and simple math under the hood.
 
 ### How do I get it
-- Carthage `github "eonist/Spatial"`
+- Carthage `github "eonist/Spatial" "master"`
 - Manual Open `Spatial.xcodeproj`
 - CocoaPod (Coming soon)
 

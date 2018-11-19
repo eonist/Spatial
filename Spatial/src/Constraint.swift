@@ -177,17 +177,20 @@ extension UIView{
    }
 }
 /**
- * AutoLayout Sugar for UIView's (Multiple)
- * EXAMPLE:
- * [label1,label2,label3].activateConstraint { views in
- *      let anchors = []
- *      let sizes = []
- *      return (anchors, sizes)
- * }
- * NOTE: ⚠️️ You have to zip together anchors in some cases
+ * Array
  */
 extension Array where Element:UIView{
    public typealias ConstraintClosure = (_ views:[UIView]) -> AnchorConstraintsAndSizeConstraints
+   /**
+    * AutoLayout Sugar for UIView's (Multiple)
+    * EXAMPLE:
+    * [label1,label2,label3].activateConstraint { views in
+    *      let anchors = []
+    *      let sizes = []
+    *      return (anchors, sizes)
+    * }
+    * NOTE: ⚠️️ You have to zip together anchors in some cases
+    */
    public func activateConstraint(closure:ConstraintClosure) {
       self.forEach{$0.translatesAutoresizingMaskIntoConstraints = false}
       let constraints:[NSLayoutConstraint] = {
@@ -197,6 +200,12 @@ extension Array where Element:UIView{
          return anchors + sizes
       }()
       NSLayoutConstraint.activate(constraints)
+   }
+   /**
+    * TODO: ⚠️️ Complete this, instead of returning array, return tuple, like the same function as for single view
+    */
+   func activateConstraints(){
+   
    }
 }
 // self.enumerated().forEach { (view, i) in
