@@ -34,7 +34,7 @@ extension MiddleContent{
          return itemView
       }
       itemViews.activateConstraint { views in /*All vertically centered, 48p height each*/
-         let anchors = Constraint.distribute(vertically: views, align: .topLeft)
+         let anchors = Constraint.distribute(vertically: views, align: .topLeft, spacing:12, offset:24)
          let sizes = views.map{Constraint.size($0, size: size)}
          return (anchors, sizes)
       }
@@ -59,7 +59,7 @@ class ItemView:UIView{
     * Creates horizontal items
     */
    func createHorizontalItems() -> [UIView] {
-      let size:CGSize = CGSize.init(width: 32, height: 32)
+      let size:CGSize = CGSize.init(width: 48, height: 48)
       let views:[UIView] = [UIColor.purple,.orange,.red,.blue].map{
          let view = UIView.init(frame: .zero)//.init(origin: .zero, size: size)
          self.addSubview(view)
