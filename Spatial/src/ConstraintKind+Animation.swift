@@ -11,15 +11,23 @@ extension ConstraintKind where Self:UIView{//TODO ⚠️️ use UIViewConstraint
    public func animate(to:CGFloat, align:HorizontalAlign, alignTo:HorizontalAlign, onComplete:@escaping AnimComplete = Self.defaultOnComplete){
       UIView.animate({
          self.update(offset: to, align: align, alignTo: alignTo)
-      },onComplete:onComplete)
+      }, onComplete:onComplete)
    }
    /**
-    * Anim for ver
+    * Anim (ver)
     */
-   public func animate(to:CGFloat, align:VerticalAlign = .top, alignTo:VerticalAlign = .top, onComplete:@escaping AnimComplete = Self.defaultOnComplete){
+   public func animate(to:CGFloat, align:VerticalAlign, alignTo:VerticalAlign, onComplete:@escaping AnimComplete = Self.defaultOnComplete){
       UIView.animate({
          self.update(offset: to, align: align, alignTo: alignTo)
-      },onComplete:onComplete)
+      }, onComplete:onComplete)
+   }
+   /**
+    * Anim (ver,hor)
+    */
+   public func animate(to:CGPoint, align:Alignment, alignTo:Alignment, onComplete:@escaping AnimComplete = Self.defaultOnComplete){
+      UIView.animate({
+         self.update(offset: to, align: align, alignTo: alignTo)
+      }, onComplete:onComplete)
    }
 }
 /**
