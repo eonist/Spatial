@@ -19,5 +19,4 @@ extension MainView{
       }
       return view
    }
-
 }

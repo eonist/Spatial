@@ -97,13 +97,17 @@ extension ConstraintKind where Self:UIView{//TODO ⚠️️ use UIViewConstraint
     * Example: btn.animate(to:100,align:left,alignTo:.left)
     */
    public func animate(to:CGFloat, align:HorizontalAlign, alignTo:HorizontalAlign, onComplete:@escaping AnimComplete = Self.defaultOnComplete){
-      UIView.animate({self.update(offset: to, align: align, alignTo: alignTo)},onComplete:onComplete)
+      UIView.animate({
+         self.update(offset: to, align: align, alignTo: alignTo)
+      },onComplete:onComplete)
    }
    /**
     * Anim for ver
     */
    public func animate(to:CGFloat, align:VerticalAlign = .top, alignTo:VerticalAlign = .top, onComplete:@escaping AnimComplete = Self.defaultOnComplete){
-      UIView.animate({self.update(offset: to, align: align, alignTo: alignTo)},onComplete:onComplete)
+      UIView.animate({
+         self.update(offset: to, align: align, alignTo: alignTo)
+      },onComplete:onComplete)
    }
 }
 /**

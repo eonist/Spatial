@@ -17,10 +17,26 @@ extension ViewController{
       self.view.addSubview(view)
       
       //Swift.print("screenSize:  \(screenSize)")
-      view.activateConstraint { view in
-         let size = Constraint.size(view, size: screenSize)
-         let pos = Constraint.anchor(view, to: self.view, align: .topLeft, alignTo: .topLeft/*, offset:CGPoint.init(x: 12, y: 12)*/)
-         return [pos.x,pos.y,size.w,size.h]
+      view.activateConstraints { view in
+         let a = Constraint.anchor(view, to: self.view, align: .topLeft, alignTo: .topLeft/*, offset:CGPoint.init(x: 12, y: 12)*/)
+         let s = Constraint.size(view, size: screenSize)
+         return (a,s)
+      }
+      return view
+   }
+   /**
+    * Creates anim test view
+    */
+   func createAnimTestView() -> AnimationTest{
+  
+      let view:AnimationTest = AnimationTest.init(frame: CGRect.init(origin: .zero, size: .zero))
+      self.view.addSubview(view)
+      
+      //Swift.print("screenSize:  \(screenSize)")
+      view.activateConstraints { view in
+         let a = Constraint.anchor(view, to: self.view, align: .topLeft, alignTo: .topLeft/*, offset:CGPoint.init(x: 12, y: 12)*/)
+         let s = Constraint.size(view, size: UIScreen.main.bounds.size)
+         return (a,s)
       }
       return view
    }

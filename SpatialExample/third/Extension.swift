@@ -1,6 +1,6 @@
 import UIKit.UIColor
 
-extension UIColor {
+internal extension UIColor {
    /**
     * EXAMPLE: let color = UIColor(hex: "ff0000")
     */

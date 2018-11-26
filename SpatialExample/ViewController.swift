@@ -1,32 +1,13 @@
 import UIKit
-
-
-//card
-   //RoundedCorners ✅
-   //12 margin ✅
-   //bottom 👈
-      //dayText
-      //weatherSymbolGraphic
-      //tempText
-   //top ✅
-      //make mask ✅
-      //Country,city
-   //content 👈
-      //centerGraphic
-         //WeatherSymbolGraphic
-         //DegreeText
-         //weatherTypeText
-//add card interaction
-   //interuptle
-   //
-//make .pin and .stretch 👈
+import Spatial
 
 class ViewController: UIViewController {
    lazy var mainView:MainView = createMainView()
-   
+   lazy var animTestView:AnimationTest = createAnimTestView()
    override func viewDidLoad() {
       super.viewDidLoad()
-      _ = mainView
+//      _ = mainView
+      _ = animTestView
       self.view.backgroundColor = .purple
    }
    override var prefersStatusBarHidden:Bool {return true}/*hides statusbar*/
