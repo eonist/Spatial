@@ -45,33 +45,39 @@ public class Constraint{
 extension Constraint{
    /**
     * Creates a dimensional constraint
-    * TODO: ⚠️️ Rename to dimension 👌, to differentiate from the Apple name convention of frame, size, bound etc, dimension is so long 🤔
-    * EXAMPLE: let widthConstraint = Constraint.size(square,to:canvas).w
-    */
-   public static func size(_ view:UIView, to:UIView) -> SizeConstraint{
-      let widthConstraint = Constraint.width(view,to:to)
-      let heightConstraint = Constraint.height(view,to:to)
-      return (widthConstraint,heightConstraint)
-   }
-   /**
-    * Creates a dimensional constraint
     * EXAMPLE: let sizeConstraint = Constraint.size(square,to:canvas,offset:.zero,multiplier:.init(x:1,y:0.5))
     * TODO: ⚠️️ offset should be CGSize
     * TODO: Wrong, it was just a bug that the multiplier was zero 👉 ⚠️️ The offset is pointless ⚠️️ as it doesnt offset, it sets size directly with out taking in account of the to, actually it works in some cases
+    * EXAMPLE: let widthConstraint = Constraint.size(square,to:canvas).w
     */
    public static func size(_ view:UIView, to:UIView, offset:CGPoint = .zero, multiplier:CGPoint = CGPoint(x:1,y:1)) -> SizeConstraint{
-      let widthConstraint = Constraint.width(view, to: to, offset: offset.x, multiplier: multiplier.x)
-      let heightConstraint = Constraint.height(view, to: to, offset: offset.y, multiplier: multiplier.y)
-      return (widthConstraint,heightConstraint)
+      let w = Constraint.width(view, to: to, offset: offset.x, multiplier: multiplier.x)
+      let h = Constraint.height(view, to: to, offset: offset.y, multiplier: multiplier.y)
+      return (w,h)
    }
    /**
     * EXAMPLE: let sizeConstraint = Constraint.size(square,size:CGSize(100,100))
     * TODO: ⚠️️ offset should be CGSize
     */
    public static func size(_ view:UIView, size:CGSize, multiplier:CGSize = CGSize(width:1,height:1)) -> SizeConstraint{
-      let widthConstraint = Constraint.width(view, width: size.width, multiplier: multiplier.width)
-      let heightConstraint = Constraint.height(view, height: size.height, multiplier: multiplier.height)
-      return (widthConstraint,heightConstraint)
+      let w = Constraint.width(view, width: size.width, multiplier: multiplier.width)
+      let h = Constraint.height(view, height: size.height, multiplier: multiplier.height)
+      return (w,h)
+   }
+   /**
+    * Returns size tuple (based on parent and or width or height)
+    * EXAMPLE: let s = Constraint.size(view, to:parent, height:48)
+    */
+   func size(_ view:UIView, to:UIView, width:CGFloat? = nil, height:CGFloat? = nil, offset:CGPoint = .zero, multiplier:CGSize = CGSize(width:1,height:1))  -> SizeConstraint {
+      let w:NSLayoutConstraint = {
+         if let width = width { return Constraint.width(view, width: width, multiplier: multiplier.width) }
+         else { return Constraint.width(view, to: to, offset: offset.x, multiplier: multiplier.width) }
+      }()
+      let h:NSLayoutConstraint = {
+         if let height = height { return Constraint.height(view, height: height, multiplier: multiplier.height) }
+         else { return Constraint.height(view, to: to, offset: offset.y, multiplier: multiplier.height) }
+      }()
+      return (w,h)
    }
    /**
     * Creates a width constraint (based on a CGFloat width)
