@@ -68,7 +68,7 @@ extension Constraint{
     * Returns size tuple (based on parent and or width or height)
     * EXAMPLE: let s = Constraint.size(view, to:parent, height:48)
     */
-   func size(_ view:UIView, to:UIView, width:CGFloat? = nil, height:CGFloat? = nil, offset:CGPoint = .zero, multiplier:CGSize = CGSize(width:1,height:1))  -> SizeConstraint {
+   public static func size(_ view:UIView, to:UIView, width:CGFloat? = nil, height:CGFloat? = nil, offset:CGPoint = .zero, multiplier:CGSize = CGSize(width:1,height:1))  -> SizeConstraint {
       let w:NSLayoutConstraint = {
          if let width = width { return Constraint.width(view, width: width, multiplier: multiplier.width) }
          else { return Constraint.width(view, to: to, offset: offset.x, multiplier: multiplier.width) }
