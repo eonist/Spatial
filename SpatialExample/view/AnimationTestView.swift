@@ -36,7 +36,7 @@ extension AnimationTest{
    @objc func buttonTouched(sender:UIButton) {
       Swift.print("It Works!!!")
 //      let to:CGFloat = 0//(UIScreen.main.bounds.height/2) + (button.frame.height/2)
-      button.animate(to:  0, align: .top, alignTo: .bottom, onComplete: {})
+      button.animate(to: .zero, align: .topLeft, alignTo: .topLeft, onComplete: {})
    }
 }
 class Button:UIButton,ConstraintKind{

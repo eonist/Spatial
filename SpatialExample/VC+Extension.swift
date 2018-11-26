@@ -28,7 +28,6 @@ extension ViewController{
     * Creates anim test view
     */
    func createAnimTestView() -> AnimationTest{
-  
       let view:AnimationTest = AnimationTest.init(frame: CGRect.init(origin: .zero, size: .zero))
       self.view.addSubview(view)
       
