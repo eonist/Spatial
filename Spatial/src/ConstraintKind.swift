@@ -72,7 +72,6 @@ extension Array where Element:ConstraintKind.UIViewConstraintKind{
          let anchor:AnchorConstraint = constraints.anchorConstraints[$0.offset]
          let size:SizeConstraint = constraints.sizeConstraints[$0.offset]
          $0.element.setConstraint(anchor:anchor,size:size)
-         
       }
       let layoutConstraints:[NSLayoutConstraint] = {
          let anchors = constraints.anchorConstraints.reduce([]) { $0 + [$1.x,$1.y] }

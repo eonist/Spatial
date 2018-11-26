@@ -1,6 +1,28 @@
 #if os(iOS)
 import UIKit
 /**
+ * Animation
+ */
+extension ConstraintKind where Self:UIView{//TODO ⚠️️ use UIViewConstraintKind
+   /**
+    * Animates a UIView that adhers to ConstraintKind (hor)
+    * Example: btn.animate(to:100,align:left,alignTo:.left)
+    */
+   public func animate(to:CGFloat, align:HorizontalAlign, alignTo:HorizontalAlign, onComplete:@escaping AnimComplete = Self.defaultOnComplete){
+      UIView.animate({
+         self.update(offset: to, align: align, alignTo: alignTo)
+      },onComplete:onComplete)
+   }
+   /**
+    * Anim for ver
+    */
+   public func animate(to:CGFloat, align:VerticalAlign = .top, alignTo:VerticalAlign = .top, onComplete:@escaping AnimComplete = Self.defaultOnComplete){
+      UIView.animate({
+         self.update(offset: to, align: align, alignTo: alignTo)
+      },onComplete:onComplete)
+   }
+}
+/**
  * Offset horizontally or vertically
  */
 extension ConstraintKind where Self:UIView{
@@ -86,28 +108,6 @@ extension ConstraintKind where Self:UIView{
       self.anchor = newAnchor
       self.size = newSize
       superview.layoutIfNeeded()/*The superview is responsible for updating subView constraint updates*/
-   }
-}
-/**
- * Animation
- */
-extension ConstraintKind where Self:UIView{//TODO ⚠️️ use UIViewConstraintKind
-   /**
-    * Animates a UIView that adhers to ConstraintKind (hor)
-    * Example: btn.animate(to:100,align:left,alignTo:.left)
-    */
-   public func animate(to:CGFloat, align:HorizontalAlign, alignTo:HorizontalAlign, onComplete:@escaping AnimComplete = Self.defaultOnComplete){
-      UIView.animate({
-         self.update(offset: to, align: align, alignTo: alignTo)
-      },onComplete:onComplete)
-   }
-   /**
-    * Anim for ver
-    */
-   public func animate(to:CGFloat, align:VerticalAlign = .top, alignTo:VerticalAlign = .top, onComplete:@escaping AnimComplete = Self.defaultOnComplete){
-      UIView.animate({
-         self.update(offset: to, align: align, alignTo: alignTo)
-      },onComplete:onComplete)
    }
 }
 /**
