@@ -146,6 +146,7 @@ extension Constraint{
 }
 /**
  * AutoLayout Sugar for UIView
+ * NOTE: Method overloading doesn't work with closures so each method name needs to be unique 🤷
  */
 extension UIView{
    /*We keep AnchorsAndSizes in a tuple, because applyConstraints wouldn't work with just an array*/
@@ -165,6 +166,7 @@ extension UIView{
     *      let size = Constraint.size(view, size: CGSize.init(width: UIScreen.main.bounds.width, height: TopBar.topBarHeight))
     *      return [anchor.x,anchor.y,size.w,size.h]
     * }
+    * TODO: ⚠️️ Rename to activateConstraints, and make activateConstraint only for 1 layoutconstraint
     */
    public func activateConstraint(closure:ConstraintClosure) {
       self.translatesAutoresizingMaskIntoConstraints = false
@@ -179,6 +181,7 @@ extension UIView{
     *    let s = Constraint.size(view, to: self)
     *    return (a,s)
     * }
+    * TODO: ⚠️️ Rename to activcateAnchorSize ?
     */
    public func activateConstraints(closure:ConstraintsClosure){
       self.translatesAutoresizingMaskIntoConstraints = false
