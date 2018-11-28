@@ -13,7 +13,7 @@ public typealias AnchorConstraintsAndSizeConstraints = (anchorConstraints:[Ancho
 public class Constraint{
    /**
     * Creates a positional constraint
-    * TODO: ⚠️️ Rename to pin 👌, to differentiate from anchor, point, origin, position?
+    * TODO: ⚠️️ Rename to pin 👌, to differentiate from anchor, point, origin, position? 🤷  
     */
    public static func anchor(_ view:UIView, to:UIView, align:Alignment, alignTo:Alignment, offset:CGPoint = CGPoint(), useMargin:Bool = false) -> AnchorConstraint {/*,offset:CGPoint = CGPoint()*/
       let horConstraint = Constraint.anchor(view, to: to, align: align.horAlign, alignTo: alignTo.horAlign,offset:offset.x,useMargin:useMargin)
@@ -212,7 +212,7 @@ extension Array where Element:UIView{
     * TODO: ⚠️️ Complete this, instead of returning array, return tuple, like the same function as for single view
     */
    func activateConstraints(){
-   
+
    }
 }
 // self.enumerated().forEach { (view, i) in
