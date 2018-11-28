@@ -157,7 +157,7 @@ extension UIView{
    /*Single*/
    public typealias ConstraintAnchorClosure = (_ view:UIView) -> AnchorConstraint
    public typealias ConstraintSizeClosure = (_ view:UIView) -> SizeConstraint
-   public typealias ConstraintSignature = (_ view:UIView) -> NSLayoutConstraint
+//   public typealias ConstraintSignature = (_ view:UIView) -> NSLayoutConstraint
    /**
     * EXAMPLE:
     * button.activateConstraint{ view in
@@ -189,7 +189,7 @@ extension UIView{
    /**
     * Activate for AnchorConstraint
     */
-   public func activateConstraint(closure:ConstraintAnchorClosure)  {
+   public func activateAnchor(closure:ConstraintAnchorClosure)  {
       self.translatesAutoresizingMaskIntoConstraints = false
       let anchorConstraint:AnchorConstraint = closure(self)/*the constraints is returned from the closure*/
       let constraints:[NSLayoutConstraint] = [anchorConstraint.x,anchorConstraint.y]
@@ -198,7 +198,7 @@ extension UIView{
    /**
     * Activate for SizeConstraint
     */
-   public func activateConstraint(closure:ConstraintSizeClosure){
+   public func activateSize(closure:ConstraintSizeClosure){
       self.translatesAutoresizingMaskIntoConstraints = false
       let sizeConstraint:SizeConstraint = closure(self)/*the constraints is returned from the closure*/
       let constraints:[NSLayoutConstraint] = [sizeConstraint.w,sizeConstraint.h]
