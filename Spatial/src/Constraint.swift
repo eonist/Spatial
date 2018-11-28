@@ -154,6 +154,10 @@ extension UIView{
    /*Tuple*/
    public typealias AnchorAndSize = (anchor:AnchorConstraint,size:SizeConstraint)
    public typealias ConstraintsClosure = (_ view:UIView) -> AnchorAndSize
+   /*Single*/
+   public typealias ConstraintAnchorClosure = (_ view:UIView) -> AnchorConstraint
+   public typealias ConstraintSizeClosure = (_ view:UIView) -> SizeConstraint
+   public typealias ConstraintSignature = (_ view:UIView) -> NSLayoutConstraint
    /**
     * EXAMPLE:
     * button.activateConstraint{ view in
@@ -178,8 +182,26 @@ extension UIView{
     */
    public func activateConstraints(closure:ConstraintsClosure){
       self.translatesAutoresizingMaskIntoConstraints = false
-      let anchorAndSize:AnchorAndSize = closure(self)
-      let constraints:[NSLayoutConstraint] = [anchorAndSize.anchor.x,anchorAndSize.anchor.y,anchorAndSize.size.w,anchorAndSize.size.h]/*the constraints is returned from the closure*/
+      let anchorAndSize:AnchorAndSize = closure(self)/*the constraints is returned from the closure*/
+      let constraints:[NSLayoutConstraint] = [anchorAndSize.anchor.x,anchorAndSize.anchor.y,anchorAndSize.size.w,anchorAndSize.size.h]
+      NSLayoutConstraint.activate(constraints)
+   }
+   /**
+    * Activate for AnchorConstraint
+    */
+   public func activateConstraint(closure:ConstraintAnchorClosure)  {
+      self.translatesAutoresizingMaskIntoConstraints = false
+      let anchorConstraint:AnchorConstraint = closure(self)/*the constraints is returned from the closure*/
+      let constraints:[NSLayoutConstraint] = [anchorConstraint.x,anchorConstraint.y]
+      NSLayoutConstraint.activate(constraints)
+   }
+   /**
+    * Activate for SizeConstraint
+    */
+   public func activateConstraint(closure:ConstraintSizeClosure){
+      self.translatesAutoresizingMaskIntoConstraints = false
+      let sizeConstraint:SizeConstraint = closure(self)/*the constraints is returned from the closure*/
+      let constraints:[NSLayoutConstraint] = [sizeConstraint.w,sizeConstraint.h]
       NSLayoutConstraint.activate(constraints)
    }
 }
