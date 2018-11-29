@@ -5,25 +5,28 @@ import UIKit
  * NOTE: Storing Constraints is a must if you want to change the constraints at a later point in time
  */
 public protocol ConstraintKind:class{
+//   var constraint:OptionalAnchorAndSize? {get set}
    var anchor:AnchorConstraint? {get set}
    var size:SizeConstraint? {get set}
 }
 /**
- * NOTE: Convenient UIView so you dont have to add anchor and size your self
+ * Note: possible upgrade to this functionality later
  */
-open class ConstraintView:UIView,ConstraintKind{
-   public var anchor: AnchorConstraint?
-   public var size: SizeConstraint?
-}
+//extension ConstraintKind {
+//   public var anchor: AnchorConstraint? {  get { return constraint?.anchor }set{ constraint?.anchor = newValue } }
+//   public var size: SizeConstraint? { get { return constraint?.size } set{  constraint?.size = newValue } }
+//}
 /**
  * Update constraints (For items that are of type ConstraintKind)
  */
 extension ConstraintKind where Self:UIView{
    /**
+    * Cobinational types and closure signatures
     * TODO: ⚠️️ This could be usefull in a global domain, for now just access it by: ConstraintKind.UIViewConstraintKind
     */
    public typealias UIViewConstraintKind = UIView & ConstraintKind
-   public typealias AnchorAndSize = (anchor:AnchorConstraint,size:SizeConstraint)//
+   public typealias AnchorAndSize = (anchor:AnchorConstraint, size:SizeConstraint)//
+   public typealias OptionalAnchorAndSize = (anchor:AnchorConstraint?, size:SizeConstraint?)//
    public typealias ConstraintKindClosure = (_ view:UIViewConstraintKind) -> AnchorAndSize
    /**
     * Same as UIView().activateConstraint... but also sets size and anchor constraints (ConstraintKind) (For animation etc)
