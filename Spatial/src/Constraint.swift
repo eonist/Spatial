@@ -1,5 +1,6 @@
 #if os(iOS)
 import UIKit
+
 public typealias AnchorConstraint = (x:NSLayoutConstraint,y:NSLayoutConstraint)
 public typealias SizeConstraint = (w:NSLayoutConstraint,h:NSLayoutConstraint)
 public typealias AnchorConstraintsAndSizeConstraints = (anchorConstraints:[AnchorConstraint],sizeConstraints:[SizeConstraint])
@@ -16,9 +17,9 @@ public class Constraint{
     * TODO: ⚠️️ Rename to pin 👌, to differentiate from anchor, point, origin, position? 🤷  
     */
    public static func anchor(_ view:UIView, to:UIView, align:Alignment, alignTo:Alignment, offset:CGPoint = CGPoint(), useMargin:Bool = false) -> AnchorConstraint {/*,offset:CGPoint = CGPoint()*/
-      let horConstraint = Constraint.anchor(view, to: to, align: align.horAlign, alignTo: alignTo.horAlign,offset:offset.x,useMargin:useMargin)
-      let verConstraint = Constraint.anchor(view, to: to, align: align.verAlign, alignTo: alignTo.verAlign,offset:offset.y,useMargin:useMargin)
-      return (horConstraint,verConstraint)
+      let horizontal:NSLayoutConstraint = Constraint.anchor(view, to: to, align: align.horAlign, alignTo: alignTo.horAlign,offset:offset.x,useMargin:useMargin)
+      let vertical:NSLayoutConstraint = Constraint.anchor(view, to: to, align: align.verAlign, alignTo: alignTo.verAlign,offset:offset.y,useMargin:useMargin)
+      return (horizontal,vertical)
    }
    /**
     * Horizontal
@@ -156,8 +157,8 @@ extension UIView{
    public typealias AnchorAndSize = (anchor:AnchorConstraint,size:SizeConstraint)
    public typealias ConstraintsClosure = (_ view:UIView) -> AnchorAndSize
    /*Single*/
-   public typealias ConstraintAnchorClosure = (_ view:UIView) -> AnchorConstraint
-   public typealias ConstraintSizeClosure = (_ view:UIView) -> SizeConstraint
+   public typealias AnchorClosure = (_ view:UIView) -> AnchorConstraint
+   public typealias SizeClosure = (_ view:UIView) -> SizeConstraint
 //   public typealias ConstraintSignature = (_ view:UIView) -> NSLayoutConstraint
    /**
     * EXAMPLE:
@@ -192,7 +193,7 @@ extension UIView{
    /**
     * Activate for AnchorConstraint
     */
-   public func activateAnchor(closure:ConstraintAnchorClosure)  {
+   public func activateAnchor(closure:AnchorClosure)  {
       self.translatesAutoresizingMaskIntoConstraints = false
       let anchorConstraint:AnchorConstraint = closure(self)/*the constraints is returned from the closure*/
       let constraints:[NSLayoutConstraint] = [anchorConstraint.x,anchorConstraint.y]
@@ -201,7 +202,7 @@ extension UIView{
    /**
     * Activate for SizeConstraint
     */
-   public func activateSize(closure:ConstraintSizeClosure){
+   public func activateSize(closure:SizeClosure){
       self.translatesAutoresizingMaskIntoConstraints = false
       let sizeConstraint:SizeConstraint = closure(self)/*the constraints is returned from the closure*/
       let constraints:[NSLayoutConstraint] = [sizeConstraint.w,sizeConstraint.h]
