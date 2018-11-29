@@ -10,6 +10,13 @@ public protocol ConstraintKind:class{
    var size:SizeConstraint? {get set}
 }
 /**
+ * NOTE: Convenient UIView so you don't have to add anchor and size your self
+ */
+open class ConstraintView:UIView,ConstraintKind{
+   public var anchor: AnchorConstraint?
+   public var size: SizeConstraint?
+}
+/**
  * Note: possible upgrade to this functionality later
  */
 extension ConstraintKind {
