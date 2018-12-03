@@ -12,10 +12,10 @@ extension MainView{
       self.addSubview(view)
       
       Swift.print("screenSize:  \(screenSize)")
-      view.activateConstraint { view in
-         let size = Constraint.size(view, size: screenSize)
-         let pos = Constraint.anchor(view, to: self, align: .topLeft, alignTo: .topLeft)
-         return [pos.x,pos.y,size.w,size.h]
+      view.activateAnchorAndSize { view in
+         let s = Constraint.size(view, size: screenSize)
+         let a = Constraint.anchor(view, to: self, align: .topLeft, alignTo: .topLeft)
+         return (a,s)
       }
       return view
    }

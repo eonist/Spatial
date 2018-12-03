@@ -17,7 +17,7 @@ extension ViewController{
       self.view.addSubview(view)
       
       //Swift.print("screenSize:  \(screenSize)")
-      view.activateConstraints { view in
+      view.activateAnchorAndSize { view in
          let a = Constraint.anchor(view, to: self.view, align: .topLeft, alignTo: .topLeft/*, offset:CGPoint.init(x: 12, y: 12)*/)
          let s = Constraint.size(view, size: screenSize)
          return (a,s)
@@ -32,7 +32,7 @@ extension ViewController{
       self.view.addSubview(view)
       
       //Swift.print("screenSize:  \(screenSize)")
-      view.activateConstraints { view in
+      view.activateAnchorAndSize { view in
          let a = Constraint.anchor(view, to: self.view, align: .topLeft, alignTo: .topLeft/*, offset:CGPoint.init(x: 12, y: 12)*/)
          let s = Constraint.size(view, size: UIScreen.main.bounds.size)
          return (a,s)

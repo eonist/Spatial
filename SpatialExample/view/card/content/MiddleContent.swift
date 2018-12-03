@@ -32,7 +32,7 @@ extension MiddleContent{
          self.addSubview(itemView)
          return itemView
       }
-      itemViews.activateConstraint { views in /*All vertically centered, 48p height each*/
+      itemViews.activateAnchorsAndSizes { views in /*All vertically centered, 48p height each*/
          let anchors = Constraint.distribute(vertically: views, align: .topLeft, spacing:12, offset:24)
          let sizes = views.map{Constraint.size($0, size: size)}
          return (anchors, sizes)
@@ -65,7 +65,7 @@ class ItemView:UIView{
          view.backgroundColor = $0
          return view
       }
-      views.activateConstraint { views in
+      views.activateAnchorsAndSizes { views in
          let anchors = Constraint.distribute(horizontally: views, align: .centerLeft)
          let sizes = views.map{Constraint.size($0, size: size)}
          return (anchors, sizes)

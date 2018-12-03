@@ -33,7 +33,6 @@ extension ConstraintKind where Self:UIView{
     * TODO: ⚠️️ This could be usefull in a global domain, for now just access it by: ConstraintKind.UIViewConstraintKind
     */
    public typealias UIViewConstraintKind = UIView & ConstraintKind
-   
 //   public typealias OptionalAnchorAndSize = (anchor:AnchorConstraint?, size:SizeConstraint?)//
 //   public typealias ConstraintKindClosure = (_ view:UIViewConstraintKind) -> AnchorAndSize
    /**
@@ -48,7 +47,7 @@ extension ConstraintKind where Self:UIView{
     * }
     * NOTE: this had to be renamed to setAndActivateConstraint, as overriding the default extension method didnt work so well when you passed the variable into a method
     */
-   public func applyConstraint(closure:ConstraintsClosure) {
+   public func applyAnchorAndSize(closure:ConstraintsClosure) {
       self.translatesAutoresizingMaskIntoConstraints = false
       let constraints:AnchorAndSize = closure(self)/*the constraints is returned from the closure*/
       setConstraint(anchor: constraints.anchor, size: constraints.size)
@@ -111,5 +110,11 @@ extension Array where Element:ConstraintKind.UIViewConstraintKind{
       }()
       NSLayoutConstraint.activate(layoutConstraints) //constraints.forEach{$0.setConstraint(anchor: $0.anchor, size: $0.size)}
    }
+}
+/**
+ * DEPRECATED
+ */
+extension ConstraintKind where Self:UIView{
+   public func applyConstraint(closure:ConstraintsClosure) { applyAnchorAndSize(closure:closure) }
 }
 #endif

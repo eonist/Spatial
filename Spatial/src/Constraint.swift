@@ -211,7 +211,7 @@ extension UIView{
 /**
  * Array
  */
-extension Array where Element:UIView{
+public extension Array where Element:UIView{
    public typealias ConstraintClosure = (_ views:[UIView]) -> AnchorConstraintsAndSizeConstraints
    /**
     * AutoLayout Sugar for UIView's (Multiple)
@@ -223,7 +223,7 @@ extension Array where Element:UIView{
     * }
     * NOTE: ⚠️️ You have to zip together anchors in some cases
     */
-   public func activateConstraint(closure:ConstraintClosure) {
+   public func activateAnchorsAndSizes(closure:ConstraintClosure) {
       self.forEach{$0.translatesAutoresizingMaskIntoConstraints = false}
       let constraints:[NSLayoutConstraint] = {
          let constraints:AnchorConstraintsAndSizeConstraints = closure(self)
@@ -238,9 +238,11 @@ extension Array where Element:UIView{
  * Deprecated methods
  */
 public extension UIView{
-   public func activateConstraints(closure:ConstraintsClosure){
-      self.activateAnchorAndSize(closure: closure)
+   public func activateConstraints(closure:ConstraintsClosure){ self.activateAnchorAndSize(closure: closure) }
+}
+public extension Array where Element:UIView{
+   public func activateConstraint(closure:ConstraintClosure) {
+      activateAnchorsAndSizes(closure: closure)
    }
 }
-
 #endif
