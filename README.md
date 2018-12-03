@@ -25,16 +25,16 @@ Hassle-free AutoLayout, tailored for interactivity and animation.
 
 ```swift
 /*Single*/
-btn1.activateConstraint{ view in
+btn1.activateAnchorAndSize{ view in
    let anchor = Constraint.anchor(view, to: self, align: .topLeft, alignTo: .topLeft)
    let size = Constraint.size(view, size: CGSize.init(width: 96, height: 24))
-   return [anchor.x,anchor.y,size.w,size.h]
+   return (anchor,size)
 }
 ```
 
 ```swift
 /*Bulk*/
-[btn1,btn2,btn3].activateConstraint { views in
+[btn1,btn2,btn3].activateAnchorsAndSizes { views in
    let anchors = Constraint.distribute(vertically: views, align: .topLeft)
    let sizes = views.map{Constraint.size($0, size: CGSize(width:96,height:42))}
    return (anchors, sizes)
