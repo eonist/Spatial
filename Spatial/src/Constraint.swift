@@ -233,12 +233,6 @@ extension Array where Element:UIView{
       }()
       NSLayoutConstraint.activate(constraints)
    }
-   /**
-    * TODO: ⚠️️ Complete this, instead of returning array, return tuple, like the same function as for single view
-    */
-   func activateConstraints() {
-
-   }
 }
 /**
  * Deprecated methods

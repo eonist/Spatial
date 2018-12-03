@@ -1,7 +1,7 @@
 import Foundation
 /**
  * TODO: ⚠️️ add none?
- * TODO: ⚠️️ remove string
+ * TODO: ⚠️️ remove string?, use CaseLiteral instead etc?
  */
 public enum Alignment:String{/*Both axises*/
     case topLeft = "topLeft"
@@ -15,7 +15,7 @@ public enum Alignment:String{/*Both axises*/
     case centerCenter = "centerCenter"
 }
 /**
- * TODO: ⚠️️ remove string
+ * TODO: ⚠️️ remove string, use CaseLiteral instead etc?
  */
 public enum Axis:String{/*axis alignment*/
     case horizontal = "horizontal"
@@ -23,7 +23,7 @@ public enum Axis:String{/*axis alignment*/
 }
 /**
  * TODO: ⚠️️ Reference AlignType in HorAlign and VerAlign, and prob use CenterX,CenterY naming instead
- * TODO: ⚠️️ remove string
+ * TODO: ⚠️️ remove string, use CaseLiteral instead etc?
  */
 public enum AlignType:String{/*Single axis*/
     case left = "left"
@@ -34,7 +34,7 @@ public enum AlignType:String{/*Single axis*/
     case centerVer = "centerVertical"
 }
 /**
- * TODO: ⚠️️ remove string
+ * TODO: ⚠️️ remove string, use CaseLiteral instead etc?
  */
 public enum HorizontalAlign:String{
     case left = "left"
@@ -42,7 +42,7 @@ public enum HorizontalAlign:String{
     case centerX = "centerX"/*use centerX or else .dot syntax fails*/
 }
 /*
- * TODO: ⚠️️ remove string
+ * TODO: ⚠️️ remove string, use CaseLiteral instead etc?
  */
 public enum VerticalAlign:String{
     case top = "top"
@@ -70,9 +70,9 @@ extension Alignment{
 
 }
 public enum AxisType{/*axis type*/
-   case start//left,top
-   case middle//centerX,centerY
-   case end//right,bottom
+   case start/*left,top*/
+   case middle/*centerX,centerY*/
+   case end/*right,bottom*/
 }
 extension AlignType{
     public var axis:Axis {
