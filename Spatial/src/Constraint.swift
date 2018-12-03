@@ -177,14 +177,13 @@ extension UIView{
    /**
     * Same as activateConstraint, but returns a tuple in the closure instead of an array
     * EXAMPLE:
-    * label.activateConstraints { view in
+    * label.activateAnchorAndSize { view in
     *    let a = Constraint.anchor(view, to: self, align: .topLeft, alignTo:  .topLeft)
     *    let s = Constraint.size(view, to: self)
     *    return (a,s)
     * }
-    * TODO: ⚠️️ Rename to activcateAnchorSize ?
     */
-   public func activateConstraints(closure:ConstraintsClosure){
+   public func activateAnchorAndSize(closure:ConstraintsClosure){
       self.translatesAutoresizingMaskIntoConstraints = false
       let anchorAndSize:AnchorAndSize = closure(self)/*the constraints is returned from the closure*/
       let constraints:[NSLayoutConstraint] = [anchorAndSize.anchor.x,anchorAndSize.anchor.y,anchorAndSize.size.w,anchorAndSize.size.h]
@@ -237,15 +236,17 @@ extension Array where Element:UIView{
    /**
     * TODO: ⚠️️ Complete this, instead of returning array, return tuple, like the same function as for single view
     */
-   func activateConstraints(){
+   func activateConstraints() {
 
    }
 }
-// self.enumerated().forEach { (view, i) in
-//    view.activateConstraint{ v in
-//       let anchor = constraints[i].anchor
-//       let size = constraints[i].size
-//       return [anchor.x,anchor.y,size.w,size.h]
-//    }
-// }
+/**
+ * Deprecated methods
+ */
+public extension UIView{
+   public func activateConstraints(closure:ConstraintsClosure){
+      self.activateAnchorAndSize(closure: closure)
+   }
+}
+
 #endif
