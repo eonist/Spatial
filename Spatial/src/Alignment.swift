@@ -52,7 +52,7 @@ public enum VerticalAlign:String{
 /**
  * Helper util
  */
-extension Alignment{
+public extension Alignment{
     public var horAlign:HorizontalAlign {
         switch self {
         case .topLeft,.centerLeft,.bottomLeft: return .left

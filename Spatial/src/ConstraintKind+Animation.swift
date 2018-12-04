@@ -3,7 +3,7 @@ import UIKit
 /**
  * Animation
  */
-extension ConstraintKind where Self:UIView{//TODO ⚠️️ use UIViewConstraintKind
+public extension ConstraintKind where Self:UIView{//TODO ⚠️️ use UIViewConstraintKind
    /**
     * Animates a UIView that adhers to ConstraintKind (hor)
     * Example: btn.animate(to:100,align:left,alignTo:.left)
@@ -33,7 +33,7 @@ extension ConstraintKind where Self:UIView{//TODO ⚠️️ use UIViewConstraint
 /**
  * Offset horizontally or vertically
  */
-extension ConstraintKind where Self:UIView{
+public extension ConstraintKind where Self:UIView{
    /*Makes code easier to read*/
    typealias UpdateAnchorClosure = (_ superView:UIView,_ oldAnchor:AnchorConstraint)->Void
    typealias UpdateSizeClosure = (_ superView:UIView,_ oldAnchor:SizeConstraint)->Void
@@ -121,7 +121,7 @@ extension ConstraintKind where Self:UIView{
 /**
  * Animation (Static & convenient)
  */
-extension UIView{
+public extension UIView{
    public typealias AnimComplete = () -> Void
    public typealias AnimUpdate = () -> Void
    public static func defaultOnComplete() {Swift.print("default anim completed closure")}

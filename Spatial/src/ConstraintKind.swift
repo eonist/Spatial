@@ -19,15 +19,15 @@ open class ConstraintView:UIView,ConstraintKind{
 /**
  * Note: possible upgrade to this functionality later
  */
-extension ConstraintKind {
-   public typealias AnchorAndSize = (anchor:AnchorConstraint, size:SizeConstraint)//
+public extension ConstraintKind {
+   public typealias AnchorAndSize = (anchor:AnchorConstraint, size:SizeConstraint)
 //   public var anchor: AnchorConstraint? {  get { return constraint?.anchor }set{ constraint?.anchor = newValue } }
 //   public var size: SizeConstraint? { get { return constraint?.size } set{  constraint?.size = newValue } }
 }
 /**
  * Update constraints (For items that are of type ConstraintKind)
  */
-extension ConstraintKind where Self:UIView{
+public extension ConstraintKind where Self:UIView{
    /**
     * Cobinational types and closure signatures
     * TODO: ⚠️️ This could be usefull in a global domain, for now just access it by: ConstraintKind.UIViewConstraintKind
@@ -40,7 +40,7 @@ extension ConstraintKind where Self:UIView{
     * TODO: ⚠️️ maybe reuse the code from activateConstraint, by forwarning the closure etc. Nope, cant call closure twice
     * TODO: ⚠️️ Rename to apply, or better 👉 applyConstraint
     * Example:
-    * sliderBar.applyConstraint { view in
+    * sliderBar.applyAnchorAndSize { view in
     *      let anchor = Constraint.anchor(view, to: self, align: .topLeft, alignTo: .topLeft)
     *      let size = Constraint.size(view, size: size)
     *      return (anchor:anchor, size:size)//(anchor, size) 👈 also works
@@ -111,10 +111,5 @@ extension Array where Element:ConstraintKind.UIViewConstraintKind{
       NSLayoutConstraint.activate(layoutConstraints) //constraints.forEach{$0.setConstraint(anchor: $0.anchor, size: $0.size)}
    }
 }
-/**
- * DEPRECATED
- */
-extension ConstraintKind where Self:UIView{
-   public func applyConstraint(closure:ConstraintsClosure) { applyAnchorAndSize(closure:closure) }
-}
+
 #endif

@@ -234,15 +234,5 @@ public extension Array where Element:UIView{
       NSLayoutConstraint.activate(constraints)
    }
 }
-/**
- * Deprecated methods
- */
-public extension UIView{
-   public func activateConstraints(closure:ConstraintsClosure){ self.activateAnchorAndSize(closure: closure) }
-}
-public extension Array where Element:UIView{
-   public func activateConstraint(closure:ConstraintClosure) {
-      activateAnchorsAndSizes(closure: closure)
-   }
-}
+
 #endif
