@@ -173,6 +173,25 @@
 			path = align;
 			sourceTree = "<group>";
 		};
+		F1BED70C21B7B2D600A0D3D4 /* constraint */ = {
+			isa = PBXGroup;
+			children = (
+				F1D369FF2172039B00F498FA /* Constraint.swift */,
+				F10213CB218756310038F496 /* Constraint+Distribution.swift */,
+				F10213CC218756310038F496 /* Constraint+Extra.swift */,
+			);
+			path = constraint;
+			sourceTree = "<group>";
+		};
+		F1BED70D21B7B2F200A0D3D4 /* type */ = {
+			isa = PBXGroup;
+			children = (
+				F1D369FD2172039B00F498FA /* ConstraintKind.swift */,
+				F1BD0416219B06F200A4A46F /* ConstraintKind+Animation.swift */,
+			);
+			path = type;
+			sourceTree = "<group>";
+		};
 		F1D369CD2171FCDC00F498FA = {
 			isa = PBXGroup;
 			children = (
@@ -229,12 +248,9 @@
 		F1D36A04217203AA00F498FA /* src */ = {
 			isa = PBXGroup;
 			children = (
+				F1BED70D21B7B2F200A0D3D4 /* type */,
+				F1BED70C21B7B2D600A0D3D4 /* constraint */,
 				F1BED6FD21B7A97300A0D3D4 /* align */,
-				F1D369FD2172039B00F498FA /* ConstraintKind.swift */,
-				F1BD0416219B06F200A4A46F /* ConstraintKind+Animation.swift */,
-				F1D369FF2172039B00F498FA /* Constraint.swift */,
-				F10213CB218756310038F496 /* Constraint+Distribution.swift */,
-				F10213CC218756310038F496 /* Constraint+Extra.swift */,
 				F1BED6F321B6513400A0D3D4 /* DEPRECATED.swift */,
 			);
 			path = src;
