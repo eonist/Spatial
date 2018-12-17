@@ -14,7 +14,7 @@ public typealias AnchorConstraintsAndSizeConstraints = (anchorConstraints:[Ancho
 public class Constraint{
    /**
     * Creates a positional constraint
-    * TODO: ⚠️️ Rename to pin 👌, to differentiate from anchor, point, origin, position? 🤷  
+    * TODO: ⚠️️ Rename to pin 👌, to differentiate from anchor, point, origin, position? 🤷
     */
    public static func anchor(_ view:UIView, to:UIView, align:Alignment, alignTo:Alignment, offset:CGPoint = CGPoint(), useMargin:Bool = false) -> AnchorConstraint {/*,offset:CGPoint = CGPoint()*/
       let horizontal:NSLayoutConstraint = Constraint.anchor(view, to: to, align: align.horAlign, alignTo: alignTo.horAlign,offset:offset.x,useMargin:useMargin)
@@ -222,6 +222,7 @@ public extension Array where Element:UIView{
     *      return (anchors, sizes)
     * }
     * NOTE: ⚠️️ You have to zip together anchors in some cases
+    * NOTE: ⚠️️ Can we utilize activateAnchors and activateSizes in this method?
     */
    public func activateAnchorsAndSizes(closure:ConstraintClosure) {
       self.forEach{$0.translatesAutoresizingMaskIntoConstraints = false}
@@ -230,6 +231,30 @@ public extension Array where Element:UIView{
          let anchors = constraints.anchorConstraints.reduce([]) { $0 + [$1.x,$1.y] }
          let sizes = constraints.sizeConstraints.reduce([]) { $0 + [$1.w,$1.h] }
          return anchors + sizes
+      }()
+      NSLayoutConstraint.activate(constraints)
+   }
+   /**
+    * Activates multiple anchor constraints
+    */
+   public func activateAnchors(closure:ConstraintClosure) {
+      self.forEach{$0.translatesAutoresizingMaskIntoConstraints = false}
+      let constraints:[NSLayoutConstraint] = {
+         let constraints:AnchorConstraintsAndSizeConstraints = closure(self)
+         let anchors = constraints.anchorConstraints.reduce([]) { $0 + [$1.x,$1.y] }
+         return anchors
+      }()
+      NSLayoutConstraint.activate(constraints)
+   }
+   /**
+    * Activates multiple size constraints
+    */
+   public func activateSizes(closure:ConstraintClosure) {
+      self.forEach{$0.translatesAutoresizingMaskIntoConstraints = false}
+      let constraints:[NSLayoutConstraint] = {
+         let constraints:AnchorConstraintsAndSizeConstraints = closure(self)
+         let sizes = constraints.sizeConstraints.reduce([]) { $0 + [$1.w,$1.h] }
+         return sizes
       }()
       NSLayoutConstraint.activate(constraints)
    }

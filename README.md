@@ -50,3 +50,4 @@ btn.animate(to:100,align:left,alignTo:.left)
 - Add one-liner accessors
 - Watch https://www.youtube.com/watch?v=bJI6z-7uNGQ
 - Read https://savvyapps.com/blog/advanced-ios-animations-with-auto-layout
+- Make examples with AutoLayout margins 👈
