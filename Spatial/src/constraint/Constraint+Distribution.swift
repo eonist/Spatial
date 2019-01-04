@@ -1,3 +1,4 @@
+#if os(iOS)
 import UIKit
 /**
  * Distribute items horizontally or vertically
@@ -11,9 +12,9 @@ extension Constraint {
     * TODO: ⚠️️ parent is always superview, then we must use UIView as type, remember your returning constriants, not setting actual anchor or size, you do that in activeConstraint
     * IMPORTANT ⚠️️ Sets only anchors not sizes
     * EXAMPLE:
-    * [label1,label2,label3].activateConstraint { views in
+    * [label1,label2,label3].applyAnchorsAndSizes { views in
     *      let anchors = Constraint.distribute(vertically:views,align:.left)
-    *      let sizes = Constraint.size(view, toView: self.frame.width, height: 48))
+    *      let sizes = views.map{ Constraint.size($0, toView: self.frame.width, height: 48)) }
     *      return (anchors, sizes)
     * }
     * NOTE: Alternativly you can do: views.enumerated().map{Constraint.anchor($0.1, to: self, align: .topLeft, alignTo:.topLeft,offset:CGPoint(x:0,y:48 * $0.0))} etc
@@ -38,10 +39,16 @@ extension Constraint {
       let anchors:[AnchorConstraint] = Array(zip(xConstraints,yConstraints))
       return anchors
    }
+}
+/**
+ * Internal helper methods
+ * NOTE: Consider moving to fileprivate Util class
+ */
+extension Constraint{
    /**
     * Distributes vertically or horizontally
     */
-   private static func distribute(_ views:[UIView], axis:Axis, align:Alignment, spacing:CGFloat = 0, offset:CGFloat = 0) -> [NSLayoutConstraint]{
+   fileprivate static func distribute(_ views:[UIView], axis:Axis, align:Alignment, spacing:CGFloat = 0, offset:CGFloat = 0) -> [NSLayoutConstraint]{
       switch (align.horAlign, align.verAlign) {
       case (.left, _),(_ , .top): return distribute(fromStart:views, axis:axis, spacing:spacing, offset:offset)
       case (.right, _),(_ , .bottom): return distribute(fromEnd:views, axis:axis, spacing:spacing, offset:offset)
@@ -51,8 +58,8 @@ extension Constraint {
    /**
     * Distributes from start to end
     */
-   private static func distribute(fromStart views:[UIView], axis:Axis, spacing:CGFloat = 0, offset:CGFloat = 0) -> [NSLayoutConstraint] {
-//      Swift.print("distribute() fromStart")
+   fileprivate static func distribute(fromStart views:[UIView], axis:Axis, spacing:CGFloat = 0, offset:CGFloat = 0) -> [NSLayoutConstraint] {
+      //      Swift.print("distribute() fromStart")
       var anchors:[NSLayoutConstraint] = []
       var prevView:UIView?
       views.enumerated().forEach { (_,view) in
@@ -73,8 +80,7 @@ extension Constraint {
    /**
     * Aligns from end to start
     */
-   private static func distribute(fromEnd views:[UIView], axis:Axis, spacing:CGFloat = 0, offset:CGFloat) -> [NSLayoutConstraint] {
-//      Swift.print("distribute() fromEnd")
+   fileprivate static func distribute(fromEnd views:[UIView], axis:Axis, spacing:CGFloat = 0, offset:CGFloat) -> [NSLayoutConstraint] {
       var anchors:[NSLayoutConstraint] = []
       var prevView:UIView?
       for view in views.reversed() {/*Move backwards*/
@@ -84,7 +90,7 @@ extension Constraint {
          if axis == .horizontal {
             let alignTo:HorizontalAlign = prevView == nil ? .right : .left/*first align to right pf superView, then left of each subsequent item*/
             anchors.append(Constraint.anchor(view,to:toView,align:.right,alignTo:alignTo,offset:offset + spacing))
-         }else {//ver
+         }else {/*vertical*/
             let alignTo:VerticalAlign = prevView == nil ? .bottom : .top/*first align to bottom pf superView, then top of each subsequent item*/
             anchors.append(Constraint.anchor(view,to:toView,align:.bottom,alignTo:alignTo,offset:offset + spacing))
          }
@@ -93,6 +99,7 @@ extension Constraint {
       return anchors
    }
 }
+#endif
 
 /**
  * Aligns one item after the other and centers their total position

@@ -11,7 +11,7 @@ extension CardView{
          let layer = CALayer()
          layer.backgroundColor = UIColor.green.cgColor
          layer.frame = self.frame//CGRect.init(x: CardView.margin.left, y: CardView.margin.top, width: self.frame.width - (CardView.margin.left + CardView.margin.right)  , height: self.frame.height - (CardView.margin.top + CardView.margin.bottom))
-         //         layer.cornerRadius = 24
+         //layer.cornerRadius = 24
          return layer
       }()
       self.layer.addSublayer(bgLayer)
@@ -25,7 +25,7 @@ extension CardView{
       let insetFrame:CGRect = CGRect.init(x: CardView.margin.left, y: CardView.margin.top, width: self.frame.width - (CardView.margin.left + CardView.margin.right)  , height: self.frame.height - (CardView.margin.top + CardView.margin.bottom))
       let path = UIBezierPath.init(roundedRect: insetFrame, cornerRadius: 24)
       maskLayer.path = path.cgPath
-      self.layer.mask = maskLayer//applies the mask to the view
+      self.layer.mask = maskLayer/*applies the mask to the view*/
       return maskLayer
    }
    /**
@@ -46,11 +46,11 @@ extension CardView{
     */
    func createMiddleContent() -> MiddleContent{
       let size:CGSize = {
-         let w:CGFloat = self.frame.width - (CardView.margin.left+CardView.margin.right)
+         let w:CGFloat = self.frame.width - (CardView.margin.left + CardView.margin.right)
          let h:CGFloat = self.frame.height - (TopBar.topBarHeight + BottomBar.bottomBarHeight + CardView.margin.top + CardView.margin.bottom)
-         return CGSize.init(width: w, height: h)
+         return .init(width: w, height: h)
       }()
-      let cardContent = MiddleContent.init(frame: CGRect.init(origin: .zero, size: size))
+      let cardContent:MiddleContent = .init(frame: .init(origin: .zero, size: size))
       self.addSubview(cardContent)
       cardContent.activateAnchorAndSize { view in
          let a = Constraint.anchor(view, to: topBar, align: .topLeft, alignTo: .bottomLeft, offset:.zero)
