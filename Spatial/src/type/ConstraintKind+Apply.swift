@@ -2,6 +2,7 @@
 import UIKit
 /**
  * Update constraints (For items that are of type ConstraintKind)
+ * NOTE: adding a method called activateConstraints doesn't make any sense because you have only anchor and size or either
  */
 public extension ConstraintKind where Self:UIView{
    /**

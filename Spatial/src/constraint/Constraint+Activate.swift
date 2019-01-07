@@ -7,14 +7,14 @@ import UIKit
 extension UIView{
    /**
     * EXAMPLE:
-    * button.activateConstraint{ view in
+    * button.activateConstraints { view in
     *      let anchor = Constraint.anchor(view, to: self, align: .topLeft, alignTo: .topLeft)
     *      let size = Constraint.size(view, size: CGSize.init(width: UIScreen.main.bounds.width, height: TopBar.topBarHeight))
     *      return [anchor.x,anchor.y,size.w,size.h]
     * }
-    * TODO: ⚠️️ Rename to activateConstraints, and make activateConstraint only for 1 layoutconstraint
+    * TODO: ⚠️️ make activateConstraint only for 1 layoutconstraint
     */
-   public func activateConstraint(closure:ConstraintClosure) {
+   public func activateConstraints(closure:ConstraintClosure) {
       self.translatesAutoresizingMaskIntoConstraints = false
       let constraints:[NSLayoutConstraint] = closure(self)/*the constraints is returned from the closure*/
       NSLayoutConstraint.activate(constraints)

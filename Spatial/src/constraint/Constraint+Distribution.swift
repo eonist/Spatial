@@ -19,7 +19,7 @@ extension Constraint {
     * }
     * NOTE: Alternativly you can do: views.enumerated().map{Constraint.anchor($0.1, to: self, align: .topLeft, alignTo:.topLeft,offset:CGPoint(x:0,y:48 * $0.0))} etc
     */
-   public static func distribute(horizontally views:[UIView], align:Alignment, spacing:CGFloat = 0, offset:CGFloat = 0) -> [AnchorConstraint] {
+   public static func distribute(horizontally views:[UIView], align:Alignment = .topLeft, spacing:CGFloat = 0, offset:CGFloat = 0) -> [AnchorConstraint] {
       let xConstraints:[NSLayoutConstraint] = distribute(views, axis:.horizontal, align:align, spacing:spacing, offset:offset)
       let yConstraints:[NSLayoutConstraint] = views.map{ view in
          guard let superView = view.superview else {fatalError("view must have superview")}
@@ -30,7 +30,7 @@ extension Constraint {
    /**
     * IMPORTANT ⚠️️ Sets only anchors not sizes
     */
-   public static func distribute(vertically views:[UIView], align:Alignment, spacing:CGFloat = 0, offset:CGFloat = 0) -> [AnchorConstraint] {
+   public static func distribute(vertically views:[UIView], align:Alignment = .topLeft, spacing:CGFloat = 0, offset:CGFloat = 0) -> [AnchorConstraint] {
       let xConstraints:[NSLayoutConstraint] = views.map{ view in
          guard let superView = view.superview else {fatalError("view must have superview")}
          return Constraint.anchor(view, to: superView, align: align.horAlign, alignTo: align.horAlign)
@@ -99,43 +99,49 @@ extension Constraint{
       return anchors
    }
 }
+extension Constraint{
+   /**
+    * Aligns one item after the other and centers their total position
+    */
+//   static func distribute(fromCenter views:[UIConstraintView], axis:Axis, length:CGFloat, offset:CGFloat) {
+//
+//      //🏀 THEN DO THIS, only works with UIConstraintView where size is available
+//
+//      //find the totalW of all items
+//      let totV:CGFloat = views.reduce(0){$0 + axis == .hor ? $1.size.width : $1.size.height}
+//      //Use Align.center to find x
+//      let v:CGPoint =  offset + round(length/2) - round(totV/2)//Align.alignmentPoint(CGSize(totV,0), container.size, Alignment.centerCenter, Alignment.centerCenter, CGPoint())
+//      //Use justifyFlexStart and lay items out left to right with new rect as offset
+//      distributeFromStart(views, axis:axis, offset:v)
+//   }
+}
+
+extension Constraint{
+   
+   /**
+    * Space items evenly to fill length
+    */
+   //extension Distribution{
+   /**
+    * Aligns all items from the absolute start to absolute end and adds equa spacing between them
+    * TODO: ⚠️️ complete this
+    * IMPORTANT ⚠️️ only works with UIConstraintView where size is available
+    */
+//    public static func spaceBetween(_ views:[ConstraintKind], _ container:CGRect) {
+//        let totW:CGFloat = items.reduce(0){$0 + $1.flexible.size.width}/*find the totalW of all items*/
+//        let totVoid:CGFloat = container.width - totW/*find totVoid by doing w - totw*/
+//        let numOfVoids:CGFloat = CGFloat(items.count - 1)/*then divide this voidSpace with .count - 1 and*/
+//        let itemVoid:CGFloat = totVoid / numOfVoids/*iterate of each item and inserting itemVoid in + width*/
+//        var x:CGFloat = container.minX//interim x
+//        items.forEach{ item in
+//            item.flexible.x = x
+//            x += item.width + itemVoid
+//        }
+//    }
+}
 #endif
 
-/**
- * Aligns one item after the other and centers their total position
- */
-//static func distribute(fromCenter views:[UIConstraintView], axis:Axis, length:CGFloat, offset:CGFloat) {
-//
-//   //🏀 THEN DO THIS, only works with UIConstraintView where size is available
-//
-//   //find the totalW of all items
-//   let totV:CGFloat = views.reduce(0){$0 + axis == .hor ? $1.size.width : $1.size.height}
-//   //Use Align.center to find x
-//   let v:CGPoint =  offset + round(length/2) - round(totV/2)//Align.alignmentPoint(CGSize(totV,0), container.size, Alignment.centerCenter, Alignment.centerCenter, CGPoint())
-//   //Use justifyFlexStart and lay items out left to right with new rect as offset
-//   distributeFromStart(views, axis:axis, offset:v)
-//}
 
-/**
- * Space items evenly to fill length
- */
-//extension Distribution{
-/**
- * Aligns all items from the absolute start to absolute end and adds equa spacing between them
- * TODO: ⚠️️ complete this
- * IMPORTANT ⚠️️ only works with UIConstraintView where size is available
- */
-// public static func spaceBetween(_ views:[ConstraintKind], _ container:CGRect) {
-//     let totW:CGFloat = items.reduce(0){$0 + $1.flexible.size.width}/*find the totalW of all items*/
-//     let totVoid:CGFloat = container.width - totW/*find totVoid by doing w - totw*/
-//     let numOfVoids:CGFloat = CGFloat(items.count - 1)/*then divide this voidSpace with .count - 1 and*/
-//     let itemVoid:CGFloat = totVoid / numOfVoids/*iterate of each item and inserting itemVoid in + width*/
-//     var x:CGFloat = container.x//interim x
-//     items.forEach{ item in
-//         item.flexible.x = x
-//         x += item.width + itemVoid
-//     }
-// }
 /**
  * Same as spaceBetween but does not pin to sides but rather add equal spacing there as well
  * TODO: ⚠️️ complete this

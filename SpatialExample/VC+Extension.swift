@@ -1,6 +1,5 @@
 import UIKit
-@testable import Spatial
-
+import Spatial
 /**
  * Create
  */
@@ -9,6 +8,7 @@ extension ViewController{
     * Creates main view
     */
    func createMainView() -> MainView{
+      Swift.print("createMainView")
       let screenSize:CGSize = {
          let size = UIScreen.main.bounds.size
          return CGSize(width:size.width/* - 24*/, height:size.height/* - 24*/)
@@ -28,6 +28,7 @@ extension ViewController{
     * Creates anim test view
     */
    func createAnimTestView() -> AnimationTest{
+      Swift.print("createAnimTestView")
       let view:AnimationTest = AnimationTest.init(frame: CGRect.init(origin: .zero, size: .zero))
       self.view.addSubview(view)
       
