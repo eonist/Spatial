@@ -6,10 +6,9 @@ class CardView:UIView{
    lazy var topBar:TopBar = createTopBar()
    lazy var cardContent:MiddleContent = createMiddleContent()
    lazy var bottomBar:BottomBar = createBottomBar()
-  
    
    override init(frame: CGRect) {
-      Swift.print("CardView.init")
+//      Swift.print("CardView.init")
       super.init(frame: frame)
       self.backgroundColor = .gray
       _ = backgroundLayer

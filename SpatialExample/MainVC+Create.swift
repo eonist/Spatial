@@ -3,7 +3,7 @@ import Spatial
 /**
  * Create
  */
-extension ViewController{
+extension MainVC{
    /**
     * Creates main view
     */
@@ -25,7 +25,7 @@ extension ViewController{
       return view
    }
    /**
-    * Creates anim test view
+    * Creates animation test view
     */
    func createAnimTestView() -> AnimationTest{
       Swift.print("createAnimTestView")
