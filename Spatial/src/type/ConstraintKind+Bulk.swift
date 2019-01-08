@@ -13,7 +13,7 @@ extension Array where Element:ConstraintKind.UIViewConstraintKind{
     *      return (anchors, sizes)
     *  }
     * NOTE: Alternativly you can do: views.enumerated().map{Constraint.anchor($0.1, to: self, align: .topLeft, alignTo:.topLeft,offset:CGPoint(x:0,y:48 * $0.0))} etc
-    * NOTE: IF you want to apply only anchors or only sizes then just pass an empty array for either
+    * NOTE: If you want to apply only anchors or only sizes then just pass an empty array for either
     */
    public func applyAnchorsAndSizes(closure:ConstraintsClosure) {
       self.forEach{$0.translatesAutoresizingMaskIntoConstraints = false}

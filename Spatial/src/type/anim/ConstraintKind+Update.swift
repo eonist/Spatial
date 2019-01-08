@@ -1,6 +1,5 @@
 #if os(iOS)
 import UIKit
-
 /**
  * Offset horizontally or vertically
  */
@@ -8,26 +7,6 @@ public extension ConstraintKind where Self:UIView{
    /*Makes code easier to read*/
    typealias UpdateAnchorClosure = (_ superView:UIView,_ oldAnchor:AnchorConstraint) -> Void
    typealias UpdateSizeClosure = (_ superView:UIView,_ oldAnchor:SizeConstraint) -> Void
-   /**
-    * Internal (Anchor)
-    * TODO: ⚠️️ Move this to fileprivate util method for better code quality
-    */
-   private func updateAnchor(_ closure:UpdateAnchorClosure) {
-      guard let superview:UIView = self.superview else {Swift.print("err superview not available");return}
-      guard let oldAnchor = self.anchor else {Swift.print("err anchor not available");return}
-      closure(superview,oldAnchor)
-      superview.layoutIfNeeded()/*The superview is responsible for updating subView constraint updates*/
-   }
-   /**
-    * Internal (Size)
-    * TODO: ⚠️️ Move this to fileprivate util method for better code quality
-    */
-   private func updateSize(_ closure:UpdateSizeClosure) {
-      guard let superview:UIView = self.superview else {Swift.print("err superview not available");return}
-      guard let oldSize = self.size else {Swift.print("err sice not available");return}
-      closure(superview,oldSize)
-      superview.layoutIfNeeded()/*The superview is responsible for updating subView constraint updates*/
-   }
    /**
     * Updates horizontal anchor
     */
@@ -86,6 +65,29 @@ public extension ConstraintKind where Self:UIView{
       NSLayoutConstraint.activate([newAnchor.x,newAnchor.y,newSize.w,newSize.h])
       self.anchor = newAnchor
       self.size = newSize
+      superview.layoutIfNeeded()/*The superview is responsible for updating subView constraint updates*/
+   }
+}
+/**
+ * Internal
+ */
+extension ConstraintKind where Self:UIView{
+   /**
+    * Internal (Anchor)
+    */
+   fileprivate func updateAnchor(_ closure:UpdateAnchorClosure) {
+      guard let superview:UIView = self.superview else {Swift.print("err superview not available");return}
+      guard let oldAnchor = self.anchor else {Swift.print("err anchor not available");return}
+      closure(superview,oldAnchor)
+      superview.layoutIfNeeded()/*The superview is responsible for updating subView constraint updates*/
+   }
+   /**
+    * Internal (Size)
+    */
+   fileprivate func updateSize(_ closure:UpdateSizeClosure) {
+      guard let superview:UIView = self.superview else {Swift.print("err superview not available");return}
+      guard let oldSize = self.size else {Swift.print("err sice not available");return}
+      closure(superview,oldSize)
       superview.layoutIfNeeded()/*The superview is responsible for updating subView constraint updates*/
    }
 }

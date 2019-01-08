@@ -25,7 +25,6 @@ extension MiddleContent{
     * Create items
     */
    func createItemViews() -> [ItemView] {
-      Swift.print("createItemViews: \(self.frame)")
       let size:CGSize = .init(width: self.frame.width, height: 48)
       let itemViews:[ItemView] = (0..<5).indices.map{ i in
          let itemView = ItemView.init(frame: .zero)

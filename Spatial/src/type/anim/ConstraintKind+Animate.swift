@@ -4,8 +4,9 @@ import UIKit
  * Animation
  * These are examples how you can animate with Spatial and autolayout
  * TODO: ⚠️️ Use animation classes that support earlier versions of iOS
+ * TODO: ⚠️️ use UIViewConstraintKind?
  */
-public extension ConstraintKind where Self:UIView{//TODO ⚠️️ use UIViewConstraintKind
+public extension ConstraintKind where Self:UIView{
    /**
     * Animates a UIView that adhers to ConstraintKind (hor)
     * Example: btn.animate(to:100,align:left,alignTo:.left)
@@ -41,7 +42,7 @@ public extension UIView{
    public static func defaultOnComplete() {Swift.print("default anim completed closure")}
    /**
     * Animate
-    * PARAM: onUpdate is "animateTo this" and on every frame do this at the same time 🤔
+    * Paramater: onUpdate is "animateTo this" and on every frame do this at the same time 🤔
     * TODO: ⚠️️ Add dur and curve to method
     */
    public static func animate(_ onUpdate:@escaping AnimUpdate, onComplete:@escaping AnimComplete = UIView.defaultOnComplete, dur:Double = 0.3, easing:AnimationCurve = .easeOut) {
@@ -53,4 +54,3 @@ public extension UIView{
    }
 }
 #endif
-

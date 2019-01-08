@@ -43,7 +43,7 @@ public extension ConstraintKind where Self:UIView{
    }
    /**
     * Convenient
-    * NOTE: this could be a variable, but I guess its not because for some reason? 🤔
+    * NOTE: this could be a variable, but I guess it's not because for some reason? 🤔
     */
    public func setConstraint(anchor:AnchorConstraint, size:SizeConstraint) {
       self.anchor = anchor

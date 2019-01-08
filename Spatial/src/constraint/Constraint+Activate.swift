@@ -2,7 +2,7 @@
 import UIKit
 /**
  * AutoLayout Sugar for UIView
- * NOTE: Method overloading doesn't work with closures so each method name needs to be unique 🤷
+ * NOTE: Method overloading doesn't work with closures so each method name needs to be unique 
  */
 extension UIView{
    /**
@@ -28,7 +28,7 @@ extension UIView{
     *    return (a,s)
     * }
     */
-   public func activateAnchorAndSize(closure:ConstraintsClosure){
+   public func activateAnchorAndSize(closure:ConstraintsClosure) {
       self.translatesAutoresizingMaskIntoConstraints = false
       let anchorAndSize:AnchorAndSize = closure(self)/*the constraints is returned from the closure*/
       let constraints:[NSLayoutConstraint] = [anchorAndSize.anchor.x,anchorAndSize.anchor.y,anchorAndSize.size.w,anchorAndSize.size.h]
@@ -37,7 +37,7 @@ extension UIView{
    /**
     * Activate for AnchorConstraint
     */
-   public func activateAnchor(closure:AnchorClosure)  {
+   public func activateAnchor(closure:AnchorClosure) {
       self.translatesAutoresizingMaskIntoConstraints = false
       let anchorConstraint:AnchorConstraint = closure(self)/*the constraints is returned from the closure*/
       let constraints:[NSLayoutConstraint] = [anchorConstraint.x,anchorConstraint.y]
@@ -46,7 +46,7 @@ extension UIView{
    /**
     * Activate for SizeConstraint
     */
-   public func activateSize(closure:SizeClosure){
+   public func activateSize(closure:SizeClosure) {
       self.translatesAutoresizingMaskIntoConstraints = false
       let sizeConstraint:SizeConstraint = closure(self)/*the constraints is returned from the closure*/
       let constraints:[NSLayoutConstraint] = [sizeConstraint.w,sizeConstraint.h]

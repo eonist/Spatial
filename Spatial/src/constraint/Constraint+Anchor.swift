@@ -4,14 +4,13 @@ import UIKit
  * Positional constraints
  * DESCRIPTION: (Aligning relative to another view (x,y))
  * Discussion: Snapkit and Carthography are too clever and caters to too many facets of autolayout. This library is just a simple extension that does basic autolayout while reducing the setup time in half.
- * TODO: ⚠️️ Not really an anchor, consider renaming to ConstraintAttribute or pin, or?
+ * TODO: ⚠️️ Not really an anchor, consider renaming to ConstraintAttribute or pin, point, origin, position? or?
  * Discussion: anchor is a more appropriate name than, pin,pos,pt,edge,put,magnet,align,corner (anchor can represent both corner,edge and center)
  */
 public class Constraint {
    /**
     * Creates a positional constraint
-    * TODO: ⚠️️ Maybe rename to pin 👌, to differentiate from anchor, point, origin, position? 🤷
-    * EXAMPLE:
+    * Example:
     * activateAnchorAndSize { view in
     *    let a = Constraint.anchor(self, to: to, align: align, alignTo: alignTo, offset: offset, useMargin: useMargin)
     *    let s = Constraint.size(self, to: to, width: width, height: height, offset: offset, multiplier: multiplier)

@@ -1,20 +1,11 @@
 import UIKit
 import Spatial
 
-class SpacingTestView:UIView{
-   lazy var verticalItems:[UIView] = createVerticalItems()
-   override init(frame: CGRect) {
-      super.init(frame:frame)
-      _ = verticalItems
-   }
-   
-   /**
-    * boilerplate
-    */
-   required init?(coder aDecoder: NSCoder) {
-      fatalError("init(coder:) has not been implemented")
-   }
-}
+//🏀
+//Use the constant to calculate the width or height.
+//will only work on items that has frame set on init I think
+//or parse the item for the w/h constraints
+
 /**
  * Create
  */
@@ -35,7 +26,6 @@ extension SpacingTestView{
          let sizes = views.map{Constraint.size($0, size: size)}
          sizes.forEach{
             Swift.print("$0.w.constant:  \($0.w.constant)")
-            
          }
          return (anchors, sizes)
       }
@@ -43,8 +33,3 @@ extension SpacingTestView{
    }
 }
 //let totW:CGFloat = items.reduce(0){$0 + $1.flexible.size.width}/*find the totalW of all items*/
-
-//🏀
-   //Use the constant to calculate the width or height.
-   //will only work on items that has frame set on init I think
-   //or parse the item for the w/h constraints
