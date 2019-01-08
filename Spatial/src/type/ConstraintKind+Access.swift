@@ -9,10 +9,10 @@ public extension ConstraintKind where Self:UIView{
     * One-liner for applyAnchorAndSize
     * Example: view.applyAnchorAndSize(to:self, height:100, align:.center, alignTo:.center)
     */
-   public func applyAnchorAndSize(to:UIView, width:CGFloat? = nil, height:CGFloat? = nil, align:Alignment = .topLeft, alignTo:Alignment = .topLeft, multiplier:CGSize = .init(width:1,height:1), offset:CGPoint = .zero, useMargin:Bool = false) {
+   public func applyAnchorAndSize(to:UIView, width:CGFloat? = nil, height:CGFloat? = nil, align:Alignment = .topLeft, alignTo:Alignment = .topLeft, multiplier:CGSize = .init(width:1,height:1), offset:CGPoint = .zero, sizeOffset:CGSize = .zero, useMargin:Bool = false) {
       self.applyAnchorAndSize { view in
-         let anchor = Constraint.anchor(view, to: self, align: .topLeft, alignTo: .topLeft,useMargin:useMargin)
-         let size = Constraint.size(self, to:to, width: width, height: height, offset: offset, multiplier: multiplier)
+         let anchor = Constraint.anchor(view, to: self, align: .topLeft, alignTo: .topLeft, offset:offset, useMargin:useMargin)
+         let size = Constraint.size(self, to:to, width: width, height: height, offset: sizeOffset, multiplier: multiplier)
          return (anchor, size)
       }
    }
@@ -29,7 +29,7 @@ public extension ConstraintKind where Self:UIView{
     * One-liner for applySize
     * view.applySize(to:self)//multiplier,offset
     */
-   public func applySize(to:UIView, width:CGFloat? = nil, height:CGFloat? = nil, offset:CGPoint = .zero, multiplier:CGSize = .init(width:1,height:1)) {
+   public func applySize(to:UIView, width:CGFloat? = nil, height:CGFloat? = nil, offset:CGSize = .zero, multiplier:CGSize = .init(width:1,height:1)) {
       self.activateSize { view in
          return Constraint.size(self, to:to, width: width, height: height, offset: offset, multiplier: multiplier)
       }
