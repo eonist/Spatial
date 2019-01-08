@@ -8,6 +8,7 @@ extension UIView {
    /**
     * One-liner for activateAnchorAndSize (Align and size a UIView instance)
     * EXAMPLE: view.anchorAndSize(to:self,height:100,align:.center,alignTo:.center)//multiplier
+    * TODO: ⚠️️ Add sizeTo, since anchorTo is different, and maybe anchorOffset?
     */
    public func anchorAndSize(to:UIView, width:CGFloat? = nil, height:CGFloat? = nil, align:Alignment = .topLeft, alignTo:Alignment = .topLeft, multiplier:CGSize = .init(width:1,height:1), offset:CGPoint = .zero, sizeOffset:CGSize = .zero, useMargin:Bool = false){
       self.activateAnchorAndSize { view in

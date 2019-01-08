@@ -5,10 +5,10 @@ extension MainView{
     * Create the FlowView
     */
    func createCardView() -> CardView{
-      let screenSize:CGSize = self.frame.size
-      let view:CardView = CardView.init(frame: .init(origin: .zero, size: screenSize))
+//      let screenSize:CGSize = self.frame.size
+      let view:CardView = CardView()//.init(frame: .init(origin: .zero, size: screenSize))
       self.addSubview(view)
-      view.anchorAndSize(to: self, width: screenSize.width, height: screenSize.height)
+      view.anchorAndSize(to: self/*, width: screenSize.width, height: screenSize.height*/)
       return view
    }
    /**
