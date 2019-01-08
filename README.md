@@ -44,4 +44,5 @@ btn.animate(to:100,align:left,alignTo:.left)
 ```
 ### Todo:
 - Complete the spaceAround and spaceBetween methods
-- Make examples with AutoLayout margins 
+- Make examples with AutoLayout margins
+- Add methods for applyAnchor for horizontal and vertical types

@@ -7,6 +7,7 @@ import UIKit
 public extension ConstraintKind where Self:UIView{
    /**
     * One-liner for applyAnchorAndSize
+    * Example: view.applyAnchorAndSize(to:self, height:100, align:.center, alignTo:.center)
     */
    public func applyAnchorAndSize(to:UIView, width:CGFloat? = nil, height:CGFloat? = nil, align:Alignment = .topLeft, alignTo:Alignment = .topLeft, multiplier:CGSize = .init(width:1,height:1), offset:CGPoint = .zero, useMargin:Bool = false) {
       self.applyAnchorAndSize { view in
@@ -17,6 +18,7 @@ public extension ConstraintKind where Self:UIView{
    }
    /**
     * One-liner for applyAnchor
+    * Example: view.applyAnchor(to:self, align:.center, alignTo:.center)
     */
    public func applyAnchor(to:UIView, align:Alignment = .topLeft, alignTo:Alignment = .topLeft, offset:CGPoint = .zero, useMargin:Bool = false)  {
       self.applyAnchor { view in
@@ -25,6 +27,7 @@ public extension ConstraintKind where Self:UIView{
    }
    /**
     * One-liner for applySize
+    * view.applySize(to:self)//multiplier,offset
     */
    public func applySize(to:UIView, width:CGFloat? = nil, height:CGFloat? = nil, offset:CGPoint = .zero, multiplier:CGSize = .init(width:1,height:1)) {
       self.activateSize { view in

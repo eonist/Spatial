@@ -18,7 +18,7 @@ extension UIView {
    }
    /**
     * One-liner for anchor (Align a UIView instance)
-    * EXAMPLE: view.anchor(to:self,align:.center,alignTo:.center)//offset
+    * EXAMPLE: view.anchor(to:self,align:.center,alignTo:.center)
     */
    public func anchor(to:UIView, align:Alignment = .topLeft, alignTo:Alignment = .topLeft, offset:CGPoint = .zero, useMargin:Bool = false){
       self.activateAnchor{ view in
@@ -43,7 +43,7 @@ extension UIView {
    }
    /**
     * Size a UIView instance
-    * EXAMPLE: view.size(to:self)//multiplier, offset
+    * EXAMPLE: view.size(to:self)
     */
    public func size(to:UIView, width:CGFloat? = nil, height:CGFloat? = nil, offset:CGPoint = .zero, multiplier:CGSize = .init(width:1,height:1)){
       self.activateSize { view in
