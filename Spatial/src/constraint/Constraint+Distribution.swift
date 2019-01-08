@@ -63,10 +63,11 @@ extension Constraint{
          guard let toView:UIView = prevView ?? view.superview else {fatalError("View must have superview")}
          let offset = prevView == nil ? offset : 0/*only the first view gets offset*/
          let spacing:CGFloat = prevView != nil ? spacing : 0/*all subsequent views gets spacing*/
-         if axis == .horizontal {
+         switch axis {
+         case .horizontal:
             let alignTo:HorizontalAlign = prevView == nil ? .left : .right/*first align to left pf superView, then right of each subsequent item*/
             anchors.append(Constraint.anchor(view,to:toView,align:.left,alignTo:alignTo,offset:offset + spacing))
-         }else {//.vertical
+         case.vertical:
             let alignTo:VerticalAlign = prevView == nil ? .top : .bottom/*first align to top pf superView, then bottom of each subsequent item*/
             anchors.append(Constraint.anchor(view, to:toView, align:.top, alignTo:alignTo, offset:offset + spacing))
          }
@@ -84,10 +85,11 @@ extension Constraint{
          guard let toView:UIView = prevView ?? view.superview else {fatalError("View must have superview")}
          let offset = prevView == nil ? offset : 0
          let spacing:CGFloat = prevView != nil ? spacing : 0 /*All subsequent views gets spacing*/
-         if axis == .horizontal {
+         switch axis {
+         case .horizontal:
             let alignTo:HorizontalAlign = prevView == nil ? .right : .left/*first align to right pf superView, then left of each subsequent item*/
             anchors.append(Constraint.anchor(view,to:toView,align:.right,alignTo:alignTo,offset:offset + spacing))
-         }else {/*Vertical*/
+         case.vertical:
             let alignTo:VerticalAlign = prevView == nil ? .bottom : .top/*first align to bottom pf superView, then top of each subsequent item*/
             anchors.append(Constraint.anchor(view,to:toView,align:.bottom,alignTo:alignTo,offset:offset + spacing))
          }

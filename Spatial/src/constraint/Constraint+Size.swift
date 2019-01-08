@@ -47,7 +47,7 @@ extension Constraint{
    }
    /**
     * Creates a width constraint (based on a CGFloat width)
-    * NOTE: When AutoLayout doesnt relate to a view the multiplier doesnt take effect, so we apply the multiplier directly to the constant
+    * NOTE: When AutoLayout doesnt relate to a view the multiplier doesn't take effect, so we apply the multiplier directly to the constant
     */
    public static func width(_ view:UIView, width:CGFloat, multiplier:CGFloat = 1) -> NSLayoutConstraint{
       return NSLayoutConstraint.init(item: view, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: width * multiplier)//NSLayoutAttribute
@@ -56,19 +56,19 @@ extension Constraint{
     * Creates a height constraint (based on a CGFloat height)
     * NOTE: When AutoLayout doesnt relate to a view the multiplier doesnt take effect, so we apply the multiplier directly to the constant
     */
-   public static func height(_ view:UIView,height:CGFloat,multiplier:CGFloat = 1) -> NSLayoutConstraint{
+   public static func height(_ view:UIView, height:CGFloat, multiplier:CGFloat = 1) -> NSLayoutConstraint{
       return NSLayoutConstraint.init(item: view, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: height * multiplier)//NSLayoutAttribute
    }
    /**
     * Creates a width constraint (based on another views width constraint)
     */
-   public static func width(_ view:UIView,to:UIView,offset:CGFloat = 0,multiplier:CGFloat = 1) -> NSLayoutConstraint{
+   public static func width(_ view:UIView, to:UIView, offset:CGFloat = 0, multiplier:CGFloat = 1) -> NSLayoutConstraint{
       return NSLayoutConstraint(item: view, attribute: .width, relatedBy: .equal, toItem: to, attribute: .width, multiplier: multiplier, constant: offset)//NSLayoutAttribute.notAnAttribute
    }
    /**
     * Creates a height constraint (based on another views width constraint)
     */
-   public static func height(_ view:UIView,to:UIView,offset:CGFloat = 0,multiplier:CGFloat = 1) -> NSLayoutConstraint{
+   public static func height(_ view:UIView, to:UIView, offset:CGFloat = 0, multiplier:CGFloat = 1) -> NSLayoutConstraint{
       return NSLayoutConstraint(item: view, attribute: .height, relatedBy: .equal, toItem: to, attribute: .height, multiplier: multiplier, constant: offset)//NSLayoutAttribute.notAnAttribute
    }
    /**
@@ -78,7 +78,7 @@ extension Constraint{
     * TODO: ⚠️️ Consider renaming this to side ?
     * EXAMPLE: let widthConstraint = Constraint.length(square,viewAxis:.horizontal,axis:.vertical)
     */
-   public static func length(_ view:UIView, to:UIView,viewAxis:Axis,toAxis:Axis,offset:CGFloat = 0,multiplier:CGFloat = 1) -> NSLayoutConstraint{
+   public static func length(_ view:UIView, to:UIView, viewAxis:Axis, toAxis:Axis, offset:CGFloat = 0, multiplier:CGFloat = 1) -> NSLayoutConstraint{
       let viewAttr:NSLayoutConstraint.Attribute = viewAxis == .horizontal ? .width : .height
       let toAttr:NSLayoutConstraint.Attribute = toAxis == .horizontal ? .width : .height
       return NSLayoutConstraint(item: view, attribute: viewAttr, relatedBy: .equal, toItem: to, attribute: toAttr, multiplier: multiplier, constant: offset)//NSLayoutAttribute.notAnAttribute
