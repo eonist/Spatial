@@ -10,7 +10,8 @@ import UIKit
 public class Constraint {
    /**
     * Creates a positional constraint
-    * Example:
+    * - parameter useMargin: This works, but when you use size constraints then you have to pin to sides, or use the sizeOffset
+    * ## Examples:
     * activateAnchorAndSize { view in
     *    let a = Constraint.anchor(self, to: to, align: align, alignTo: alignTo, offset: offset, useMargin: useMargin)
     *    let s = Constraint.size(self, to: to, width: width, height: height, offset: offset, multiplier: multiplier)
@@ -32,7 +33,9 @@ public class Constraint {
     * Vertical
     */
    public static func anchor(_ view:UIView, to:UIView, align:VerticalAlign, alignTo:VerticalAlign, offset:CGFloat = 0, useMargin:Bool = false) -> NSLayoutConstraint {/*,offset:CGPoint = CGPoint()*/
-      return NSLayoutConstraint(item: view, attribute: Util.layoutAttr(align:align), relatedBy: .equal, toItem: to, attribute: Util.layoutAttr(align:alignTo,useMargin:useMargin), multiplier: 1.0, constant: offset)
+      let attr = Util.layoutAttr(align:align)
+      let relatedByAttr = Util.layoutAttr(align:alignTo,useMargin:useMargin)
+      return NSLayoutConstraint(item:view, attribute:attr , relatedBy:.equal, toItem:to, attribute:relatedByAttr, multiplier:1.0, constant:offset)
    }
 }
 /**

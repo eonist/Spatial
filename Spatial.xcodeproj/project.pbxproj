@@ -12,14 +12,15 @@
 		F109EE6721E3771700FCC696 /* SpacingTestView+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE6621E3771700FCC696 /* SpacingTestView+Create.swift */; };
 		F109EE6B21E382D100FCC696 /* Constraint+Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE6A21E382D100FCC696 /* Constraint+Access.swift */; };
 		F109EE6D21E383F000FCC696 /* ConstraintKind+Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE6C21E383F000FCC696 /* ConstraintKind+Access.swift */; };
-		F109EE8821E49AF100FCC696 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE8721E49AF100FCC696 /* MainVC.swift */; };
-		F109EE8A21E49B6600FCC696 /* MainVC+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE8921E49B6600FCC696 /* MainVC+Create.swift */; };
+		F109EE8821E49AF100FCC696 /* VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE8721E49AF100FCC696 /* VC.swift */; };
+		F109EE8A21E49B6600FCC696 /* VC+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE8921E49B6600FCC696 /* VC+Create.swift */; };
 		F109EE8D21E4D42200FCC696 /* MiddleContent+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE8C21E4D42200FCC696 /* MiddleContent+Create.swift */; };
 		F109EE8F21E4D48A00FCC696 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE8E21E4D48A00FCC696 /* ItemView.swift */; };
 		F109EE9121E4D4B300FCC696 /* ItemView+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE9021E4D4B300FCC696 /* ItemView+Create.swift */; };
 		F109EE9621E4D58800FCC696 /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE9521E4D58800FCC696 /* BottomBar.swift */; };
 		F109EE9821E4D5A500FCC696 /* BottomBar+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE9721E4D5A500FCC696 /* BottomBar+Constant.swift */; };
 		F109EE9A21E4D5D900FCC696 /* TopBar+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE9921E4D5D900FCC696 /* TopBar+Constant.swift */; };
+		F109EE9D21E5EA9500FCC696 /* CardView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE9C21E5EA9500FCC696 /* CardView+Constant.swift */; };
 		F114AEDC21ABC18F00942A28 /* AnimationTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F114AEDB21ABC18F00942A28 /* AnimationTestView.swift */; };
 		F151DDA921738B2C00AA0ABE /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151DDA821738B2C00AA0ABE /* TopBar.swift */; };
 		F151DDAC21738CAF00AA0ABE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151DDAB21738CAF00AA0ABE /* Constants.swift */; };
@@ -87,14 +88,15 @@
 		F109EE6621E3771700FCC696 /* SpacingTestView+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpacingTestView+Create.swift"; sourceTree = "<group>"; };
 		F109EE6A21E382D100FCC696 /* Constraint+Access.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constraint+Access.swift"; sourceTree = "<group>"; };
 		F109EE6C21E383F000FCC696 /* ConstraintKind+Access.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConstraintKind+Access.swift"; sourceTree = "<group>"; };
-		F109EE8721E49AF100FCC696 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
-		F109EE8921E49B6600FCC696 /* MainVC+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVC+Create.swift"; sourceTree = "<group>"; };
+		F109EE8721E49AF100FCC696 /* VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC.swift; sourceTree = "<group>"; };
+		F109EE8921E49B6600FCC696 /* VC+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC+Create.swift"; sourceTree = "<group>"; };
 		F109EE8C21E4D42200FCC696 /* MiddleContent+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MiddleContent+Create.swift"; sourceTree = "<group>"; };
 		F109EE8E21E4D48A00FCC696 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		F109EE9021E4D4B300FCC696 /* ItemView+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemView+Create.swift"; sourceTree = "<group>"; };
 		F109EE9521E4D58800FCC696 /* BottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
 		F109EE9721E4D5A500FCC696 /* BottomBar+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottomBar+Constant.swift"; sourceTree = "<group>"; };
 		F109EE9921E4D5D900FCC696 /* TopBar+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopBar+Constant.swift"; sourceTree = "<group>"; };
+		F109EE9C21E5EA9500FCC696 /* CardView+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+Constant.swift"; sourceTree = "<group>"; };
 		F114AEDB21ABC18F00942A28 /* AnimationTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTestView.swift; sourceTree = "<group>"; };
 		F151DDA821738B2C00AA0ABE /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
 		F151DDAB21738CAF00AA0ABE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -199,10 +201,23 @@
 			path = bottom;
 			sourceTree = "<group>";
 		};
+		F109EE9B21E5DAC500FCC696 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				F1FC84D22174E6A600D01B72 /* card */,
+				F17E38722174C15D009C10B2 /* MainView.swift */,
+				F1C624FE21C789830082A265 /* MainView+Create.swift */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
 		F151DDA721738B1C00AA0ABE /* view */ = {
 			isa = PBXGroup;
 			children = (
-				F17E0E4121DF461D00EE3027 /* main */,
+				F109EE8721E49AF100FCC696 /* VC.swift */,
+				F109EE8921E49B6600FCC696 /* VC+Create.swift */,
+				F109EE9B21E5DAC500FCC696 /* main */,
+				F109EE6821E3775E00FCC696 /* spaceTest */,
 				F17E0E4421DF46B700EE3027 /* animTest */,
 			);
 			path = view;
@@ -223,17 +238,6 @@
 				F17E0E3D21DF356900EE3027 /* ConstraintView.swift */,
 			);
 			path = extra;
-			sourceTree = "<group>";
-		};
-		F17E0E4121DF461D00EE3027 /* main */ = {
-			isa = PBXGroup;
-			children = (
-				F1FC84D22174E6A600D01B72 /* card */,
-				F109EE6821E3775E00FCC696 /* spaceTest */,
-				F17E38722174C15D009C10B2 /* MainView.swift */,
-				F1C624FE21C789830082A265 /* MainView+Create.swift */,
-			);
-			path = main;
 			sourceTree = "<group>";
 		};
 		F17E0E4421DF46B700EE3027 /* animTest */ = {
@@ -342,8 +346,6 @@
 				F151DDA721738B1C00AA0ABE /* view */,
 				F1D369E82171FDAE00F498FA /* AppDelegate.swift */,
 				F1C624FB21C789790082A265 /* common */,
-				F109EE8721E49AF100FCC696 /* MainVC.swift */,
-				F109EE8921E49B6600FCC696 /* MainVC+Create.swift */,
 				F1D369EF2171FDAF00F498FA /* Assets.xcassets */,
 				F1D369F12171FDAF00F498FA /* LaunchScreen.storyboard */,
 				F1D369F42171FDAF00F498FA /* Info.plist */,
@@ -373,6 +375,7 @@
 			children = (
 				F151DDBB2173CABC00AA0ABE /* CardView.swift */,
 				F17E0E2921DE2EBE00EE3027 /* CardView+Create.swift */,
+				F109EE9C21E5EA9500FCC696 /* CardView+Constant.swift */,
 				F1BBDD132180B4FD008DBC9B /* content */,
 			);
 			path = card;
@@ -523,7 +526,7 @@
 			files = (
 				F114AEDC21ABC18F00942A28 /* AnimationTestView.swift in Sources */,
 				F109EE8D21E4D42200FCC696 /* MiddleContent+Create.swift in Sources */,
-				F109EE8821E49AF100FCC696 /* MainVC.swift in Sources */,
+				F109EE8821E49AF100FCC696 /* VC.swift in Sources */,
 				F151DDAC21738CAF00AA0ABE /* Constants.swift in Sources */,
 				F109EE9121E4D4B300FCC696 /* ItemView+Create.swift in Sources */,
 				F17E38732174C15D009C10B2 /* MainView.swift in Sources */,
@@ -537,11 +540,12 @@
 				F109EE6521E10A4800FCC696 /* SpacingTestView.swift in Sources */,
 				F109EE8F21E4D48A00FCC696 /* ItemView.swift in Sources */,
 				F1FC84D42174E6B800D01B72 /* MiddleContent.swift in Sources */,
+				F109EE9D21E5EA9500FCC696 /* CardView+Constant.swift in Sources */,
 				F109EE9621E4D58800FCC696 /* BottomBar.swift in Sources */,
 				F109EE9821E4D5A500FCC696 /* BottomBar+Constant.swift in Sources */,
 				F1C624FF21C789830082A265 /* MainView+Create.swift in Sources */,
 				F151DDA921738B2C00AA0ABE /* TopBar.swift in Sources */,
-				F109EE8A21E49B6600FCC696 /* MainVC+Create.swift in Sources */,
+				F109EE8A21E49B6600FCC696 /* VC+Create.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
