@@ -46,3 +46,4 @@ btn.animate(to:100,align:left,alignTo:.left)
 - Complete the spaceAround and spaceBetween methods
 - Make examples with AutoLayout margins
 - Add methods for applyAnchor for horizontal and vertical types
+- Document every param in every declaration (Since the API is more stable now)

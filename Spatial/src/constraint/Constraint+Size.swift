@@ -24,6 +24,7 @@ extension Constraint{
    }
    /**
     * EXAMPLE: let sizeConstraint = Constraint.size(square,size:CGSize(100,100))
+    * TODO: ⚠️️ This doesn't have offset, maybe it should 🤔 for now i guess you can always inset the size
     */
    public static func size(_ view:UIView, size:CGSize, multiplier:CGSize = CGSize(width:1,height:1)) -> SizeConstraint{
       let w = Constraint.width(view, width: size.width, multiplier: multiplier.width)
@@ -47,7 +48,7 @@ extension Constraint{
    }
    /**
     * Creates a width constraint (based on a CGFloat width)
-    * NOTE: When AutoLayout doesnt relate to a view the multiplier doesn't take effect, so we apply the multiplier directly to the constant
+    * NOTE: When AutoLayout doesn't relate to a view the multiplier doesn't take effect, so we apply the multiplier directly to the constant
     */
    public static func width(_ view:UIView, width:CGFloat, multiplier:CGFloat = 1) -> NSLayoutConstraint{
       return NSLayoutConstraint.init(item: view, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: width * multiplier)//NSLayoutAttribute

@@ -11,7 +11,6 @@ extension CardView{
          let layer = CALayer()
          layer.backgroundColor = UIColor.green.cgColor
          layer.frame = self.frame//CGRect.init(x: CardView.margin.left, y: CardView.margin.top, width: self.frame.width - (CardView.margin.left + CardView.margin.right)  , height: self.frame.height - (CardView.margin.top + CardView.margin.bottom))
-         //layer.cornerRadius = 24
          return layer
       }()
       self.layer.addSublayer(bgLayer)
@@ -49,13 +48,12 @@ extension CardView{
    func createMiddleContent() -> MiddleContent{
       let middleContent:MiddleContent = .init()
       self.addSubview(middleContent)
-      let w:CGFloat = /*self.frame.width */ (CardView.margin.left + CardView.margin.right)
-      let h:CGFloat = /*self.frame.height*/ (TopBar.topBarHeight + BottomBar.bottomBarHeight + CardView.margin.top + CardView.margin.bottom)
-      
-      //Continue here: 🏀
-         //add anchorTo:, sizeTo
-      
-      middleContent.anchorAndSize(to: topBar, alignTo: .bottomLeft, sizeOffset:.init(width:w,height:h))
+      let sizeOffset:CGSize = {
+         let w:CGFloat = -(CardView.margin.left + CardView.margin.right)
+         let h:CGFloat = -(TopBar.topBarHeight + BottomBar.bottomBarHeight + CardView.margin.top + CardView.margin.bottom)
+         return CGSize(width:w,height:h)
+      }()
+      middleContent.anchorAndSize(to: topBar, sizeTo:self, alignTo: .bottomLeft, sizeOffset:sizeOffset)
       return middleContent
    }
    /**
@@ -64,7 +62,8 @@ extension CardView{
    func createBottomBar() -> BottomBar {
       let bottomBar:BottomBar = .init()
       self.addSubview(bottomBar)
-      bottomBar.anchorAndSize(to: cardContent, width: UIScreen.main.bounds.width, height: BottomBar.bottomBarHeight, alignTo: .bottomLeft)
+      let size:CGSize = .init(width: UIScreen.main.bounds.width, height: BottomBar.bottomBarHeight)
+      bottomBar.anchorAndSize(to: cardContent, width:size.width,height:size.height, alignTo: .bottomLeft)
       return bottomBar
    }
 }
