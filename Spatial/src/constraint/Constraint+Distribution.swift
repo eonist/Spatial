@@ -6,16 +6,16 @@ import UIKit
 extension Constraint {
    /**
     * Horizontal & Vertical Distribution
-    * TODO: ⚠️️ Add support for spacing
-    * TODO: ⚠️️ parent is always superview, then we must use UIView as type, remember your returning constriants, not setting actual anchor or size, you do that in activeConstraint
-    * IMPORTANT ⚠️️ Sets only anchors not sizes
-    * EXAMPLE:
+    * - TODO: ⚠️️ Add support for spacing
+    * - TODO: ⚠️️ parent is always superview, then we must use UIView as type, remember your returning constriants, not setting actual anchor or size, you do that in activeConstraint
+    * - IMPORTANT: ⚠️️ Sets only anchors not sizes
+    * ## EXAMPLE:
     * [label1,label2,label3].applyAnchorsAndSizes { views in
     *      let anchors = Constraint.distribute(vertically:views,align:.left)
     *      let sizes = views.map{ Constraint.size($0, toView: self.frame.width, height: 48)) }
     *      return (anchors, sizes)
     * }
-    * NOTE: Alternativly you can do: views.enumerated().map{Constraint.anchor($0.1, to: self, align: .topLeft, alignTo:.topLeft,offset:CGPoint(x:0,y:48 * $0.0))} etc
+    * - NOTE: Alternativly you can do: views.enumerated().map{Constraint.anchor($0.1, to: self, align: .topLeft, alignTo:.topLeft,offset:CGPoint(x:0,y:48 * $0.0))} etc
     */
    public static func distribute(horizontally views:[UIView], align:Alignment = .topLeft, spacing:CGFloat = 0, offset:CGFloat = 0) -> [AnchorConstraint] {
       let xConstraints:[NSLayoutConstraint] = distribute(views, axis:.horizontal, align:align, spacing:spacing, offset:offset)
@@ -26,7 +26,7 @@ extension Constraint {
       return anchors
    }
    /**
-    * IMPORTANT ⚠️️ Sets only anchors not sizes
+    * - IMPORTANT ⚠️️ Sets only anchors not sizes
     */
    public static func distribute(vertically views:[UIView], align:Alignment = .topLeft, spacing:CGFloat = 0, offset:CGFloat = 0) -> [AnchorConstraint] {
       let xConstraints:[NSLayoutConstraint] = views.map{ view in
@@ -40,7 +40,7 @@ extension Constraint {
 }
 /**
  * Internal helper methods
- * NOTE: Consider moving to fileprivate Util class
+ * - NOTE: Consider moving to fileprivate Util class
  */
 extension Constraint{
    /**

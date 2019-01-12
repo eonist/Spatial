@@ -6,14 +6,14 @@ import UIKit
 public extension Array where Element:UIView{
    /**
     * AutoLayout Sugar for UIView's (Multiple)
-    * EXAMPLE:
+    * ## EXAMPLE:
     * [label1,label2,label3].activateConstraint { views in
     *      let anchors = []
     *      let sizes = []
     *      return (anchors, sizes)
     * }
-    * NOTE: ⚠️️ You have to zip together anchors in some cases
-    * NOTE: ⚠️️ Can we utilize activateAnchors and activateSizes in this method?
+    * - NOTE: ⚠️️ You have to zip together anchors in some cases
+    * - NOTE: ⚠️️ Can we utilize activateAnchors and activateSizes in this method?
     */
    public func activateAnchorsAndSizes(closure:ConstraintClosure) {
       self.forEach{$0.translatesAutoresizingMaskIntoConstraints = false}

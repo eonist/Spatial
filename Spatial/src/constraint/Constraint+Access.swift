@@ -61,7 +61,7 @@ extension UIView {
    }
    /**
     * Size a UIView instance
-    * EXAMPLE: view.size(to:self)
+    * ## Examples: view.size(to:self)
     */
    public func size(to:UIView, width:CGFloat? = nil, height:CGFloat? = nil, offset:CGSize = .zero, multiplier:CGSize = .init(width:1,height:1)){
       self.activateSize { view in

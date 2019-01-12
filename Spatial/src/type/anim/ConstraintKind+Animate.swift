@@ -42,8 +42,8 @@ public extension UIView{
    public static func defaultOnComplete() {Swift.print("default anim completed closure")}
    /**
     * Animate
-    * Paramater: onUpdate is "animateTo this" and on every frame do this at the same time 🤔
-    * TODO: ⚠️️ Add dur and curve to method
+    * - Paramater onUpdate: is "animateTo this" and on every frame do this at the same time 🤔
+    * - TODO: ⚠️️ Add dur and curve to method
     */
    public static func animate(_ onUpdate:@escaping AnimUpdate, onComplete:@escaping AnimComplete = UIView.defaultOnComplete, dur:Double = 0.3, easing:AnimationCurve = .easeOut) {
       let anim = UIViewPropertyAnimator(duration: dur, curve: easing, animations: {

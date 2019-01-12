@@ -30,7 +30,7 @@ public extension ConstraintKind where Self:UIView{
       }
    }
    /**
-    * Update (hor & ver)
+    * Update (horizontal & vertical)
     */
    public func update(offset:CGPoint, align:Alignment, alignTo:Alignment){
       updateAnchor { (superview,oldAnchor) in
@@ -74,6 +74,7 @@ public extension ConstraintKind where Self:UIView{
 extension ConstraintKind where Self:UIView{
    /**
     * Internal (Anchor)
+    * - Note: used in conjunction with animation
     */
    fileprivate func updateAnchor(_ closure:UpdateAnchorClosure) {
       guard let superview:UIView = self.superview else {Swift.print("err superview not available");return}
@@ -83,6 +84,7 @@ extension ConstraintKind where Self:UIView{
    }
    /**
     * Internal (Size)
+    * - Note: used in conjunction with animation
     */
    fileprivate func updateSize(_ closure:UpdateSizeClosure) {
       guard let superview:UIView = self.superview else {Swift.print("err superview not available");return}

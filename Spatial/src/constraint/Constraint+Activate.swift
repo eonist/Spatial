@@ -6,7 +6,7 @@ import UIKit
  */
 extension UIView{
    /**
-    * EXAMPLE:
+    * ## EXAMPLE:
     * button.activateConstraints { view in
     *      let anchor = Constraint.anchor(view, to: self, align: .topLeft, alignTo: .topLeft)
     *      let size = Constraint.size(view, size: CGSize.init(width: UIScreen.main.bounds.width, height: TopBar.topBarHeight))
@@ -21,7 +21,7 @@ extension UIView{
    }
    /**
     * Same as activateConstraint, but returns a tuple in the closure instead of an array
-    * EXAMPLE:
+    * ## EXAMPLE:
     * label.activateAnchorAndSize { view in
     *    let a = Constraint.anchor(view, to: self, align: .topLeft, alignTo:  .topLeft)
     *    let s = Constraint.size(view, to: self)

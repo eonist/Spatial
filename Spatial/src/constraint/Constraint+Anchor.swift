@@ -1,11 +1,10 @@
 #if os(iOS)
 import UIKit
 /**
- * Positional constraints
- * DESCRIPTION: (Aligning relative to another view (x,y))
- * Discussion: Snapkit and Carthography are too clever and caters to too many facets of autolayout. This library is just a simple extension that does basic autolayout while reducing the setup time in half.
- * TODO: ⚠️️ Not really an anchor, consider renaming to ConstraintAttribute or pin, point, origin, position? or?
- * Discussion: anchor is a more appropriate name than, pin,pos,pt,edge,put,magnet,align,corner (anchor can represent both corner,edge and center)
+ * Positional constraints (Aligning relative to another view (x,y))
+ * - Remark: Snapkit and Carthography are too clever and caters to too many facets of autolayout. This library is just a simple extension that does basic autolayout while reducing the setup time in half.
+ * - ToDo: ⚠️️ Not really an anchor, consider renaming to ConstraintAttribute or pin, point, origin, position? or?
+ * - Note: anchor is a more appropriate name than, pin,pos,pt,edge,put,magnet,align,corner (anchor can represent both corner,edge and center)
  */
 public class Constraint {
    /**
@@ -40,11 +39,11 @@ public class Constraint {
 }
 /**
  * Internal helper methods
- * TODO: ⚠️️ Move these methods to Util class and see if code-quality improves
+ * - ToDo: ⚠️️ Move these methods to Util class and see if code-quality improves
  */
 fileprivate class Util{
    /**
-    * x (internal)
+    * For aligning in the x axis (internal)
     */
    static func layoutAttr(align:HorizontalAlign, useMargin:Bool = false) -> NSLayoutConstraint.Attribute{
       switch align{
@@ -54,7 +53,7 @@ fileprivate class Util{
       }
    }
    /**
-    * y (internal)
+    * For aligning in the y axis  (internal)
     */
    static func layoutAttr(align:VerticalAlign, useMargin:Bool = false) -> NSLayoutConstraint.Attribute{
       switch align{
