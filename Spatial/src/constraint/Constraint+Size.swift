@@ -36,10 +36,16 @@ extension Constraint{
    /**
     * Creates a size constraint
     * - Returns size tuple (based on parent and or width or height)
+    * - Parameter view: The view to be sized by AutoLayout
+    * - Parameter to: The view to be sized to
+    * - Parameter width: custom width, instead of relying on another view to size against
+    * - Parameter height: custom height, instead of relying on another view to size against
+    * - Prameter offset: add extra offset to view in x,y dir
+    * - Parameter multiplier: Scale the size constraint by this scalar (works with other view and custom size)
     * ## EXAMPLE:
     * let s = Constraint.size(view, to:parent, height:48)
     */
-   public static func size(_ view:UIView, to:UIView, width:CGFloat? = nil, height:CGFloat? = nil, offset:CGSize = .zero, multiplier:CGSize = CGSize(width:1,height:1))  -> SizeConstraint {
+   public static func size(_ view:UIView, to:UIView, width:CGFloat? = nil, height:CGFloat? = nil, offset:CGSize = .zero, multiplier:CGSize = .init(width:1,height:1))  -> SizeConstraint {
       let w:NSLayoutConstraint = {
          if let width = width { return Constraint.width(view, width: width, multiplier: multiplier.width) }
          else { return Constraint.width(view, to: to, offset: offset.width, multiplier: multiplier.width) }
