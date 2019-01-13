@@ -1,6 +1,6 @@
 import UIKit
 /**
- * Convenient extension methods for UIView
+ * Convenient extension methods for UIView (One-liners)
  * Definition: Convenience the state of being able to proceed with something without difficulty
  * TODO: ⚠️️ Make these methods for [UIView] as well
  */
@@ -61,11 +61,24 @@ extension UIView {
    }
    /**
     * Size a UIView instance
-    * ## Examples: view.size(to:self)
+    * ## Examples:
+    * view.size(to:self)
+    * - ToDo: ⚠️️ Maybe the to could be optional, 
     */
    public func size(to:UIView, width:CGFloat? = nil, height:CGFloat? = nil, offset:CGSize = .zero, multiplier:CGSize = .init(width:1,height:1)){
       self.activateSize { view in
          return Constraint.size(self, to: to, width: width, height: height, offset: offset, multiplier: multiplier)
+      }
+   }
+   /**
+    * Size a UIView instance to a peccific size
+    * - TODO: ⚠️️ This doesn't have offset, maybe it should 🤔 for now I guess you can always inset the size
+    * ## Examples:
+    * view.size(width:100,height:100)
+    */
+   func size(width:CGFloat, height:CGFloat, multiplier:CGSize = CGSize(width:1,height:1)) {
+      self.activateSize { view in
+         return Constraint.size(self, size:.init(width:0,height:0), multiplier:multiplier)
       }
    }
 }

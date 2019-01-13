@@ -13,7 +13,7 @@ extension Constraint{
    /**
     * Creates a dimensional constraint
     * - IMPORTANT: Multiplier needs to be 1,1 to not have an effect
-    * - IMPORTANT: Offser needs to be 0,0 to not have an effect
+    * - IMPORTANT: Offset needs to be 0,0 to not have an effect
     * ## EXAMPLE: let sizeConstraint = Constraint.size(square,to:canvas,offset:.zero,multiplier:.init(x:1,y:0.5))
     * ## EXAMPLE: let widthConstraint = Constraint.size(square,to:canvas).w
     */
@@ -24,7 +24,7 @@ extension Constraint{
    }
    /**
     * Creates a size constraint
-    * - TODO: ⚠️️ This doesn't have offset, maybe it should 🤔 for now i guess you can always inset the size
+    * - TODO: ⚠️️ This doesn't have offset, maybe it should 🤔 for now I guess you can always inset the size
     * ## EXAMPLE:
     * let sizeConstraint = Constraint.size(square,size:CGSize(100,100))
     */
