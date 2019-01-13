@@ -72,11 +72,11 @@ extension UIView {
    }
    /**
     * Size a UIView instance to a peccific size
-    * - TODO: ⚠️️ This doesn't have offset, maybe it should 🤔 for now I guess you can always inset the size
+    * - ToDo: ⚠️️ This doesn't have offset, maybe it should 🤔 for now I guess you can always inset the size
     * ## Examples:
     * view.size(width:100,height:100)
     */
-   func size(width:CGFloat, height:CGFloat, multiplier:CGSize = CGSize(width:1,height:1)) {
+   public func size(width:CGFloat, height:CGFloat, multiplier:CGSize = CGSize(width:1,height:1)) {
       self.activateSize { view in
          return Constraint.size(self, size:.init(width:0,height:0), multiplier:multiplier)
       }
