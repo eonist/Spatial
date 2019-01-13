@@ -6,10 +6,10 @@ import UIKit
 public extension Array where Element:UIView{
    /**
     * AutoLayout Sugar for UIView's (Multiple)
-    * ## EXAMPLE:
+    * ## Examples:
     * [label1,label2,label3].activateConstraint { views in
-    *      let anchors = []
-    *      let sizes = []
+    *      let anchors = Constraint.distribute(vertically: views, align: .topLeft)
+    *      let sizes = views.map{$0.size(width:96,height:42)}
     *      return (anchors, sizes)
     * }
     * - NOTE: ⚠️️ You have to zip together anchors in some cases
@@ -27,6 +27,10 @@ public extension Array where Element:UIView{
    }
    /**
     * Activates multiple anchor constraints
+    * ## Examples:
+    * [label1,label2,label3].activateAnchors {
+    *    return Constraint.distribute(vertically: views, align: .topCenter)
+    * }
     */
    public func activateAnchors(closure:AnchorConstraintsClosure) {
       self.forEach{$0.translatesAutoresizingMaskIntoConstraints = false}

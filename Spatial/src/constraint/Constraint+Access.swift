@@ -3,20 +3,21 @@ import UIKit
  * Convenient extension methods for UIView (One-liners)
  * Definition: Convenience the state of being able to proceed with something without difficulty
  * TODO: ⚠️️ Make these methods for [UIView] as well
+ * TODO: Rename Constraint+Access to something more meaningful
  */
 extension UIView {
    /**
     * One-liner for activateAnchorAndSize (Align and size a UIView instance)
-    * - parameter to: anchor to this view
-    * - parameter sizeTo: provide this if you need to base the size on another view
-    * - parameter width: provide this if you want to use a fixed width
-    * - parameter height: provide this if you want to use a fixed height
-    * - parameter align: alignment for the `to` view
-    * - parameter alignTo: alignment for the `sizeTo` view, if one was provided
-    * - parameter multiplier: multiplies the `size` or `sizeTo`
-    * - parameter offset: offset for the `to` parameter
-    * - parameter sizeOffset: offset for the `sizeTo` parameter
-    * - parameter useMargin: aligns to autolayout margins or not
+    * - Parameter to: anchor to this view
+    * - Parameter sizeTo: provide this if you need to base the size on another view
+    * - Parameter width: provide this if you want to use a fixed width
+    * - Parameter height: provide this if you want to use a fixed height
+    * - Parameter align: alignment for the `to` view
+    * - Parameter alignTo: alignment for the `sizeTo` view, if one was provided
+    * - Parameter multiplier: multiplies the `size` or `sizeTo`
+    * - Parameter offset: offset for the `to` parameter
+    * - Parameter sizeOffset: offset for the `sizeTo` parameter (use negative values for inset)
+    * - Parameter useMargin: aligns to autolayout margins or not
     * ## Examples:
     * view.anchorAndSize(to:self,height:100,align:.center,alignTo:.center)//multiplier
     */
@@ -76,9 +77,28 @@ extension UIView {
     * ## Examples:
     * view.size(width:100,height:100)
     */
-   public func size(width:CGFloat, height:CGFloat, multiplier:CGSize = CGSize(width:1,height:1)) {
+   public func size(width:CGFloat, height:CGFloat, multiplier:CGSize = .init(width:1,height:1)) {
       self.activateSize { view in
          return Constraint.size(self, size:.init(width:0,height:0), multiplier:multiplier)
+      }
+   }
+}
+/**
+ * One-liner for multiple views
+ */
+public extension Array where Element:UIView{
+   /**
+    * Anchoring for an array of views
+    * - Parameter dir: Different between vertical and horizontal
+    */
+   public func distribute(to:UIView, dir:Axis, align:Alignment = .topLeft, spacing:CGFloat = 0, offset:CGFloat = 0){ 
+      self.activateAnchors { views in
+         switch dir {
+         case .horizontal:
+            return Constraint.distribute(horizontally: views, align: .topCenter, spacing:spacing, offset:offset)
+         case .vertical:
+            return Constraint.distribute(vertically: views, align: .topCenter, spacing:spacing, offset:offset)
+         }
       }
    }
 }

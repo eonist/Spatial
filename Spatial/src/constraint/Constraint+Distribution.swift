@@ -7,6 +7,7 @@ extension Constraint {
    /**
     * Horizontal & Vertical Distribution
     * - TODO: ⚠️️ Add support for spacing
+    * - TODO: ⚠️️ Add support for alignTo: (because you might want to set a different anchor for the views than for the view to align to)
     * - TODO: ⚠️️ parent is always superview, then we must use UIView as type, remember your returning constriants, not setting actual anchor or size, you do that in activeConstraint
     * - IMPORTANT: ⚠️️ Sets only anchors not sizes
     * ## EXAMPLE:
