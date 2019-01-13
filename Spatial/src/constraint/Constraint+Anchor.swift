@@ -53,7 +53,7 @@ fileprivate class Util{
       }
    }
    /**
-    * For aligning in the y axis  (internal)
+    * For aligning in the y axis (internal)
     */
    static func layoutAttr(align:VerticalAlign, useMargin:Bool = false) -> NSLayoutConstraint.Attribute{
       switch align{

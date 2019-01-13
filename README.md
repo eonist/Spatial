@@ -26,9 +26,20 @@ Hassle-free AutoLayout, tailored for interactivity and animation.
 ```swift
 /*One-liner, single*/
 btn1.anchorAndSize(to: self, width: 96, height: 24)
+
+/*Long-hand, single*/
+btn1.activateAnchorAndSize{ view in
+	let a = Constraint.anchor(view, to: self)
+	let s = Constraint.size(view, width:96, height:24)
+	return (a,s)
+}
 ```
 
 ```swift
+/*Short-hand, bulk*/
+[btn1,btn2,btn3].anchor(vertically: views, align: .topLeft)
+[btn1,btn2,btn3].size(width:96, height:24)
+
 /*Long-hand, bulk*/
 [btn1,btn2,btn3].activateAnchorsAndSizes { views in
    let anchors = Constraint.distribute(vertically: views, align: .topLeft)

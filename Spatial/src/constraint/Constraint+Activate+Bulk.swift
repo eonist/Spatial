@@ -9,11 +9,11 @@ public extension Array where Element:UIView{
     * ## Examples:
     * [label1,label2,label3].activateConstraint { views in
     *      let anchors = Constraint.distribute(vertically: views, align: .topLeft)
-    *      let sizes = views.map{$0.size(width:96,height:42)}
+    *      let sizes = views.map{Constraint.size(width:96,height:42)}
     *      return (anchors, sizes)
     * }
     * - NOTE: ⚠️️ You have to zip together anchors in some cases
-    * - NOTE: ⚠️️ Can we utilize activateAnchors and activateSizes in this method?
+    * - ToDo: ⚠️️ Can we utilize activateAnchors and activateSizes in this method? 🤔
     */
    public func activateAnchorsAndSizes(closure:ConstraintClosure) {
       self.forEach{$0.translatesAutoresizingMaskIntoConstraints = false}
@@ -43,6 +43,10 @@ public extension Array where Element:UIView{
    }
    /**
     * Activates multiple size constraints
+    * ## Examples:
+    * [btn1,btn2,btn3].activateSizes { views in
+    *    return views.map{$0.size(width:96,height:42)}
+    * }
     */
    public func activateSizes(closure:SizeConstraintsClosure) {
       self.forEach{$0.translatesAutoresizingMaskIntoConstraints = false}
