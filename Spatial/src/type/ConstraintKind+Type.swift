@@ -15,6 +15,8 @@ public extension ConstraintKind where Self:UIView{
  * Bulk
  */
 extension Array where Element:ConstraintKind.UIViewConstraintKind{
-   public typealias ConstraintsClosure = (_ views:[UIView]) -> AnchorConstraintsAndSizeConstraints
+   public typealias AnchorAndSizeClosure = (_ views:[UIView]) -> AnchorConstraintsAndSizeConstraints
+   public typealias SizesClosure = (_ views:[UIView]) -> [SizeConstraint]
+   public typealias AnchorClosure = (_ views:[UIView]) -> [AnchorConstraint]
 }
 #endif

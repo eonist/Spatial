@@ -15,7 +15,7 @@ extension Array where Element:ConstraintKind.UIViewConstraintKind{
     * - Note: Alternativly you can do: views.enumerated().map{Constraint.anchor($0.1, to: self, align: .topLeft, alignTo:.topLeft,offset:CGPoint(x:0,y:48 * $0.0))} etc
     * - Note: If you want to apply only anchors or only sizes then just pass an empty array for either
     */
-   public func applyAnchorsAndSizes(closure:ConstraintsClosure) {
+   public func applyAnchorsAndSizes(closure:AnchorAndSizeClosure) {
       self.forEach{$0.translatesAutoresizingMaskIntoConstraints = false}
       let constraints:AnchorConstraintsAndSizeConstraints = closure(self)/*the constraints is returned from the closure*/
       self.enumerated().forEach {
@@ -28,6 +28,34 @@ extension Array where Element:ConstraintKind.UIViewConstraintKind{
          let sizes = constraints.sizeConstraints.reduce([]) { $0 + [$1.w,$1.h] }
          return anchors + sizes
       }()
+      NSLayoutConstraint.activate(layoutConstraints)
+   }
+   /**
+    * Apply sizes
+    * - ToDo: ⚠️️ Write doc
+    */
+   public func applySizes(closure:SizesClosure) {
+      self.forEach{$0.translatesAutoresizingMaskIntoConstraints = false}
+      let constraints:[SizeConstraint] = closure(self)/*the constraints is returned from the closure*/
+      self.enumerated().forEach {
+         let size:SizeConstraint = constraints[$0.offset]
+         $0.element.size = size
+      }
+      let layoutConstraints:[NSLayoutConstraint] = constraints.reduce([]) { $0 + [$1.w,$1.h] }
+      NSLayoutConstraint.activate(layoutConstraints)
+   }
+   /**
+    * Apply anchors
+    * - ToDo: ⚠️️ Write doc
+    */
+   public func applyAnchors(closure:AnchorClosure) {
+      self.forEach{$0.translatesAutoresizingMaskIntoConstraints = false}
+      let constraints:[AnchorConstraint] = closure(self)/*the constraints is returned from the closure*/
+      self.enumerated().forEach {
+         let anchor:AnchorConstraint = constraints[$0.offset]
+         $0.element.anchor = anchor
+      }
+      let layoutConstraints:[NSLayoutConstraint] = constraints.reduce([]) { $0 + [$1.x,$1.y] }
       NSLayoutConstraint.activate(layoutConstraints)
    }
 }

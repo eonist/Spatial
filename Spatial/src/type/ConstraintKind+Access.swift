@@ -31,9 +31,39 @@ public extension ConstraintKind where Self:UIView{
     * view.applySize(to:self)//multiplier,offset
     */
    public func applySize(to:UIView, width:CGFloat? = nil, height:CGFloat? = nil, offset:CGSize = .zero, multiplier:CGSize = .init(width:1,height:1)) {
-      self.activateSize { view in
+      self.applySize { view in
          return Constraint.size(self, to:to, width: width, height: height, offset: offset, multiplier: multiplier)
       }
    }
+}
+/**
+ * Bulk
+ */
+extension Array where Element:ConstraintKind.UIViewConstraintKind{
+   /**
+    * Size multiple UIView instance
+    * - Parameter offset: Add margin by providing a size offset
+    * ## Examples:
+    * [btn1,btn2,btn3].applySize(to:self, height:24, offset:.init(width:-40,height:0))
+    */
+   public func applySizes(to:UIView, width:CGFloat? = nil, height:CGFloat? = nil, offset:CGSize = .zero, multiplier:CGSize = .init(width:1,height:1)){
+      self.applySizes { views in
+         return views.map{
+            Constraint.size($0, to: to, width: width, height: height, offset: offset, multiplier: multiplier)
+         }
+      }
+   }
+   /**
+    * New
+    */
+   public func applySizes(width:CGFloat, height:CGFloat, multiplier:CGSize = .init(width:1,height:1)) {
+      self.applySizes { views in
+         return views.map{
+            Constraint.size($0,size:.init(width:width,height:height),multiplier:multiplier)
+         }
+      }
+   }
+   // TODO: ⚠️️ add anchorAndSize
+   // TODO: ⚠️️ add anchor
 }
 #endif

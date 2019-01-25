@@ -37,7 +37,7 @@ btn1.activateAnchorAndSize{ view in
 
 ```swift
 /*Short-hand, bulk*/
-distributeAndSize(dir:.vertical, width:96, height:24)
+btn1.distributeAndSize(dir:.vertical, width:96, height:24)
 
 /*Long-hand, bulk*/
 [btn1,btn2,btn3].activateAnchorsAndSizes { views in

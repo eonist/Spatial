@@ -22,6 +22,8 @@
 		F109EE9A21E4D5D900FCC696 /* TopBar+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE9921E4D5D900FCC696 /* TopBar+Constant.swift */; };
 		F109EE9D21E5EA9500FCC696 /* CardView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE9C21E5EA9500FCC696 /* CardView+Constant.swift */; };
 		F114AEDC21ABC18F00942A28 /* AnimationTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F114AEDB21ABC18F00942A28 /* AnimationTestView.swift */; };
+		F14FADE121F3980F00ACE5FF /* ConstraintKind+SpaceBetween.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14FADE021F3980F00ACE5FF /* ConstraintKind+SpaceBetween.swift */; };
+		F14FADE321F398C000ACE5FF /* ConstraintKind+SpaceAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14FADE221F398C000ACE5FF /* ConstraintKind+SpaceAround.swift */; };
 		F151DDA921738B2C00AA0ABE /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151DDA821738B2C00AA0ABE /* TopBar.swift */; };
 		F151DDAC21738CAF00AA0ABE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151DDAB21738CAF00AA0ABE /* Constants.swift */; };
 		F151DDB721739BF500AA0ABE /* Spatial.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F1D369D72171FCDC00F498FA /* Spatial.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -98,6 +100,8 @@
 		F109EE9921E4D5D900FCC696 /* TopBar+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopBar+Constant.swift"; sourceTree = "<group>"; };
 		F109EE9C21E5EA9500FCC696 /* CardView+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+Constant.swift"; sourceTree = "<group>"; };
 		F114AEDB21ABC18F00942A28 /* AnimationTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTestView.swift; sourceTree = "<group>"; };
+		F14FADE021F3980F00ACE5FF /* ConstraintKind+SpaceBetween.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConstraintKind+SpaceBetween.swift"; sourceTree = "<group>"; };
+		F14FADE221F398C000ACE5FF /* ConstraintKind+SpaceAround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConstraintKind+SpaceAround.swift"; sourceTree = "<group>"; };
 		F151DDA821738B2C00AA0ABE /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
 		F151DDAB21738CAF00AA0ABE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F151DDBB2173CABC00AA0ABE /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -296,6 +300,8 @@
 				F17E0E2D21DE327B00EE3027 /* ConstraintKind+Bulk.swift */,
 				F17E0E2B21DE31A800EE3027 /* ConstraintKind+Type.swift */,
 				F17E0E3F21DF35DF00EE3027 /* ConstraintKind.swift */,
+				F14FADE021F3980F00ACE5FF /* ConstraintKind+SpaceBetween.swift */,
+				F14FADE221F398C000ACE5FF /* ConstraintKind+SpaceAround.swift */,
 				F17E0E3C21DF355D00EE3027 /* extra */,
 				F17E0E3B21DF343500EE3027 /* anim */,
 			);
@@ -506,7 +512,9 @@
 				F109EE6D21E383F000FCC696 /* ConstraintKind+Access.swift in Sources */,
 				F17E0E2C21DE31A800EE3027 /* ConstraintKind+Type.swift in Sources */,
 				F1D36A032172039B00F498FA /* Constraint+Activate.swift in Sources */,
+				F14FADE121F3980F00ACE5FF /* ConstraintKind+SpaceBetween.swift in Sources */,
 				F17E0E4021DF35DF00EE3027 /* ConstraintKind.swift in Sources */,
+				F14FADE321F398C000ACE5FF /* ConstraintKind+SpaceAround.swift in Sources */,
 				F1BED70521B7A9BB00A0D3D4 /* VerticalAlign.swift in Sources */,
 				F1BED70321B7A9AE00A0D3D4 /* HorizontalAlign.swift in Sources */,
 				F1D36A002172039B00F498FA /* Alignment.swift in Sources */,

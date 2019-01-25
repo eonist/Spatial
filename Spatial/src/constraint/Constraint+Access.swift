@@ -95,9 +95,9 @@ public extension Array where Element:UIView{
    public func distribute(dir:Axis, align:Alignment = .topLeft, spacing:CGFloat = 0, offset:CGFloat = 0){
       self.activateAnchors { views in
          switch dir {
-         case .horizontal:
+         case .hor:
             return Constraint.distribute(horizontally: views, align: .topCenter, spacing:spacing, offset:offset)
-         case .vertical:
+         case .ver:
             return Constraint.distribute(vertically: views, align: .topCenter, spacing:spacing, offset:offset)
          }
       }
@@ -139,7 +139,9 @@ public extension Array where Element:UIView{
 public extension Array where Element:UIView {
    /**
     * One-liner for activateAnchorsAndSizes (Align and size multiple UIView instance)
-    * - Important: ⚠️️ This method can only use its parent as a size reference, not a different view, maybe in the future we can enable more options
+    * - Important: ⚠️️ This method is a bit beta (WIP)
+    * - Important: ⚠️️ This method can only use it's parent as a size reference, not a different view, maybe in the future we can enable more options
+    * - TODO: ⚠️️ The align part isn't used, try to add it to the code somehow
     * ## Examples: 🤷
     * distributeAndSize(dir:.hor, height:42)
     */
@@ -148,10 +150,10 @@ public extension Array where Element:UIView {
          let anchors:[AnchorConstraint] = {
             // TODO: ⚠️️ this part is a duplicate of the single version of this method, so reuse it somehow
             switch dir {
-            case .horizontal:
-               return Constraint.distribute(horizontally: views, align: .topCenter, spacing:spacing, offset:offset)
-            case .vertical:
-               return Constraint.distribute(vertically: views, align: .topCenter, spacing:spacing, offset:offset)
+            case .hor:
+               return Constraint.distribute(horizontally: views, align: alignTo, spacing:spacing, offset:offset)
+            case .ver:
+               return Constraint.distribute(vertically: views, align: alignTo, spacing:spacing, offset:offset)
             }
          }()
          let sizes:[SizeConstraint] = views.map { view in

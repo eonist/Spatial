@@ -15,7 +15,7 @@ public extension ConstraintKind where Self:UIView{
     *      return (anchor:anchor, size:size)//(anchor, size) 👈 also works
     * }
     */
-   public func applyAnchorAndSize(closure:ConstraintsClosure) {
+   public func applyAnchorAndSize(closure:AnchorAndSizeClosure) {
       self.translatesAutoresizingMaskIntoConstraints = false
       let constraints:AnchorAndSize = closure(self)/*the constraints is returned from the closure*/
       setConstraint(anchor: constraints.anchor, size: constraints.size)

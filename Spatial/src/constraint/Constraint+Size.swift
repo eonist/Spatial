@@ -91,8 +91,8 @@ extension Constraint{
     * let widthConstraint = Constraint.length(square,viewAxis:.horizontal,axis:.vertical)
     */
    public static func length(_ view:UIView, to:UIView, viewAxis:Axis, toAxis:Axis, offset:CGFloat = 0, multiplier:CGFloat = 1) -> NSLayoutConstraint{
-      let viewAttr:NSLayoutConstraint.Attribute = viewAxis == .horizontal ? .width : .height
-      let toAttr:NSLayoutConstraint.Attribute = toAxis == .horizontal ? .width : .height
+      let viewAttr:NSLayoutConstraint.Attribute = viewAxis == .hor ? .width : .height
+      let toAttr:NSLayoutConstraint.Attribute = toAxis == .hor ? .width : .height
       return NSLayoutConstraint(item: view, attribute: viewAttr, relatedBy: .equal, toItem: to, attribute: toAttr, multiplier: multiplier, constant: offset)//NSLayoutAttribute.notAnAttribute
    }
 }
