@@ -3,6 +3,7 @@ import UIKit
 /**
  * Update constraints (For items that are of type ConstraintKind)
  * NOTE: adding a method called activateConstraints doesn't make any sense because you have only anchor and size or either
+ * - TODO: ⚠️️ add anchorAndSize
  */
 public extension ConstraintKind where Self:UIView{
    /**
@@ -63,7 +64,27 @@ extension Array where Element:ConstraintKind.UIViewConstraintKind{
          }
       }
    }
-   // TODO: ⚠️️ add anchorAndSize
-   // TODO: ⚠️️ add anchor
+   /**
+    * One-liner for applyAnchor for many views (vertical)
+    * Example: view.applyAnchor(to:self, align:.top, alignTo:.top)
+    */
+   public func applyAnchors(to:UIView, align:VerticalAlign = .top, alignTo:VerticalAlign = .top, offset:CGFloat = 0, useMargin:Bool = false){
+      self.applyAnchors(axis:.ver) { views in
+         return views.map{
+            Constraint.anchor($0, to: to, align: align, alignTo: alignTo, offset: offset, useMargin: useMargin)
+         }
+      }
+   }
+   /**
+    * One-liner for applyAnchor for many views (horizontal)
+    * Example: view.applyAnchor(to:self, align:.left, alignTo:.left)
+    */
+   public func applyAnchors(to:UIView, align:HorizontalAlign = .left, alignTo:HorizontalAlign = .left, offset:CGFloat = 0, useMargin:Bool = false){
+      self.applyAnchors(axis:.hor) { views in
+         return views.map{
+            Constraint.anchor($0, to: to, align: align, alignTo: alignTo, offset: offset, useMargin: useMargin)
+         }
+      }
+   }
 }
 #endif

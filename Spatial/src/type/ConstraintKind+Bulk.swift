@@ -58,5 +58,23 @@ extension Array where Element:ConstraintKind.UIViewConstraintKind{
       let layoutConstraints:[NSLayoutConstraint] = constraints.reduce([]) { $0 + [$1.x,$1.y] }
       NSLayoutConstraint.activate(layoutConstraints)
    }
+   
+   /**
+    * Apply anchors
+    * - ToDo: ⚠️️ Write doc
+    */
+   public func applyAnchors(axis:Axis, closure:AxisClosure) {
+      self.forEach{$0.translatesAutoresizingMaskIntoConstraints = false}
+      let constraints:[NSLayoutConstraint] = closure(self)/*the constraints is returned from the closure*/
+      self.enumerated().forEach {
+         let anchor:NSLayoutConstraint = constraints[$0.offset]
+         switch axis {
+         case .hor: $0.element.anchor?.x = anchor
+         case .ver: $0.element.anchor?.y = anchor
+         }
+      }
+      let layoutConstraints:[NSLayoutConstraint] = constraints.reduce([]) { $0 + [$1] }
+      NSLayoutConstraint.activate(layoutConstraints)
+   }
 }
 #endif

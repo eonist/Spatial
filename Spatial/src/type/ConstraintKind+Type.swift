@@ -18,5 +18,7 @@ extension Array where Element:ConstraintKind.UIViewConstraintKind{
    public typealias AnchorAndSizeClosure = (_ views:[UIView]) -> AnchorConstraintsAndSizeConstraints
    public typealias SizesClosure = (_ views:[UIView]) -> [SizeConstraint]
    public typealias AnchorClosure = (_ views:[UIView]) -> [AnchorConstraint]
+   public typealias AxisClosure = (_ views:[UIView]) -> [NSLayoutConstraint]
+   
 }
 #endif
