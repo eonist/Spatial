@@ -21,7 +21,6 @@ extension MainView{
       self.addSubview(view)
       view.backgroundColor = .green
 //      view.applyAnchorAndSize(to: self)
-     
       view.anchorAndSize(to: self)
       return view
    }
