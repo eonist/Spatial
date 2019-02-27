@@ -5,10 +5,11 @@ import Foundation
 extension Array where Element:ConstraintKind.UIViewConstraintKind{
    /**
     * Same as spaceBetween but does not pin to sides but rather add equal spacing there as well
-    * - IMPORTANT ⚠️️ only works with UIConstraintView where size is available
+    * - Important: ⚠️️ only works with UIConstraintView where size is available
     * - Description: |--[]--[]--[]--[]--[]--|
     * ## Examples:
     * views.spaceAround(dir: .hor, parent: self)
+    * - Parameter inset: Inset the parent bound
     */
    public func spaceAround(dir:Axis, parent:UIView, inset:UIEdgeInsets = .init()){
       switch dir {

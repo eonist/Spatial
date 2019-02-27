@@ -11,7 +11,7 @@ extension Array where Element:ConstraintKind.UIViewConstraintKind{
     * - Important: ⚠️️ Only works with UIConstraintView's (parent does not have to be UIViewConstraintKind)
     * - Parameter parent: the containg view that has the views as subViews
     * - Parameter dir: which direction you want to distribute items in
-    * - Parameter inset: use this to inset where items should be set, if none is provided parent.bounds is used
+    * - Parameter inset: use this to inset where items should be set, if none is provided parent.bounds is used 
     * ## Examples:
     * views.spaceBetween(dir: .horizontal, parent: self, inset:x)
     */

@@ -60,7 +60,7 @@ extension Array where Element:ConstraintKind.UIViewConstraintKind{
    }
    
    /**
-    * Apply anchors
+    * Apply anchors (axis)
     * - ToDo: ⚠️️ Write doc
     */
    public func applyAnchors(axis:Axis, closure:AxisClosure) {
