@@ -20,6 +20,7 @@ extension UIView {
     * - Parameter useMargin: aligns to autolayout margins or not
     * ## Examples:
     * view.anchorAndSize(to:self,height:100,align:.center,alignTo:.center)//multiplier
+    * - TODO: ⚠️️ the sizeTo param is a bit overkill, just use the to param
     */
    public func anchorAndSize(to:UIView, sizeTo:UIView? = nil, width:CGFloat? = nil, height:CGFloat? = nil, align:Alignment = .topLeft, alignTo:Alignment = .topLeft, multiplier:CGSize = .init(width:1,height:1), offset:CGPoint = .zero, sizeOffset:CGSize = .zero, useMargin:Bool = false){
       self.activateAnchorAndSize { view in
@@ -80,6 +81,15 @@ extension UIView {
    public func size(width:CGFloat, height:CGFloat, multiplier:CGSize = .init(width:1,height:1)) {
       self.activateSize { view in
          return Constraint.size(self, size:.init(width:width,height:height), multiplier:multiplier)
+      }
+   }
+   /**
+    * One-liner for setting the opposite side of another view
+    */
+   public func size(to:UIView,axis:Axis,toAxis:Axis){
+      self.activateConstraint { view in
+//         let toAxis:Axis = axis == Axis.hor ? .ver : .hor
+         return Constraint.length(view, to: to, viewAxis: axis, toAxis: toAxis)
       }
    }
 }

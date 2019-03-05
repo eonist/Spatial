@@ -53,7 +53,7 @@ btn1.distributeAndSize(dir:.vertical, width:96, height:24)
 btn.animate(to:100,align:left,alignTo:.left)
 ```
 ### Todo:
-- Complete the spaceAround and spaceBetween methods
-- Make examples with AutoLayout margins
+- Complete the spaceAround and spaceBetween methods ✅
+- Make examples with AutoLayout margins not
 - Add methods for applyAnchor for horizontal and vertical types
-- Document every param in every declaration (Since the API is more stable now)
+- Document every param in every declaration (Since the API is more stable now) 👈
