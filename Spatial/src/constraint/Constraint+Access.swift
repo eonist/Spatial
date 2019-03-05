@@ -39,6 +39,7 @@ extension UIView {
     * One-liner for anchor (Align a UIView instance)
     * ## Examples:
     * view.anchor(to:self,align:.center,alignTo:.center)
+    * - TODO: ⚠️️ change to -> target (to diff from ver and hor and closure)
     */
    public func anchor(to:UIView, align:Alignment = .topLeft, alignTo:Alignment = .topLeft, offset:CGPoint = .zero, useMargin:Bool = false){
       self.activateAnchor{ view in
@@ -47,18 +48,20 @@ extension UIView {
    }
    /**
     * Horizontally align a UIView instance
+    * - TODO: ⚠️️ change to horTo
     */
-   public func anchor(to:UIView, align:HorizontalAlign = .left, alignTo:HorizontalAlign = .left, offset:CGFloat = 0, useMargin:Bool = false) {
+   public func anchor(horTo:UIView, align:HorizontalAlign = .left, alignTo:HorizontalAlign = .left, offset:CGFloat = 0, useMargin:Bool = false) {
       self.activateConstraints { view in
-         return [Constraint.anchor(view, to: to, align: align, alignTo: alignTo, offset: offset, useMargin: useMargin)]
+         return [Constraint.anchor(view, to: horTo, align: align, alignTo: alignTo, offset: offset, useMargin: useMargin)]
       }
    }
    /**
     * Vertically align a UIView instance
+    *  - TODO: ⚠️️ change to verTo
     */
-   public func anchor(to:UIView, align:VerticalAlign = .top, alignTo:VerticalAlign = .top, offset:CGFloat = 0, useMargin:Bool = false) {
+   public func anchor(verTo:UIView, align:VerticalAlign = .top, alignTo:VerticalAlign = .top, offset:CGFloat = 0, useMargin:Bool = false) {
       self.activateConstraints { view in
-         return [Constraint.anchor(view, to: to, align: align, alignTo: alignTo, offset: offset, useMargin: useMargin)]
+         return [Constraint.anchor(view, to: verTo, align: align, alignTo: alignTo, offset: offset, useMargin: useMargin)]
       }
    }
    /**
@@ -85,10 +88,10 @@ extension UIView {
    }
    /**
     * One-liner for setting the opposite side of another view
+    * - Parameter toAxis: related to this axis
     */
    public func size(to:UIView,axis:Axis,toAxis:Axis){
       self.activateConstraint { view in
-//         let toAxis:Axis = axis == Axis.hor ? .ver : .hor
          return Constraint.length(view, to: to, viewAxis: axis, toAxis: toAxis)
       }
    }
