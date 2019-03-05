@@ -90,9 +90,9 @@ extension UIView {
     * One-liner for setting the opposite side of another view
     * - Parameter toAxis: related to this axis
     */
-   public func size(to:UIView,axis:Axis,toAxis:Axis){
+   public func size(to:UIView,axis:Axis,toAxis:Axis, offset:CGFloat = 0, multiplier:CGFloat = 1){
       self.activateConstraint { view in
-         return Constraint.length(view, to: to, viewAxis: axis, toAxis: toAxis)
+         return Constraint.length(view, to:to, viewAxis:axis, toAxis:toAxis, offset:offset, multiplier:multiplier)
       }
    }
 }
