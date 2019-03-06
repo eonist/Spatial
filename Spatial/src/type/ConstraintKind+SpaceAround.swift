@@ -6,6 +6,7 @@ extension Array where Element:ConstraintKind.UIViewConstraintKind{
    /**
     * Same as spaceBetween but does not pin to sides but rather add equal spacing there as well
     * - Important: ⚠️️ only works with UIConstraintView where size is available
+    * - Important: ⚠️️ only works were the parent.bound are available
     * - Description: |--[]--[]--[]--[]--[]--|
     * ## Examples:
     * views.spaceAround(dir: .hor, parent: self)

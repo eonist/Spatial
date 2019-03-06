@@ -40,6 +40,7 @@ extension UIView {
     * ## Examples:
     * view.anchor(to:self,align:.center,alignTo:.center)
     * - TODO: ⚠️️ change to -> target (to diff from ver and hor and closure)
+    * - TODO: ⚠️️ make to optional, and use superview
     */
    public func anchor(to:UIView, align:Alignment = .topLeft, alignTo:Alignment = .topLeft, offset:CGPoint = .zero, useMargin:Bool = false){
       self.activateAnchor{ view in
@@ -90,9 +91,25 @@ extension UIView {
     * One-liner for setting the opposite side of another view
     * - Parameter toAxis: related to this axis
     */
-   public func size(to:UIView,axis:Axis,toAxis:Axis, offset:CGFloat = 0, multiplier:CGFloat = 1){
+   public func size(to:UIView, axis:Axis,toAxis:Axis, offset:CGFloat = 0, multiplier:CGFloat = 1){
       self.activateConstraint { view in
          return Constraint.length(view, to:to, viewAxis:axis, toAxis:toAxis, offset:offset, multiplier:multiplier)
+      }
+   }
+   /**
+    * Width
+    */
+   func size(width:CGFloat, multiplier:CGFloat = 1){
+      self.activateConstraint { view in
+         return Constraint.width(view, width: width, multiplier: multiplier)
+      }
+   }
+   /**
+    * Height
+    */
+   func size(height:CGFloat, multiplier:CGFloat = 1){
+      self.activateConstraint { view in
+         return Constraint.height(view, height: height, multiplier: multiplier)
       }
    }
 }

@@ -57,3 +57,4 @@ btn.animate(to:100,align:left,alignTo:.left)
 - Make examples with AutoLayout margins not
 - Add methods for applyAnchor for horizontal and vertical types
 - Document every param in every declaration (Since the API is more stable now) 👈
+- Consider renaming anchor and size to pin and fit
