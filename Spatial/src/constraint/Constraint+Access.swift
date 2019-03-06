@@ -99,7 +99,7 @@ extension UIView {
    /**
     * Width
     */
-   func size(width:CGFloat, multiplier:CGFloat = 1){
+   public func size(width:CGFloat, multiplier:CGFloat = 1){
       self.activateConstraint { view in
          return Constraint.width(view, width: width, multiplier: multiplier)
       }
@@ -107,7 +107,7 @@ extension UIView {
    /**
     * Height
     */
-   func size(height:CGFloat, multiplier:CGFloat = 1){
+   public func size(height:CGFloat, multiplier:CGFloat = 1){
       self.activateConstraint { view in
          return Constraint.height(view, height: height, multiplier: multiplier)
       }
