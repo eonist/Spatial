@@ -43,22 +43,54 @@ public class Constraint {
 fileprivate class Util{
    /**
     * For aligning in the x axis (internal)
+    * - Note: Layout margin is o ly available for ios and tvos
     */
    static func layoutAttr(align:HorizontalAlign, useMargin:Bool = false) -> NSLayoutConstraint.Attribute{
       switch align{
-      case .left: return useMargin ? NSLayoutConstraint.Attribute.leftMargin : NSLayoutConstraint.Attribute.left //fatalError("err")
-      case .right: return useMargin ? NSLayoutConstraint.Attribute.rightMargin : NSLayoutConstraint.Attribute.right
-      case .centerX: return useMargin ? NSLayoutConstraint.Attribute.centerXWithinMargins : NSLayoutConstraint.Attribute.centerX
+      case .left:
+         #if os(iOS)
+         if useMargin {
+            return  NSLayoutConstraint.Attribute.leftMargin
+         }
+         #endif
+         return NSLayoutConstraint.Attribute.left //fatalError("err")
+      case .right:
+         #if os(iOS)
+         if useMargin {
+            NSLayoutConstraint.Attribute.rightMargin
+         }
+         #endif
+         return  NSLayoutConstraint.Attribute.right
+      case .centerX:
+         #if os(iOS)
+         if useMargin {
+            NSLayoutConstraint.Attribute.centerXWithinMargins
+         }
+         #endif
+         return NSLayoutConstraint.Attribute.centerX
       }
    }
    /**
     * For aligning in the y axis (internal)
+    * - Note: Layout margin is o ly available for ios and tvos
     */
    static func layoutAttr(align:VerticalAlign, useMargin:Bool = false) -> NSLayoutConstraint.Attribute{
       switch align{
-      case .top: return useMargin ? NSLayoutConstraint.Attribute.topMargin : NSLayoutConstraint.Attribute.top
-      case .bottom: return useMargin ? NSLayoutConstraint.Attribute.bottomMargin : NSLayoutConstraint.Attribute.bottom
-      case .centerY: return useMargin ? NSLayoutConstraint.Attribute.centerYWithinMargins : NSLayoutConstraint.Attribute.centerY
+      case .top:
+         #if os(iOS)
+         if useMargin { return NSLayoutConstraint.Attribute.topMargin   }
+         #endif
+         return NSLayoutConstraint.Attribute.top
+      case .bottom:
+          #if os(iOS)
+          if useMargin { return NSLayoutConstraint.Attribute.bottomMargin  }
+          #endif
+         return NSLayoutConstraint.Attribute.bottom
+      case .centerY:
+         #if os(iOS)
+         if useMargin {return NSLayoutConstraint.Attribute.centerYWithinMargins}
+         #endif
+         return NSLayoutConstraint.Attribute.centerY
       }
    }
 }

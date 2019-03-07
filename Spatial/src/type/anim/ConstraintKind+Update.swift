@@ -1,4 +1,4 @@
-
+#if os(iOS)
 import Foundation
 /**
  * Offset horizontally or vertically
@@ -56,7 +56,7 @@ public extension ConstraintKind where Self:View{
     * PARAM: multiplier: only applies to the size (⚠️️ NOT IMPLEMENTED YET ⚠️️)
     */
    public func update(rect:CGRect, align:Alignment, alignTo:Alignment/*, multiplier:CGPoint*/){
-      guard let superview:UIView = self.superview else {Swift.print("err superview not available");return}
+      guard let superview:View = self.superview else {Swift.print("err superview not available");return}
       guard let oldAnchor = self.anchor else {Swift.print("err anchor not available");return}
       guard let oldSize = self.size else {Swift.print("err sice not available");return}
       NSLayoutConstraint.deactivate([oldAnchor.y, oldAnchor.x, oldSize.w, oldSize.h])
@@ -77,7 +77,7 @@ extension ConstraintKind where Self:View{
     * - Note: used in conjunction with animation
     */
    fileprivate func updateAnchor(_ closure:UpdateAnchorClosure) {
-      guard let superview:UIView = self.superview else {Swift.print("err superview not available");return}
+      guard let superview:View = self.superview else {Swift.print("err superview not available");return}
       guard let oldAnchor = self.anchor else {Swift.print("err anchor not available");return}
       closure(superview,oldAnchor)
       superview.layoutIfNeeded()/*The superview is responsible for updating subView constraint updates*/
@@ -87,10 +87,10 @@ extension ConstraintKind where Self:View{
     * - Note: used in conjunction with animation
     */
    fileprivate func updateSize(_ closure:UpdateSizeClosure) {
-      guard let superview:UIView = self.superview else {Swift.print("err superview not available");return}
+      guard let superview:View = self.superview else {Swift.print("err superview not available");return}
       guard let oldSize = self.size else {Swift.print("err sice not available");return}
       closure(superview,oldSize)
       superview.layoutIfNeeded()/*The superview is responsible for updating subView constraint updates*/
    }
 }
-
+#endif

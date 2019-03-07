@@ -49,7 +49,7 @@ fileprivate class SpaceAroundUtil{
    /**
     * Vertical
     */
-   static func spaceAround(vertically parent:UIView, views:[ConstraintKind.ViewConstraintKind], inset:UIEdgeInsets) {
+   static func spaceAround(vertically parent:View, views:[ConstraintKind.ViewConstraintKind], inset:EdgeInsets) {
       let rect:CGRect = parent.bounds.inset(by: inset)
       let itemVoid:CGFloat = {
          let totH:CGFloat = views.reduce(0){$0 + ($1.size?.h.constant ?? 0)}/*find the totalW of all items*/
