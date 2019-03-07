@@ -1,9 +1,9 @@
-#if os(iOS)
-import UIKit
+ 
+import Foundation
 /**
  * Update arrays of UIViewConstraintKind
  */
-extension Array where Element:ConstraintKind.UIViewConstraintKind{
+extension Array where Element:ConstraintKind.ViewConstraintKind{
    /**
     * Apply constraints on an array of UIViewConstraintKind
     * Example:
@@ -77,4 +77,4 @@ extension Array where Element:ConstraintKind.UIViewConstraintKind{
       NSLayoutConstraint.activate(layoutConstraints)
    }
 }
-#endif
+

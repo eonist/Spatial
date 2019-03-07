@@ -1,5 +1,4 @@
-#if os(iOS)
-import UIKit
+import Foundation
 /**
  * Positional constraints (Aligning relative to another view (x,y))
  * - Remark: Snapkit and Carthography are too clever and caters to too many facets of autolayout. This library is just a simple extension that does basic autolayout while reducing the setup time in half.
@@ -17,7 +16,7 @@ public class Constraint {
     *    return (a,s)
     * }
     */
-   public static func anchor(_ view:UIView, to:UIView, align:Alignment, alignTo:Alignment, offset:CGPoint = CGPoint(), useMargin:Bool = false) -> AnchorConstraint {/*,offset:CGPoint = CGPoint()*/
+   public static func anchor(_ view:View, to:View, align:Alignment, alignTo:Alignment, offset:CGPoint = CGPoint(), useMargin:Bool = false) -> AnchorConstraint {/*,offset:CGPoint = CGPoint()*/
       let hor:NSLayoutConstraint = Constraint.anchor(view, to: to, align: align.horAlign, alignTo: alignTo.horAlign,offset:offset.x,useMargin:useMargin)
       let ver:NSLayoutConstraint = Constraint.anchor(view, to: to, align: align.verAlign, alignTo: alignTo.verAlign,offset:offset.y,useMargin:useMargin)
       return (hor,ver)
@@ -25,13 +24,13 @@ public class Constraint {
    /**
     * Horizontal
     */
-   public static func anchor(_ view:UIView, to:UIView, align:HorizontalAlign, alignTo:HorizontalAlign, offset:CGFloat = 0, useMargin:Bool = false) -> NSLayoutConstraint {/*,offset:CGPoint = CGPoint()*/
+   public static func anchor(_ view:View, to:View, align:HorizontalAlign, alignTo:HorizontalAlign, offset:CGFloat = 0, useMargin:Bool = false) -> NSLayoutConstraint {/*,offset:CGPoint = CGPoint()*/
       return NSLayoutConstraint(item: view, attribute: Util.layoutAttr(align:align), relatedBy: .equal, toItem: to, attribute: Util.layoutAttr(align:alignTo,useMargin:useMargin), multiplier: 1.0, constant: offset)
    }
    /**
     * Vertical
     */
-   public static func anchor(_ view:UIView, to:UIView, align:VerticalAlign, alignTo:VerticalAlign, offset:CGFloat = 0, useMargin:Bool = false) -> NSLayoutConstraint {/*,offset:CGPoint = CGPoint()*/
+   public static func anchor(_ view:View, to:View, align:VerticalAlign, alignTo:VerticalAlign, offset:CGFloat = 0, useMargin:Bool = false) -> NSLayoutConstraint {/*,offset:CGPoint = CGPoint()*/
       let attr = Util.layoutAttr(align:align)
       let relatedByAttr = Util.layoutAttr(align:alignTo,useMargin:useMargin)
       return NSLayoutConstraint(item:view, attribute:attr , relatedBy:.equal, toItem:to, attribute:relatedByAttr, multiplier:1.0, constant:offset)
@@ -63,4 +62,3 @@ fileprivate class Util{
       }
    }
 }
-#endif

@@ -2,7 +2,7 @@ import Foundation
 /**
  * Extension for spaceAround method
  */
-extension Array where Element:ConstraintKind.UIViewConstraintKind{
+extension Array where Element:ConstraintKind.ViewConstraintKind{
    /**
     * Same as spaceBetween but does not pin to sides but rather add equal spacing there as well
     * - Important: ⚠️️ only works with UIConstraintView where size is available
@@ -12,7 +12,7 @@ extension Array where Element:ConstraintKind.UIViewConstraintKind{
     * views.spaceAround(dir: .hor, parent: self)
     * - Parameter inset: Inset the parent bound
     */
-   public func spaceAround(dir:Axis, parent:UIView, inset:UIEdgeInsets = .init()){
+   public func spaceAround(dir:Axis, parent:View, inset:EdgeInsets = .init()){
       switch dir {
       case .hor:
          SpaceAroundUtil.spaceAround(horizontally:parent, views:self, inset:inset)
@@ -28,7 +28,7 @@ fileprivate class SpaceAroundUtil{
    /**
     * Horizontal
     */
-   static func spaceAround(horizontally parent:UIView, views:[ConstraintKind.UIViewConstraintKind], inset:UIEdgeInsets) {
+   static func spaceAround(horizontally parent:View, views:[ConstraintKind.ViewConstraintKind], inset:EdgeInsets) {
       let rect:CGRect = parent.bounds.inset(by: inset)
       let itemVoid:CGFloat = {
          let totW:CGFloat = views.reduce(0){$0 + ($1.size?.w.constant ?? 0)}/*find the totalW of all items*/
@@ -49,7 +49,7 @@ fileprivate class SpaceAroundUtil{
    /**
     * Vertical
     */
-   static func spaceAround(vertically parent:UIView, views:[ConstraintKind.UIViewConstraintKind], inset:UIEdgeInsets) {
+   static func spaceAround(vertically parent:UIView, views:[ConstraintKind.ViewConstraintKind], inset:UIEdgeInsets) {
       let rect:CGRect = parent.bounds.inset(by: inset)
       let itemVoid:CGFloat = {
          let totH:CGFloat = views.reduce(0){$0 + ($1.size?.h.constant ?? 0)}/*find the totalW of all items*/

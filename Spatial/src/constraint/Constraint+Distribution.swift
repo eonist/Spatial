@@ -1,5 +1,4 @@
-#if os(iOS)
-import UIKit
+import Foundation
 /**
  * Distribute items horizontally or vertically
  */
@@ -22,7 +21,7 @@ extension Constraint {
     * - Paramerer align: at which corner should the first item align to
     * - Parameter views: the views to distribute in a row
     */
-   public static func distribute(horizontally views:[UIView], align:Alignment = .topLeft, spacing:CGFloat = 0, offset:CGFloat = 0) -> [AnchorConstraint] {
+   public static func distribute(horizontally views:[View], align:Alignment = .topLeft, spacing:CGFloat = 0, offset:CGFloat = 0) -> [AnchorConstraint] {
       let xConstraints:[NSLayoutConstraint] = distribute(views, axis:.hor, align:align, spacing:spacing, offset:offset)
       let yConstraints:[NSLayoutConstraint] = views.map{ view in
          guard let superView = view.superview else {fatalError("View must have superview")}
@@ -33,7 +32,7 @@ extension Constraint {
    /**
     * - IMPORTANT ⚠️️ Sets only anchors not sizes
     */
-   public static func distribute(vertically views:[UIView], align:Alignment = .topLeft, spacing:CGFloat = 0, offset:CGFloat = 0) -> [AnchorConstraint] {
+   public static func distribute(vertically views:[View], align:Alignment = .topLeft, spacing:CGFloat = 0, offset:CGFloat = 0) -> [AnchorConstraint] {
       let xConstraints:[NSLayoutConstraint] = views.map{ view in
          guard let superView = view.superview else {fatalError("View must have superview")}
          return Constraint.anchor(view, to: superView, align: align.horAlign, alignTo: align.horAlign)
@@ -51,7 +50,7 @@ extension Constraint{
    /**
     * Distributes vertically or horizontally
     */
-   fileprivate static func distribute(_ views:[UIView], axis:Axis, align:Alignment, spacing:CGFloat = 0, offset:CGFloat = 0) -> [NSLayoutConstraint]{
+   fileprivate static func distribute(_ views:[View], axis:Axis, align:Alignment, spacing:CGFloat = 0, offset:CGFloat = 0) -> [NSLayoutConstraint]{
       switch (align.horAlign, align.verAlign) {
       case (.left, _),(_ , .top): return distribute(fromStart:views, axis:axis, spacing:spacing, offset:offset)
       case (.right, _),(_ , .bottom): return distribute(fromEnd:views, axis:axis, spacing:spacing, offset:offset)
@@ -61,11 +60,11 @@ extension Constraint{
    /**
     * Distributes from start to end
     */
-   fileprivate static func distribute(fromStart views:[UIView], axis:Axis, spacing:CGFloat = 0, offset:CGFloat = 0) -> [NSLayoutConstraint] {
+   fileprivate static func distribute(fromStart views:[View], axis:Axis, spacing:CGFloat = 0, offset:CGFloat = 0) -> [NSLayoutConstraint] {
       var anchors:[NSLayoutConstraint] = []
-      var prevView:UIView?
+      var prevView:View?
       views.enumerated().forEach { (_,view) in
-         guard let toView:UIView = prevView ?? view.superview else {fatalError("View must have superview")}
+         guard let toView:View = prevView ?? view.superview else {fatalError("View must have superview")}
          let offset = prevView == nil ? offset : 0/*only the first view gets offset*/
          let spacing:CGFloat = prevView != nil ? spacing : 0/*all subsequent views gets spacing*/
          switch axis {
@@ -83,11 +82,11 @@ extension Constraint{
    /**
     * Aligns from end to start
     */
-   fileprivate static func distribute(fromEnd views:[UIView], axis:Axis, spacing:CGFloat = 0, offset:CGFloat) -> [NSLayoutConstraint] {
+   fileprivate static func distribute(fromEnd views:[View], axis:Axis, spacing:CGFloat = 0, offset:CGFloat) -> [NSLayoutConstraint] {
       var anchors:[NSLayoutConstraint] = []
-      var prevView:UIView?
+      var prevView:View?
       for view in views.reversed() {/*Move backwards*/
-         guard let toView:UIView = prevView ?? view.superview else {fatalError("View must have superview")}
+         guard let toView:View = prevView ?? view.superview else {fatalError("View must have superview")}
          let offset = prevView == nil ? offset : 0
          let spacing:CGFloat = prevView != nil ? spacing : 0 /*All subsequent views gets spacing*/
          switch axis {
@@ -103,4 +102,3 @@ extension Constraint{
       return anchors
    }
 }
-#endif

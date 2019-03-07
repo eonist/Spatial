@@ -1,10 +1,9 @@
-#if os(iOS)
-import UIKit
+import Foundation
 /**
  * AutoLayout Sugar for UIView
  * NOTE: Method overloading doesn't work with closures so each method name needs to be unique 
  */
-extension UIView{
+extension View{
    /**
     * ## EXAMPLE:
     * button.activateConstraints { view in
@@ -60,4 +59,3 @@ extension UIView{
       NSLayoutConstraint.activate(constraints)
    }
 }
-#endif

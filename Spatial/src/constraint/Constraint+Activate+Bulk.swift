@@ -1,9 +1,8 @@
-#if os(iOS)
-import UIKit
+import Foundation
 /**
  * Array
  */
-public extension Array where Element:UIView{
+public extension Array where Element:View{
    /**
     * AutoLayout Sugar for UIView's (Multiple)
     * ## Examples:
@@ -58,4 +57,3 @@ public extension Array where Element:UIView{
       NSLayoutConstraint.activate(constraints)
    }
 }
-#endif

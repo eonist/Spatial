@@ -1,12 +1,12 @@
-#if os(iOS)
-import UIKit
+
+import Foundation
 /**
  * Offset horizontally or vertically
  */
-public extension ConstraintKind where Self:UIView{
+public extension ConstraintKind where Self:View{
    /*Makes code easier to read*/
-   typealias UpdateAnchorClosure = (_ superView:UIView,_ oldAnchor:AnchorConstraint) -> Void
-   typealias UpdateSizeClosure = (_ superView:UIView,_ oldAnchor:SizeConstraint) -> Void
+   typealias UpdateAnchorClosure = (_ superView:View,_ oldAnchor:AnchorConstraint) -> Void
+   typealias UpdateSizeClosure = (_ superView:View,_ oldAnchor:SizeConstraint) -> Void
    /**
     * Updates horizontal anchor
     */
@@ -71,7 +71,7 @@ public extension ConstraintKind where Self:UIView{
 /**
  * Internal
  */
-extension ConstraintKind where Self:UIView{
+extension ConstraintKind where Self:View{
    /**
     * Internal (Anchor)
     * - Note: used in conjunction with animation
@@ -93,4 +93,4 @@ extension ConstraintKind where Self:UIView{
       superview.layoutIfNeeded()/*The superview is responsible for updating subView constraint updates*/
    }
 }
-#endif
+

@@ -2,7 +2,7 @@ import Foundation
 /**
  * Space items evenly to fill length
  */
-extension Array where Element:ConstraintKind.UIViewConstraintKind{
+extension Array where Element:ConstraintKind.ViewConstraintKind{
    /**
     * Aligns all items horizontally from the absolute start to absolute end and adds equal spacing between them
     * - Description: |[]--[]--[]--[]--[]|
@@ -15,7 +15,7 @@ extension Array where Element:ConstraintKind.UIViewConstraintKind{
     * ## Examples:
     * views.spaceBetween(dir: .horizontal, parent: self, inset:x)
     */
-   public func spaceBetween(dir:Axis, parent:UIView, inset:UIEdgeInsets = .init()){//add edgeinset instead of rect, then applythat directly to rect
+   public func spaceBetween(dir:Axis, parent:View, inset:EdgeInsets = .init()){//add edgeinset instead of rect, then applythat directly to rect
       switch dir {
       case .hor:
          SpaceBetweenUtil.spaceBetween(horizontally:parent, views:self, inset:inset)
@@ -31,7 +31,7 @@ fileprivate class SpaceBetweenUtil{
    /**
     * Horizontal (new)
     */
-   static func spaceBetween(horizontally parent:UIView, views:[ConstraintKind.UIViewConstraintKind], inset:UIEdgeInsets) {
+   static func spaceBetween(horizontally parent:View, views:[ConstraintKind.ViewConstraintKind], inset:EdgeInsets) {
       let rect:CGRect = parent.bounds.inset(by: inset)
       let itemVoid:CGFloat = {
          let totW:CGFloat = views.reduce(0){$0 + ($1.size?.w.constant ?? 0)}/*find the totalW of all items*/
@@ -52,7 +52,7 @@ fileprivate class SpaceBetweenUtil{
    /**
     * Vertical (new)
     */
-   static func spaceBetween(vertically parent:UIView, views:[ConstraintKind.UIViewConstraintKind], inset:UIEdgeInsets) {
+   static func spaceBetween(vertically parent:View, views:[ConstraintKind.ViewConstraintKind], inset:EdgeInsets) {
       let rect:CGRect = parent.bounds.inset(by: inset)
       let itemVoid:CGFloat = {
          let totH:CGFloat = views.reduce(0){$0 + ($1.size?.h.constant ?? 0)}/*find the totalW of all items*/

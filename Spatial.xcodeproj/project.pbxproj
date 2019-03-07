@@ -40,6 +40,7 @@
 		F17E0E4021DF35DF00EE3027 /* ConstraintKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3F21DF35DF00EE3027 /* ConstraintKind.swift */; };
 		F17E0E4321DF467E00EE3027 /* AnimationTestView+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E4221DF467E00EE3027 /* AnimationTestView+Create.swift */; };
 		F17E38732174C15D009C10B2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E38722174C15D009C10B2 /* MainView.swift */; };
+		F185A3A02231974E00AE66B2 /* Hybrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F185A39F2231974E00AE66B2 /* Hybrid.swift */; };
 		F1BD0417219B06F200A4A46F /* ConstraintKind+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BD0416219B06F200A4A46F /* ConstraintKind+Animate.swift */; };
 		F1BED6FF21B7A99000A0D3D4 /* AlignType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BED6FE21B7A99000A0D3D4 /* AlignType.swift */; };
 		F1BED70121B7A99D00A0D3D4 /* AxisType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BED70021B7A99D00A0D3D4 /* AxisType.swift */; };
@@ -117,6 +118,7 @@
 		F17E0E3F21DF35DF00EE3027 /* ConstraintKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintKind.swift; sourceTree = "<group>"; };
 		F17E0E4221DF467E00EE3027 /* AnimationTestView+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimationTestView+Create.swift"; sourceTree = "<group>"; };
 		F17E38722174C15D009C10B2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		F185A39F2231974E00AE66B2 /* Hybrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hybrid.swift; sourceTree = "<group>"; };
 		F1BD0416219B06F200A4A46F /* ConstraintKind+Animate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConstraintKind+Animate.swift"; sourceTree = "<group>"; };
 		F1BED6FE21B7A99000A0D3D4 /* AlignType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignType.swift; sourceTree = "<group>"; };
 		F1BED70021B7A99D00A0D3D4 /* AxisType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisType.swift; sourceTree = "<group>"; };
@@ -253,6 +255,14 @@
 			path = animTest;
 			sourceTree = "<group>";
 		};
+		F185A39E2231969100AE66B2 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				F185A39F2231974E00AE66B2 /* Hybrid.swift */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
 		F1BBDD132180B4FD008DBC9B /* content */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +379,7 @@
 		F1D36A04217203AA00F498FA /* src */ = {
 			isa = PBXGroup;
 			children = (
+				F185A39E2231969100AE66B2 /* common */,
 				F1BED70D21B7B2F200A0D3D4 /* type */,
 				F1BED70C21B7B2D600A0D3D4 /* constraint */,
 				F1BED6FD21B7A97300A0D3D4 /* align */,
@@ -507,6 +518,7 @@
 				F1BED70121B7A99D00A0D3D4 /* AxisType.swift in Sources */,
 				F1BD0417219B06F200A4A46F /* ConstraintKind+Animate.swift in Sources */,
 				F1BED70921B7B12400A0D3D4 /* Alignment+Extension.swift in Sources */,
+				F185A3A02231974E00AE66B2 /* Hybrid.swift in Sources */,
 				F17E0E3221DE36F300EE3027 /* Constraint+Type.swift in Sources */,
 				F17E0E2E21DE327B00EE3027 /* ConstraintKind+Bulk.swift in Sources */,
 				F109EE6D21E383F000FCC696 /* ConstraintKind+Access.swift in Sources */,

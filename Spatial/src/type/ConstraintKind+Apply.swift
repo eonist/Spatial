@@ -1,10 +1,10 @@
-#if os(iOS)
-import UIKit
+
+import Foundation
 /**
  * Update constraints (For items that are of type ConstraintKind)
  * NOTE: adding a method called activateConstraints doesn't make any sense because you have only anchor and size or either
  */
-public extension ConstraintKind where Self:UIView{
+public extension ConstraintKind where Self:View{
    /**
     * Activates and sets size and anchor to a ConstraintKind
     * - Note Same as UIView().activateConstraint... but also sets size and anchor constraints (ConstraintKind) (For animation etc)
@@ -50,4 +50,4 @@ public extension ConstraintKind where Self:UIView{
       self.size = size
    }
 }
-#endif
+

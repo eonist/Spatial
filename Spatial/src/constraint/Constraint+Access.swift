@@ -1,14 +1,14 @@
-import UIKit
+import Foundation
 /**
  * Convenient extension methods for UIView (One-liners)
  * Definition: Convenience the state of being able to proceed with something without difficulty
  * TODO: ⚠️️ Make these methods for [UIView] as well
  * TODO: Rename Constraint+Access to something more meaningful
  */
-extension UIView {
+extension View {
    /**
     * One-liner for activateAnchorAndSize (Align and size a UIView instance)
-    * - Parameter to: anchor to this view
+    * - Parameter to: anchor to this view, if sizeTo is not set, then to is used for sizing
     * - Parameter sizeTo: provide this if you need to base the size on another view
     * - Parameter width: provide this if you want to use a fixed width
     * - Parameter height: provide this if you want to use a fixed height
@@ -20,9 +20,8 @@ extension UIView {
     * - Parameter useMargin: aligns to autolayout margins or not
     * ## Examples:
     * view.anchorAndSize(to:self,height:100,align:.center,alignTo:.center)//multiplier
-    * - TODO: ⚠️️ the sizeTo param is a bit overkill, just use the to param
     */
-   public func anchorAndSize(to:UIView, sizeTo:UIView? = nil, width:CGFloat? = nil, height:CGFloat? = nil, align:Alignment = .topLeft, alignTo:Alignment = .topLeft, multiplier:CGSize = .init(width:1,height:1), offset:CGPoint = .zero, sizeOffset:CGSize = .zero, useMargin:Bool = false){
+   public func anchorAndSize(to:View, sizeTo:View? = nil, width:CGFloat? = nil, height:CGFloat? = nil, align:Alignment = .topLeft, alignTo:Alignment = .topLeft, multiplier:CGSize = .init(width:1,height:1), offset:CGPoint = .zero, sizeOffset:CGSize = .zero, useMargin:Bool = false){
       self.activateAnchorAndSize { view in
          let a = Constraint.anchor(self, to: to, align: align, alignTo: alignTo, offset: offset, useMargin: useMargin)
          let s:SizeConstraint = {
@@ -42,7 +41,7 @@ extension UIView {
     * - TODO: ⚠️️ change to -> target (to diff from ver and hor and closure)
     * - TODO: ⚠️️ make to optional, and use superview
     */
-   public func anchor(to:UIView, align:Alignment = .topLeft, alignTo:Alignment = .topLeft, offset:CGPoint = .zero, useMargin:Bool = false){
+   public func anchor(to:View, align:Alignment = .topLeft, alignTo:Alignment = .topLeft, offset:CGPoint = .zero, useMargin:Bool = false){
       self.activateAnchor{ view in
          return Constraint.anchor(self, to: to, align: align, alignTo: alignTo, offset: offset, useMargin: useMargin)
       }
@@ -51,7 +50,7 @@ extension UIView {
     * Horizontally align a UIView instance
     * - TODO: ⚠️️ change to horTo
     */
-   public func anchor(horTo:UIView, align:HorizontalAlign = .left, alignTo:HorizontalAlign = .left, offset:CGFloat = 0, useMargin:Bool = false) {
+   public func anchor(horTo:View, align:HorizontalAlign = .left, alignTo:HorizontalAlign = .left, offset:CGFloat = 0, useMargin:Bool = false) {
       self.activateConstraints { view in
          return [Constraint.anchor(view, to: horTo, align: align, alignTo: alignTo, offset: offset, useMargin: useMargin)]
       }
@@ -60,7 +59,7 @@ extension UIView {
     * Vertically align a UIView instance
     *  - TODO: ⚠️️ change to verTo
     */
-   public func anchor(verTo:UIView, align:VerticalAlign = .top, alignTo:VerticalAlign = .top, offset:CGFloat = 0, useMargin:Bool = false) {
+   public func anchor(verTo:View, align:VerticalAlign = .top, alignTo:VerticalAlign = .top, offset:CGFloat = 0, useMargin:Bool = false) {
       self.activateConstraints { view in
          return [Constraint.anchor(view, to: verTo, align: align, alignTo: alignTo, offset: offset, useMargin: useMargin)]
       }
@@ -71,7 +70,7 @@ extension UIView {
     * view.size(to:self)
     * - ToDo: ⚠️️ Maybe the to could be optional, 
     */
-   public func size(to:UIView, width:CGFloat? = nil, height:CGFloat? = nil, offset:CGSize = .zero, multiplier:CGSize = .init(width:1,height:1)){
+   public func size(to:View, width:CGFloat? = nil, height:CGFloat? = nil, offset:CGSize = .zero, multiplier:CGSize = .init(width:1,height:1)){
       self.activateSize { view in
          return Constraint.size(self, to: to, width: width, height: height, offset: offset, multiplier: multiplier)
       }
@@ -91,7 +90,7 @@ extension UIView {
     * One-liner for setting the opposite side of another view
     * - Parameter toAxis: related to this axis
     */
-   public func size(to:UIView, axis:Axis,toAxis:Axis, offset:CGFloat = 0, multiplier:CGFloat = 1){
+   public func size(to:View, axis:Axis,toAxis:Axis, offset:CGFloat = 0, multiplier:CGFloat = 1){
       self.activateConstraint { view in
          return Constraint.length(view, to:to, viewAxis:axis, toAxis:toAxis, offset:offset, multiplier:multiplier)
       }
@@ -116,7 +115,7 @@ extension UIView {
 /**
  * One-liner for anchoring multiple views (Bulk)
  */
-public extension Array where Element:UIView{
+public extension Array where Element:View{
    /**
     * Anchoring for an array of views
     * - Parameter dir: Different between vertical and horizontal
@@ -136,14 +135,14 @@ public extension Array where Element:UIView{
 /**
  * One-liner for sizing multiple views (Bulk)
  */
-public extension Array where Element:UIView{
+public extension Array where Element:View{
    /**
     * Size multiple UIView instance
     * - Parameter offset: Add margin by providing a size offset
     * ## Examples:
     * [btn1,btn2,btn3].size(to:self, height:24, offset:.init(width:-40,height:0))
     */
-   public func size(to:UIView, width:CGFloat? = nil, height:CGFloat? = nil, offset:CGSize = .zero, multiplier:CGSize = .init(width:1,height:1)){
+   public func size(to:View, width:CGFloat? = nil, height:CGFloat? = nil, offset:CGSize = .zero, multiplier:CGSize = .init(width:1,height:1)){
       self.activateSizes { views in
          return views.map{
             return Constraint.size($0, to: to, width: width, height: height, offset: offset, multiplier: multiplier)
@@ -166,7 +165,7 @@ public extension Array where Element:UIView{
 /**
  * One-liner for sizing and anchoring multiple views (Bulk)
  */
-public extension Array where Element:UIView {
+public extension Array where Element:View {
    /**
     * One-liner for activateAnchorsAndSizes (Align and size multiple UIView instance)
     * - Important: ⚠️️ This method is a bit beta (WIP)
