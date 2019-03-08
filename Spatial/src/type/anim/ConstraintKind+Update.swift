@@ -68,9 +68,9 @@ public extension ConstraintKind where Self:View{
       superview.layoutIfNeeded()/*The superview is responsible for updating subView constraint updates*/
       #elseif os(macOS)
 //      superview.layoutSubtreeIfNeeded()//experimental ⚠️️
-      //      superview.updateConstraintsForSubtreeIfNeeded()
+            superview.updateConstraintsForSubtreeIfNeeded()
       //      superview.displayIfNeeded()
-      superview.layout()
+//      superview.layout()🚫
       #endif
    }
 }
@@ -90,9 +90,9 @@ extension ConstraintKind where Self:View{
       superview.layoutIfNeeded()/*The superview is responsible for updating subView constraint updates*/
       #elseif os(macOS)
 //      superview.layoutSubtreeIfNeeded()//experimental ⚠️️
-      //      superview.updateConstraintsForSubtreeIfNeeded()
+            superview.updateConstraintsForSubtreeIfNeeded()
       //      superview.displayIfNeeded()
-      superview.layout()
+//      superview.layout()🚫
       #endif
    }
    /**
@@ -107,9 +107,9 @@ extension ConstraintKind where Self:View{
       superview.layoutIfNeeded()/*The superview is responsible for updating subView constraint updates*/
       #elseif os(macOS)
 //      superview.layoutSubtreeIfNeeded()//experimental ⚠️️
-//      superview.updateConstraintsForSubtreeIfNeeded()
+      superview.updateConstraintsForSubtreeIfNeeded()
 //      superview.displayIfNeeded()
-      superview.layout()
+//      superview.layout()🚫
       #endif
    }
 }
