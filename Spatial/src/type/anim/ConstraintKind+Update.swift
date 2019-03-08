@@ -1,4 +1,3 @@
-#if os(iOS)
 import Foundation
 /**
  * Offset horizontally or vertically
@@ -65,7 +64,13 @@ public extension ConstraintKind where Self:View{
       NSLayoutConstraint.activate([newAnchor.x,newAnchor.y,newSize.w,newSize.h])
       self.anchor = newAnchor
       self.size = newSize
+      #if os(iOS)
       superview.layoutIfNeeded()/*The superview is responsible for updating subView constraint updates*/
+      #elseif os(macOS)
+      superview.layoutSubtreeIfNeeded()//experimental ⚠️️
+      //      superview.updateConstraintsForSubtreeIfNeeded()
+      //      superview.displayIfNeeded()
+      #endif
    }
 }
 /**
@@ -80,7 +85,13 @@ extension ConstraintKind where Self:View{
       guard let superview:View = self.superview else {Swift.print("err superview not available");return}
       guard let oldAnchor = self.anchor else {Swift.print("err anchor not available");return}
       closure(superview,oldAnchor)
+      #if os(iOS)
       superview.layoutIfNeeded()/*The superview is responsible for updating subView constraint updates*/
+      #elseif os(macOS)
+      superview.layoutSubtreeIfNeeded()//experimental ⚠️️
+      //      superview.updateConstraintsForSubtreeIfNeeded()
+      //      superview.displayIfNeeded()
+      #endif
    }
    /**
     * Internal (Size)
@@ -90,7 +101,12 @@ extension ConstraintKind where Self:View{
       guard let superview:View = self.superview else {Swift.print("err superview not available");return}
       guard let oldSize = self.size else {Swift.print("err sice not available");return}
       closure(superview,oldSize)
+      #if os(iOS)
       superview.layoutIfNeeded()/*The superview is responsible for updating subView constraint updates*/
+      #elseif os(macOS)
+      superview.layoutSubtreeIfNeeded()//experimental ⚠️️
+//      superview.updateConstraintsForSubtreeIfNeeded()
+//      superview.displayIfNeeded()
+      #endif
    }
 }
-#endif

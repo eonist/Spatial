@@ -57,14 +57,14 @@ fileprivate class Util{
       case .right:
          #if os(iOS)
          if useMargin {
-            NSLayoutConstraint.Attribute.rightMargin
+            return NSLayoutConstraint.Attribute.rightMargin
          }
          #endif
          return  NSLayoutConstraint.Attribute.right
       case .centerX:
          #if os(iOS)
          if useMargin {
-            NSLayoutConstraint.Attribute.centerXWithinMargins
+            return NSLayoutConstraint.Attribute.centerXWithinMargins
          }
          #endif
          return NSLayoutConstraint.Attribute.centerX
