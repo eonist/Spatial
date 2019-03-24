@@ -23,6 +23,7 @@ public extension ConstraintKind where Self:View{
    }
    /**
     * Activates and sets anchor to a ConstraintKind
+    * Abstract: Removes and adds anchor and size on ConstraintKind 
     */
    public func applyAnchor(closure:AnchorClosure)  {
       self.translatesAutoresizingMaskIntoConstraints = false
