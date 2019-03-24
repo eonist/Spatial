@@ -85,6 +85,12 @@ extension Constraint{
     * Represents a side, basically you can base one axis-length on another, so vertical length represents horixontal length etc
     * - Note: Useful if you want to set a width of an object to the height of another object
     * - Note: You can also use it on it's own view to copy width to height for instance
+    * - Parameter to: The view you relate to (usually the parent)
+    * - parameter view: the view to apply the constraint to
+    * - Parameter viewAxis: the attribute to derive from
+    * - Parameter toAxis: the attribute to set to
+    * - Parameter offset: x or y
+    * - Parameter multiplier: scalar value, default is 1
     * - TODO: ⚠️️ Consider renaming this to side or axisLength?
     * ## EXAMPLE:
     * let widthConstraint = Constraint.length(square,viewAxis:.horizontal,axis:.vertical)
