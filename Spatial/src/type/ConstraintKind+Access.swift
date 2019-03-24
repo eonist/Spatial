@@ -24,7 +24,7 @@ public extension ConstraintKind where Self:View{
     */
    public func applyAnchor(to:View, align:Alignment = .topLeft, alignTo:Alignment = .topLeft, offset:CGPoint = .zero, useMargin:Bool = false)  {
       self.applyAnchor { view in
-         return Constraint.anchor(self, to: to, align: align, alignTo: alignTo, useMargin:useMargin)
+         return Constraint.anchor(self, to: to, align: align, alignTo: alignTo, offset:offset, useMargin:useMargin)
       }
    }
    /**
