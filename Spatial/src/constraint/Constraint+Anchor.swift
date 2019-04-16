@@ -17,28 +17,27 @@ public class Constraint {
     * }
     */
    public static func anchor(_ view:View, to:View, align:Alignment, alignTo:Alignment, offset:CGPoint = CGPoint(), useMargin:Bool = false) -> AnchorConstraint {/*,offset:CGPoint = CGPoint()*/
-      let hor:NSLayoutConstraint = Constraint.anchor(view, to: to, align: align.horAlign, alignTo: alignTo.horAlign,offset:offset.x,useMargin:useMargin)
-      let ver:NSLayoutConstraint = Constraint.anchor(view, to: to, align: align.verAlign, alignTo: alignTo.verAlign,offset:offset.y,useMargin:useMargin)
+      let hor: NSLayoutConstraint = Constraint.anchor(view, to: to, align: align.horAlign, alignTo: alignTo.horAlign,offset:offset.x, useMargin:useMargin)
+      let ver: NSLayoutConstraint = Constraint.anchor(view, to: to, align: align.verAlign, alignTo: alignTo.verAlign,offset:offset.y, useMargin:useMargin)
       return (hor,ver)
    }
    /**
-    * Horizontal
+    * Horizontal anchoring
     */
-   public static func anchor(_ view:View, to:View, align:HorizontalAlign, alignTo:HorizontalAlign, offset:CGFloat = 0, useMargin:Bool = false) -> NSLayoutConstraint {/*,offset:CGPoint = CGPoint()*/
-      return NSLayoutConstraint(item: view, attribute: Util.layoutAttr(align:align), relatedBy: .equal, toItem: to, attribute: Util.layoutAttr(align:alignTo,useMargin:useMargin), multiplier: 1.0, constant: offset)
+    public static func anchor(_ view:View, to:View, align:HorizontalAlign, alignTo:HorizontalAlign, offset:CGFloat = 0, useMargin:Bool = false, relation:NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint {/*,offset:CGPoint = CGPoint()*/
+      return .init(item: view, attribute: Util.layoutAttr(align:align), relatedBy: relation, toItem: to, attribute: Util.layoutAttr(align:alignTo,useMargin:useMargin), multiplier: 1.0, constant: offset)
    }
    /**
-    * Vertical
+    * Vertical anchoring
     */
-   public static func anchor(_ view:View, to:View, align:VerticalAlign, alignTo:VerticalAlign, offset:CGFloat = 0, useMargin:Bool = false) -> NSLayoutConstraint {/*,offset:CGPoint = CGPoint()*/
+   public static func anchor(_ view:View, to:View, align:VerticalAlign, alignTo:VerticalAlign, offset:CGFloat = 0, useMargin:Bool = false, relation:NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint {/*,offset:CGPoint = CGPoint()*/
       let attr = Util.layoutAttr(align:align)
       let relatedByAttr = Util.layoutAttr(align:alignTo,useMargin:useMargin)
-      return NSLayoutConstraint(item:view, attribute:attr , relatedBy:.equal, toItem:to, attribute:relatedByAttr, multiplier:1.0, constant:offset)
+      return .init(item:view, attribute:attr , relatedBy:relation, toItem:to, attribute:relatedByAttr, multiplier:1.0, constant:offset)
    }
 }
 /**
  * Internal helper methods
- * - ToDo: ⚠️️ Move these methods to Util class and see if code-quality improves
  */
 fileprivate class Util{
    /**
@@ -78,17 +77,17 @@ fileprivate class Util{
       switch align{
       case .top:
          #if os(iOS)
-         if useMargin { return NSLayoutConstraint.Attribute.topMargin   }
+         if useMargin { return NSLayoutConstraint.Attribute.topMargin }
          #endif
          return NSLayoutConstraint.Attribute.top
       case .bottom:
           #if os(iOS)
-          if useMargin { return NSLayoutConstraint.Attribute.bottomMargin  }
+          if useMargin { return NSLayoutConstraint.Attribute.bottomMargin }
           #endif
          return NSLayoutConstraint.Attribute.bottom
       case .centerY:
          #if os(iOS)
-         if useMargin {return NSLayoutConstraint.Attribute.centerYWithinMargins}
+         if useMargin { return NSLayoutConstraint.Attribute.centerYWithinMargins }
          #endif
          return NSLayoutConstraint.Attribute.centerY
       }

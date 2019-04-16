@@ -59,27 +59,27 @@ extension Constraint{
     * Creates a width constraint (based on a CGFloat width)
     * - Note: When AutoLayout doesn't relate to a view the multiplier doesn't take effect, so we apply the multiplier directly to the constant
     */
-   public static func width(_ view:View, width:CGFloat, multiplier:CGFloat = 1) -> NSLayoutConstraint{
-      return NSLayoutConstraint.init(item: view, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: width * multiplier)//NSLayoutAttribute
+   public static func width(_ view:View, width:CGFloat, multiplier:CGFloat = 1, relation:NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint{
+      return NSLayoutConstraint.init(item: view, attribute: .width, relatedBy: relation, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: width * multiplier)//NSLayoutAttribute
    }
    /**
     * Creates a height constraint (based on a CGFloat height)
     * - Note: When AutoLayout doesnt relate to a view the multiplier doesnt take effect, so we apply the multiplier directly to the constant
     */
-   public static func height(_ view:View, height:CGFloat, multiplier:CGFloat = 1) -> NSLayoutConstraint{
-      return NSLayoutConstraint.init(item: view, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: height * multiplier)//NSLayoutAttribute
+   public static func height(_ view:View, height:CGFloat, multiplier:CGFloat = 1, relation:NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint{
+      return NSLayoutConstraint.init(item: view, attribute: .height, relatedBy: relation, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: height * multiplier)//NSLayoutAttribute
    }
    /**
     * Creates a width constraint (based on another views width constraint)
     */
-   public static func width(_ view:View, to:View, offset:CGFloat = 0, multiplier:CGFloat = 1) -> NSLayoutConstraint{
-      return NSLayoutConstraint(item: view, attribute: .width, relatedBy: .equal, toItem: to, attribute: .width, multiplier: multiplier, constant: offset)//NSLayoutAttribute.notAnAttribute
+   public static func width(_ view:View, to:View, offset:CGFloat = 0, multiplier:CGFloat = 1, relation:NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint{
+      return NSLayoutConstraint(item: view, attribute: .width, relatedBy: relation, toItem: to, attribute: .width, multiplier: multiplier, constant: offset)//NSLayoutAttribute.notAnAttribute
    }
    /**
     * Creates a height constraint (based on another views width constraint)
     */
-   public static func height(_ view:View, to:View, offset:CGFloat = 0, multiplier:CGFloat = 1) -> NSLayoutConstraint{
-      return NSLayoutConstraint(item: view, attribute: .height, relatedBy: .equal, toItem: to, attribute: .height, multiplier: multiplier, constant: offset)//NSLayoutAttribute.notAnAttribute
+   public static func height(_ view:View, to:View, offset:CGFloat = 0, multiplier:CGFloat = 1, relation:NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint{
+      return NSLayoutConstraint(item: view, attribute: .height, relatedBy: relation, toItem: to, attribute: .height, multiplier: multiplier, constant: offset)//NSLayoutAttribute.notAnAttribute
    }
    /**
     * Represents a side, basically you can base one axis-length on another, so vertical length represents horixontal length etc
@@ -96,9 +96,9 @@ extension Constraint{
     * ## EXAMPLE:
     * let widthConstraint = Constraint.length(square,viewAxis:.horizontal,axis:.vertical)
     */
-   public static func length(_ view:View, to:View, viewAxis:Axis, toAxis:Axis, offset:CGFloat = 0, multiplier:CGFloat = 1) -> NSLayoutConstraint{
+   public static func length(_ view:View, to:View, viewAxis:Axis, toAxis:Axis, offset:CGFloat = 0, multiplier:CGFloat = 1, relation:NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint{
       let viewAttr:NSLayoutConstraint.Attribute = viewAxis == .hor ? .width : .height
       let toAttr:NSLayoutConstraint.Attribute = toAxis == .hor ? .width : .height
-      return NSLayoutConstraint(item: view, attribute: viewAttr, relatedBy: .equal, toItem: to, attribute: toAttr, multiplier: multiplier, constant: offset)//NSLayoutAttribute.notAnAttribute
+      return .init(item: view, attribute: viewAttr, relatedBy: relation, toItem: to, attribute: toAttr, multiplier: multiplier, constant: offset)//NSLayoutAttribute.notAnAttribute
    }
 }

@@ -24,4 +24,24 @@ extension MainView{
       view.anchorAndSize(to: self)
       return view
    }
+    /**
+     * Test minimums
+     */
+    func createMinMaxView() -> MinMaxTestView{
+        let view:MinMaxTestView = .init()
+        self.addSubview(view)
+        view.backgroundColor = .lightGray
+        view.anchorAndSize(to: self, height:120)
+        return view
+    }
+    /**
+     *
+     */
+    func createTestView() -> TestView{
+        let view:TestView = .init()
+        self.addSubview(view)
+        view.backgroundColor = .lightGray
+        view.anchorAndSize(to: self, height:120)
+        return view
+    }
 }
