@@ -27,6 +27,7 @@ extension TestView{
      */
     func createDescLabel() -> UILabel {
         return with(.init()) {
+            let text = "title"
             $0.text = "title"
             $0.font = .boldSystemFont(ofSize: 20.0)
             $0.textColor = .black
@@ -35,7 +36,8 @@ extension TestView{
             $0.backgroundColor = UIColor.green.withAlphaComponent(0.5)
             $0.layer.borderWidth = 0.5
             $0.layer.borderColor = UIColor.black.cgColor
-            $0.anchor(to: self, align: .centerLeft, alignTo: .centerLeft, offset: .init(x:20,y:0) )
+            let size:CGSize = text.size(withAttributes:[.font: UIFont.systemFont(ofSize:18.0)])
+            $0.anchorAndSize(to: self, width: size.width, align: .centerLeft, alignTo: .centerLeft, offset: .init(x:20,y:0) )
             //            $0.activateConstraints { view in
             ////                let height:NSLayoutConstraint = Constraint.height(view, to: self)//length(view, to:self, viewAxis: .ver, toAxis: .ver )
             //                let y = Constraint.anchor(view, to: self, align: .centerY, alignTo: .centerY)

@@ -37,11 +37,21 @@ extension MainView{
     /**
      *
      */
-    func createTestView() -> TestView{
+    func createTestView() -> TestView {
         let view:TestView = .init()
         self.addSubview(view)
         view.backgroundColor = .lightGray
         view.anchorAndSize(to: self, height:120)
+        return view
+    }
+    /**
+     * 
+     */
+    func createTableView() -> UIView {
+        let view = CustomTableView.init(rowData: ["Alpha","Beta","Ceta","Delta","Setta"], frame: .zero, style: .grouped)
+        self.addSubview(view)
+        view.backgroundColor = .lightGray
+        view.anchorAndSize(to: self/*, height:120*/)
         return view
     }
 }

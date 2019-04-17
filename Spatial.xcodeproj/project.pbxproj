@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D0C0F6422673E7A00B0673D /* CustomTableView+Interaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F4B22673E7A00B0673D /* CustomTableView+Interaction.swift */; };
+		9D0C0F6522673E7A00B0673D /* CustomTableView+Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F4C22673E7A00B0673D /* CustomTableView+Cell.swift */; };
+		9D0C0F6622673E7A00B0673D /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F4D22673E7A00B0673D /* CustomTableView.swift */; };
+		9D0C0F6722673E7A00B0673D /* MatchScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F5022673E7A00B0673D /* MatchScoreCell.swift */; };
+		9D0C0F6822673E7A00B0673D /* InputTextItem+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F5222673E7A00B0673D /* InputTextItem+Constants.swift */; };
+		9D0C0F6922673E7A00B0673D /* InputTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F5322673E7A00B0673D /* InputTextCell.swift */; };
+		9D0C0F6A22673E7A00B0673D /* InputTextItem+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F5422673E7A00B0673D /* InputTextItem+Create.swift */; };
+		9D0C0F6B22673E7A00B0673D /* MatchCell+Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F5622673E7A00B0673D /* MatchCell+Const.swift */; };
+		9D0C0F6C22673E7A00B0673D /* MatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F5722673E7A00B0673D /* MatchCell.swift */; };
+		9D0C0F6D22673E7A00B0673D /* MatchCell+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F5822673E7A00B0673D /* MatchCell+Create.swift */; };
+		9D0C0F6E22673E7A00B0673D /* MatchHighlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F5A22673E7A00B0673D /* MatchHighlightCell.swift */; };
+		9D0C0F6F22673E7A00B0673D /* CellDataKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F5C22673E7A00B0673D /* CellDataKind.swift */; };
+		9D0C0F7022673E7A00B0673D /* MatchTeamCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F5D22673E7A00B0673D /* MatchTeamCellData.swift */; };
+		9D0C0F7122673E7A00B0673D /* LeagueCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F5E22673E7A00B0673D /* LeagueCellData.swift */; };
+		9D0C0F7222673E7A00B0673D /* MatchCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F5F22673E7A00B0673D /* MatchCellData.swift */; };
+		9D0C0F7322673E7A00B0673D /* MatchScoreCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F6022673E7A00B0673D /* MatchScoreCellData.swift */; };
+		9D0C0F7422673E7A00B0673D /* MatchTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F6222673E7A00B0673D /* MatchTeamCell.swift */; };
+		9D0C0F7522673E7A00B0673D /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F6322673E7A00B0673D /* BaseCell.swift */; };
 		9D2117D12265B6D900EC5A0E /* MinMaxTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2117D02265B6D900EC5A0E /* MinMaxTestView.swift */; };
 		9D2117D92265C7A900EC5A0E /* With.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D2117D82265C7A800EC5A0E /* With.framework */; };
 		9D2117DA2265C7A900EC5A0E /* With.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D2117D82265C7A800EC5A0E /* With.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -120,6 +138,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9D0C0F4B22673E7A00B0673D /* CustomTableView+Interaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomTableView+Interaction.swift"; sourceTree = "<group>"; };
+		9D0C0F4C22673E7A00B0673D /* CustomTableView+Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomTableView+Cell.swift"; sourceTree = "<group>"; };
+		9D0C0F4D22673E7A00B0673D /* CustomTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
+		9D0C0F5022673E7A00B0673D /* MatchScoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchScoreCell.swift; sourceTree = "<group>"; };
+		9D0C0F5222673E7A00B0673D /* InputTextItem+Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InputTextItem+Constants.swift"; sourceTree = "<group>"; };
+		9D0C0F5322673E7A00B0673D /* InputTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputTextCell.swift; sourceTree = "<group>"; };
+		9D0C0F5422673E7A00B0673D /* InputTextItem+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InputTextItem+Create.swift"; sourceTree = "<group>"; };
+		9D0C0F5622673E7A00B0673D /* MatchCell+Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MatchCell+Const.swift"; sourceTree = "<group>"; };
+		9D0C0F5722673E7A00B0673D /* MatchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
+		9D0C0F5822673E7A00B0673D /* MatchCell+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MatchCell+Create.swift"; sourceTree = "<group>"; };
+		9D0C0F5A22673E7A00B0673D /* MatchHighlightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchHighlightCell.swift; sourceTree = "<group>"; };
+		9D0C0F5C22673E7A00B0673D /* CellDataKind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDataKind.swift; sourceTree = "<group>"; };
+		9D0C0F5D22673E7A00B0673D /* MatchTeamCellData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchTeamCellData.swift; sourceTree = "<group>"; };
+		9D0C0F5E22673E7A00B0673D /* LeagueCellData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeagueCellData.swift; sourceTree = "<group>"; };
+		9D0C0F5F22673E7A00B0673D /* MatchCellData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchCellData.swift; sourceTree = "<group>"; };
+		9D0C0F6022673E7A00B0673D /* MatchScoreCellData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchScoreCellData.swift; sourceTree = "<group>"; };
+		9D0C0F6222673E7A00B0673D /* MatchTeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchTeamCell.swift; sourceTree = "<group>"; };
+		9D0C0F6322673E7A00B0673D /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		9D2117D02265B6D900EC5A0E /* MinMaxTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinMaxTestView.swift; sourceTree = "<group>"; };
 		9D2117D22265C77B00EC5A0E /* With.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = With.framework; path = Carthage/Build/iOS/With.framework; sourceTree = "<group>"; };
 		9D2117D32265C77B00EC5A0E /* Spatial.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Spatial.framework; path = Carthage/Build/iOS/Spatial.framework; sourceTree = "<group>"; };
@@ -213,6 +249,87 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D0C0F4A22673E7A00B0673D /* table */ = {
+			isa = PBXGroup;
+			children = (
+				9D0C0F4B22673E7A00B0673D /* CustomTableView+Interaction.swift */,
+				9D0C0F4C22673E7A00B0673D /* CustomTableView+Cell.swift */,
+				9D0C0F4D22673E7A00B0673D /* CustomTableView.swift */,
+				9D0C0F4E22673E7A00B0673D /* cell */,
+			);
+			path = table;
+			sourceTree = "<group>";
+		};
+		9D0C0F4E22673E7A00B0673D /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				9D0C0F4F22673E7A00B0673D /* matchscore */,
+				9D0C0F5122673E7A00B0673D /* input */,
+				9D0C0F5522673E7A00B0673D /* match */,
+				9D0C0F5922673E7A00B0673D /* matchhighlight */,
+				9D0C0F5B22673E7A00B0673D /* protocol */,
+				9D0C0F6122673E7A00B0673D /* matchteam */,
+				9D0C0F6322673E7A00B0673D /* BaseCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		9D0C0F4F22673E7A00B0673D /* matchscore */ = {
+			isa = PBXGroup;
+			children = (
+				9D0C0F5022673E7A00B0673D /* MatchScoreCell.swift */,
+			);
+			path = matchscore;
+			sourceTree = "<group>";
+		};
+		9D0C0F5122673E7A00B0673D /* input */ = {
+			isa = PBXGroup;
+			children = (
+				9D0C0F5322673E7A00B0673D /* InputTextCell.swift */,
+				9D0C0F5222673E7A00B0673D /* InputTextItem+Constants.swift */,
+				9D0C0F5422673E7A00B0673D /* InputTextItem+Create.swift */,
+			);
+			path = input;
+			sourceTree = "<group>";
+		};
+		9D0C0F5522673E7A00B0673D /* match */ = {
+			isa = PBXGroup;
+			children = (
+				9D0C0F5622673E7A00B0673D /* MatchCell+Const.swift */,
+				9D0C0F5722673E7A00B0673D /* MatchCell.swift */,
+				9D0C0F5822673E7A00B0673D /* MatchCell+Create.swift */,
+			);
+			path = match;
+			sourceTree = "<group>";
+		};
+		9D0C0F5922673E7A00B0673D /* matchhighlight */ = {
+			isa = PBXGroup;
+			children = (
+				9D0C0F5A22673E7A00B0673D /* MatchHighlightCell.swift */,
+			);
+			path = matchhighlight;
+			sourceTree = "<group>";
+		};
+		9D0C0F5B22673E7A00B0673D /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				9D0C0F5C22673E7A00B0673D /* CellDataKind.swift */,
+				9D0C0F5D22673E7A00B0673D /* MatchTeamCellData.swift */,
+				9D0C0F5E22673E7A00B0673D /* LeagueCellData.swift */,
+				9D0C0F5F22673E7A00B0673D /* MatchCellData.swift */,
+				9D0C0F6022673E7A00B0673D /* MatchScoreCellData.swift */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
+		9D0C0F6122673E7A00B0673D /* matchteam */ = {
+			isa = PBXGroup;
+			children = (
+				9D0C0F6222673E7A00B0673D /* MatchTeamCell.swift */,
+			);
+			path = matchteam;
+			sourceTree = "<group>";
+		};
 		9D2117CF2265B67800EC5A0E /* other */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +400,7 @@
 			children = (
 				F109EE8721E49AF100FCC696 /* VC.swift */,
 				F109EE8921E49B6600FCC696 /* VC+Create.swift */,
+				9D0C0F4A22673E7A00B0673D /* table */,
 				F109EE9B21E5DAC500FCC696 /* main */,
 				F109EE6821E3775E00FCC696 /* spaceTest */,
 				9D2117CF2265B67800EC5A0E /* other */,
@@ -696,27 +814,45 @@
 			files = (
 				F114AEDC21ABC18F00942A28 /* AnimationTestView.swift in Sources */,
 				F109EE8D21E4D42200FCC696 /* MiddleContent+Create.swift in Sources */,
+				9D0C0F7022673E7A00B0673D /* MatchTeamCellData.swift in Sources */,
 				F109EE8821E49AF100FCC696 /* VC.swift in Sources */,
+				9D0C0F7222673E7A00B0673D /* MatchCellData.swift in Sources */,
+				9D0C0F6B22673E7A00B0673D /* MatchCell+Const.swift in Sources */,
 				9D2117D12265B6D900EC5A0E /* MinMaxTestView.swift in Sources */,
+				9D0C0F6922673E7A00B0673D /* InputTextCell.swift in Sources */,
+				9D0C0F7322673E7A00B0673D /* MatchScoreCellData.swift in Sources */,
 				F151DDAC21738CAF00AA0ABE /* Constants.swift in Sources */,
+				9D0C0F7122673E7A00B0673D /* LeagueCellData.swift in Sources */,
+				9D0C0F6E22673E7A00B0673D /* MatchHighlightCell.swift in Sources */,
 				F109EE9121E4D4B300FCC696 /* ItemView+Create.swift in Sources */,
+				9D0C0F6422673E7A00B0673D /* CustomTableView+Interaction.swift in Sources */,
 				F17E38732174C15D009C10B2 /* MainView.swift in Sources */,
+				9D0C0F7522673E7A00B0673D /* BaseCell.swift in Sources */,
 				F17E0E4321DF467E00EE3027 /* AnimationTestView+Create.swift in Sources */,
 				F1C624FD21C789790082A265 /* Extension.swift in Sources */,
+				9D0C0F6C22673E7A00B0673D /* MatchCell.swift in Sources */,
 				F151DDBC2173CABC00AA0ABE /* CardView.swift in Sources */,
 				F109EE6721E3771700FCC696 /* SpacingTestView+Create.swift in Sources */,
 				F109EE9A21E4D5D900FCC696 /* TopBar+Constant.swift in Sources */,
+				9D0C0F6722673E7A00B0673D /* MatchScoreCell.swift in Sources */,
 				9D2117DE2265E01700EC5A0E /* TestView.swift in Sources */,
+				9D0C0F6522673E7A00B0673D /* CustomTableView+Cell.swift in Sources */,
 				F17E0E2A21DE2EBE00EE3027 /* CardView+Create.swift in Sources */,
 				F1D369E92171FDAE00F498FA /* AppDelegate.swift in Sources */,
+				9D0C0F6622673E7A00B0673D /* CustomTableView.swift in Sources */,
 				F109EE6521E10A4800FCC696 /* SpacingTestView.swift in Sources */,
 				F109EE8F21E4D48A00FCC696 /* ItemView.swift in Sources */,
+				9D0C0F6D22673E7A00B0673D /* MatchCell+Create.swift in Sources */,
+				9D0C0F6822673E7A00B0673D /* InputTextItem+Constants.swift in Sources */,
+				9D0C0F6A22673E7A00B0673D /* InputTextItem+Create.swift in Sources */,
 				F1FC84D42174E6B800D01B72 /* MiddleContent.swift in Sources */,
 				F109EE9D21E5EA9500FCC696 /* CardView+Constant.swift in Sources */,
+				9D0C0F6F22673E7A00B0673D /* CellDataKind.swift in Sources */,
 				F109EE9621E4D58800FCC696 /* BottomBar.swift in Sources */,
 				F109EE9821E4D5A500FCC696 /* BottomBar+Constant.swift in Sources */,
 				F1C624FF21C789830082A265 /* MainView+Create.swift in Sources */,
 				F151DDA921738B2C00AA0ABE /* TopBar.swift in Sources */,
+				9D0C0F7422673E7A00B0673D /* MatchTeamCell.swift in Sources */,
 				F109EE8A21E49B6600FCC696 /* VC+Create.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

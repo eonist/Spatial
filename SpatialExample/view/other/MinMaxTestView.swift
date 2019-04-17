@@ -97,4 +97,5 @@ extension MinMaxTestView{
     //research guideline for autolayout
     //add multiple different inputtextcells with different sized description
     //add left or right aligned input textfield as a bool flag
+    //
 

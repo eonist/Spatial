@@ -8,7 +8,7 @@ class VC: UIViewController {
       super.viewDidLoad()
       _ = mainView
       //_ = animTestView
-      self.view.backgroundColor = .purple
+      self.view.backgroundColor = .lightGray
    }
    override var prefersStatusBarHidden:Bool {return true}/*hides statusbar*/
 }
