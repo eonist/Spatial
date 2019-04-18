@@ -6,7 +6,7 @@ import Foundation
 extension Array where Element:ConstraintKind.ViewConstraintKind{
    /**
     * Apply constraints on an array of UIViewConstraintKind
-    * Example:
+    * ## Examples:
     *  [label1,label2,label3].applyAnchorsAndSizes { views in
     *      let anchors = [] /*Use Constraint.distribute*/
     *      let sizes = [] /*Use views.map {Constraint.size}*/
@@ -24,8 +24,8 @@ extension Array where Element:ConstraintKind.ViewConstraintKind{
          $0.element.setConstraint(anchor:anchor,size:size)
       }
       let layoutConstraints:[NSLayoutConstraint] = {
-         let anchors = constraints.anchorConstraints.reduce([]) { $0 + [$1.x,$1.y] }
-         let sizes = constraints.sizeConstraints.reduce([]) { $0 + [$1.w,$1.h] }
+         let anchors:[NSLayoutConstraint] = constraints.anchorConstraints.reduce([]) { $0 + [$1.x,$1.y] }
+         let sizes:[NSLayoutConstraint] = constraints.sizeConstraints.reduce([]) { $0 + [$1.w,$1.h] }
          return anchors + sizes
       }()
       NSLayoutConstraint.activate(layoutConstraints)
@@ -77,4 +77,3 @@ extension Array where Element:ConstraintKind.ViewConstraintKind{
       NSLayoutConstraint.activate(layoutConstraints)
    }
 }
-

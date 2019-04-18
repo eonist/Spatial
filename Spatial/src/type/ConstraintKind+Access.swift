@@ -50,7 +50,7 @@ extension ConstraintKind where Self:View{
     * - Parameter to: The instance to apply to
     * - Parameter width: the width to apply to instance
     * - Parameter height: the height to apply to instance
-    * - Parameter multiplier: multiplies the `size` or `sizeTo`
+    * - Parameter multiplier: multiplies the `size` or `sizeTo` default is (width:1,height:1)
     * - Parameter offset: offset for the `to` parameter
     */
    public func applySize(to:View, width:CGFloat? = nil, height:CGFloat? = nil, offset:CGSize = .zero, multiplier:CGSize = .init(width:1,height:1)) {

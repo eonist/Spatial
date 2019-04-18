@@ -12,11 +12,11 @@ class MainView:UIView {
         _ = tableTestView
 //        _ = testView
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func layoutSubviews() {
         Swift.print("layoutSubviews")
     }
