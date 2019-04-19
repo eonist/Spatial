@@ -40,9 +40,10 @@ extension ConstraintKind where Self:View{
    }
    /**
     * Update (horizontal & vertical)
-    * - Parameter offset: The x & y you want to apply
-    * - Parameter align: axis alignment type for the instance you are applying to
-    * _ Parameter alignTo: axis alignment to another instance
+    * - Parameters:
+    *    - offset: The x & y you want to apply
+    *    - align: axis alignment type for the instance you are applying to
+    *    - alignTo: axis alignment to another instance
     */
    public func update(offset:CGPoint, align:Alignment, alignTo:Alignment){
       updateAnchor { (superview,oldAnchor) in
