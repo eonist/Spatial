@@ -5,7 +5,7 @@ import Foundation
  */
 extension ConstraintKind where Self:View{
    /**
-    * Cobinational types and closure signatures
+    * Combinational types and closure signatures
     * - Note: This could be useful in a global domain, for now just access it by: ConstraintKind.UIViewConstraintKind
     */
    public typealias ViewConstraintKind = View & ConstraintKind

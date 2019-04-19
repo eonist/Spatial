@@ -11,15 +11,16 @@ extension ConstraintKind where Self:View{
     * ## Examples:
     * view.applyAnchorAndSize(to:self, height:100, align:.center, alignTo:.center)
     * - TODO: ⚠️️ Needs the same kind of parameters as anchorAndSize uses
-    * - Parameter to: The instance to apply to
-    * - Parameter width: the width to apply to instance
-    * - Parameter height: the height to apply to instance
-    * - Parameter align: alignment for the `to` view
-    * - Parameter alignTo: alignment for the `sizeTo` view, if one was provided
-    * - Parameter multiplier: multiplies the `size` or `sizeTo`
-    * - Parameter offset: offset for the `to` parameter
-    * - Parameter sizeOffset: offset for the `sizeTo` parameter (use negative values for inset)
-    * - Parameter useMargin: aligns to autolayout margins or not
+    * - Parameters:
+    *    - to: The instance to apply to
+    *    - width: the width to apply to instance
+    *    - height: the height to apply to instance
+    *    - align: alignment for the `to` view
+    *    - alignTo: alignment for the `sizeTo` view, if one was provided
+    *    - multiplier: multiplies the `size` or `sizeTo`
+    *    - offset: offset for the `to` parameter
+    *    - sizeOffset: offset for the `sizeTo` parameter (use negative values for inset)
+    *    - useMargin: aligns to autolayout margins or not
     */
    public func applyAnchorAndSize(to:View, width:CGFloat? = nil, height:CGFloat? = nil, align:Alignment = .topLeft, alignTo:Alignment = .topLeft, multiplier:CGSize = .init(width:1,height:1), offset:CGPoint = .zero, sizeOffset:CGSize = .zero, useMargin:Bool = false) {
       self.applyAnchorAndSize { view in
@@ -32,11 +33,12 @@ extension ConstraintKind where Self:View{
     * One-liner for applyAnchor
     * ## Examples:
     * view.applyAnchor(to:self, align:.center, alignTo:.center)
-    * - Parameter to: The instance to apply to
-    * - Parameter align: alignment for the `to` view
-    * - Parameter alignTo: alignment for the `sizeTo` view, if one was provided
-    * - Parameter offset: offset for the `to` parameter
-    * - Parameter useMargin: aligns to autolayout margins or not
+    * - Parameters:
+    *    - to: The instance to apply to
+    *    - align: alignment for the `to` view
+    *    - alignTo: alignment for the `sizeTo` view, if one was provided
+    *    - offset: offset for the `to` parameter
+    *    - useMargin: aligns to autolayout margins or not
     */
    public func applyAnchor(to:View, align:Alignment = .topLeft, alignTo:Alignment = .topLeft, offset:CGPoint = .zero, useMargin:Bool = false)  {
       self.applyAnchor { view in
@@ -47,11 +49,12 @@ extension ConstraintKind where Self:View{
     * One-liner for applySize
     * ## Examples:
     * view.applySize(to:self)//multiplier,offset
-    * - Parameter to: The instance to apply to
-    * - Parameter width: the width to apply to instance
-    * - Parameter height: the height to apply to instance
-    * - Parameter multiplier: multiplies the `size` or `sizeTo` default is (width:1,height:1)
-    * - Parameter offset: offset for the `to` parameter
+    * Parameters:
+    *    - to: The instance to apply to
+    *    - width: the width to apply to instance
+    *    - height: the height to apply to instance
+    *    - multiplier: multiplies the `size` or `sizeTo` default is (width:1,height:1)
+    *    - offset: offset for the `to` parameter
     */
    public func applySize(to:View, width:CGFloat? = nil, height:CGFloat? = nil, offset:CGSize = .zero, multiplier:CGSize = .init(width:1,height:1)) {
       self.applySize { view in

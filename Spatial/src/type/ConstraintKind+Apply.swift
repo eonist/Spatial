@@ -2,7 +2,7 @@
 import Foundation
 /**
  * Update constraints (For items that are of type ConstraintKind)
- * NOTE: adding a method called activateConstraints doesn't make any sense because you have only anchor and size or either
+ * - NOTE: adding a method called activateConstraints doesn't make any sense because you have only anchor and size or either
  */
 extension ConstraintKind where Self:View{
    /**
@@ -23,7 +23,7 @@ extension ConstraintKind where Self:View{
    }
    /**
     * Activates and sets anchor to a ConstraintKind
-    * Note: remeber to deactive constraints before calling this method
+    * - Note: remeber to deactive constraints before calling this method
     */
    public func applyAnchor(closure:AnchorClosure)  {
       self.translatesAutoresizingMaskIntoConstraints = false

@@ -3,7 +3,7 @@
 [![codebeat badge](https://codebeat.co/badges/b4ee0d27-b00c-464b-b9b2-c9906cb6c19f)](https://codebeat.co/projects/github-com-eonist-spatial-master)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-<img width="900" alt="img" src="https://rawgit.com/stylekit/img/master/spatial_github.svg">
+<img width="900" alt="img" src="https://raw.github.com/stylekit/img/master/spatial_github.svg?sanitize=true">
 
 Definition: **Spatial** | ˈspeɪʃ(ə)l | adjective | **describes how objects fit together in space**
 

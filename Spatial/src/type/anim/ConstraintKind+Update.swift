@@ -3,14 +3,17 @@ import Foundation
  * Offset horizontally or vertically
  */
 extension ConstraintKind where Self:View{
-   /*Callback closures signatures as typalias makes code easier to read*/
+   /**
+    * - Remark: Callback closures signatures as typalias makes code easier to read
+    */
    typealias UpdateAnchorClosure = (_ superView:View,_ oldAnchor:AnchorConstraint) -> Void
    typealias UpdateSizeClosure = (_ superView:View,_ oldAnchor:SizeConstraint) -> Void
    /**
     * Updates horizontal anchor
-    * - Parameter offset: The x you want to apply
-    * - Parameter align: horizontal axis alignment type for the instance you are applying to
-    * _ Parameter alignTo: horizontal axis alignment to another instance
+    * - Parameters:
+    *    - offset: The x you want to apply
+    *    - align: horizontal axis alignment type for the instance you are applying to
+    *    - alignTo: horizontal axis alignment to another instance
     */
    public func update(offset:CGFloat, align:HorizontalAlign, alignTo:HorizontalAlign){
       updateAnchor { (superview,oldAnchor) in
@@ -22,9 +25,10 @@ extension ConstraintKind where Self:View{
    }
    /**
     * Updates vertical anchor
-    * - Parameter offset: The y you want to apply
-    * - Parameter align: vertical axis alignment type for the instance you are applying to
-    * _ Parameter alignTo: vertical axis alignment to another instance
+    * - Parameters:
+    *    - offset: The y you want to apply
+    *    - align: vertical axis alignment type for the instance you are applying to
+    *    - alignTo: vertical axis alignment to another instance
     */
    public func update(offset:CGFloat, align:VerticalAlign, alignTo:VerticalAlign){
       updateAnchor { (superview,oldAnchor) in

@@ -8,16 +8,17 @@ import Foundation
 extension View {
    /**
     * One-liner for activateAnchorAndSize (Align and size a UIView instance)
-    * - Parameter to: anchor to this view, if sizeTo is not set, then to is used for sizing
-    * - Parameter sizeTo: provide this if you need to base the size on another view
-    * - Parameter width: provide this if you want to use a fixed width
-    * - Parameter height: provide this if you want to use a fixed height
-    * - Parameter align: alignment for the `to` view
-    * - Parameter alignTo: alignment for the `sizeTo` view, if one was provided
-    * - Parameter multiplier: multiplies the `size` or `sizeTo`
-    * - Parameter offset: offset for the `to` parameter
-    * - Parameter sizeOffset: offset for the `sizeTo` parameter (use negative values for inset)
-    * - Parameter useMargin: aligns to autolayout margins or not
+    * Paramters:
+    *    - to: anchor to this view, if sizeTo is not set, then to is used for sizing
+    *    - sizeTo: provide this if you need to base the size on another view
+    *    - width: provide this if you want to use a fixed width
+    *    - height: provide this if you want to use a fixed height
+    *    - align: alignment for the `to` view
+    *    - alignTo: alignment for the `sizeTo` view, if one was provided
+    *    - multiplier: multiplies the `size` or `sizeTo`
+    *    - offset: offset for the `to` parameter
+    *    - sizeOffset: offset for the `sizeTo` parameter (use negative values for inset)
+    *    - useMargin: aligns to autolayout margins or not
     * ## Examples:
     * view.anchorAndSize(to:self,height:100,align:.center,alignTo:.center)//multiplier
     */
@@ -68,7 +69,7 @@ extension View {
     * Size a UIView instance
     * ## Examples:
     * view.size(to:self)
-    * - ToDo: ⚠️️ Maybe the to could be optional, 
+    * - ToDo: ⚠️️ Maybe the to could be optional,
     */
    public func size(to:View, width:CGFloat? = nil, height:CGFloat? = nil, offset:CGSize = .zero, multiplier:CGSize = .init(width:1,height:1)){
       self.activateSize { view in

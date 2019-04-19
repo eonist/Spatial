@@ -1,4 +1,4 @@
- 
+
 import Foundation
 /**
  * Update arrays of UIViewConstraintKind
@@ -7,11 +7,11 @@ extension Array where Element:ConstraintKind.ViewConstraintKind{
    /**
     * Apply constraints on an array of UIViewConstraintKind
     * ## Examples:
-    *  [label1,label2,label3].applyAnchorsAndSizes { views in
-    *      let anchors = [] /*Use Constraint.distribute*/
-    *      let sizes = [] /*Use views.map {Constraint.size}*/
-    *      return (anchors, sizes)
-    *  }
+    * [label1,label2,label3].applyAnchorsAndSizes { views in
+    *     let anchors = [] /*Use Constraint.distribute*/
+    *     let sizes = [] /*Use views.map {Constraint.size}*/
+    *     return (anchors, sizes)
+    * }
     * - Note: Alternativly you can do: views.enumerated().map{Constraint.anchor($0.1, to: self, align: .topLeft, alignTo:.topLeft,offset:CGPoint(x:0,y:48 * $0.0))} etc
     * - Note: If you want to apply only anchors or only sizes then just pass an empty array for either
     */
@@ -32,7 +32,7 @@ extension Array where Element:ConstraintKind.ViewConstraintKind{
    }
    /**
     * Apply sizes
-    * - ToDo: ⚠️️ Write doc
+    * - Description: same as applyAnchorsAndSizes but just for sizes
     */
    public func applySizes(closure:SizesClosure) {
       self.forEach{$0.translatesAutoresizingMaskIntoConstraints = false}
@@ -46,7 +46,7 @@ extension Array where Element:ConstraintKind.ViewConstraintKind{
    }
    /**
     * Apply anchors
-    * - ToDo: ⚠️️ Write doc
+    * - Description: same as applyAnchorsAndSizes but just for anchors
     */
    public func applyAnchors(closure:AnchorClosure) {
       self.forEach{$0.translatesAutoresizingMaskIntoConstraints = false}
@@ -58,10 +58,10 @@ extension Array where Element:ConstraintKind.ViewConstraintKind{
       let layoutConstraints:[NSLayoutConstraint] = constraints.reduce([]) { $0 + [$1.x,$1.y] }
       NSLayoutConstraint.activate(layoutConstraints)
    }
-   
+
    /**
     * Apply anchors (axis)
-    * - ToDo: ⚠️️ Write doc
+    * - Description: same as applyAnchorsAndSizes but just for horizontal or vertical anchor
     */
    public func applyAnchors(axis:Axis, closure:AxisClosure) {
       self.forEach{$0.translatesAutoresizingMaskIntoConstraints = false}

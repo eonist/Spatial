@@ -18,7 +18,7 @@ extension Array where Element:ConstraintKind.ViewConstraintKind{
       }
    }
    /**
-    * New
+    * - Description: Same as regular applySizes but we must provide both width and height
     */
    public func applySizes(width:CGFloat, height:CGFloat, multiplier:CGSize = .init(width:1,height:1)) {
       self.applySizes { views in
@@ -29,7 +29,8 @@ extension Array where Element:ConstraintKind.ViewConstraintKind{
    }
    /**
     * One-liner for applyAnchor for many views (vertical)
-    * Example: view.applyAnchor(to:self, align:.top, alignTo:.top)
+    * ## Examples:
+    * view.applyAnchor(to:self, align:.top, alignTo:.top)
     */
    public func applyAnchors(to:View, align:VerticalAlign = .top, alignTo:VerticalAlign = .top, offset:CGFloat = 0, useMargin:Bool = false){
       self.applyAnchors(axis:.ver) { views in
@@ -40,7 +41,8 @@ extension Array where Element:ConstraintKind.ViewConstraintKind{
    }
    /**
     * One-liner for applyAnchor for many views (horizontal)
-    * Example: view.applyAnchor(to:self, align:.left, alignTo:.left)
+    * ## Examples:
+    * view.applyAnchor(to:self, align:.left, alignTo:.left)
     */
    public func applyAnchors(to:View, align:HorizontalAlign = .left, alignTo:HorizontalAlign = .left, offset:CGFloat = 0, useMargin:Bool = false){
       self.applyAnchors(axis:.hor) { views in

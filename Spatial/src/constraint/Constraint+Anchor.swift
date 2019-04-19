@@ -8,7 +8,7 @@ import Foundation
 public class Constraint {
    /**
     * Creates a positional constraint
-    * - parameter useMargin: This works, but when you use size constraints then you have to pin to sides, or use the sizeOffset
+    * - Parameter useMargin: This works, but when you use size constraints then you have to pin to sides, or use the sizeOffset
     * ## Examples:
     * activateAnchorAndSize { view in
     *    let a = Constraint.anchor(self, to: to, align: align, alignTo: alignTo, offset: offset, useMargin: useMargin)

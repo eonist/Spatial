@@ -1,11 +1,11 @@
 import Foundation
 /**
  * AutoLayout Sugar for UIView
- * NOTE: Method overloading doesn't work with closures so each method name needs to be unique 
+ * NOTE: Method overloading doesn't work with closures so each method name needs to be unique
  */
 extension View{
    /**
-    * ## EXAMPLE:
+    * ## Examples:
     * button.activateConstraints { view in
     *      let anchor = Constraint.anchor(view, to: self, align: .topLeft, alignTo: .topLeft)
     *      let size = Constraint.size(view, size: CGSize.init(width: UIScreen.main.bounds.width, height: TopBar.topBarHeight))
@@ -27,7 +27,7 @@ extension View{
    }
    /**
     * Same as activateConstraint, but returns a tuple in the closure instead of an array
-    * ## EXAMPLE:
+    * ## Examples:
     * label.activateAnchorAndSize { view in
     *    let a = Constraint.anchor(view, to: self, align: .topLeft, alignTo:  .topLeft)
     *    let s = Constraint.size(view, to: self)

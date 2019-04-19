@@ -82,22 +82,23 @@
 		F185A3BD22319EAC00AE66B2 /* Constraint+Activate+Bulk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E2F21DE364D00EE3027 /* Constraint+Activate+Bulk.swift */; };
 		F185A3BE22319EAC00AE66B2 /* Constraint+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3121DE36F300EE3027 /* Constraint+Type.swift */; };
 		F185A3BF22319EAC00AE66B2 /* Constraint+Distribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10213CB218756310038F496 /* Constraint+Distribution.swift */; };
-		F185A3C022319EAC00AE66B2 /* Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D369FC2172039B00F498FA /* Alignment.swift */; };
-		F185A3C122319EAC00AE66B2 /* Alignment+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BED70821B7B12400A0D3D4 /* Alignment+Extension.swift */; };
-		F185A3C222319EAC00AE66B2 /* Axis.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BED70621B7AAFE00A0D3D4 /* Axis.swift */; };
-		F185A3C322319EAC00AE66B2 /* HorizontalAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BED70221B7A9AE00A0D3D4 /* HorizontalAlign.swift */; };
-		F185A3C422319EAC00AE66B2 /* VerticalAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BED70421B7A9BB00A0D3D4 /* VerticalAlign.swift */; };
-		F185A3C522319EAC00AE66B2 /* AxisType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BED70021B7A99D00A0D3D4 /* AxisType.swift */; };
-		F185A3C622319EAC00AE66B2 /* AlignType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BED6FE21B7A99000A0D3D4 /* AlignType.swift */; };
-		F185A3C722319EAC00AE66B2 /* AlignType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BED70A21B7B14B00A0D3D4 /* AlignType+Extension.swift */; };
+		F1AA755D2269F94500D4C272 /* AlignType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA755B2269F94400D4C272 /* AlignType.swift */; };
+		F1AA755E2269F94500D4C272 /* AlignType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA755B2269F94400D4C272 /* AlignType.swift */; };
+		F1AA755F2269F94500D4C272 /* AlignType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA755C2269F94400D4C272 /* AlignType+Extension.swift */; };
+		F1AA75602269F94500D4C272 /* AlignType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA755C2269F94400D4C272 /* AlignType+Extension.swift */; };
+		F1AA75652269F96800D4C272 /* Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA75632269F96800D4C272 /* Alignment.swift */; };
+		F1AA75662269F96800D4C272 /* Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA75632269F96800D4C272 /* Alignment.swift */; };
+		F1AA75672269F96800D4C272 /* Alignment+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA75642269F96800D4C272 /* Alignment+Extension.swift */; };
+		F1AA75682269F96800D4C272 /* Alignment+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA75642269F96800D4C272 /* Alignment+Extension.swift */; };
+		F1AA756F2269F99D00D4C272 /* Axis.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756B2269F99D00D4C272 /* Axis.swift */; };
+		F1AA75702269F99D00D4C272 /* Axis.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756B2269F99D00D4C272 /* Axis.swift */; };
+		F1AA75712269F99D00D4C272 /* AxisType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756C2269F99D00D4C272 /* AxisType.swift */; };
+		F1AA75722269F99D00D4C272 /* AxisType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756C2269F99D00D4C272 /* AxisType.swift */; };
+		F1AA75732269F99D00D4C272 /* VerticalAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756D2269F99D00D4C272 /* VerticalAlign.swift */; };
+		F1AA75742269F99D00D4C272 /* VerticalAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756D2269F99D00D4C272 /* VerticalAlign.swift */; };
+		F1AA75752269F99D00D4C272 /* HorizontalAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756E2269F99D00D4C272 /* HorizontalAlign.swift */; };
+		F1AA75762269F99D00D4C272 /* HorizontalAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756E2269F99D00D4C272 /* HorizontalAlign.swift */; };
 		F1BD0417219B06F200A4A46F /* ConstraintKind+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BD0416219B06F200A4A46F /* ConstraintKind+Animate.swift */; };
-		F1BED6FF21B7A99000A0D3D4 /* AlignType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BED6FE21B7A99000A0D3D4 /* AlignType.swift */; };
-		F1BED70121B7A99D00A0D3D4 /* AxisType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BED70021B7A99D00A0D3D4 /* AxisType.swift */; };
-		F1BED70321B7A9AE00A0D3D4 /* HorizontalAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BED70221B7A9AE00A0D3D4 /* HorizontalAlign.swift */; };
-		F1BED70521B7A9BB00A0D3D4 /* VerticalAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BED70421B7A9BB00A0D3D4 /* VerticalAlign.swift */; };
-		F1BED70721B7AAFE00A0D3D4 /* Axis.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BED70621B7AAFE00A0D3D4 /* Axis.swift */; };
-		F1BED70921B7B12400A0D3D4 /* Alignment+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BED70821B7B12400A0D3D4 /* Alignment+Extension.swift */; };
-		F1BED70B21B7B14B00A0D3D4 /* AlignType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BED70A21B7B14B00A0D3D4 /* AlignType+Extension.swift */; };
 		F1C624FD21C789790082A265 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C624FC21C789790082A265 /* Extension.swift */; };
 		F1C624FF21C789830082A265 /* MainView+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C624FE21C789830082A265 /* MainView+Create.swift */; };
 		F1CDF088225D22F10076EC92 /* ConstraintKind+Bulk+Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CDF087225D22F10076EC92 /* ConstraintKind+Bulk+Access.swift */; };
@@ -106,7 +107,6 @@
 		F1D369E92171FDAE00F498FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D369E82171FDAE00F498FA /* AppDelegate.swift */; };
 		F1D369F02171FDAF00F498FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1D369EF2171FDAF00F498FA /* Assets.xcassets */; };
 		F1D369F32171FDAF00F498FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D369F12171FDAF00F498FA /* LaunchScreen.storyboard */; };
-		F1D36A002172039B00F498FA /* Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D369FC2172039B00F498FA /* Alignment.swift */; };
 		F1D36A012172039B00F498FA /* ConstraintKind+Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D369FD2172039B00F498FA /* ConstraintKind+Apply.swift */; };
 		F1D36A032172039B00F498FA /* Constraint+Activate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D369FF2172039B00F498FA /* Constraint+Activate.swift */; };
 		F1FC84D42174E6B800D01B72 /* MiddleContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FC84D32174E6B800D01B72 /* MiddleContent.swift */; };
@@ -198,14 +198,15 @@
 		F185A3A622319E8E00AE66B2 /* Spatial_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Spatial_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F185A3A822319E8E00AE66B2 /* Spatial_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Spatial_macOS.h; sourceTree = "<group>"; };
 		F185A3A922319E8E00AE66B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1AA755B2269F94400D4C272 /* AlignType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlignType.swift; sourceTree = "<group>"; };
+		F1AA755C2269F94400D4C272 /* AlignType+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AlignType+Extension.swift"; sourceTree = "<group>"; };
+		F1AA75632269F96800D4C272 /* Alignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alignment.swift; sourceTree = "<group>"; };
+		F1AA75642269F96800D4C272 /* Alignment+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alignment+Extension.swift"; sourceTree = "<group>"; };
+		F1AA756B2269F99D00D4C272 /* Axis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Axis.swift; sourceTree = "<group>"; };
+		F1AA756C2269F99D00D4C272 /* AxisType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxisType.swift; sourceTree = "<group>"; };
+		F1AA756D2269F99D00D4C272 /* VerticalAlign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalAlign.swift; sourceTree = "<group>"; };
+		F1AA756E2269F99D00D4C272 /* HorizontalAlign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalAlign.swift; sourceTree = "<group>"; };
 		F1BD0416219B06F200A4A46F /* ConstraintKind+Animate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConstraintKind+Animate.swift"; sourceTree = "<group>"; };
-		F1BED6FE21B7A99000A0D3D4 /* AlignType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignType.swift; sourceTree = "<group>"; };
-		F1BED70021B7A99D00A0D3D4 /* AxisType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisType.swift; sourceTree = "<group>"; };
-		F1BED70221B7A9AE00A0D3D4 /* HorizontalAlign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalAlign.swift; sourceTree = "<group>"; };
-		F1BED70421B7A9BB00A0D3D4 /* VerticalAlign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalAlign.swift; sourceTree = "<group>"; };
-		F1BED70621B7AAFE00A0D3D4 /* Axis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Axis.swift; sourceTree = "<group>"; };
-		F1BED70821B7B12400A0D3D4 /* Alignment+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alignment+Extension.swift"; sourceTree = "<group>"; };
-		F1BED70A21B7B14B00A0D3D4 /* AlignType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlignType+Extension.swift"; sourceTree = "<group>"; };
 		F1C624FC21C789790082A265 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		F1C624FE21C789830082A265 /* MainView+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainView+Create.swift"; sourceTree = "<group>"; };
 		F1CDF087225D22F10076EC92 /* ConstraintKind+Bulk+Access.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConstraintKind+Bulk+Access.swift"; sourceTree = "<group>"; };
@@ -217,7 +218,6 @@
 		F1D369EF2171FDAF00F498FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1D369F22171FDAF00F498FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1D369F42171FDAF00F498FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F1D369FC2172039B00F498FA /* Alignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alignment.swift; sourceTree = "<group>"; };
 		F1D369FD2172039B00F498FA /* ConstraintKind+Apply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConstraintKind+Apply.swift"; sourceTree = "<group>"; };
 		F1D369FF2172039B00F498FA /* Constraint+Activate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Constraint+Activate.swift"; sourceTree = "<group>"; };
 		F1FC84D32174E6B800D01B72 /* MiddleContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleContent.swift; sourceTree = "<group>"; };
@@ -452,6 +452,35 @@
 			path = "Spatial-macOS";
 			sourceTree = "<group>";
 		};
+		F1AA755A2269F94400D4C272 /* aligntype */ = {
+			isa = PBXGroup;
+			children = (
+				F1AA755B2269F94400D4C272 /* AlignType.swift */,
+				F1AA755C2269F94400D4C272 /* AlignType+Extension.swift */,
+			);
+			path = aligntype;
+			sourceTree = "<group>";
+		};
+		F1AA75622269F96800D4C272 /* alignment */ = {
+			isa = PBXGroup;
+			children = (
+				F1AA75632269F96800D4C272 /* Alignment.swift */,
+				F1AA75642269F96800D4C272 /* Alignment+Extension.swift */,
+			);
+			path = alignment;
+			sourceTree = "<group>";
+		};
+		F1AA756A2269F99D00D4C272 /* axis */ = {
+			isa = PBXGroup;
+			children = (
+				F1AA756B2269F99D00D4C272 /* Axis.swift */,
+				F1AA756C2269F99D00D4C272 /* AxisType.swift */,
+				F1AA756D2269F99D00D4C272 /* VerticalAlign.swift */,
+				F1AA756E2269F99D00D4C272 /* HorizontalAlign.swift */,
+			);
+			path = axis;
+			sourceTree = "<group>";
+		};
 		F1BBDD132180B4FD008DBC9B /* content */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,14 +494,9 @@
 		F1BED6FD21B7A97300A0D3D4 /* align */ = {
 			isa = PBXGroup;
 			children = (
-				F1D369FC2172039B00F498FA /* Alignment.swift */,
-				F1BED70821B7B12400A0D3D4 /* Alignment+Extension.swift */,
-				F1BED70621B7AAFE00A0D3D4 /* Axis.swift */,
-				F1BED70221B7A9AE00A0D3D4 /* HorizontalAlign.swift */,
-				F1BED70421B7A9BB00A0D3D4 /* VerticalAlign.swift */,
-				F1BED70021B7A99D00A0D3D4 /* AxisType.swift */,
-				F1BED6FE21B7A99000A0D3D4 /* AlignType.swift */,
-				F1BED70A21B7B14B00A0D3D4 /* AlignType+Extension.swift */,
+				F1AA756A2269F99D00D4C272 /* axis */,
+				F1AA755A2269F94400D4C272 /* aligntype */,
+				F1AA75622269F96800D4C272 /* alignment */,
 			);
 			path = align;
 			sourceTree = "<group>";
@@ -744,33 +768,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F185A3C522319EAC00AE66B2 /* AxisType.swift in Sources */,
 				F185A3BF22319EAC00AE66B2 /* Constraint+Distribution.swift in Sources */,
+				F1AA75702269F99D00D4C272 /* Axis.swift in Sources */,
 				F185A3BA22319EAC00AE66B2 /* Constraint+Anchor.swift in Sources */,
+				F1AA755E2269F94500D4C272 /* AlignType.swift in Sources */,
+				F1AA75762269F99D00D4C272 /* HorizontalAlign.swift in Sources */,
 				F185A3BB22319EAC00AE66B2 /* Constraint+Size.swift in Sources */,
 				F185A3B922319EAC00AE66B2 /* Constraint+Access.swift in Sources */,
-				F185A3C622319EAC00AE66B2 /* AlignType.swift in Sources */,
 				F185A3BD22319EAC00AE66B2 /* Constraint+Activate+Bulk.swift in Sources */,
 				F185A3B622319EAC00AE66B2 /* ConstraintView.swift in Sources */,
 				F185A3B422319EAC00AE66B2 /* ConstraintKind+SpaceBetween.swift in Sources */,
-				F185A3C722319EAC00AE66B2 /* AlignType+Extension.swift in Sources */,
-				F185A3C322319EAC00AE66B2 /* HorizontalAlign.swift in Sources */,
+				F1AA75682269F96800D4C272 /* Alignment+Extension.swift in Sources */,
+				F1AA75602269F94500D4C272 /* AlignType+Extension.swift in Sources */,
+				F1AA75722269F99D00D4C272 /* AxisType.swift in Sources */,
 				F185A3B722319EAC00AE66B2 /* ConstraintKind+Animate.swift in Sources */,
 				F185A3BE22319EAC00AE66B2 /* Constraint+Type.swift in Sources */,
 				F185A3B122319EAC00AE66B2 /* ConstraintKind+Bulk.swift in Sources */,
-				F185A3C022319EAC00AE66B2 /* Alignment.swift in Sources */,
 				F185A3BC22319EAC00AE66B2 /* Constraint+Activate.swift in Sources */,
 				F185A3B022319EAC00AE66B2 /* ConstraintKind+Apply.swift in Sources */,
+				F1AA75662269F96800D4C272 /* Alignment.swift in Sources */,
 				F185A3AF22319EAC00AE66B2 /* ConstraintKind+Access.swift in Sources */,
 				F185A3B822319EAC00AE66B2 /* ConstraintKind+Update.swift in Sources */,
-				F185A3C422319EAC00AE66B2 /* VerticalAlign.swift in Sources */,
 				F185A3B522319EAC00AE66B2 /* ConstraintKind+SpaceAround.swift in Sources */,
-				F185A3C222319EAC00AE66B2 /* Axis.swift in Sources */,
+				F1AA75742269F99D00D4C272 /* VerticalAlign.swift in Sources */,
 				F185A3B222319EAC00AE66B2 /* ConstraintKind+Type.swift in Sources */,
 				F1CDF089225D22F10076EC92 /* ConstraintKind+Bulk+Access.swift in Sources */,
 				F185A3B322319EAC00AE66B2 /* ConstraintKind.swift in Sources */,
 				F185A3AE22319EAC00AE66B2 /* Hybrid.swift in Sources */,
-				F185A3C122319EAC00AE66B2 /* Alignment+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,30 +804,30 @@
 			files = (
 				F17E0E3E21DF356900EE3027 /* ConstraintView.swift in Sources */,
 				F1D36A012172039B00F498FA /* ConstraintKind+Apply.swift in Sources */,
+				F1AA756F2269F99D00D4C272 /* Axis.swift in Sources */,
 				F10213CD218756310038F496 /* Constraint+Distribution.swift in Sources */,
-				F1BED70B21B7B14B00A0D3D4 /* AlignType+Extension.swift in Sources */,
-				F1BED70121B7A99D00A0D3D4 /* AxisType.swift in Sources */,
+				F1AA755D2269F94500D4C272 /* AlignType.swift in Sources */,
+				F1AA75752269F99D00D4C272 /* HorizontalAlign.swift in Sources */,
 				F1BD0417219B06F200A4A46F /* ConstraintKind+Animate.swift in Sources */,
-				F1BED70921B7B12400A0D3D4 /* Alignment+Extension.swift in Sources */,
 				F185A3A02231974E00AE66B2 /* Hybrid.swift in Sources */,
 				F17E0E3221DE36F300EE3027 /* Constraint+Type.swift in Sources */,
+				F1AA75672269F96800D4C272 /* Alignment+Extension.swift in Sources */,
+				F1AA755F2269F94500D4C272 /* AlignType+Extension.swift in Sources */,
 				F17E0E2E21DE327B00EE3027 /* ConstraintKind+Bulk.swift in Sources */,
 				F109EE6D21E383F000FCC696 /* ConstraintKind+Access.swift in Sources */,
+				F1AA75712269F99D00D4C272 /* AxisType.swift in Sources */,
 				F17E0E2C21DE31A800EE3027 /* ConstraintKind+Type.swift in Sources */,
 				F1D36A032172039B00F498FA /* Constraint+Activate.swift in Sources */,
 				F14FADE121F3980F00ACE5FF /* ConstraintKind+SpaceBetween.swift in Sources */,
 				F17E0E4021DF35DF00EE3027 /* ConstraintKind.swift in Sources */,
 				F14FADE321F398C000ACE5FF /* ConstraintKind+SpaceAround.swift in Sources */,
-				F1BED70521B7A9BB00A0D3D4 /* VerticalAlign.swift in Sources */,
-				F1BED70321B7A9AE00A0D3D4 /* HorizontalAlign.swift in Sources */,
-				F1D36A002172039B00F498FA /* Alignment.swift in Sources */,
+				F1AA75652269F96800D4C272 /* Alignment.swift in Sources */,
 				F17E0E3A21DF33E100EE3027 /* ConstraintKind+Update.swift in Sources */,
 				F17E0E3821DF2A8D00EE3027 /* Constraint+Size.swift in Sources */,
-				F1BED70721B7AAFE00A0D3D4 /* Axis.swift in Sources */,
+				F1AA75732269F99D00D4C272 /* VerticalAlign.swift in Sources */,
 				F109EE6B21E382D100FCC696 /* Constraint+Access.swift in Sources */,
 				F1CDF088225D22F10076EC92 /* ConstraintKind+Bulk+Access.swift in Sources */,
 				F17E0E3021DE364D00EE3027 /* Constraint+Activate+Bulk.swift in Sources */,
-				F1BED6FF21B7A99000A0D3D4 /* AlignType.swift in Sources */,
 				F17E0E3621DF29E100EE3027 /* Constraint+Anchor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

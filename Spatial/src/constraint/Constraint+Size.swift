@@ -2,19 +2,21 @@ import Foundation
 /**
  * Size constraints
  * NOTE: Has a lot of NSConstraint and NSAnchor info: https://stackoverflow.com/a/26181982/5389500
- * EXAMPLE: square.translatesAutoresizingMaskIntoConstraints = false (this enables you to set your own constraints)
- * EXAMPLE: contentView.layoutMargins = UIEdgeInsetsMake(12,12,12,12)//adds margin to the containing view
- * EXAMPLE: let pos = Constraint.anchor(square,to:canvas,targetAlign:.topleft,toAlign:.topleft)
- * EXAMPLE: let size = Constraint.size(square,to:canvas)
- * EXAMPLE: NSLayoutConstraint.activate([anchor.x,anchor.y,size.w,size.h])
+ * ## Examples:
+ * square.translatesAutoresizingMaskIntoConstraints = false (this enables you to set your own constraints)
+ * contentView.layoutMargins = UIEdgeInsetsMake(12,12,12,12)//adds margin to the containing view
+ * let pos = Constraint.anchor(square,to:canvas,targetAlign:.topleft,toAlign:.topleft)
+ * let size = Constraint.size(square,to:canvas)
+ * NSLayoutConstraint.activate([anchor.x,anchor.y,size.w,size.h])
  */
 extension Constraint{
    /**
     * Creates a dimensional constraint
-    * - IMPORTANT: Multiplier needs to be 1,1 to not have an effect
-    * - IMPORTANT: Offset needs to be 0,0 to not have an effect
-    * ## EXAMPLE: let sizeConstraint = Constraint.size(square,to:canvas,offset:.zero,multiplier:.init(x:1,y:0.5))
-    * ## EXAMPLE: let widthConstraint = Constraint.size(square,to:canvas).w
+    * - Important: Multiplier needs to be 1,1 to not have an effect
+    * - Important: Offset needs to be 0,0 to not have an effect
+    * ## EXAMPLEs:
+    * let sizeConstraint = Constraint.size(square,to:canvas,offset:.zero,multiplier:.init(x:1,y:0.5))
+    * let widthConstraint = Constraint.size(square,to:canvas).w
     */
    public static func size(_ view:View, to:View, offset:CGSize = .zero, multiplier:CGPoint = CGPoint(x:1,y:1)) -> SizeConstraint{
       let w = Constraint.width(view, to: to, offset: offset.width, multiplier: multiplier.x)
@@ -24,7 +26,7 @@ extension Constraint{
    /**
     * Creates a size constraint
     * - TODO: ⚠️️ This doesn't have offset, maybe it should 🤔 for now I guess you can always inset the size
-    * ## EXAMPLE:
+    * ## Examples:
     * let sizeConstraint = Constraint.size(square,size:CGSize(100,100))
     */
    public static func size(_ view:View, size:CGSize, multiplier:CGSize = CGSize(width:1,height:1)) -> SizeConstraint{
@@ -35,13 +37,14 @@ extension Constraint{
    /**
     * Creates a size constraint
     * - Returns size tuple (based on parent and or width or height)
-    * - Parameter view: The view to be sized by AutoLayout
-    * - Parameter to: The view to be sized to
-    * - Parameter width: custom width, instead of relying on another view to size against
-    * - Parameter height: custom height, instead of relying on another view to size against
-    * - Prameter offset: add extra offset to view in x,y dir
-    * - Parameter multiplier: Scale the size constraint by this scalar (works with other view and custom size)
-    * ## EXAMPLE:
+    *  Parameters:
+    *    - view: The view to be sized by AutoLayout
+    *    - to: The view to be sized to
+    *    - width: custom width, instead of relying on another view to size against
+    *    - height: custom height, instead of relying on another view to size against
+    *    - offset: add extra offset to view in x,y dir
+    *    - multiplier: Scale the size constraint by this scalar (works with other view and custom size)
+    * ## Examples:
     * let s = Constraint.size(view, to:parent, height:48)
     */
    public static func size(_ view:View, to:View, width:CGFloat? = nil, height:CGFloat? = nil, offset:CGSize = .zero, multiplier:CGSize = .init(width:1,height:1))  -> SizeConstraint {
@@ -85,15 +88,16 @@ extension Constraint{
     * Represents a side, basically you can base one axis-length on another, so vertical length represents horixontal length etc
     * - Note: Useful if you want to set a width of an object to the height of another object
     * - Note: You can also use it on it's own view to copy width to height for instance
-    * - Parameter to: The view you relate to (usually the parent)
-    * - parameter view: the view to apply the constraint to
-    * - Parameter viewAxis: the attribute to set to
-    * - Parameter toAxis: the attribute to derive from
-    * - Parameter offset: x or y
-    * - Parameter multiplier: scalar value, default is 1
+    * - Parameters:
+    *    - to: The view you relate to (usually the parent)
+    *    - view: the view to apply the constraint to
+    *    - viewAxis: the attribute to set to
+    *    - toAxis: the attribute to derive from
+    *    - offset: x or y
+    *    - multiplier: scalar value, default is 1
     * - TODO: ⚠️️ Consider renaming this to side or axisLength?
     * - TODO: ⚠️️ Consider making the distinction between between viewAxis and toAxis more clear
-    * ## EXAMPLE:
+    * ## Examples:
     * let widthConstraint = Constraint.length(square,viewAxis:.horizontal,axis:.vertical)
     */
    public static func length(_ view:View, to:View, viewAxis:Axis, toAxis:Axis, offset:CGFloat = 0, multiplier:CGFloat = 1, relation:NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint{

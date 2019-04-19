@@ -36,7 +36,7 @@ fileprivate class SpaceAroundUtil{
          let numOfVoids:CGFloat = CGFloat(views.count + 1)/*then divide this voidSpace with .count - 1 and*/
          return totVoid / numOfVoids/*iterate of each item and inserting itemVoid in + width*/
       }()
-      var x:CGFloat = rect.origin.x+itemVoid/*interim x*/
+      var x:CGFloat = rect.origin.x + itemVoid/*interim x*/
       views.forEach{ item in
          item.activateConstraint { view in
             let constraint = Constraint.anchor(item, to: parent, align: .left, alignTo: .left, offset:x)
