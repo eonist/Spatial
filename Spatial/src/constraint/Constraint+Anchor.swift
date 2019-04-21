@@ -30,26 +30,26 @@ public class Constraint {
    /**
     * Vertical anchoring
     */
-   public static func anchor(_ view:View, to:View, align:VerticalAlign, alignTo:VerticalAlign, offset:CGFloat = 0, useMargin:Bool = false, relation:NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint {/*,offset:CGPoint = CGPoint()*/
+   public static func anchor(_ view:View, to:View, align: VerticalAlign, alignTo: VerticalAlign, offset:CGFloat = 0, useMargin:Bool = false, relation:NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint {/*,offset:CGPoint = CGPoint()*/
       let attr = Util.layoutAttr(align:align)
-      let relatedByAttr = Util.layoutAttr(align:alignTo,useMargin:useMargin)
-      return .init(item:view, attribute:attr , relatedBy:relation, toItem:to, attribute:relatedByAttr, multiplier:1.0, constant:offset)
+      let relatedByAttr = Util.layoutAttr(align: alignTo, useMargin: useMargin)
+      return .init(item:view, attribute:attr , relatedBy: relation, toItem: to, attribute: relatedByAttr, multiplier: 1.0, constant: offset)
    }
 }
 /**
  * Internal helper methods
  */
-fileprivate class Util{
+fileprivate class Util {
    /**
     * For aligning in the x axis (internal)
     * - Note: Layout margin is o ly available for ios and tvos
     */
-   static func layoutAttr(align:HorizontalAlign, useMargin:Bool = false) -> NSLayoutConstraint.Attribute{
-      switch align{
+   static func layoutAttr(align: HorizontalAlign, useMargin: Bool = false) -> NSLayoutConstraint.Attribute {
+      switch align {
       case .left:
          #if os(iOS)
          if useMargin {
-            return  NSLayoutConstraint.Attribute.leftMargin
+            return NSLayoutConstraint.Attribute.leftMargin
          }
          #endif
          return NSLayoutConstraint.Attribute.left //fatalError("err")
@@ -59,7 +59,7 @@ fileprivate class Util{
             return NSLayoutConstraint.Attribute.rightMargin
          }
          #endif
-         return  NSLayoutConstraint.Attribute.right
+         return NSLayoutConstraint.Attribute.right
       case .centerX:
          #if os(iOS)
          if useMargin {
@@ -73,8 +73,8 @@ fileprivate class Util{
     * For aligning in the y axis (internal)
     * - Note: Layout margin is o ly available for ios and tvos
     */
-   static func layoutAttr(align:VerticalAlign, useMargin:Bool = false) -> NSLayoutConstraint.Attribute{
-      switch align{
+   static func layoutAttr(align: VerticalAlign, useMargin: Bool = false) -> NSLayoutConstraint.Attribute{
+      switch align {
       case .top:
          #if os(iOS)
          if useMargin { return NSLayoutConstraint.Attribute.topMargin }

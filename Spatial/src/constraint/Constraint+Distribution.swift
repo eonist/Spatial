@@ -5,9 +5,9 @@ import Foundation
 extension Constraint {
    /**
     * Horizontal & Vertical Distribution
-    * - TODO: ⚠️️ Add support for spacing
-    * - TODO: ⚠️️ Add support for alignTo: (because you might want to set a different anchor for the views than for the view to align to)
-    * - TODO: ⚠️️ parent is always superview, then we must use UIView as type, remember your returning constriants, not setting actual anchor or size, you do that in activeConstraint
+    * - Fixme: ⚠️️ Add support for spacing
+    * - Fixme: ⚠️️ Add support for alignTo: (because you might want to set a different anchor for the views than for the view to align to)
+    * - Fixme: ⚠️️ parent is always superview, then we must use UIView as type, remember your returning constriants, not setting actual anchor or size, you do that in activeConstraint
     * - Important: ⚠️️ Sets only anchors not sizes
     * ## EXAMPLE:
     * [label1,label2,label3].applyAnchorsAndSizes { views in
@@ -15,16 +15,16 @@ extension Constraint {
     *      let sizes = views.map{ Constraint.size($0, toView: self.frame.width, height: 48)) }
     *      return (anchors, sizes)
     * }
-    * - NOTE: Alternativly you can do: views.enumerated().map{Constraint.anchor($0.1, to: self, align: .topLeft, alignTo:.topLeft,offset:CGPoint(x:0,y:48 * $0.0))} etc
+    * - Note: Alternativly you can do: views.enumerated().map{Constraint.anchor($0.1, to: self, align: .topLeft, alignTo:.topLeft,offset:CGPoint(x:0,y:48 * $0.0))} etc
     * Parameters:
     * - spacing: a void between items
     * - offset: offset the x in the begining
     * - align: at which corner should the first item align to
     * - views: the views to distribute in a row
     */
-   public static func distribute(horizontally views:[View], align:Alignment = .topLeft, spacing:CGFloat = 0, offset:CGFloat = 0) -> [AnchorConstraint] {
-      let xConstraints:[NSLayoutConstraint] = distribute(views, axis:.hor, align:align, spacing:spacing, offset:offset)
-      let yConstraints:[NSLayoutConstraint] = views.map{ view in
+   public static func distribute(horizontally views: [View], align: Alignment = .topLeft, spacing:CGFloat = 0, offset:CGFloat = 0) -> [AnchorConstraint] {
+      let xConstraints: [NSLayoutConstraint] = distribute(views, axis:.hor, align:align, spacing:spacing, offset:offset)
+      let yConstraints: [NSLayoutConstraint] = views.map { view in
          guard let superView = view.superview else {fatalError("View must have superview")}
          return Constraint.anchor(view, to: superView, align: align.verAlign, alignTo: align.verAlign)}
       let anchors:[AnchorConstraint] = Array(zip(xConstraints,yConstraints))

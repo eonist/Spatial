@@ -57,11 +57,11 @@ extension ConstraintKind where Self:View{
     * Update (size)
     * - Parameter size: the size you want to resize the instance to
     */
-   public func update(size:CGSize) {
-      updateSize { (superview,oldSize) in
-         NSLayoutConstraint.deactivate([oldSize.w,oldSize.h])
+   public func update(size: CGSize) {
+      updateSize { (superview, oldSize) in
+         NSLayoutConstraint.deactivate([oldSize.w, oldSize.h])
          let newSize = Constraint.size(self, size: size)
-         NSLayoutConstraint.activate([newSize.w,newSize.h])
+         NSLayoutConstraint.activate([newSize.w, newSize.h])
          self.size = newSize
       }
    }
@@ -69,14 +69,14 @@ extension ConstraintKind where Self:View{
     * Update (size & position) offset
     * - Parameter multiplier: only applies to the size (⚠️️ NOT IMPLEMENTED YET ⚠️️)
     */
-   public func update(rect:CGRect, align:Alignment, alignTo:Alignment){
-      guard let superview:View = self.superview else {Swift.print("⚠️️ err superview not available ⚠️️");return}
-      guard let oldAnchor = self.anchor else {Swift.print("⚠️️ err anchor not available ⚠️️");return}
-      guard let oldSize = self.size else {Swift.print("⚠️️ err sice not available ⚠️️");return}
+   public func update(rect: CGRect, align: Alignment, alignTo: Alignment) {
+      guard let superview: View = self.superview else { Swift.print("⚠️️ err superview not available ⚠️️"); return }
+      guard let oldAnchor: AnchorConstraint = self.anchor else { Swift.print("⚠️️ err anchor not available ⚠️️"); return }
+      guard let oldSize: SizeConstraint = self.size else { Swift.print("⚠️️ err sice not available ⚠️️"); return }
       NSLayoutConstraint.deactivate([oldAnchor.y, oldAnchor.x, oldSize.w, oldSize.h])
-      let newAnchor = Constraint.anchor(self, to: superview, align: align, alignTo: alignTo,offset:rect.origin)
+      let newAnchor = Constraint.anchor(self, to: superview, align: align, alignTo: alignTo, offset:rect.origin)
       let newSize = Constraint.size(self, size: rect.size)
-      NSLayoutConstraint.activate([newAnchor.x,newAnchor.y,newSize.w,newSize.h])
+      NSLayoutConstraint.activate([newAnchor.x, newAnchor.y, newSize.w, newSize.h])
       self.anchor = newAnchor
       self.size = newSize
       #if os(iOS)
@@ -89,15 +89,15 @@ extension ConstraintKind where Self:View{
 /**
  * Internal
  */
-extension ConstraintKind where Self:View{
+extension ConstraintKind where Self: View {
    /**
     * Internal (Anchor)
     * - Note: used in conjunction with animation
     */
-   fileprivate func updateAnchor(_ closure:UpdateAnchorClosure) {
-      guard let superview:View = self.superview else {Swift.print("⚠️️ err superview not available ⚠️️");return}
-      guard let oldAnchor = self.anchor else {Swift.print("⚠️️ err anchor not available ⚠️️");return}
-      closure(superview,oldAnchor)
+   fileprivate func updateAnchor(_ closure: UpdateAnchorClosure) {
+      guard let superview: View = self.superview else { Swift.print("⚠️️ err superview not available ⚠️️"); return }
+      guard let oldAnchor: AnchorConstraint = self.anchor else { Swift.print("⚠️️ err anchor not available ⚠️️"); return }
+      closure(superview, oldAnchor)
       #if os(iOS)
       superview.layoutIfNeeded()/*The superview is responsible for updating subView constraint updates*/
       #elseif os(macOS)
@@ -108,10 +108,10 @@ extension ConstraintKind where Self:View{
     * Internal (Size)
     * - Note: used in conjunction with animation
     */
-   fileprivate func updateSize(_ closure:UpdateSizeClosure) {
-      guard let superview:View = self.superview else {Swift.print("⚠️️ err superview not available ⚠️️");return}
-      guard let oldSize = self.size else {Swift.print("⚠️️ err sice not available ⚠️️");return}
-      closure(superview,oldSize)
+   fileprivate func updateSize(_ closure: UpdateSizeClosure) {
+      guard let superview: View = self.superview else { Swift.print("⚠️️ err superview not available ⚠️️"); return }
+      guard let oldSize: SizeConstraint = self.size else { Swift.print("⚠️️ err sice not available ⚠️️"); return }
+      closure(superview, oldSize)
       #if os(iOS)
       superview.layoutIfNeeded()/*The superview is responsible for updating subView constraint updates*/
       #elseif os(macOS)

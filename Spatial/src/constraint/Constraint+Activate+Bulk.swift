@@ -15,11 +15,11 @@ extension Array where Element:View{
     * - ToDo: ⚠️️ Can we utilize activateAnchors and activateSizes in this method? 🤔
     */
    public func activateAnchorsAndSizes(closure:ConstraintsClosure) {
-      self.forEach{$0.translatesAutoresizingMaskIntoConstraints = false}
-      let constraints:[NSLayoutConstraint] = {
-         let constraints:AnchorConstraintsAndSizeConstraints = closure(self)
-         let anchors = constraints.anchorConstraints.reduce([]) { $0 + [$1.x,$1.y] }
-         let sizes = constraints.sizeConstraints.reduce([]) { $0 + [$1.w,$1.h] }
+      self.forEach{ $0.translatesAutoresizingMaskIntoConstraints = false }
+      let constraints: [NSLayoutConstraint] = {
+         let constraints: AnchorConstraintsAndSizeConstraints = closure(self)
+         let anchors: [NSLayoutConstraint] = constraints.anchorConstraints.reduce([]) { $0 + [$1.x,$1.y] }
+         let sizes: [NSLayoutConstraint] = constraints.sizeConstraints.reduce([]) { $0 + [$1.w,$1.h] }
          return anchors + sizes
       }()
       NSLayoutConstraint.activate(constraints)
@@ -31,11 +31,11 @@ extension Array where Element:View{
     *    return Constraint.distribute(vertically: views, align: .topCenter)
     * }
     */
-   public func activateAnchors(closure:AnchorConstraintsClosure) {
-      self.forEach{$0.translatesAutoresizingMaskIntoConstraints = false}
-      let constraints:[NSLayoutConstraint] = {
-         let constraints:[AnchorConstraint] = closure(self)
-         let anchors = constraints.reduce([]) { $0 + [$1.x,$1.y] }
+   public func activateAnchors(closure: AnchorConstraintsClosure) {
+      self.forEach{ $0.translatesAutoresizingMaskIntoConstraints = false }
+      let constraints: [NSLayoutConstraint] = {
+         let constraints: [AnchorConstraint] = closure(self)
+         let anchors: [NSLayoutConstraint] = constraints.reduce([]) { $0 + [$1.x,$1.y] }
          return anchors
       }()
       NSLayoutConstraint.activate(constraints)
@@ -48,10 +48,10 @@ extension Array where Element:View{
     * }
     */
    public func activateSizes(closure:SizeConstraintsClosure) {
-      self.forEach{$0.translatesAutoresizingMaskIntoConstraints = false}
-      let constraints:[NSLayoutConstraint] = {
-         let constraints:[SizeConstraint] = closure(self)
-         let sizes = constraints.reduce([]) { $0 + [$1.w,$1.h] }
+      self.forEach{ $0.translatesAutoresizingMaskIntoConstraints = false }
+      let constraints: [NSLayoutConstraint] = {
+         let constraints: [SizeConstraint] = closure(self)
+         let sizes: [NSLayoutConstraint] = constraints.reduce([]) { $0 + [$1.w, $1.h] }
          return sizes
       }()
       NSLayoutConstraint.activate(constraints)
