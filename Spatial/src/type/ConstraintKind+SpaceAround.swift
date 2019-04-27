@@ -2,7 +2,7 @@ import Foundation
 /**
  * Extension for spaceAround method
  */
-extension Array where Element:ConstraintKind.ViewConstraintKind{
+extension Array where Element: ConstraintKind.ViewConstraintKind {
    /**
     * Same as spaceBetween but does not pin to sides but rather add equal spacing there as well
     * - Important: ⚠️️ only works with UIConstraintView where size is available
@@ -12,12 +12,12 @@ extension Array where Element:ConstraintKind.ViewConstraintKind{
     * views.spaceAround(dir: .hor, parent: self)
     * - Parameter inset: Inset the parent bound
     */
-   public func spaceAround(dir:Axis, parent:View, inset:EdgeInsets = .init()){
+   public func spaceAround(dir: Axis, parent: View, inset: EdgeInsets = .init()) {
       switch dir {
       case .hor:
-         SpaceAroundUtil.spaceAround(horizontally:parent, views:self, inset:inset)
+         SpaceAroundUtil.spaceAround(horizontally: parent, views: self, inset: inset)
       case .ver:
-         SpaceAroundUtil.spaceAround(vertically:parent, views:self, inset:inset)
+         SpaceAroundUtil.spaceAround(vertically: parent, views: self, inset: inset)
       }
    }
 }
@@ -31,15 +31,15 @@ fileprivate class SpaceAroundUtil {
    static func spaceAround(horizontally parent: View, views: [ConstraintKind.ViewConstraintKind], inset: EdgeInsets) {
       let rect: CGRect = parent.bounds.inset(by: inset)
       let itemVoid: CGFloat = {
-         let totW: CGFloat = views.reduce(0){$0 + ($1.size?.w.constant ?? 0)}/*find the totalW of all items*/
-         let totVoid: CGFloat = rect.width - totW/*find totVoid by doing w - totw*/
-         let numOfVoids: CGFloat = CGFloat(views.count + 1)/*then divide this voidSpace with .count - 1 and*/
+         let totW: CGFloat = views.reduce(0) { $0 + ($1.size?.w.constant ?? 0) }/*find the totalW of all items*/
+         let totVoid: CGFloat = rect.width - totW /*find totVoid by doing w - totw*/
+         let numOfVoids = CGFloat(views.count + 1)/*then divide this voidSpace with .count - 1 and*/
          return totVoid / numOfVoids/*iterate of each item and inserting itemVoid in + width*/
       }()
-      var x:CGFloat = rect.origin.x + itemVoid/*interim x*/
+      var x: CGFloat = rect.origin.x + itemVoid/*interim x*/
       views.forEach { item in
          item.activateConstraint { _ in
-            let constraint = Constraint.anchor(item, to: parent, align: .left, alignTo: .left, offset:x)
+            let constraint = Constraint.anchor(item, to: parent, align: .left, alignTo: .left, offset: x)
             item.anchor?.x = constraint
             return constraint
          }
@@ -50,11 +50,11 @@ fileprivate class SpaceAroundUtil {
     * spaceAround (Vertical)
     */
    static func spaceAround(vertically parent: View, views: [ConstraintKind.ViewConstraintKind], inset: EdgeInsets) {
-      let rect:CGRect = parent.bounds.inset(by: inset)
+      let rect: CGRect = parent.bounds.inset(by: inset)
       let itemVoid: CGFloat = {
          let totH: CGFloat = views.reduce(0) { $0 + ($1.size?.h.constant ?? 0) }/*find the totalW of all items*/
          let totVoid: CGFloat = rect.height - totH /*find totVoid by doing w - totw*/
-         let numOfVoids: CGFloat = CGFloat(views.count + 1) /*then divide this voidSpace with .count - 1 and*/
+         let numOfVoids = CGFloat(views.count + 1) /*then divide this voidSpace with .count - 1 and*/
          return totVoid / numOfVoids /*iterate of each item and inserting itemVoid in + width*/
       }()
       var y: CGFloat = rect.origin.y + itemVoid/*interim y*/

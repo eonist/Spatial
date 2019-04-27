@@ -36,11 +36,11 @@ extension CardView{
 /**
  * Background & layer
  */
-extension CardView{
+extension CardView {
    /**
     * Creates bg layer
     */
-   func createBackgroundLayer() -> CALayer{
+   func createBackgroundLayer() -> CALayer {
       let bgLayer: CALayer = {
          let layer = CALayer()
          layer.backgroundColor = UIColor.green.cgColor
@@ -53,7 +53,7 @@ extension CardView{
    /**
     * Creates and applies mask to view
     */
-   func createMaskLayer() -> CAShapeLayer{
+   func createMaskLayer() -> CAShapeLayer {
       let maskLayer = CAShapeLayer()
       let path:UIBezierPath = .init(roundedRect: self.bounds, cornerRadius: 24)
       maskLayer.path = path.cgPath

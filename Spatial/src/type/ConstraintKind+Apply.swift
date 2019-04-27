@@ -1,10 +1,9 @@
-
 import Foundation
 /**
  * Update constraints (For items that are of type ConstraintKind)
  * - NOTE: adding a method called activateConstraints doesn't make any sense because you have only anchor and size or either
  */
-extension ConstraintKind where Self:View{
+extension ConstraintKind where Self: View {
    /**
     * Activates and sets size and anchor to a ConstraintKind
     * - Note Same as UIView().activateConstraint... but also sets size and anchor constraints (ConstraintKind) (For animation etc)
@@ -25,7 +24,7 @@ extension ConstraintKind where Self:View{
     * Activates and sets anchor to a ConstraintKind
     * - Note: remeber to deactive constraints before calling this method
     */
-   public func applyAnchor(closure: AnchorClosure)  {
+   public func applyAnchor(closure: AnchorClosure) {
       self.translatesAutoresizingMaskIntoConstraints = false
       let anchorConstraint: AnchorConstraint = closure(self)/*the constraints is returned from the closure*/
       let constraints: [NSLayoutConstraint] = [anchorConstraint.x, anchorConstraint.y]
@@ -35,7 +34,7 @@ extension ConstraintKind where Self:View{
    /**
     * Activates and sets size to a ConstraintKind
     */
-   public func applySize(closure:SizeClosure) {
+   public func applySize(closure: SizeClosure) {
       self.translatesAutoresizingMaskIntoConstraints = false
       let sizeConstraint: SizeConstraint = closure(self)/*the constraints is returned from the closure*/
       let constraints: [NSLayoutConstraint] = [sizeConstraint.w, sizeConstraint.h]
@@ -46,7 +45,7 @@ extension ConstraintKind where Self:View{
     * Sets both anchor and size to a ConstraintKind
     * - Note: this could be a variable, but I guess it's not because for some reason? 🤔
     */
-   public func setConstraint(anchor:AnchorConstraint, size:SizeConstraint) {
+   public func setConstraint(anchor: AnchorConstraint, size: SizeConstraint) {
       self.anchor = anchor
       self.size = size
    }

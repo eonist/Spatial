@@ -18,18 +18,18 @@ extension Constraint {
     * let sizeConstraint = Constraint.size(square,to:canvas,offset:.zero,multiplier:.init(x:1,y:0.5))
     * let widthConstraint = Constraint.size(square,to:canvas).w
     */
-   public static func size(_ view:View, to:View, offset:CGSize = .zero, multiplier:CGPoint = CGPoint(x:1,y:1)) -> SizeConstraint{
+   public static func size(_ view: View, to: View, offset: CGSize = .zero, multiplier: CGPoint = .init(x:1, y:1)) -> SizeConstraint {
       let width = Constraint.width(view, to: to, offset: offset.width, multiplier: multiplier.x)
       let height = Constraint.height(view, to: to, offset: offset.height, multiplier: multiplier.y)
       return (width, height)
    }
    /**
     * Creates a size constraint
-    * - TODO: ⚠️️ This doesn't have offset, maybe it should 🤔 for now I guess you can always inset the size
+    * - Fixme: ⚠️️ This doesn't have offset, maybe it should 🤔 for now I guess you can always inset the size
     * ## Examples:
     * let sizeConstraint = Constraint.size(square,size:CGSize(100,100))
     */
-   public static func size(_ view:View, size:CGSize, multiplier:CGSize = CGSize(width:1,height:1)) -> SizeConstraint{
+   public static func size(_ view: View, size: CGSize, multiplier: CGSize = .init(width: 1, height: 1)) -> SizeConstraint {
       let width = Constraint.width(view, width: size.width, multiplier: multiplier.width)
       let height = Constraint.height(view, height: size.height, multiplier: multiplier.height)
       return (width, height)
@@ -47,16 +47,16 @@ extension Constraint {
     * ## Examples:
     * let s = Constraint.size(view, to:parent, height:48)
     */
-   public static func size(_ view: View, to: View, width: CGFloat? = nil, height: CGFloat? = nil, offset: CGSize = .zero, multiplier: CGSize = .init(width: 1,height: 1)) -> SizeConstraint {
-      let width:NSLayoutConstraint = {
+   public static func size(_ view: View, to: View, width: CGFloat? = nil, height: CGFloat? = nil, offset: CGSize = .zero, multiplier: CGSize = .init(width: 1, height: 1)) -> SizeConstraint {
+      let width: NSLayoutConstraint = {
          if let width = width { return Constraint.width(view, width: width, multiplier: multiplier.width) }
          else { return Constraint.width(view, to: to, offset: offset.width, multiplier: multiplier.width) }
       }()
-      let height:NSLayoutConstraint = {
+      let height: NSLayoutConstraint = {
          if let height = height { return Constraint.height(view, height: height, multiplier: multiplier.height) }
          else { return Constraint.height(view, to: to, offset: offset.height, multiplier: multiplier.height) }
       }()
-      return (width,height)
+      return (width, height)
    }
    /**
     * Creates a width constraint (based on a CGFloat width)
@@ -95,14 +95,14 @@ extension Constraint {
     *    - toAxis: the attribute to derive from
     *    - offset: x or y
     *    - multiplier: scalar value, default is 1
-    * - TODO: ⚠️️ Consider renaming this to side or axisLength?
-    * - TODO: ⚠️️ Consider making the distinction between between viewAxis and toAxis more clear
+    * - Fixme: ⚠️️ Consider renaming this to side or axisLength?
+    * - Fixme: ⚠️️ Consider making the distinction between between viewAxis and toAxis more clear
     * ## Examples:
     * let widthConstraint = Constraint.length(square,viewAxis:.horizontal,axis:.vertical)
     */
-   public static func length(_ view:View, to:View, viewAxis:Axis, toAxis:Axis, offset:CGFloat = 0, multiplier:CGFloat = 1, relation:NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint{
-      let viewAttr:NSLayoutConstraint.Attribute = viewAxis == .hor ? .width : .height
-      let toAttr:NSLayoutConstraint.Attribute = toAxis == .hor ? .width : .height
-      return .init(item: view, attribute: viewAttr, relatedBy: relation, toItem: to, attribute: toAttr, multiplier: multiplier, constant: offset)//NSLayoutAttribute.notAnAttribute
+   public static func length(_ view: View, to: View, viewAxis: Axis, toAxis: Axis, offset: CGFloat = 0, multiplier: CGFloat = 1, relation: NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint {
+      let viewAttr: NSLayoutConstraint.Attribute = viewAxis == .hor ? .width : .height
+      let toAttr: NSLayoutConstraint.Attribute = toAxis == .hor ? .width : .height
+      return .init(item: view, attribute: viewAttr, relatedBy: relation, toItem: to, attribute: toAttr, multiplier: multiplier, constant: offset)
    }
 }

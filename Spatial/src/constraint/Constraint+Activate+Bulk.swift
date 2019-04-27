@@ -2,7 +2,7 @@ import Foundation
 /**
  * Array
  */
-extension Array where Element:View{
+extension Array where Element: View {
    /**
     * AutoLayout Sugar for UIView's (Multiple)
     * ## Examples:
@@ -11,15 +11,15 @@ extension Array where Element:View{
     *      let sizes = views.map{Constraint.size(width:96,height:42)}
     *      return (anchors, sizes)
     * }
-    * - NOTE: ⚠️️ You have to zip together anchors in some cases
-    * - ToDo: ⚠️️ Can we utilize activateAnchors and activateSizes in this method? 🤔
+    * - Note: ⚠️️ You have to zip together anchors in some cases
+    * - Fixme: ⚠️️ Can we utilize activateAnchors and activateSizes in this method? 🤔
     */
    public func activateAnchorsAndSizes(closure:ConstraintsClosure) {
-      self.forEach{ $0.translatesAutoresizingMaskIntoConstraints = false }
+      self.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
       let constraints: [NSLayoutConstraint] = {
          let constraints: AnchorConstraintsAndSizeConstraints = closure(self)
-         let anchors: [NSLayoutConstraint] = constraints.anchorConstraints.reduce([]) { $0 + [$1.x,$1.y] }
-         let sizes: [NSLayoutConstraint] = constraints.sizeConstraints.reduce([]) { $0 + [$1.w,$1.h] }
+         let anchors: [NSLayoutConstraint] = constraints.anchorConstraints.reduce([]) { $0 + [$1.x, $1.y] }
+         let sizes: [NSLayoutConstraint] = constraints.sizeConstraints.reduce([]) { $0 + [$1.w, $1.h] }
          return anchors + sizes
       }()
       NSLayoutConstraint.activate(constraints)
@@ -32,10 +32,10 @@ extension Array where Element:View{
     * }
     */
    public func activateAnchors(closure: AnchorConstraintsClosure) {
-      self.forEach{ $0.translatesAutoresizingMaskIntoConstraints = false }
+      self.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
       let constraints: [NSLayoutConstraint] = {
          let constraints: [AnchorConstraint] = closure(self)
-         let anchors: [NSLayoutConstraint] = constraints.reduce([]) { $0 + [$1.x,$1.y] }
+         let anchors: [NSLayoutConstraint] = constraints.reduce([]) { $0 + [$1.x, $1.y] }
          return anchors
       }()
       NSLayoutConstraint.activate(constraints)
@@ -47,8 +47,8 @@ extension Array where Element:View{
     *    return views.map{$0.size(width:96,height:42)}
     * }
     */
-   public func activateSizes(closure:SizeConstraintsClosure) {
-      self.forEach{ $0.translatesAutoresizingMaskIntoConstraints = false }
+   public func activateSizes(closure: SizeConstraintsClosure) {
+      self.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
       let constraints: [NSLayoutConstraint] = {
          let constraints: [SizeConstraint] = closure(self)
          let sizes: [NSLayoutConstraint] = constraints.reduce([]) { $0 + [$1.w, $1.h] }

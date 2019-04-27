@@ -2,12 +2,12 @@ import Foundation
 /**
  * Offset horizontally or vertically
  */
-extension ConstraintKind where Self:View{
+extension ConstraintKind where Self: View {
    /**
     * - Remark: Callback closures signatures as typalias makes code easier to read
     */
-   typealias UpdateAnchorClosure = (_ superView:View,_ oldAnchor:AnchorConstraint) -> Void
-   typealias UpdateSizeClosure = (_ superView:View,_ oldAnchor:SizeConstraint) -> Void
+   typealias UpdateAnchorClosure = (_ superView: View, _ oldAnchor: AnchorConstraint) -> Void
+   typealias UpdateSizeClosure = (_ superView: View, _ oldAnchor: SizeConstraint) -> Void
    /**
     * Updates horizontal anchor
     * - Parameters:
@@ -15,8 +15,8 @@ extension ConstraintKind where Self:View{
     *    - align: horizontal axis alignment type for the instance you are applying to
     *    - alignTo: horizontal axis alignment to another instance
     */
-   public func update(offset:CGFloat, align:HorizontalAlign, alignTo:HorizontalAlign){
-      updateAnchor { (superview,oldAnchor) in
+   public func update(offset: CGFloat, align: HorizontalAlign, alignTo: HorizontalAlign) {
+      updateAnchor { superview, oldAnchor in
          NSLayoutConstraint.deactivate([oldAnchor.x])
          let newAnchorX = Constraint.anchor(self, to: superview, align: align, alignTo: alignTo, offset: offset)
          NSLayoutConstraint.activate([newAnchorX])
@@ -30,8 +30,8 @@ extension ConstraintKind where Self:View{
     *    - align: vertical axis alignment type for the instance you are applying to
     *    - alignTo: vertical axis alignment to another instance
     */
-   public func update(offset:CGFloat, align:VerticalAlign, alignTo:VerticalAlign){
-      updateAnchor { (superview,oldAnchor) in
+   public func update(offset: CGFloat, align: VerticalAlign, alignTo: VerticalAlign) {
+      updateAnchor { superview, oldAnchor in
          NSLayoutConstraint.deactivate([oldAnchor.y])
          let newAnchorY = Constraint.anchor(self, to: superview, align: align, alignTo: alignTo, offset: offset)
          NSLayoutConstraint.activate([newAnchorY])
@@ -45,11 +45,11 @@ extension ConstraintKind where Self:View{
     *    - align: axis alignment type for the instance you are applying to
     *    - alignTo: axis alignment to another instance
     */
-   public func update(offset:CGPoint, align:Alignment, alignTo:Alignment){
-      updateAnchor { (superview,oldAnchor) in
-         NSLayoutConstraint.deactivate([oldAnchor.x,oldAnchor.y])
-         let newAnchor = Constraint.anchor(self, to: superview, align: align, alignTo: alignTo, offset:offset)
-         NSLayoutConstraint.activate([newAnchor.x,newAnchor.y])
+   public func update(offset: CGPoint, align: Alignment, alignTo: Alignment) {
+      updateAnchor { superview, oldAnchor in
+         NSLayoutConstraint.deactivate([oldAnchor.x, oldAnchor.y])
+         let newAnchor: AnchorConstraint = Constraint.anchor(self, to: superview, align: align, alignTo: alignTo, offset: offset)
+         NSLayoutConstraint.activate([newAnchor.x, newAnchor.y])
          self.anchor = newAnchor
       }
    }
@@ -58,9 +58,9 @@ extension ConstraintKind where Self:View{
     * - Parameter size: the size you want to resize the instance to
     */
    public func update(size: CGSize) {
-      updateSize { (superview, oldSize) in
+      updateSize { _, oldSize in
          NSLayoutConstraint.deactivate([oldSize.w, oldSize.h])
-         let newSize = Constraint.size(self, size: size)
+         let newSize: SizeConstraint = Constraint.size(self, size: size)
          NSLayoutConstraint.activate([newSize.w, newSize.h])
          self.size = newSize
       }
@@ -74,8 +74,8 @@ extension ConstraintKind where Self:View{
       guard let oldAnchor: AnchorConstraint = self.anchor else { Swift.print("⚠️️ err anchor not available ⚠️️"); return }
       guard let oldSize: SizeConstraint = self.size else { Swift.print("⚠️️ err sice not available ⚠️️"); return }
       NSLayoutConstraint.deactivate([oldAnchor.y, oldAnchor.x, oldSize.w, oldSize.h])
-      let newAnchor = Constraint.anchor(self, to: superview, align: align, alignTo: alignTo, offset:rect.origin)
-      let newSize = Constraint.size(self, size: rect.size)
+      let newAnchor: AnchorConstraint = Constraint.anchor(self, to: superview, align: align, alignTo: alignTo, offset: rect.origin)
+      let newSize: SizeConstraint = Constraint.size(self, size: rect.size)
       NSLayoutConstraint.activate([newAnchor.x, newAnchor.y, newSize.w, newSize.h])
       self.anchor = newAnchor
       self.size = newSize

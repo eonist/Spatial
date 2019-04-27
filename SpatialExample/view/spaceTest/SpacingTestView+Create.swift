@@ -15,14 +15,14 @@ extension SpacingTestView {
     */
    func createVerticalItems() -> [UIView] {
       let size: CGSize = .init(width: 120, height: 48)
-      let views: [ConstraintView] = [UIColor.purple, .orange/*,.red,.blue*/].map{
+      let views: [ConstraintView] = [UIColor.purple, .orange/*,.red,.blue*/].map {
          let view: ConstraintView = .init(frame: .zero)//.init(origin: .zero, size: size)
          self.addSubview(view)
          view.backgroundColor = $0
          return view
       }
       views.applySizes(width: size.width, height: size.height)
-      views.applyAnchors(to: self, align: .top , alignTo: .top, offset: 20)
+      views.applyAnchors(to: self, align: .top, alignTo: .top, offset: 20)
 //      views.distribute(dir: .horizontal)
 //      (dir: .hor, width: size.width, height: size.height)
 //      views.distributeAndSize(dir: .hor, height: size.height, multiplier:.init(width:0.25,height:1), offset:20, sizeOffset:.init(width:-10,height:0))

@@ -22,12 +22,12 @@ extension View {
     * ## Examples:
     * view.anchorAndSize(to:self,height:100,align:.center,alignTo:.center)//multiplier
     */
-   public func anchorAndSize(to: View, sizeTo: View? = nil, width: CGFloat? = nil, height: CGFloat? = nil, align: Alignment = .topLeft, alignTo:Alignment = .topLeft, multiplier: CGSize = .init(width:1,height:1), offset: CGPoint = .zero, sizeOffset: CGSize = .zero, useMargin: Bool = false){
+   public func anchorAndSize(to: View, sizeTo: View? = nil, width: CGFloat? = nil, height: CGFloat? = nil, align: Alignment = .topLeft, alignTo: Alignment = .topLeft, multiplier: CGSize = .init(width:1,height:1), offset: CGPoint = .zero, sizeOffset: CGSize = .zero, useMargin: Bool = false) {
       self.activateAnchorAndSize { _ in
          let anchor = Constraint.anchor(self, to: to, align: align, alignTo: alignTo, offset: offset, useMargin: useMargin)
          let size:SizeConstraint = {
             if let width = width, let height = height {/*This method exists when you have size, but don't want to set size based on another view*/
-               return Constraint.size(self, size: .init(width:width,height:height), multiplier: multiplier)
+               return Constraint.size(self, size: .init(width: width, height: height), multiplier: multiplier)
             } else {
                return Constraint.size(self, to: sizeTo ?? to, width: width, height: height, offset: sizeOffset, multiplier: multiplier)
             }
@@ -42,27 +42,27 @@ extension View {
     * - Fixme: ⚠️️ change to -> target (to diff from ver and hor and closure)
     * - Fixme: ⚠️️ make to optional, and use superview
     */
-   public func anchor(to:View, align:Alignment = .topLeft, alignTo:Alignment = .topLeft, offset:CGPoint = .zero, useMargin:Bool = false){
-      self.activateAnchor{ view in
-         return Constraint.anchor(self, to: to, align: align, alignTo: alignTo, offset: offset, useMargin: useMargin)
+   public func anchor(to: View, align: Alignment = .topLeft, alignTo: Alignment = .topLeft, offset: CGPoint = .zero, useMargin: Bool = false) {
+      self.activateAnchor { _ in
+         Constraint.anchor(self, to: to, align: align, alignTo: alignTo, offset: offset, useMargin: useMargin)
       }
    }
    /**
     * Horizontally align a UIView instance
     * - Fixme: ⚠️️ change to horTo
     */
-   public func anchor(horTo:View, align:HorizontalAlign = .left, alignTo:HorizontalAlign = .left, offset:CGFloat = 0, useMargin:Bool = false) {
+   public func anchor(horTo: View, align: HorizontalAlign = .left, alignTo: HorizontalAlign = .left, offset: CGFloat = 0, useMargin: Bool = false) {
       self.activateConstraints { view in
-         return [Constraint.anchor(view, to: horTo, align: align, alignTo: alignTo, offset: offset, useMargin: useMargin)]
+         [Constraint.anchor(view, to: horTo, align: align, alignTo: alignTo, offset: offset, useMargin: useMargin)]
       }
    }
    /**
     * Vertically align a UIView instance
     *  - Fixme: ⚠️️ change to verTo
     */
-   public func anchor(verTo:View, align:VerticalAlign = .top, alignTo:VerticalAlign = .top, offset:CGFloat = 0, useMargin:Bool = false) {
+   public func anchor(verTo: View, align: VerticalAlign = .top, alignTo: VerticalAlign = .top, offset: CGFloat = 0, useMargin: Bool = false) {
       self.activateConstraints { view in
-         return [Constraint.anchor(view, to: verTo, align: align, alignTo: alignTo, offset: offset, useMargin: useMargin)]
+         [Constraint.anchor(view, to: verTo, align: align, alignTo: alignTo, offset: offset, useMargin: useMargin)]
       }
    }
    /**
@@ -71,9 +71,9 @@ extension View {
     * view.size(to:self)
     * - Fixme: ⚠️️ Maybe the to could be optional,
     */
-   public func size(to:View, width:CGFloat? = nil, height:CGFloat? = nil, offset:CGSize = .zero, multiplier:CGSize = .init(width:1,height:1)){
+   public func size(to: View, width: CGFloat? = nil, height: CGFloat? = nil, offset: CGSize = .zero, multiplier: CGSize = .init(width: 1, height: 1)){
       self.activateSize { _ in
-         return Constraint.size(self, to: to, width: width, height: height, offset: offset, multiplier: multiplier)
+         Constraint.size(self, to: to, width: width, height: height, offset: offset, multiplier: multiplier)
       }
    }
    /**
@@ -82,34 +82,34 @@ extension View {
     * ## Examples:
     * view.size(width:100,height:100)
     */
-   public func size(width: CGFloat, height: CGFloat, multiplier: CGSize = .init(width:1,height:1)) {
+   public func size(width: CGFloat, height: CGFloat, multiplier: CGSize = .init(width: 1, height: 1)) {
       self.activateSize { _ in
-         return Constraint.size(self, size:.init(width:width,height:height), multiplier:multiplier)
+         Constraint.size(self, size: .init(width: width, height: height), multiplier: multiplier)
       }
    }
    /**
     * One-liner for setting the opposite side of another view
     * - Parameter toAxis: related to this axis
     */
-   public func size(to: View, axis: Axis, toAxis: Axis, offset: CGFloat = 0, multiplier: CGFloat = 1){
+   public func size(to: View, axis: Axis, toAxis: Axis, offset: CGFloat = 0, multiplier: CGFloat = 1) {
       self.activateConstraint { view in
-         return Constraint.length(view, to:to, viewAxis:axis, toAxis:toAxis, offset:offset, multiplier:multiplier)
+         Constraint.length(view, to:to, viewAxis: axis, toAxis: toAxis, offset: offset, multiplier: multiplier)
       }
    }
    /**
     * Width
     */
-   public func size(width: CGFloat, multiplier: CGFloat = 1){
+   public func size(width: CGFloat, multiplier: CGFloat = 1) {
       self.activateConstraint { view in
-         return Constraint.width(view, width: width, multiplier: multiplier)
+         Constraint.width(view, width: width, multiplier: multiplier)
       }
    }
    /**
     * Height
     */
-   public func size(height: CGFloat, multiplier: CGFloat = 1){
+   public func size(height: CGFloat, multiplier: CGFloat = 1) {
       self.activateConstraint { view in
-         return Constraint.height(view, height: height, multiplier: multiplier)
+         Constraint.height(view, height: height, multiplier: multiplier)
       }
    }
 }
@@ -122,13 +122,13 @@ extension Array where Element: View {
     * - Parameter dir: Different between vertical and horizontal
     * Fixme: ⚠️️ Could be named `anchor`
     */
-   public func distribute(dir: Axis, align: Alignment = .topLeft, spacing: CGFloat = 0, offset: CGFloat = 0){
+   public func distribute(dir: Axis, align: Alignment = .topLeft, spacing: CGFloat = 0, offset: CGFloat = 0) {
       self.activateAnchors { views in
          switch dir {
          case .hor:
-            return Constraint.distribute(horizontally: views, align: .topCenter, spacing:spacing, offset:offset)
+            return Constraint.distribute(horizontally: views, align: .topCenter, spacing: spacing, offset: offset)
          case .ver:
-            return Constraint.distribute(vertically: views, align: .topCenter, spacing:spacing, offset:offset)
+            return Constraint.distribute(vertically: views, align: .topCenter, spacing: spacing, offset: offset)
          }
       }
    }
@@ -136,17 +136,17 @@ extension Array where Element: View {
 /**
  * One-liner for sizing multiple views (Bulk)
  */
-extension Array where Element: View{
+extension Array where Element: View {
    /**
     * Size multiple UIView instance
     * - Parameter offset: Add margin by providing a size offset
     * ## Examples:
     * [btn1,btn2,btn3].size(to:self, height:24, offset:.init(width:-40,height:0))
     */
-   public func size(to: View, width: CGFloat? = nil, height: CGFloat? = nil, offset: CGSize = .zero, multiplier: CGSize = .init(width:1,height:1)) {
+   public func size(to: View, width: CGFloat? = nil, height: CGFloat? = nil, offset: CGSize = .zero, multiplier: CGSize = .init(width: 1,height: 1)) {
       self.activateSizes { views in
-         return views.map {
-            return Constraint.size($0, to: to, width: width, height: height, offset: offset, multiplier: multiplier)
+         views.map {
+            Constraint.size($0, to: to, width: width, height: height, offset: offset, multiplier: multiplier)
          }
       }
    }
@@ -155,10 +155,10 @@ extension Array where Element: View{
     * ## Examples:
     * [btn1,btn2,btn3].size(width:96, height:24)
     */
-   public func size(width: CGFloat, height: CGFloat, multiplier: CGSize = .init(width:1,height:1)) {
+   public func size(width: CGFloat, height: CGFloat, multiplier: CGSize = .init(width: 1, height: 1)) {
       self.activateSizes { views in
-         return views.map {
-            return Constraint.size($0,size:.init(width:width,height:height),multiplier:multiplier)
+         views.map {
+            Constraint.size($0,size:.init(width: width, height: height), multiplier: multiplier)
          }
       }
    }
@@ -175,7 +175,7 @@ extension Array where Element: View {
     * ## Examples: 🤷
     * distributeAndSize(dir:.hor, height:42)
     */
-   public func distributeAndSize(dir: Axis, width: CGFloat? = nil, height: CGFloat? = nil, align: Alignment = .topLeft, alignTo: Alignment = .topLeft, spacing: CGFloat = 0, multiplier: CGSize = .init(width: 1, height: 1), offset: CGFloat = 0, sizeOffset: CGSize = .zero){
+   public func distributeAndSize(dir: Axis, width: CGFloat? = nil, height: CGFloat? = nil, align: Alignment = .topLeft, alignTo: Alignment = .topLeft, spacing: CGFloat = 0, multiplier: CGSize = .init(width: 1, height: 1), offset: CGFloat = 0, sizeOffset: CGSize = .zero) {
       self.activateAnchorsAndSizes { views in
          let anchors: [AnchorConstraint] = {
             // Fixme: ⚠️️ this part is a duplicate of the single version of this method, so reuse it somehow

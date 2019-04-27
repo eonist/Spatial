@@ -50,7 +50,7 @@ extension UIView {
       let anim:UIViewPropertyAnimator = .init(duration: dur, curve: easing, animations: {
          onUpdate()
       })
-      anim.addCompletion{ _ in onComplete() }
+      anim.addCompletion { _ in onComplete() }
       anim.startAnimation()
    }
 }

@@ -1,7 +1,7 @@
 import Foundation
 /**
  * AutoLayout Sugar for UIView
- * NOTE: Method overloading doesn't work with closures so each method name needs to be unique
+ * - NOTE: Method overloading doesn't work with closures so each method name needs to be unique
  */
 extension View{
    /**
@@ -14,7 +14,7 @@ extension View{
     */
    public func activateConstraints(closure: ConstraintsClosure) {
       self.translatesAutoresizingMaskIntoConstraints = false
-      let constraints:[NSLayoutConstraint] = closure(self)/*the constraints is returned from the closure*/
+      let constraints: [NSLayoutConstraint] = closure(self)/*the constraints is returned from the closure*/
       NSLayoutConstraint.activate(constraints)
    }
    /**
@@ -22,7 +22,7 @@ extension View{
     */
    public func activateConstraint(closure: ConstraintClosure) {
       self.translatesAutoresizingMaskIntoConstraints = false
-      let constraint:NSLayoutConstraint = closure(self)/*the constraints is returned from the closure*/
+      let constraint: NSLayoutConstraint = closure(self)/*the constraints is returned from the closure*/
       NSLayoutConstraint.activate([constraint])
    }
    /**
@@ -36,26 +36,26 @@ extension View{
     */
    public func activateAnchorAndSize(closure: AnchorAndSizeClosure) {
       self.translatesAutoresizingMaskIntoConstraints = false
-      let anchorAndSize:AnchorAndSize = closure(self)/*the constraints is returned from the closure*/
-      let constraints:[NSLayoutConstraint] = [anchorAndSize.anchor.x,anchorAndSize.anchor.y,anchorAndSize.size.w,anchorAndSize.size.h]
+      let anchorAndSize: AnchorAndSize = closure(self)/*the constraints is returned from the closure*/
+      let constraints: [NSLayoutConstraint] = [anchorAndSize.anchor.x, anchorAndSize.anchor.y, anchorAndSize.size.w, anchorAndSize.size.h]
       NSLayoutConstraint.activate(constraints)
    }
    /**
     * Activate for AnchorConstraint
     */
-   public func activateAnchor(closure:AnchorClosure) {
+   public func activateAnchor(closure: AnchorClosure) {
       self.translatesAutoresizingMaskIntoConstraints = false
-      let anchorConstraint:AnchorConstraint = closure(self)/*the constraints is returned from the closure*/
-      let constraints:[NSLayoutConstraint] = [anchorConstraint.x,anchorConstraint.y]
+      let anchorConstraint: AnchorConstraint = closure(self)/*the constraints is returned from the closure*/
+      let constraints: [NSLayoutConstraint] = [anchorConstraint.x, anchorConstraint.y]
       NSLayoutConstraint.activate(constraints)
    }
    /**
     * Activate for SizeConstraint
     */
-   public func activateSize(closure:SizeClosure) {
+   public func activateSize(closure: SizeClosure) {
       self.translatesAutoresizingMaskIntoConstraints = false
-      let sizeConstraint:SizeConstraint = closure(self)/*the constraints is returned from the closure*/
-      let constraints: [NSLayoutConstraint] = [sizeConstraint.w,sizeConstraint.h]
+      let sizeConstraint: SizeConstraint = closure(self)/*the constraints is returned from the closure*/
+      let constraints: [NSLayoutConstraint] = [sizeConstraint.w, sizeConstraint.h]
       NSLayoutConstraint.activate(constraints)
    }
 }

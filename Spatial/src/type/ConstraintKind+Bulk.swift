@@ -1,9 +1,8 @@
-
 import Foundation
 /**
  * Update arrays of UIViewConstraintKind
  */
-extension Array where Element:ConstraintKind.ViewConstraintKind{
+extension Array where Element: ConstraintKind.ViewConstraintKind {
    /**
     * Apply constraints on an array of UIViewConstraintKind
     * ## Examples:
@@ -16,16 +15,16 @@ extension Array where Element:ConstraintKind.ViewConstraintKind{
     * - Note: If you want to apply only anchors or only sizes then just pass an empty array for either
     */
    public func applyAnchorsAndSizes(closure: AnchorAndSizeClosure) {
-      self.forEach {$0.translatesAutoresizingMaskIntoConstraints = false}
-      let constraints:AnchorConstraintsAndSizeConstraints = closure(self)/*the constraints is returned from the closure*/
+      self.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
+      let constraints: AnchorConstraintsAndSizeConstraints = closure(self)/*the constraints is returned from the closure*/
       self.enumerated().forEach {
-         let anchor:AnchorConstraint = constraints.anchorConstraints[$0.offset]
-         let size:SizeConstraint = constraints.sizeConstraints[$0.offset]
+         let anchor: AnchorConstraint = constraints.anchorConstraints[$0.offset]
+         let size: SizeConstraint = constraints.sizeConstraints[$0.offset]
          $0.element.setConstraint(anchor: anchor, size: size)
       }
-      let layoutConstraints:[NSLayoutConstraint] = {
-         let anchors: [NSLayoutConstraint] = constraints.anchorConstraints.reduce([]) { $0 + [$1.x,$1.y] }
-         let sizes: [NSLayoutConstraint] = constraints.sizeConstraints.reduce([]) { $0 + [$1.w,$1.h] }
+      let layoutConstraints: [NSLayoutConstraint] = {
+         let anchors: [NSLayoutConstraint] = constraints.anchorConstraints.reduce([]) { $0 + [$1.x, $1.y] }
+         let sizes: [NSLayoutConstraint] = constraints.sizeConstraints.reduce([]) { $0 + [$1.w, $1.h] }
          return anchors + sizes
       }()
       NSLayoutConstraint.activate(layoutConstraints)
@@ -35,10 +34,10 @@ extension Array where Element:ConstraintKind.ViewConstraintKind{
     * - Description: same as applyAnchorsAndSizes but just for sizes
     */
    public func applySizes(closure: SizesClosure) {
-      self.forEach {$0.translatesAutoresizingMaskIntoConstraints = false}
-      let constraints:[SizeConstraint] = closure(self)/*the constraints is returned from the closure*/
+      self.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
+      let constraints: [SizeConstraint] = closure(self)/*the constraints is returned from the closure*/
       self.enumerated().forEach {
-         let size:SizeConstraint = constraints[$0.offset]
+         let size: SizeConstraint = constraints[$0.offset]
          $0.element.size = size
       }
       let layoutConstraints: [NSLayoutConstraint] = constraints.reduce([]) { $0 + [$1.w,$1.h] }
@@ -49,10 +48,10 @@ extension Array where Element:ConstraintKind.ViewConstraintKind{
     * - Description: same as applyAnchorsAndSizes but just for anchors
     */
    public func applyAnchors(closure:AnchorClosure) {
-      self.forEach {$0.translatesAutoresizingMaskIntoConstraints = false}
+      self.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
       let constraints: [AnchorConstraint] = closure(self)/*the constraints is returned from the closure*/
       self.enumerated().forEach {
-         let anchor:AnchorConstraint = constraints[$0.offset]
+         let anchor: AnchorConstraint = constraints[$0.offset]
          $0.element.anchor = anchor
       }
       let layoutConstraints: [NSLayoutConstraint] = constraints.reduce([]) { $0 + [$1.x,$1.y] }
@@ -63,17 +62,17 @@ extension Array where Element:ConstraintKind.ViewConstraintKind{
     * Apply anchors (axis)
     * - Description: same as applyAnchorsAndSizes but just for horizontal or vertical anchor
     */
-   public func applyAnchors(axis:Axis, closure:AxisClosure) {
-      self.forEach {$0.translatesAutoresizingMaskIntoConstraints = false}
-      let constraints:[NSLayoutConstraint] = closure(self)/*the constraints is returned from the closure*/
+   public func applyAnchors(axis: Axis, closure: AxisClosure) {
+      self.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
+      let constraints: [NSLayoutConstraint] = closure(self)/*the constraints is returned from the closure*/
       self.enumerated().forEach {
-         let anchor:NSLayoutConstraint = constraints[$0.offset]
+         let anchor: NSLayoutConstraint = constraints[$0.offset]
          switch axis {
          case .hor: $0.element.anchor?.x = anchor
          case .ver: $0.element.anchor?.y = anchor
          }
       }
-      let layoutConstraints:[NSLayoutConstraint] = constraints.reduce([]) { $0 + [$1] }
+      let layoutConstraints: [NSLayoutConstraint] = constraints.reduce([]) { $0 + [$1] }
       NSLayoutConstraint.activate(layoutConstraints)
    }
 }

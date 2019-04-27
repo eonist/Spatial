@@ -1,4 +1,3 @@
-
 import Foundation
 /**
  * UIView's that implement this protocol are able to store the anchor and size constraints

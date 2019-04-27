@@ -1,7 +1,7 @@
 import UIKit
 import Spatial
 
-class AnimationTest:UIView{
+class AnimationTest: UIView {
    lazy var button:Button = createButton()
    override init(frame: CGRect) {
       super.init(frame: frame)

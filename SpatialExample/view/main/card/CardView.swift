@@ -2,12 +2,12 @@ import UIKit
 
 class CardView:UIView{
    /*Graphics*/
-   lazy var backgroundLayer:CALayer = createBackgroundLayer()
-   lazy var maskLayer:CAShapeLayer = createMaskLayer()
+   lazy var backgroundLayer: CALayer = createBackgroundLayer()
+   lazy var maskLayer: CAShapeLayer = createMaskLayer()
    /*UI*/
-   lazy var topBar:TopBar = createTopBar()
-   lazy var cardContent:MiddleContent = createMiddleContent()
-   lazy var bottomBar:BottomBar = createBottomBar()
+   lazy var topBar: TopBar = createTopBar()
+   lazy var cardContent: MiddleContent = createMiddleContent()
+   lazy var bottomBar: BottomBar = createBottomBar()
    override init(frame: CGRect) {
       super.init(frame: frame)
       /*UI*/
