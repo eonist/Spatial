@@ -2,7 +2,7 @@
 ![mit](https://img.shields.io/badge/License-MIT-brightgreen.svg) ![platform](https://img.shields.io/badge/Platform-iOS-blue.svg) ![platform](https://img.shields.io/badge/Platform-macOS-blue.svg) ![Lang](https://img.shields.io/badge/Language-Swift%205.0-orange.svg)
 [![codebeat badge](https://codebeat.co/badges/b4ee0d27-b00c-464b-b9b2-c9906cb6c19f)](https://codebeat.co/projects/github-com-eonist-spatial-master)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Swift-lint Sindre](https://img.shields.io/badge/swift--lint-sindre-brightgreen.svg)](https://github.com/sindresorhus/swiftlint-sindre)
+[![SwiftLint Sindre](https://img.shields.io/badge/SwiftLint-Sindre-brightgreen.svg)](https://github.com/sindresorhus/swiftlint-sindre)
 
 <img width="900" alt="img" src="https://raw.github.com/stylekit/img/master/spatial_github.svg?sanitize=true">
 
