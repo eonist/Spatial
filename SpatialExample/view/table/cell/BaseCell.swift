@@ -1,7 +1,7 @@
 import UIKit
 
-class BaseCell:UITableViewCell {
-   var data:CellDataKind?/*Stores cellData*/
+class BaseCell: UITableViewCell {
+   var data: CellDataKind?/*Stores cellData*/
    /**
     * Init
     */
@@ -18,6 +18,7 @@ class BaseCell:UITableViewCell {
    /**
     * Boilerplate
     */
+   @available(*, unavailable)
    required init?(coder aDecoder: NSCoder) {
       fatalError("init(coder:) has not been implemented")
    }

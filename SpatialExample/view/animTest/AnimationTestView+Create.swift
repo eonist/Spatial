@@ -6,7 +6,7 @@ extension AnimationTest {
     * Button
     */
    func createButton() -> Button {
-      let btn:Button = .init (type: .system)
+      let btn: Button = .init (type: .system)
       btn.backgroundColor = .gray
       btn.setTitle("Button", for: .normal)
       btn.setTitleColor(.black, for: .normal)

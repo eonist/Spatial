@@ -5,7 +5,7 @@ import Foundation
  * - Fixme: ⚠️️ Make own Carthage framework named Align? 🤔
  * - Note: use Alignment.topLeft.rawValue if you want to get the string "topLeft"
  */
-public enum Alignment:String {
+public enum Alignment: String {
     case topLeft
     case topCenter
     case topRight

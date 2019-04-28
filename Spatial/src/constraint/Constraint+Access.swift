@@ -22,10 +22,10 @@ extension View {
     * ## Examples:
     * view.anchorAndSize(to:self,height:100,align:.center,alignTo:.center)//multiplier
     */
-   public func anchorAndSize(to: View, sizeTo: View? = nil, width: CGFloat? = nil, height: CGFloat? = nil, align: Alignment = .topLeft, alignTo: Alignment = .topLeft, multiplier: CGSize = .init(width:1,height:1), offset: CGPoint = .zero, sizeOffset: CGSize = .zero, useMargin: Bool = false) {
+   public func anchorAndSize(to: View, sizeTo: View? = nil, width: CGFloat? = nil, height: CGFloat? = nil, align: Alignment = .topLeft, alignTo: Alignment = .topLeft, multiplier: CGSize = .init(width:1, height:1), offset: CGPoint = .zero, sizeOffset: CGSize = .zero, useMargin: Bool = false) {
       self.activateAnchorAndSize { _ in
          let anchor = Constraint.anchor(self, to: to, align: align, alignTo: alignTo, offset: offset, useMargin: useMargin)
-         let size:SizeConstraint = {
+         let size: SizeConstraint = {
             if let width = width, let height = height {/*This method exists when you have size, but don't want to set size based on another view*/
                return Constraint.size(self, size: .init(width: width, height: height), multiplier: multiplier)
             } else {
@@ -71,7 +71,7 @@ extension View {
     * view.size(to:self)
     * - Fixme: ⚠️️ Maybe the to could be optional,
     */
-   public func size(to: View, width: CGFloat? = nil, height: CGFloat? = nil, offset: CGSize = .zero, multiplier: CGSize = .init(width: 1, height: 1)){
+   public func size(to: View, width: CGFloat? = nil, height: CGFloat? = nil, offset: CGSize = .zero, multiplier: CGSize = .init(width: 1, height: 1)) {
       self.activateSize { _ in
          Constraint.size(self, to: to, width: width, height: height, offset: offset, multiplier: multiplier)
       }
@@ -93,7 +93,7 @@ extension View {
     */
    public func size(to: View, axis: Axis, toAxis: Axis, offset: CGFloat = 0, multiplier: CGFloat = 1) {
       self.activateConstraint { view in
-         Constraint.length(view, to:to, viewAxis: axis, toAxis: toAxis, offset: offset, multiplier: multiplier)
+         Constraint.length(view, to: to, viewAxis: axis, toAxis: toAxis, offset: offset, multiplier: multiplier)
       }
    }
    /**
@@ -143,7 +143,7 @@ extension Array where Element: View {
     * ## Examples:
     * [btn1,btn2,btn3].size(to:self, height:24, offset:.init(width:-40,height:0))
     */
-   public func size(to: View, width: CGFloat? = nil, height: CGFloat? = nil, offset: CGSize = .zero, multiplier: CGSize = .init(width: 1,height: 1)) {
+   public func size(to: View, width: CGFloat? = nil, height: CGFloat? = nil, offset: CGSize = .zero, multiplier: CGSize = .init(width: 1, height: 1)) {
       self.activateSizes { views in
          views.map {
             Constraint.size($0, to: to, width: width, height: height, offset: offset, multiplier: multiplier)
@@ -158,7 +158,7 @@ extension Array where Element: View {
    public func size(width: CGFloat, height: CGFloat, multiplier: CGSize = .init(width: 1, height: 1)) {
       self.activateSizes { views in
          views.map {
-            Constraint.size($0,size:.init(width: width, height: height), multiplier: multiplier)
+            Constraint.size($0, size: .init(width: width, height: height), multiplier: multiplier)
          }
       }
    }

@@ -1,11 +1,5 @@
 import UIKit
 import Spatial
-
-//🏀
-//Use the constant to calculate the width or height.
-//will only work on items that has frame set on init I think
-//or parse the item for the w/h constraints
-
 /**
  * Create
  */

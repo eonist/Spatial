@@ -3,9 +3,8 @@ import With
 import Spatial
 
 class MinMaxTestView: UIView {
-   lazy var descLabel:UILabel = createDescLabel()
-   lazy var inputTextField:UITextField = createInputTextField()
-   
+   lazy var descLabel: UILabel = createDescLabel()
+   lazy var inputTextField: UITextField = createInputTextField()
    override init(frame: CGRect = .zero) {
       super.init(frame: frame)
       _ = descLabel
@@ -21,7 +20,7 @@ class MinMaxTestView: UIView {
 /**
  * Create
  */
-extension MinMaxTestView{
+extension MinMaxTestView {
    /**
     * Title
     */
@@ -39,15 +38,13 @@ extension MinMaxTestView{
          $0.layer.borderColor = UIColor.black.cgColor
          //            $0.anchor(to: self, align: .centerLeft, alignTo: .centerLeft, offset: .init(x:20,y:0) )
          $0.activateConstraints { view in
-            
             //let height:NSLayoutConstraint = Constraint.height(view, to: self)//length(view, to:self, viewAxis: .ver, toAxis: .ver )
             let y = Constraint.anchor(view, to: self, align: .centerY, alignTo: .centerY)
-            let left = Constraint.anchor(view, to: self, align: .left, alignTo: .left, offset:20)
+            let left = Constraint.anchor(view, to: self, align: .left, alignTo: .left, offset: 20)
             //                let right = Constraint.anchor(view, to: self, align: .right, alignTo: .right, offset:-20)
             //                let stringWidth:CGFloat =
-            let size = text.size(withAttributes:[.font: font])
-            
-            let width:NSLayoutConstraint = Constraint.width(view, width: size.width)
+            let size = text.size(withAttributes: [.font: font])
+            let width: NSLayoutConstraint = Constraint.width(view, width: size.width)
             return [y, left, width /*,height,,,*/]
          }
          //            $0.sizeToFit()
@@ -62,9 +59,8 @@ extension MinMaxTestView{
    /**
     * TextField
     */
-   func createInputTextField() -> UITextField{
+   func createInputTextField() -> UITextField {
       return with(.init()) {
-         //            $0.returnKeyType = .done
          $0.font = .systemFont(ofSize: 16)
          $0.textColor = .gray
          $0.textAlignment = .right
@@ -73,30 +69,18 @@ extension MinMaxTestView{
          $0.layer.borderWidth = 0.5
          $0.layer.borderColor = UIColor.green.cgColor
          $0.text = "test content"
-         
          self.self.addSubview($0)
-         //            $0.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+         //$0.autoresizingMask = [.flexibleWidth, .flexibleHeight]
          $0.activateConstraints { view in
-            //                let height:NSLayoutConstraint = Constraint.height(view, to: contentView)//length(view, to:self, viewAxis: .ver, toAxis: .ver )
+            //let height:NSLayoutConstraint = Constraint.height(view, to: contentView)//length(view, to:self, viewAxis: .ver, toAxis: .ver )
             let y = Constraint.anchor(view, to: self, align: .centerY, alignTo: .centerY)
             let width = Constraint.width(view, width: 100)
-            //                let left = Constraint.anchor(view, to: descLabel, align: .left, alignTo: .right/*, relation:.lessThanOrEqual*/)
-            //                left.priority = .init(rawValue: 900)
-            let right = Constraint.anchor(view, to: self, align: .right, alignTo: .right, offset:-20)
-            //                                right.priority = UILayoutPriority(rawValue: 1000)
+            //let left = Constraint.anchor(view, to: descLabel, align: .left, alignTo: .right/*, relation:.lessThanOrEqual*/)
+            //left.priority = .init(rawValue: 900)
+            let right = Constraint.anchor(view, to: self, align: .right, alignTo: .right, offset: -20)
+            //right.priority = UILayoutPriority(rawValue: 1000)
             return [y, /*height,, left*/ right, width]
          }
       }
    }
 }
-
-
-//move the table test into spatial (just the InputTextCell)
-//add left aligned input
-//add right aligned input
-//research guideline for autolayout
-//add multiple different inputtextcells with different sized description
-//add left or right aligned input textfield as a bool flag
-//
-
-

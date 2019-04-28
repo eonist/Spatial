@@ -3,7 +3,7 @@ import Foundation
  * AutoLayout Sugar for UIView
  * - NOTE: Method overloading doesn't work with closures so each method name needs to be unique
  */
-extension View{
+extension View {
    /**
     * ## Examples:
     * button.activateConstraints { view in

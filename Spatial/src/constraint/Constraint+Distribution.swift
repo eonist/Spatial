@@ -22,8 +22,8 @@ extension Constraint {
     *    - align: at which corner should the first item align to
     *    - views: the views to distribute in a row
     */
-   public static func distribute(horizontally views: [View], align: Alignment = .topLeft, spacing:CGFloat = 0, offset:CGFloat = 0) -> [AnchorConstraint] {
-      let xConstraints: [NSLayoutConstraint] = distribute(views, axis:.hor, align:align, spacing:spacing, offset:offset)
+   public static func distribute(horizontally views: [View], align: Alignment = .topLeft, spacing: CGFloat = 0, offset: CGFloat = 0) -> [AnchorConstraint] {
+      let xConstraints: [NSLayoutConstraint] = distribute(views, axis: .hor, align: align, spacing: spacing, offset: offset)
       let yConstraints: [NSLayoutConstraint] = views.map { view in
          guard let superView = view.superview else { fatalError("View must have superview") }
          return Constraint.anchor(view, to: superView, align: align.verAlign, alignTo: align.verAlign)
@@ -39,8 +39,8 @@ extension Constraint {
          guard let superView = view.superview else { fatalError("View must have superview") }
          return Constraint.anchor(view, to: superView, align: align.horAlign, alignTo: align.horAlign)
       }
-      let yConstraints = distribute(views, axis:.ver, align:align, spacing:spacing, offset:offset)
-      let anchors: [AnchorConstraint] = Array(zip(xConstraints,yConstraints))
+      let yConstraints = distribute(views, axis: .ver, align: align, spacing: spacing, offset: offset)
+      let anchors: [AnchorConstraint] = Array(zip(xConstraints, yConstraints))
       return anchors
    }
 }
@@ -48,33 +48,33 @@ extension Constraint {
  * Internal helper methods
  * - NOTE: Consider moving to fileprivate Util class
  */
-extension Constraint{
+extension Constraint {
    /**
     * Distributes vertically or horizontally
     */
    fileprivate static func distribute(_ views: [View], axis: Axis, align: Alignment, spacing: CGFloat = 0, offset: CGFloat = 0) -> [NSLayoutConstraint] {
       switch (align.horAlign, align.verAlign) {
-      case (.left, _),(_ , .top): return distribute(fromStart:views, axis: axis, spacing: spacing, offset: offset)
-      case (.right, _),(_ , .bottom): return distribute(fromEnd:views, axis: axis, spacing: spacing, offset: offset)
+      case (.left, _), (_, .top): return distribute(fromStart: views, axis: axis, spacing: spacing, offset: offset)
+      case (.right, _), (_, .bottom): return distribute(fromEnd: views, axis: axis, spacing: spacing, offset: offset)
       default: fatalError("Type not supported: h: \(align.horAlign) v: \(align.verAlign)")
       }
    }
    /**
     * Distributes from start to end
     */
-   fileprivate static func distribute(fromStart views:[View], axis:Axis, spacing:CGFloat = 0, offset:CGFloat = 0) -> [NSLayoutConstraint] {
+   fileprivate static func distribute(fromStart views: [View], axis: Axis, spacing: CGFloat = 0, offset: CGFloat = 0) -> [NSLayoutConstraint] {
       var anchors: [NSLayoutConstraint] = []
       var prevView: View?
-      views.enumerated().forEach { (_,view) in
-         guard let toView: View = prevView ?? view.superview else {fatalError("View must have superview")}
+      views.enumerated().forEach { _, view in
+         guard let toView: View = prevView ?? view.superview else { fatalError("View must have superview") }
          let offset = prevView == nil ? offset : 0/*only the first view gets offset*/
          let spacing: CGFloat = prevView != nil ? spacing : 0/*all subsequent views gets spacing*/
          switch axis {
          case .hor:
             let alignTo: HorizontalAlign = prevView == nil ? .left : .right/*first align to left pf superView, then right of each subsequent item*/
-            anchors.append(Constraint.anchor(view, to: toView, align:.left, alignTo: alignTo, offset: offset + spacing))
-         case.ver:
-            let alignTo:VerticalAlign = prevView == nil ? .top : .bottom/*first align to top pf superView, then bottom of each subsequent item*/
+            anchors.append(Constraint.anchor(view, to: toView, align: .left, alignTo: alignTo, offset: offset + spacing))
+         case .ver:
+            let alignTo: VerticalAlign = prevView == nil ? .top : .bottom/*first align to top pf superView, then bottom of each subsequent item*/
             anchors.append(Constraint.anchor(view, to: toView, align: .top, alignTo: alignTo, offset: offset + spacing))
          }
          prevView = view

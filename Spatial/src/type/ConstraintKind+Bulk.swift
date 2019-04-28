@@ -40,21 +40,21 @@ extension Array where Element: ConstraintKind.ViewConstraintKind {
          let size: SizeConstraint = constraints[$0.offset]
          $0.element.size = size
       }
-      let layoutConstraints: [NSLayoutConstraint] = constraints.reduce([]) { $0 + [$1.w,$1.h] }
+      let layoutConstraints: [NSLayoutConstraint] = constraints.reduce([]) { $0 + [$1.w, $1.h] }
       NSLayoutConstraint.activate(layoutConstraints)
    }
    /**
     * Apply anchors
     * - Description: same as applyAnchorsAndSizes but just for anchors
     */
-   public func applyAnchors(closure:AnchorClosure) {
+   public func applyAnchors(closure: AnchorClosure) {
       self.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
       let constraints: [AnchorConstraint] = closure(self)/*the constraints is returned from the closure*/
       self.enumerated().forEach {
          let anchor: AnchorConstraint = constraints[$0.offset]
          $0.element.anchor = anchor
       }
-      let layoutConstraints: [NSLayoutConstraint] = constraints.reduce([]) { $0 + [$1.x,$1.y] }
+      let layoutConstraints: [NSLayoutConstraint] = constraints.reduce([]) { $0 + [$1.x, $1.y] }
       NSLayoutConstraint.activate(layoutConstraints)
    }
 

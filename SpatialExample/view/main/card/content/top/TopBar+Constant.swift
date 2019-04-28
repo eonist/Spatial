@@ -1,7 +1,7 @@
 import UIKit
 
-extension TopBar{
-   static let topBarHeight:CGFloat = UIScreen.main.bounds.width/4 + UIApplication.shared.statusBarFrame.height
+extension TopBar {
+   static let topBarHeight: CGFloat = UIScreen.main.bounds.width / 4 + UIApplication.shared.statusBarFrame.height
 }
 
 

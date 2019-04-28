@@ -3,12 +3,12 @@ import Spatial
 /**
  * UI elements
  */
-extension CardView{
+extension CardView {
    /**
     * Creates topBar
     */
-   func createTopBar() -> TopBar{
-      let topBar:TopBar = .init()
+   func createTopBar() -> TopBar {
+      let topBar: TopBar = .init()
       self.addSubview(topBar)
       topBar.anchorAndSize(to: self, height: TopBar.topBarHeight)
       return topBar
@@ -16,20 +16,20 @@ extension CardView{
    /**
     * Creates the middle card content view
     */
-   func createMiddleContent() -> MiddleContent{
-      let middleContent:MiddleContent = .init()
+   func createMiddleContent() -> MiddleContent {
+      let middleContent: MiddleContent = .init()
       self.addSubview(middleContent)
-      let sizeOffset:CGSize = .init(width:0,height:-(TopBar.topBarHeight + BottomBar.bottomBarHeight))
-      middleContent.anchorAndSize(to:topBar, sizeTo:self, alignTo:.bottomLeft, sizeOffset:sizeOffset)
+      let sizeOffset: CGSize = .init(width: 0, height: -(TopBar.topBarHeight + BottomBar.bottomBarHeight))
+      middleContent.anchorAndSize(to: topBar, sizeTo: self, alignTo: .bottomLeft, sizeOffset: sizeOffset)
       return middleContent
    }
    /**
     * Creates bottomBar
     */
    func createBottomBar() -> BottomBar {
-      let bottomBar:BottomBar = .init()
+      let bottomBar: BottomBar = .init()
       self.addSubview(bottomBar)
-      bottomBar.anchorAndSize(to: cardContent, sizeTo:self, height:BottomBar.bottomBarHeight, alignTo: .bottomLeft)
+      bottomBar.anchorAndSize(to: cardContent, sizeTo: self, height: BottomBar.bottomBarHeight, alignTo: .bottomLeft)
       return bottomBar
    }
 }
@@ -55,7 +55,7 @@ extension CardView {
     */
    func createMaskLayer() -> CAShapeLayer {
       let maskLayer = CAShapeLayer()
-      let path:UIBezierPath = .init(roundedRect: self.bounds, cornerRadius: 24)
+      let path: UIBezierPath = .init(roundedRect: self.bounds, cornerRadius: 24)
       maskLayer.path = path.cgPath
       self.layer.mask = maskLayer/*Applies the mask to the view*/
       return maskLayer

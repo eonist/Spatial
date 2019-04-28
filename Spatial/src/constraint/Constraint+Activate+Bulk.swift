@@ -14,7 +14,7 @@ extension Array where Element: View {
     * - Note: ⚠️️ You have to zip together anchors in some cases
     * - Fixme: ⚠️️ Can we utilize activateAnchors and activateSizes in this method? 🤔
     */
-   public func activateAnchorsAndSizes(closure:ConstraintsClosure) {
+   public func activateAnchorsAndSizes(closure: ConstraintsClosure) {
       self.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
       let constraints: [NSLayoutConstraint] = {
          let constraints: AnchorConstraintsAndSizeConstraints = closure(self)

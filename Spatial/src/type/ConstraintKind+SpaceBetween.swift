@@ -42,7 +42,7 @@ fileprivate class SpaceBetweenUtil {
       }()
       var x: CGFloat = rect.origin.x/*interim x*/
       views.forEach { item in
-         item.activateConstraint { view in //Fixme: ⚠️️ Create applyAnchor for hor and ver
+         item.activateConstraint { _ in //Fixme: ⚠️️ Create applyAnchor for hor and ver
             let constraint = Constraint.anchor(item, to: parent, align: .left, alignTo: .left, offset: x)
             item.anchor?.x = constraint
             return constraint

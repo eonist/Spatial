@@ -1,6 +1,6 @@
 import UIKit
 
-extension CustomTableView{
+extension CustomTableView {
    /**
     * Returns row count in a section
     */
@@ -12,15 +12,15 @@ extension CustomTableView{
     */
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       //      let rowIndex:Int =
-      let cell:UITableViewCell = {
+      let cell: UITableViewCell = {
          switch indexPath.row {
          case 0, 1:
-            guard let cell:InputTextCell = tableView.dequeueReusableCell(withIdentifier: "\(InputTextCell.self)", for: indexPath as IndexPath) as? InputTextCell else {fatalError("err")}
+            guard let cell: InputTextCell = tableView.dequeueReusableCell(withIdentifier: "\(InputTextCell.self)", for: indexPath as IndexPath) as? InputTextCell else { fatalError("err") }
             cell.backgroundColor = .purple
-            cell.data = LeagueCellData.init(team: "Cognative resolution",placement: "Description: ")
+            cell.data = LeagueCellData.init(team: "Cognative resolution", placement: "Description: ")
             return cell as InputTextCell
          default:
-            let cell = UITableViewCell.init()
+            let cell: UITableViewCell = .init()
             cell.backgroundColor = .gray
             return cell
 //            fatalError("Not supported")

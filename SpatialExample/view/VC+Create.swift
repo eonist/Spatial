@@ -3,12 +3,12 @@ import Spatial
 /**
  * Create
  */
-extension VC{
+extension VC {
    /**
     * Creates main view
     */
-   func createMainView() -> MainView{
-      let view:MainView = .init()
+   func createMainView() -> MainView {
+      let view: MainView = .init()
       self.view.addSubview(view)
       view.anchorAndSize(to: self.view)
       return view
@@ -16,8 +16,8 @@ extension VC{
    /**
     * Creates animation test view
     */
-   func createAnimTestView() -> AnimationTest{
-      let view:AnimationTest = .init(frame: CGRect.init(origin: .zero, size: .zero))
+   func createAnimTestView() -> AnimationTest {
+      let view: AnimationTest = .init(frame: .init(origin: .zero, size: .zero))
       self.view.addSubview(view)
       view.anchorAndSize(to: self.view)
       return view

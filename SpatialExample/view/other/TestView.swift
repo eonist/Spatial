@@ -39,8 +39,8 @@ extension TestView {
          $0.backgroundColor = UIColor.green.withAlphaComponent(0.5)
          $0.layer.borderWidth = 0.5
          $0.layer.borderColor = UIColor.black.cgColor
-         let size:CGSize = text.size(withAttributes:[.font: UIFont.systemFont(ofSize:18.0)])
-         $0.anchorAndSize(to: self, width: size.width, align: .centerLeft, alignTo: .centerLeft, offset: .init(x:20,y:0) )
+         let size: CGSize = text.size(withAttributes: [.font: UIFont.systemFont(ofSize: 18.0)])
+         $0.anchorAndSize(to: self, width: size.width, align: .centerLeft, alignTo: .centerLeft, offset: .init(x: 20, y: 0) )
          //            $0.activateConstraints { view in
          ////                let height:NSLayoutConstraint = Constraint.height(view, to: self)//length(view, to:self, viewAxis: .ver, toAxis: .ver )
          //                let y = Constraint.anchor(view, to: self, align: .centerY, alignTo: .centerY)
@@ -61,7 +61,7 @@ extension TestView {
    /**
     * TextField
     */
-   func createInputTextField() -> UITextField{
+   func createInputTextField() -> UITextField {
       return with(.init()) {
          //            $0.returnKeyType = .done
          $0.font = .systemFont(ofSize: 16)
@@ -78,11 +78,10 @@ extension TestView {
             let y = Constraint.anchor(view, to: self, align: .centerY, alignTo: .centerY)
             let left = Constraint.anchor(view, to: descLabel, align: .left, alignTo: .right)
             left.priority = .init(rawValue: 250)
-            let right = Constraint.anchor(view, to: self, align: .right, alignTo: .right, offset:-20)
+            let right = Constraint.anchor(view, to: self, align: .right, alignTo: .right, offset: -20)
             //                right.priority = UILayoutPriority(rawValue: 250)
             return [y, /*height,*/ left, right]
          }
       }
    }
 }
-

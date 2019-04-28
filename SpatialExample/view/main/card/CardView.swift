@@ -1,6 +1,6 @@
 import UIKit
 
-class CardView:UIView{
+class CardView: UIView {
    /*Graphics*/
    lazy var backgroundLayer: CALayer = createBackgroundLayer()
    lazy var maskLayer: CAShapeLayer = createMaskLayer()
@@ -18,6 +18,7 @@ class CardView:UIView{
    /**
     * Boilerplate
     */
+   @available(*, unavailable)
    required init?(coder aDecoder: NSCoder) {
       fatalError("init(coder:) has not been implemented")
    }
