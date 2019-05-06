@@ -17,7 +17,7 @@ extension CustomTableView {
          case 0, 1:
             guard let cell: InputTextCell = tableView.dequeueReusableCell(withIdentifier: "\(InputTextCell.self)", for: indexPath as IndexPath) as? InputTextCell else { fatalError("err") }
             cell.backgroundColor = .purple
-            cell.data = LeagueCellData.init(team: "Cognative resolution", placement: "Description: ")
+            cell.data = LeagueCellData(team: "Cognative resolution", placement: "Description: ")
             return cell as InputTextCell
          default:
             let cell: UITableViewCell = .init()
