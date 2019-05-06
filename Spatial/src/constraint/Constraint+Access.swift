@@ -192,7 +192,7 @@ extension Array where Element: View {
                if let width = width, let height = height {/*This method exists when you have size, but don't want to set size based on another view*/
                   return Constraint.size(view, size: .init(width: width, height: height), multiplier: multiplier)
                } else {
-                  guard let superView: UIView = view.superview else { fatalError("View must have superview") }
+                  guard let superView: View = view.superview else { fatalError("View must have superview") }
                   return Constraint.size(view, to: superView, width: width, height: height, offset: sizeOffset, multiplier: multiplier)
                }
             }()
