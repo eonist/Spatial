@@ -106,7 +106,7 @@ whitelist_rules:
 #  - unavailable_function
   - unneeded_break_in_switch
   - unneeded_parentheses_in_closure_argument
-  - untyped_error_in_catch
+  #- untyped_error_in_catch
   - unused_closure_parameter
   - unused_control_flow_label
   - unused_enumerated
