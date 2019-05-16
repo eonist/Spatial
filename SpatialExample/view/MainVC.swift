@@ -1,7 +1,7 @@
 import UIKit
 import Spatial
 
-class VC: UIViewController {
+class MainVC: UIViewController {
    lazy var mainView: MainView = createMainView()
    lazy var animTestView: AnimationTest = createAnimTestView()
    override func viewDidLoad() {

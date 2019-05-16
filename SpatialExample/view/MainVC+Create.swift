@@ -3,7 +3,7 @@ import Spatial
 /**
  * Create
  */
-extension VC {
+extension MainVC {
    /**
     * Creates main view
     */
