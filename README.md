@@ -3,6 +3,7 @@
 [![codebeat badge](https://codebeat.co/badges/b4ee0d27-b00c-464b-b9b2-c9906cb6c19f)](https://codebeat.co/projects/github-com-eonist-spatial-master)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![SwiftLint Sindre](https://img.shields.io/badge/SwiftLint-Sindre-hotpink.svg)](https://github.com/sindresorhus/swiftlint-sindre)
+
 <img width="900" alt="img" src="https://raw.github.com/stylekit/img/master/spatial_github.svg?sanitize=true">
 
 Definition: **Spatial** | ˈspeɪʃ(ə)l | adjective | **describes how objects fit together in space**
@@ -30,19 +31,19 @@ btn1.anchorAndSize(to: self, width: 96, height: 24)
 /*Long-hand, single*/
 btn1.activateAnchorAndSize{ view in
 	let a = Constraint.anchor(view, to: self)
-	let s = Constraint.size(view, width:96, height:24)
-	return (a,s)
+	let s = Constraint.size(view, width: 96, height: 24)
+	return (a, s)
 }
 ```
 
 ```swift
 /*Short-hand, bulk*/
-[btn1,btn2,btn3].distributeAndSize(dir:.vertical, width:96, height:24)
+[btn1, btn2, btn3].distributeAndSize(dir: .vertical, width: 96, height: 24)
 
 /*Long-hand, bulk*/
 [btn1,btn2,btn3].activateAnchorsAndSizes { views in
    let anchors = Constraint.distribute(vertically: views, align: .topLeft)
-   let sizes = views.map{$0.size(width:96,height:42)}
+   let sizes = views.map { $0.size(width: 96, height: 42) }
    return (anchors, sizes)
 }
 ```
@@ -50,7 +51,7 @@ btn1.activateAnchorAndSize{ view in
 
 ```swift
 /*Animation*/
-btn.animate(to:100,align:left,alignTo:.left)
+btn.animate(to: 100,align: left, alignTo: .left)
 ```
 ### Todo:
 - Complete the spaceAround and spaceBetween methods ✅
