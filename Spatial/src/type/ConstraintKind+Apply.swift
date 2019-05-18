@@ -7,6 +7,7 @@ extension ConstraintKind where Self: View {
    /**
     * Activates and sets size and anchor to a ConstraintKind
     * - Note Same as UIView().activateConstraint... but also sets size and anchor constraints (ConstraintKind) (For animation etc)
+    * - Important: remeber to deactive constraints before calling this method
     * ## Examples:
     * sliderBar.applyAnchorAndSize { view in
     *      let anchor = Constraint.anchor(view, to: self, align: .topLeft, alignTo: .topLeft)
@@ -22,7 +23,7 @@ extension ConstraintKind where Self: View {
    }
    /**
     * Activates and sets anchor to a ConstraintKind
-    * - Note: remeber to deactive constraints before calling this method
+    * - Important: remeber to deactive constraints before calling this method
     */
    public func applyAnchor(closure: AnchorClosure) {
       self.translatesAutoresizingMaskIntoConstraints = false
@@ -33,6 +34,7 @@ extension ConstraintKind where Self: View {
    }
    /**
     * Activates and sets size to a ConstraintKind
+    * - Important: remeber to deactive constraints before calling this method
     */
    public func applySize(closure: SizeClosure) {
       self.translatesAutoresizingMaskIntoConstraints = false
