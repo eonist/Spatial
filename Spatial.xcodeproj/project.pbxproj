@@ -110,6 +110,7 @@
 		F1D36A012172039B00F498FA /* ConstraintKind+Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D369FD2172039B00F498FA /* ConstraintKind+Apply.swift */; };
 		F1D36A032172039B00F498FA /* Constraint+Activate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D369FF2172039B00F498FA /* Constraint+Activate.swift */; };
 		F1D81ECF22E329D2008F842A /* Constraint+Access+Bulk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D81ECE22E329D2008F842A /* Constraint+Access+Bulk.swift */; };
+		F1D81EFE22E46FEC008F842A /* Constraint+Access+Bulk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D81ECE22E329D2008F842A /* Constraint+Access+Bulk.swift */; };
 		F1FC84D42174E6B800D01B72 /* MiddleContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FC84D32174E6B800D01B72 /* MiddleContent.swift */; };
 /* End PBXBuildFile section */
 
@@ -806,6 +807,7 @@
 				F1AA75602269F94500D4C272 /* AlignType+Extension.swift in Sources */,
 				F1AA75722269F99D00D4C272 /* AxisType.swift in Sources */,
 				F185A3B722319EAC00AE66B2 /* ConstraintKind+Animate.swift in Sources */,
+				F1D81EFE22E46FEC008F842A /* Constraint+Access+Bulk.swift in Sources */,
 				F185A3BE22319EAC00AE66B2 /* Constraint+Type.swift in Sources */,
 				F185A3B122319EAC00AE66B2 /* ConstraintKind+Bulk.swift in Sources */,
 				F185A3BC22319EAC00AE66B2 /* Constraint+Activate.swift in Sources */,
