@@ -97,6 +97,7 @@ extension Constraint {
     *    - multiplier: scalar value, default is 1
     * - Fixme: ⚠️️ Consider renaming this to side or axisLength?
     * - Fixme: ⚠️️ Consider making the distinction between between viewAxis and toAxis more clear
+    * - Important: ⚠️️ the offset that is set in toAttr, is not carried along to the new Constraint, so be sure to add the same offset if needed
     * ## Examples:
     * let widthConstraint = Constraint.length(square,viewAxis:.horizontal,axis:.vertical)
     */
