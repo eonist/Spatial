@@ -4,7 +4,7 @@ import Foundation
  */
 extension Array where Element: ConstraintKind.ViewConstraintKind {
    /**
-    * Aligns all items horizontally from the absolute start to absolute end and adds equal spacing between them
+    * Aligns all items horizontally from the absolute start to absolute end and adds equal spacing between them (only works on views that adher to ConstraintKind)
     * - Description: |[]--[]--[]--[]--[]|
     * - Important: ⚠️️ views needs to have size constraint applied before calling this method
     * - Important: ⚠️️ This method from layoutSubViews, as you need the parent.bounds to be realized, and its only relaized from AutoLayout when layoutSubViews is called

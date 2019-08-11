@@ -112,6 +112,8 @@
 		F1D36A032172039B00F498FA /* Constraint+Activate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D369FF2172039B00F498FA /* Constraint+Activate.swift */; };
 		F1D81ECF22E329D2008F842A /* Constraint+Access+Bulk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D81ECE22E329D2008F842A /* Constraint+Access+Bulk.swift */; };
 		F1D81EFE22E46FEC008F842A /* Constraint+Access+Bulk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D81ECE22E329D2008F842A /* Constraint+Access+Bulk.swift */; };
+		F1E78731230046BB002007EE /* Align.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E78730230046BA002007EE /* Align.swift */; };
+		F1E78732230046BB002007EE /* Align.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E78730230046BA002007EE /* Align.swift */; };
 		F1FC84D42174E6B800D01B72 /* MiddleContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FC84D32174E6B800D01B72 /* MiddleContent.swift */; };
 /* End PBXBuildFile section */
 
@@ -225,6 +227,7 @@
 		F1D369FD2172039B00F498FA /* ConstraintKind+Apply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConstraintKind+Apply.swift"; sourceTree = "<group>"; };
 		F1D369FF2172039B00F498FA /* Constraint+Activate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Constraint+Activate.swift"; sourceTree = "<group>"; };
 		F1D81ECE22E329D2008F842A /* Constraint+Access+Bulk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constraint+Access+Bulk.swift"; sourceTree = "<group>"; };
+		F1E78730230046BA002007EE /* Align.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Align.swift; sourceTree = "<group>"; };
 		F1FC84D32174E6B800D01B72 /* MiddleContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -500,6 +503,7 @@
 		F1BED6FD21B7A97300A0D3D4 /* align */ = {
 			isa = PBXGroup;
 			children = (
+				F1E78730230046BA002007EE /* Align.swift */,
 				F1AA756A2269F99D00D4C272 /* axis */,
 				F1AA755A2269F94400D4C272 /* aligntype */,
 				F1AA75622269F96800D4C272 /* alignment */,
@@ -655,6 +659,7 @@
 				F185A3A222319E8E00AE66B2 /* Sources */,
 				F185A3A322319E8E00AE66B2 /* Frameworks */,
 				F185A3A422319E8E00AE66B2 /* Resources */,
+				F1E787332300487D002007EE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -673,6 +678,7 @@
 				F1D369D32171FCDC00F498FA /* Sources */,
 				F1D369D42171FCDC00F498FA /* Frameworks */,
 				F1D369D52171FCDC00F498FA /* Resources */,
+				F1E7873423004895002007EE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -789,6 +795,40 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		F1E787332300487D002007EE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		F1E7873423004895002007EE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -814,6 +854,7 @@
 				F185A3BE22319EAC00AE66B2 /* Constraint+Type.swift in Sources */,
 				F185A3B122319EAC00AE66B2 /* ConstraintKind+Bulk.swift in Sources */,
 				F185A3BC22319EAC00AE66B2 /* Constraint+Activate.swift in Sources */,
+				F1E78732230046BB002007EE /* Align.swift in Sources */,
 				F185A3B022319EAC00AE66B2 /* ConstraintKind+Apply.swift in Sources */,
 				F1AA75662269F96800D4C272 /* Alignment.swift in Sources */,
 				F185A3AF22319EAC00AE66B2 /* ConstraintKind+Access.swift in Sources */,
@@ -849,6 +890,7 @@
 				F17E0E2C21DE31A800EE3027 /* ConstraintKind+Type.swift in Sources */,
 				F1D36A032172039B00F498FA /* Constraint+Activate.swift in Sources */,
 				F14FADE121F3980F00ACE5FF /* ConstraintKind+SpaceBetween.swift in Sources */,
+				F1E78731230046BB002007EE /* Align.swift in Sources */,
 				F17E0E4021DF35DF00EE3027 /* ConstraintKind.swift in Sources */,
 				F14FADE321F398C000ACE5FF /* ConstraintKind+SpaceAround.swift in Sources */,
 				F1AA75652269F96800D4C272 /* Alignment.swift in Sources */,
