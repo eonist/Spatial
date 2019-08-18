@@ -99,6 +99,13 @@
 		F1AA75742269F99D00D4C272 /* VerticalAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756D2269F99D00D4C272 /* VerticalAlign.swift */; };
 		F1AA75752269F99D00D4C272 /* HorizontalAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756E2269F99D00D4C272 /* HorizontalAlign.swift */; };
 		F1AA75762269F99D00D4C272 /* HorizontalAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756E2269F99D00D4C272 /* HorizontalAlign.swift */; };
+		F1B4955423095690001F28F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B4955323095690001F28F2 /* AppDelegate.swift */; };
+		F1B4955623095693001F28F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1B4955523095693001F28F2 /* Assets.xcassets */; };
+		F1B4955923095693001F28F2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1B4955723095693001F28F2 /* MainMenu.xib */; };
+		F1B4955F230956BE001F28F2 /* With.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D2117D82265C7A800EC5A0E /* With.framework */; };
+		F1B49560230956BE001F28F2 /* With.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D2117D82265C7A800EC5A0E /* With.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F1B49561230956BE001F28F2 /* Spatial_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F185A3A622319E8E00AE66B2 /* Spatial_macOS.framework */; };
+		F1B49562230956BE001F28F2 /* Spatial_macOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F185A3A622319E8E00AE66B2 /* Spatial_macOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F1BD0417219B06F200A4A46F /* ConstraintKind+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BD0416219B06F200A4A46F /* ConstraintKind+Animate.swift */; };
 		F1C624FD21C789790082A265 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C624FC21C789790082A265 /* Extension.swift */; };
 		F1C624FF21C789830082A265 /* MainView+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C624FE21C789830082A265 /* MainView+Create.swift */; };
@@ -125,6 +132,13 @@
 			remoteGlobalIDString = F1D369D62171FCDC00F498FA;
 			remoteInfo = Spatial;
 		};
+		F1B49563230956BE001F28F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1D369CE2171FCDC00F498FA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F185A3A522319E8E00AE66B2;
+			remoteInfo = "Spatial-macOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -136,6 +150,18 @@
 			files = (
 				9D2117DA2265C7A900EC5A0E /* With.framework in Embed Frameworks */,
 				F151DDB721739BF500AA0ABE /* Spatial.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1B49565230956BF001F28F2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F1B49560230956BE001F28F2 /* With.framework in Embed Frameworks */,
+				F1B49562230956BE001F28F2 /* Spatial_macOS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +238,12 @@
 		F1AA756C2269F99D00D4C272 /* AxisType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxisType.swift; sourceTree = "<group>"; };
 		F1AA756D2269F99D00D4C272 /* VerticalAlign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalAlign.swift; sourceTree = "<group>"; };
 		F1AA756E2269F99D00D4C272 /* HorizontalAlign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalAlign.swift; sourceTree = "<group>"; };
+		F1B4955123095690001F28F2 /* SpatialExampleMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpatialExampleMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1B4955323095690001F28F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F1B4955523095693001F28F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F1B4955823095693001F28F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		F1B4955A23095693001F28F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1B4955B23095693001F28F2 /* SpatialExampleMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpatialExampleMac.entitlements; sourceTree = "<group>"; };
 		F1BD0416219B06F200A4A46F /* ConstraintKind+Animate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConstraintKind+Animate.swift"; sourceTree = "<group>"; };
 		F1C624FC21C789790082A265 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		F1C624FE21C789830082A265 /* MainView+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainView+Create.swift"; sourceTree = "<group>"; };
@@ -236,6 +268,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1B4954E23095690001F28F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1B4955F230956BE001F28F2 /* With.framework in Frameworks */,
+				F1B49561230956BE001F28F2 /* Spatial_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +531,18 @@
 			path = axis;
 			sourceTree = "<group>";
 		};
+		F1B4955223095690001F28F2 /* SpatialExampleMac */ = {
+			isa = PBXGroup;
+			children = (
+				F1B4955323095690001F28F2 /* AppDelegate.swift */,
+				F1B4955523095693001F28F2 /* Assets.xcassets */,
+				F1B4955723095693001F28F2 /* MainMenu.xib */,
+				F1B4955A23095693001F28F2 /* Info.plist */,
+				F1B4955B23095693001F28F2 /* SpatialExampleMac.entitlements */,
+			);
+			path = SpatialExampleMac;
+			sourceTree = "<group>";
+		};
 		F1BBDD132180B4FD008DBC9B /* content */ = {
 			isa = PBXGroup;
 			children = (
@@ -559,6 +612,7 @@
 				F1D369E72171FDAE00F498FA /* SpatialExample */,
 				F1D369D92171FCDC00F498FA /* Spatial */,
 				F185A3A722319E8E00AE66B2 /* Spatial-macOS */,
+				F1B4955223095690001F28F2 /* SpatialExampleMac */,
 				F1D369D82171FCDC00F498FA /* Products */,
 				F1D369FA2171FECE00F498FA /* Frameworks */,
 			);
@@ -570,6 +624,7 @@
 				F1D369D72171FCDC00F498FA /* Spatial.framework */,
 				F1D369E62171FDAE00F498FA /* SpatialExample.app */,
 				F185A3A622319E8E00AE66B2 /* Spatial_macOS.framework */,
+				F1B4955123095690001F28F2 /* SpatialExampleMac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -670,6 +725,25 @@
 			productReference = F185A3A622319E8E00AE66B2 /* Spatial_macOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		F1B4955023095690001F28F2 /* SpatialExampleMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1B4955E23095693001F28F2 /* Build configuration list for PBXNativeTarget "SpatialExampleMac" */;
+			buildPhases = (
+				F1B4954D23095690001F28F2 /* Sources */,
+				F1B4954E23095690001F28F2 /* Frameworks */,
+				F1B4954F23095690001F28F2 /* Resources */,
+				F1B49565230956BF001F28F2 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F1B49564230956BE001F28F2 /* PBXTargetDependency */,
+			);
+			name = SpatialExampleMac;
+			productName = SpatialExampleMac;
+			productReference = F1B4955123095690001F28F2 /* SpatialExampleMac.app */;
+			productType = "com.apple.product-type.application";
+		};
 		F1D369D62171FCDC00F498FA /* Spatial */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1D369DF2171FCDC00F498FA /* Build configuration list for PBXNativeTarget "Spatial" */;
@@ -715,12 +789,15 @@
 		F1D369CE2171FCDC00F498FA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = FutureLab;
 				TargetAttributes = {
 					F185A3A522319E8E00AE66B2 = {
 						CreatedOnToolsVersion = 10.1;
+					};
+					F1B4955023095690001F28F2 = {
+						CreatedOnToolsVersion = 10.2;
 					};
 					F1D369D62171FCDC00F498FA = {
 						CreatedOnToolsVersion = 10.0;
@@ -747,6 +824,7 @@
 				F1D369D62171FCDC00F498FA /* Spatial */,
 				F1D369E52171FDAE00F498FA /* SpatialExample */,
 				F185A3A522319E8E00AE66B2 /* Spatial-macOS */,
+				F1B4955023095690001F28F2 /* SpatialExampleMac */,
 			);
 		};
 /* End PBXProject section */
@@ -756,6 +834,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1B4954F23095690001F28F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1B4955623095693001F28F2 /* Assets.xcassets in Resources */,
+				F1B4955923095693001F28F2 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -868,6 +955,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F1B4954D23095690001F28F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1B4955423095690001F28F2 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F1D369D32171FCDC00F498FA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -962,9 +1057,22 @@
 			target = F1D369D62171FCDC00F498FA /* Spatial */;
 			targetProxy = F151DDB821739BF500AA0ABE /* PBXContainerItemProxy */;
 		};
+		F1B49564230956BE001F28F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F185A3A522319E8E00AE66B2 /* Spatial-macOS */;
+			targetProxy = F1B49563230956BE001F28F2 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		F1B4955723095693001F28F2 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1B4955823095693001F28F2 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
 		F1D369F12171FDAF00F498FA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1034,6 +1142,58 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		F1B4955C23095693001F28F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SpatialExampleMac/SpatialExampleMac.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = SpatialExampleMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.futurelab.SpatialExampleMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F1B4955D23095693001F28F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SpatialExampleMac/SpatialExampleMac.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = SpatialExampleMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.futurelab.SpatialExampleMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1273,6 +1433,15 @@
 			buildConfigurations = (
 				F185A3AC22319E8E00AE66B2 /* Debug */,
 				F185A3AD22319E8E00AE66B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1B4955E23095693001F28F2 /* Build configuration list for PBXNativeTarget "SpatialExampleMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1B4955C23095693001F28F2 /* Debug */,
+				F1B4955D23095693001F28F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
