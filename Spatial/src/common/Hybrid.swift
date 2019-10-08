@@ -11,9 +11,11 @@ public typealias View = NSView
 public typealias EdgeInsets = NSEdgeInsets
 #endif
 
+#if os(macOS)
 extension CGRect {
    /**
     * - Note: the insetBy is uniform like: NSRect.init(x: 0, y: 0, width: 100, height: 100).insetBy(dx: 10, dy: 10)//(10.0, 10.0, 80.0, 80.0)
+    * - iOS has its own inset(by:) that works exactly the same as the bellow
     */
    public func inset(by inset: EdgeInsets) -> CGRect {
       let x = self.origin.x + inset.left
@@ -23,3 +25,4 @@ extension CGRect {
       return .init(x: x, y: y, width: width, height: height)
    }
 }
+#endif
