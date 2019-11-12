@@ -6,7 +6,7 @@ extension Array where Element: ConstraintKind.ViewConstraintKind {
    /**
     * Apply constraints on an array of UIViewConstraintKind
     * ## Examples:
-    * [label1,label2,label3].applyAnchorsAndSizes { views in
+    * [label1, label2, label3].applyAnchorsAndSizes { views in
     *     let anchors = [] // Use Constraint.distribute
     *     let sizes = [] // Use views.map { Constraint.size }
     *     return (anchors, sizes)
@@ -35,7 +35,7 @@ extension Array where Element: ConstraintKind.ViewConstraintKind {
     */
    public func applySizes(closure: SizesClosure) {
       self.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
-      let constraints: [SizeConstraint] = closure(self) // the constraints is returned from the closure
+      let constraints: [SizeConstraint] = closure(self) // The constraints is returned from the closure
       self.enumerated().forEach {
          let size: SizeConstraint = constraints[$0.offset]
          $0.element.size = size
@@ -64,7 +64,7 @@ extension Array where Element: ConstraintKind.ViewConstraintKind {
     */
    public func applyAnchors(axis: Axis, closure: AxisClosure) {
       self.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
-      let constraints: [NSLayoutConstraint] = closure(self) // the constraints is returned from the closure
+      let constraints: [NSLayoutConstraint] = closure(self) // The constraints is returned from the closure
       self.enumerated().forEach {
          let anchor: NSLayoutConstraint = constraints[$0.offset]
          switch axis {

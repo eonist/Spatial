@@ -9,7 +9,7 @@ public typealias AnchorConstraintsAndSizeConstraints = (anchorConstraints: [Anch
  */
 extension View {
    // We keep AnchorsAndSizes in a tuple, because applyConstraints wouldn't work with just an array
-   public typealias AnchorsAndSizes = (anchors: [NSLayoutConstraint], sizes: [NSLayoutConstraint]) // can this go to [UIView].AnchorsAndSizes  ?
+   public typealias AnchorsAndSizes = (anchors: [NSLayoutConstraint], sizes: [NSLayoutConstraint]) // Can this go to [UIView].AnchorsAndSizes  ?
    public typealias ConstraintsClosure = (_ view: View) -> [NSLayoutConstraint]
    public typealias ConstraintClosure = (_ view: View) -> NSLayoutConstraint
    // Tuple

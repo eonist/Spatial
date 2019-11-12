@@ -45,10 +45,10 @@ extension ConstraintKind where Self: View {
       }
    }
    /**
-    * One-liner for applySize
+    * One-liner method for the long-hand method self.applySize
     * ## Examples:
     * view.applySize(to:self)//multiplier,offset
-    * Parameters:
+    * - Parameters:
     *    - to: The instance to apply to
     *    - width: the width to apply to instance
     *    - height: the height to apply to instance

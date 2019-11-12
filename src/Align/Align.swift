@@ -6,7 +6,7 @@ import Foundation
  */
 public class Align {
    /**
-    * Aligns PARAM: view to PARAM: canvasAlignment and PARAM: viewAlignment within PARAM: canvasSize with a optional PARAM offset
+    * Aligns view to canvasAlignment and  viewAlignment within canvasSize with a optional offset
     * - Parameters:
     *    - object: Layout item you want to manipulate
     *    - canvasSize: Area size  on which you want to align the target to (usually the parent size)
@@ -17,26 +17,27 @@ public class Align {
     * Align.align(someCircle, canvasSize: .init(x: 400, y: 300), canvasAlign: .center, objectAlign: .topLeft) // Output: centers a circle within 400x300 rectangle
     * Align.align(someCircle, canvasSize: .init(x: 400, y: 300), canvasAlign: .centerRight, objectAlign: .centerRight) // Output: aligns the circle to the y axis center and  to the right border of the rectangle but withinn the rectange
     */
-   public static func align(_ object: View, canvasSize: CGSize, canvasAlign: Alignment, objectAlign: Alignment, offset: CGPoint = .zero) {
-      let alignmentPoint: CGPoint = Align.alignmentPoint(.init(width: object.frame.width, height: object.frame.height), canvasSize: canvasSize, canvasAlign: canvasAlign, objectAlign: objectAlign, offset: offset)
+   public static func align(object: View, canvasSize: CGSize, canvasAlign: Alignment, objectAlign: Alignment, offset: CGPoint = .zero) {
+      let alignmentPoint: CGPoint = Align.alignmentPoint(objectSize: .init(width: object.frame.width, height: object.frame.height), canvasSize: canvasSize, canvasAlign: canvasAlign, objectAlign: objectAlign, offset: offset)
       object.frame.origin = alignmentPoint
    }
    /**
     * Returns the point from where to align target PARAM: objectSize within PARAM: canvasSize at PARAM: objectAlignment and PARAM: canvasAlignment and PARAM: offset
-    * - Parameter: objectSize the size of the object that is being aligned
-    * - Parameter: canvasSize is the size of the canvas the object is beeing aligned to (Thinkn of the canvas as a painting and the object as an element in that painting, figurativly speaking)
+    * - Parameters:
+    *   - objectSize: the size of the object that is being aligned
+    *   - canvasSize: is the size of the canvas the object is beeing aligned to (Thinkn of the canvas as a painting and the object as an element in that painting, figurativly speaking)
     * - Remark: this function is usefull when aligning two or more objects where you can add the size together and find the correct alignment point
     */
-   public static func alignmentPoint(_ objectSize: CGSize, canvasSize: CGSize, canvasAlign: Alignment, objectAlign: Alignment, offset: CGPoint = .zero) -> CGPoint {
-      let canvasP: CGPoint = Align.point(canvasSize, align: canvasAlign)
-      let objP: CGPoint = Align.point(objectSize, align: objectAlign)
+   public static func alignmentPoint(objectSize: CGSize, canvasSize: CGSize, canvasAlign: Alignment, objectAlign: Alignment, offset: CGPoint = .zero) -> CGPoint {
+      let canvasP: CGPoint = Align.point(size: canvasSize, align: canvasAlign)
+      let objP: CGPoint = Align.point(size: objectSize, align: objectAlign)
       let p: CGPoint = .init(x:canvasP.x - objP.x, y: canvasP.y - objP.y)
       return .init(x:p.x + offset.x, y: p.y + offset.y)
    }
    /**
     * Returns the pivot point of an object according to what pivotAlignment it has
     */
-   public static func point(_ size: CGSize, align: Alignment) -> CGPoint {
+   public static func point(size: CGSize, align: Alignment) -> CGPoint {
       switch align {
       case .topLeft:return .init()
       case .topRight:return .init(x: size.width, y: 0)
@@ -59,6 +60,6 @@ extension Align {
     * - Note: alt names: alignMany? or alignAll?
     */
    public static func align(_ objects: [View], canvasSize: CGSize, canvasAlign: Alignment, objectAlign: Alignment, offset: CGPoint = .zero) {
-      objects.forEach { object in Align.align(object, canvasSize: canvasSize, canvasAlign: canvasAlign, objectAlign: objectAlign, offset: offset) }
+      objects.forEach { object in Align.align(object: object, canvasSize: canvasSize, canvasAlign: canvasAlign, objectAlign: objectAlign, offset: offset) }
    }
 }

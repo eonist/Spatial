@@ -1,7 +1,7 @@
 import Foundation
 /**
  * Size constraints
- * - NOTE: Has a lot of NSConstraint and NSAnchor info: https://stackoverflow.com/a/26181982/5389500
+ * - Note: Has a lot of NSConstraint and NSAnchor info: https://stackoverflow.com/a/26181982/5389500
  * ## Examples:
  * square.translatesAutoresizingMaskIntoConstraints = false (this enables you to set your own constraints)
  * contentView.layoutMargins = UIEdgeInsetsMake(12, 12, 12, 12) // adds margin to the containing view
@@ -14,9 +14,9 @@ extension Constraint {
     * Creates a dimensional constraint
     * - Important: Multiplier needs to be 1, 1 to not have an effect
     * - Important: Offset needs to be 0, 0 to not have an effect
-    * ## EXAMPLEs:
-    * let sizeConstraint = Constraint.size(square, to: canvas, offset: .zero, multiplier: .init(x: 1, y: 0.5))
-    * let widthConstraint = Constraint.size(square, to: canvas).w
+    * ## Examples:
+    * let sizeConstraint = Constraint.size(square, to: parent, offset: .zero, multiplier: .init(x: 1, y: 0.5))
+    * let widthConstraint = Constraint.size(square, to: parent).w
     */
    public static func size(_ view: View, to: View, offset: CGSize = .zero, multiplier: CGPoint = .init(x:1, y:1)) -> SizeConstraint {
       let width = Constraint.width(view, to: to, offset: offset.width, multiplier: multiplier.x)
@@ -25,7 +25,7 @@ extension Constraint {
    }
    /**
     * Creates a size constraint
-    * - Fixme: ⚠️️ This doesn't have offset, maybe it should 🤔 for now I guess you can always inset the size
+    * - Fixme: ⚠️️ This doesn't have offset, maybe it should, for now I guess you can always inset the size
     * ## Examples:
     * let sizeConstraint = Constraint.size(square, size: .init(width: 100, height: 100))
     */
@@ -37,7 +37,7 @@ extension Constraint {
    /**
     * Creates a size constraint
     * - Returns size tuple (based on parent and or width or height)
-    *  Parameters:
+    * - Parameters:
     *    - view: The view to be sized by AutoLayout
     *    - to: The view to be sized to
     *    - width: custom width, instead of relying on another view to size against

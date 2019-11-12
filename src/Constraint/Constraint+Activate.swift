@@ -5,11 +5,12 @@ import Foundation
  */
 extension View {
    /**
+    * Activate constraint (multiple layoutconstraints)
     * ## Examples:
     * button.activateConstraints { view in
     *      let anchor = Constraint.anchor(view, to: self, align: .topLeft, alignTo: .topLeft)
     *      let size = Constraint.size(view, size: CGSize.init(width: UIScreen.main.bounds.width, height: TopBar.topBarHeight))
-    *      return [anchor.x,anchor.y,size.w,size.h]
+    *      return [anchor.x, anchor.y, size.w, size.h]
     * }
     */
    public func activateConstraints(closure: ConstraintsClosure) {
@@ -18,7 +19,7 @@ extension View {
       NSLayoutConstraint.activate(constraints)
    }
    /**
-    * Activate constraint for singular layoutconstraint
+    * Activate constraint (singular layoutconstraint)
     */
    public func activateConstraint(closure: ConstraintClosure) {
       self.translatesAutoresizingMaskIntoConstraints = false
@@ -27,16 +28,17 @@ extension View {
    }
    /**
     * Same as activateConstraint, but returns a tuple in the closure instead of an array
+    * - Note: Useful for when you return anchor and size
     * ## Examples:
     * label.activateAnchorAndSize { view in
-    *    let a = Constraint.anchor(view, to: self, align: .topLeft, alignTo:  .topLeft)
-    *    let s = Constraint.size(view, to: self)
-    *    return (a,s)
+    *    let a: AnchorConstraint = Constraint.anchor(view, to: self, align: .topLeft, alignTo:  .topLeft)
+    *    let s: SizeConstraint = Constraint.size(view, to: self)
+    *    return (a, s)
     * }
     */
    public func activateAnchorAndSize(closure: AnchorAndSizeClosure) {
       self.translatesAutoresizingMaskIntoConstraints = false
-      let anchorAndSize: AnchorAndSize = closure(self) // the constraints is returned from the closure
+      let anchorAndSize: AnchorAndSize = closure(self) // The constraints is returned from the closure
       let constraints: [NSLayoutConstraint] = [anchorAndSize.anchor.x, anchorAndSize.anchor.y, anchorAndSize.size.w, anchorAndSize.size.h]
       NSLayoutConstraint.activate(constraints)
    }
@@ -45,7 +47,7 @@ extension View {
     */
    public func activateAnchor(closure: AnchorClosure) {
       self.translatesAutoresizingMaskIntoConstraints = false
-      let anchorConstraint: AnchorConstraint = closure(self) // the constraints is returned from the closure
+      let anchorConstraint: AnchorConstraint = closure(self) // The constraints is returned from the closure
       let constraints: [NSLayoutConstraint] = [anchorConstraint.x, anchorConstraint.y]
       NSLayoutConstraint.activate(constraints)
    }
@@ -54,7 +56,7 @@ extension View {
     */
    public func activateSize(closure: SizeClosure) {
       self.translatesAutoresizingMaskIntoConstraints = false
-      let sizeConstraint: SizeConstraint = closure(self) // the constraints is returned from the closure
+      let sizeConstraint: SizeConstraint = closure(self) // The constraints is returned from the closure
       let constraints: [NSLayoutConstraint] = [sizeConstraint.w, sizeConstraint.h]
       NSLayoutConstraint.activate(constraints)
    }

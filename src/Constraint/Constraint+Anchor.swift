@@ -3,7 +3,7 @@ import Foundation
  * Positional constraints (Aligning relative to another view (x,y))
  * - Remark: Snapkit and Carthography are too clever and caters to too many facets of autolayout. This library is just a simple extension that does basic autolayout while reducing the setup time in half.
  * - Fixme: ⚠️️ Not really an anchor, consider renaming to ConstraintAttribute or pin, point, origin, position? or?
- * - Note: anchor is a more appropriate name than, pin,pos,pt,edge,put,magnet,align,corner (anchor can represent both corner,edge and center)
+ * - Note: anchor is a more appropriate name than, pin, pos, pt, edge, put, magnet, align, corner (anchor can represent both corner, edge and center)
  */
 public class Constraint {
    /**
@@ -42,7 +42,7 @@ public class Constraint {
 fileprivate class Util {
    /**
     * For aligning in the x axis (internal)
-    * - Note: Layout margin is o ly available for ios and tvos
+    * - Note: Layout margin is only available for iOS and tvOS
     */
    static func layoutAttr(align: HorizontalAlign, useMargin: Bool = false) -> NSLayoutConstraint.Attribute {
       switch align {

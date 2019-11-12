@@ -8,7 +8,8 @@ import Foundation
 extension View {
    /**
     * One-liner for activateAnchorAndSize (Align and size a UIView instance)
-    * Paramters:
+    * - Abstract: position and size views with AutoLayout with one call
+    * - Parameters:
     *    - to: anchor to this view, if sizeTo is not set, then to is used for sizing
     *    - sizeTo: provide this if you need to base the size on another view
     *    - width: provide this if you want to use a fixed width
@@ -20,7 +21,7 @@ extension View {
     *    - sizeOffset: offset for the `sizeTo` parameter (use negative values for inset)
     *    - useMargin: aligns to autolayout margins or not
     * ## Examples:
-    * view.anchorAndSize(to:self,height:100,align:.center,alignTo:.center)//multiplier
+    * view.anchorAndSize(to: self, height: 100, align: .center, alignTo: .center) // multiplier
     */
    public func anchorAndSize(to: View, sizeTo: View? = nil, width: CGFloat? = nil, height: CGFloat? = nil, align: Alignment = .topLeft, alignTo: Alignment = .topLeft, multiplier: CGSize = .init(width:1, height:1), offset: CGPoint = .zero, sizeOffset: CGSize = .zero, useMargin: Bool = false) {
       self.activateAnchorAndSize { _ in
@@ -37,10 +38,11 @@ extension View {
    }
    /**
     * One-liner for anchor (Align a UIView instance)
+    * - Abstract: position views with AutoLayout with one call
     * ## Examples:
-    * view.anchor(to:self,align:.center,alignTo:.center)
+    * view.anchor(to: self, align: .center, alignTo: .center)
     * - Fixme: ⚠️️ change to -> target (to diff from ver and hor and closure)
-    * - Fixme: ⚠️️ make to optional, and use superview
+    * - Fixme: ⚠️️ make `to` optional, and use superview
     */
    public func anchor(to: View, align: Alignment = .topLeft, alignTo: Alignment = .topLeft, offset: CGPoint = .zero, useMargin: Bool = false) {
       self.activateAnchor { _ in
@@ -49,6 +51,7 @@ extension View {
    }
    /**
     * Horizontally align a UIView instance
+    * - Abstract: position views horizontally with AutoLayout with one call
     * - Fixme: ⚠️️ change to horTo
     */
    public func anchor(horTo: View, align: HorizontalAlign = .left, alignTo: HorizontalAlign = .left, offset: CGFloat = 0, useMargin: Bool = false) {
@@ -58,7 +61,8 @@ extension View {
    }
    /**
     * Vertically align a UIView instance
-    *  - Fixme: ⚠️️ change to verTo
+    * - Abstract: position views vertically with AutoLayout with one call
+    *  - Fixme: ⚠️️ Maybe change to verTo
     */
    public func anchor(verTo: View, align: VerticalAlign = .top, alignTo: VerticalAlign = .top, offset: CGFloat = 0, useMargin: Bool = false) {
       self.activateConstraints { view in
@@ -68,8 +72,8 @@ extension View {
    /**
     * Size a UIView instance
     * ## Examples:
-    * view.size(to:self)
-    * - Fixme: ⚠️️ Maybe the to could be optional,
+    * view.size(to: self)
+    * - Fixme: ⚠️️ Maybe the `to` could be optional,
     */
    public func size(to: View, width: CGFloat? = nil, height: CGFloat? = nil, offset: CGSize = .zero, multiplier: CGSize = .init(width: 1, height: 1)) {
       self.activateSize { _ in
@@ -80,7 +84,7 @@ extension View {
     * Size a UIView instance to a speccific metric size
     * - Fixme: ⚠️️ This doesn't have offset, maybe it should 🤔 for now I guess you can always inset the size
     * ## Examples:
-    * view.size(width:100,height:100)
+    * view.size(width: 100, height: 100)
     */
    public func size(width: CGFloat, height: CGFloat, multiplier: CGSize = .init(width: 1, height: 1)) {
       self.activateSize { _ in
@@ -98,6 +102,9 @@ extension View {
    }
    /**
     * Width
+    *  ## Examples:
+    * view.size(width: 100, multiplier: 0.5)
+    * - Fixme: ⚠️️ This may be superflouse as you could just do width: 100 * 0.5 etc
     */
    public func size(width: CGFloat, multiplier: CGFloat = 1) {
       self.activateConstraint { view in
@@ -106,6 +113,9 @@ extension View {
    }
    /**
     * Height
+    * ## Examples:
+    * view.size(height: 100, multiplier: 0.5)
+    * - Fixme: ⚠️️ This may be superflouse as you could just do height: 100 * 0.5 etc
     */
    public func size(height: CGFloat, multiplier: CGFloat = 1) {
       self.activateConstraint { view in
@@ -121,6 +131,8 @@ extension Array where Element: View {
     * Anchoring for an array of views
     * - Parameter dir: Different between vertical and horizontal
     * Fixme: ⚠️️ Could be named `anchor`
+    * ## Examples:
+    * views.distribute(dir: .horizontal)
     */
    public func distribute(dir: Axis, align: Alignment = .topLeft, spacing: CGFloat = 0, offset: CGFloat = 0) {
       self.activateAnchors { views in
@@ -153,7 +165,7 @@ extension Array where Element: View {
    /**
     * Size multiple UIView instance to a speccific metric size
     * ## Examples:
-    * [btn1,btn2,btn3].size(width: 96, height: 24)
+    * [btn1, btn2, btn3].size(width: 96, height: 24)
     */
    public func size(width: CGFloat, height: CGFloat, multiplier: CGSize = .init(width: 1, height: 1)) {
       self.activateSizes { views in

@@ -6,13 +6,13 @@ extension Array where Element: View {
    /**
     * AutoLayout Sugar for UIView's (Multiple)
     * ## Examples:
-    * [label1,label2,label3].activateConstraint { views in
+    * [label1, label2, label3].activateConstraint { views in
     *      let anchors = Constraint.distribute(vertically: views, align: .topLeft)
-    *      let sizes = views.map{Constraint.size(width:96,height:42)}
+    *      let sizes = views.map { Constraint.size(width: 96, height: 42) }
     *      return (anchors, sizes)
     * }
     * - Note: ⚠️️ You have to zip together anchors in some cases
-    * - Fixme: ⚠️️ Can we utilize activateAnchors and activateSizes in this method? 🤔
+    * - Fixme: ⚠️️ Can we utilize activateAnchors and activateSizes in this method?
     */
    public func activateAnchorsAndSizes(closure: ConstraintsClosure) {
       self.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
@@ -27,7 +27,7 @@ extension Array where Element: View {
    /**
     * Activates multiple anchor constraints
     * ## Examples:
-    * [label1,label2,label3].activateAnchors {
+    * [label1, label2, label3].activateAnchors {
     *    return Constraint.distribute(vertically: views, align: .topCenter)
     * }
     */
@@ -43,8 +43,8 @@ extension Array where Element: View {
    /**
     * Activates multiple size constraints
     * ## Examples:
-    * [btn1,btn2,btn3].activateSizes { views in
-    *    return views.map{$0.size(width:96,height:42)}
+    * [btn1, btn2, btn3].activateSizes { views in
+    *    return views.map { $0.size(width: 96, height: 42) }
     * }
     */
    public func activateSizes(closure: SizeConstraintsClosure) {

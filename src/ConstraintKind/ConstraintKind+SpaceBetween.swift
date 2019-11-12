@@ -17,7 +17,7 @@ extension Array where Element: ConstraintKind.ViewConstraintKind {
     * views.spaceBetween(dir: .horizontal, parent: self, inset:x)
     * - Fixme: ⚠️️ write doc
     */
-   public func spaceBetween(dir: Axis, parent: View, inset: EdgeInsets = .init()) { // Fixme: ⚠️️ add EdgeInset instead of rect, then apply that directly to rect
+   public func spaceBetween(dir: Axis, parent: View, inset: EdgeInsets = .init()) {
       switch dir {
       case .hor: SpaceBetweenUtil.spaceBetween(horizontally: parent, views: self, inset: inset)
       case .ver: SpaceBetweenUtil.spaceBetween(vertically: parent, views: self, inset: inset)
@@ -36,11 +36,11 @@ fileprivate class SpaceBetweenUtil {
       let rect: CGRect = parent.bounds.inset(by: inset)
       let itemVoid: CGFloat = {
          let totW: CGFloat = views.reduce(0) { $0 + ($1.size?.w.constant ?? 0) } // find the totalW of all items
-         let totVoid: CGFloat = rect.width - totW // find totVoid by doing w - totw
-         let numOfVoids = CGFloat(views.count - 1) // then divide this voidSpace with .count - 1 and
-         return totVoid / numOfVoids // iterate of each item and inserting itemVoid in + width
+         let totVoid: CGFloat = rect.width - totW // Find totVoid by doing w - totw
+         let numOfVoids = CGFloat(views.count - 1) // Then divide this voidSpace with .count - 1 and
+         return totVoid / numOfVoids // Iterate of each item and inserting itemVoid in + width
       }()
-      var x: CGFloat = rect.origin.x // interim x
+      var x: CGFloat = rect.origin.x // Interim x
       views.forEach { item in
          item.activateConstraint { _ in // Fixme: ⚠️️ Create applyAnchor for hor and ver
             let constraint = Constraint.anchor(item, to: parent, align: .left, alignTo: .left, offset: x)
@@ -57,12 +57,12 @@ fileprivate class SpaceBetweenUtil {
    static func spaceBetween(vertically parent: View, views: [ConstraintKind.ViewConstraintKind], inset: EdgeInsets) {
       let rect: CGRect = parent.bounds.inset(by: inset)
       let itemVoid: CGFloat = {
-         let totH: CGFloat = views.reduce(0) { $0 + ($1.size?.h.constant ?? 0) } // find the totalW of all items
-         let totVoid: CGFloat = rect.height - totH // find totVoid by doing w - totw
-         let numOfVoids = CGFloat(views.count - 1) // then divide this voidSpace with .count - 1 and
+         let totH: CGFloat = views.reduce(0) { $0 + ($1.size?.h.constant ?? 0) } // Find the totalW of all items
+         let totVoid: CGFloat = rect.height - totH // Find totVoid by doing w - totw
+         let numOfVoids = CGFloat(views.count - 1) // Then divide this voidSpace with .count - 1 and
          return totVoid / numOfVoids // Iterate of each item and inserting itemVoid in + width
       }()
-      var y: CGFloat = rect.origin.y // interim y
+      var y: CGFloat = rect.origin.y // Interim y
       views.forEach { item in
          item.activateConstraint { _ in // Fixme: ⚠️️ Create applyAnchor for hor and ver
             let constraint = Constraint.anchor(item, to: parent, align: .top, alignTo: .top, offset: y)

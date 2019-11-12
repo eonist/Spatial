@@ -6,13 +6,13 @@ import Foundation
 extension ConstraintKind where Self: View {
    /**
     * Activates and sets size and anchor to a ConstraintKind
-    * - Note Same as UIView().activateConstraint... but also sets size and anchor constraints (ConstraintKind) (For animation etc)
-    * - Important: remeber to deactive constraints before calling this method
+    * - Note: Same as UIView().activateConstraint... but also sets size and anchor constraints (ConstraintKind) (For animation etc)
+    * - Important: remember to deactive constraints before calling this method
     * ## Examples:
     * sliderBar.applyAnchorAndSize { view in
     *      let anchor = Constraint.anchor(view, to: self, align: .topLeft, alignTo: .topLeft)
     *      let size = Constraint.size(view, size: size)
-    *      return (anchor:anchor, size:size) // (anchor, size) 👈 also works
+    *      return (anchor:anchor, size:size) // (anchor, size) also works
     * }
     */
    public func applyAnchorAndSize(closure: AnchorAndSizeClosure) {
@@ -38,14 +38,14 @@ extension ConstraintKind where Self: View {
     */
    public func applySize(closure: SizeClosure) {
       self.translatesAutoresizingMaskIntoConstraints = false
-      let sizeConstraint: SizeConstraint = closure(self) // the constraints is returned from the closure
+      let sizeConstraint: SizeConstraint = closure(self) // The constraints is returned from the closure
       let constraints: [NSLayoutConstraint] = [sizeConstraint.w, sizeConstraint.h]
       self.size = sizeConstraint
       NSLayoutConstraint.activate(constraints)
    }
    /**
     * Sets both anchor and size to a ConstraintKind
-    * - Note: this could be a variable, but I guess it's not because for some reason? 🤔
+    * - Fixme: this could be a variable, but I guess it's not because for some reason?
     */
    public func setConstraint(anchor: AnchorConstraint, size: SizeConstraint) {
       self.anchor = anchor
