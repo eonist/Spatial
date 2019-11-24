@@ -1,22 +1,9 @@
 {
+  "commitish" : "754cdfcde946fd1e7eca2d16e1253192c35f3485",
   "Mac" : [
     {
       "name" : "With_mac",
-      "hash" : "80f2223b90123aa6d0e46ba96b287e460a0f59de9d4e0e35d934fe33bb7e365b",
-      "swiftToolchainVersion" : "5.1.2 (swiftlang-1100.0.278 clang-1100.0.33.9)"
-    }
-  ],
-  "watchOS" : [
-
-  ],
-  "tvOS" : [
-
-  ],
-  "commitish" : "88f57201f947db31ac4ac122206a2cfc2ca2ca54",
-  "iOS" : [
-    {
-      "name" : "With",
-      "hash" : "71b80957238094a2b314e3e7c9389b5383e836a4ea79a4772ceb351ed829ada1",
+      "hash" : "56d9a0b4a7fa9a49d9d4f1a4dd6fc0e78c9dc5d564f014c435d8043db0f7bcdb",
       "swiftToolchainVersion" : "5.1.2 (swiftlang-1100.0.278 clang-1100.0.33.9)"
     }
   ]
