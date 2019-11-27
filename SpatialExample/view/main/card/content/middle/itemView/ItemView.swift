@@ -1,5 +1,4 @@
 import UIKit
-import Spatial
 
 class ItemView: UIView {
    lazy var horizontalItems: [UIView] = createHorizontalItems()

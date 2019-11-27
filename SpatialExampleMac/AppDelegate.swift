@@ -1,5 +1,4 @@
 import Cocoa
-import Spatial_macOS
 
 @NSApplicationMain
 /**

@@ -1,5 +1,4 @@
 import UIKit
-import Spatial
 
 class MainVC: UIViewController {
    lazy var mainView: MainView = createMainView()

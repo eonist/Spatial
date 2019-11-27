@@ -1,5 +1,4 @@
 import UIKit
-import Spatial
 import With
 
 class SizeTestingView: UIView {

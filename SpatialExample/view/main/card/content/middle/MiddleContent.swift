@@ -1,5 +1,4 @@
 import UIKit
-import Spatial
 
 class MiddleContent: UIView {
    lazy var itemViews: [ItemView] = createItemViews()

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,14 +27,9 @@
 		9D0C0F7522673E7A00B0673D /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F6322673E7A00B0673D /* BaseCell.swift */; };
 		9D1C760D22FAC5BB00120D6C /* SizeTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1C760C22FAC5BB00120D6C /* SizeTestingView.swift */; };
 		9D2117D12265B6D900EC5A0E /* MinMaxTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2117D02265B6D900EC5A0E /* MinMaxTestView.swift */; };
-		9D2117D92265C7A900EC5A0E /* With.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D2117D82265C7A800EC5A0E /* With.framework */; };
-		9D2117DA2265C7A900EC5A0E /* With.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D2117D82265C7A800EC5A0E /* With.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D2117DE2265E01700EC5A0E /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2117DD2265E01700EC5A0E /* TestView.swift */; };
-		F10213CD218756310038F496 /* Constraint+Distribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10213CB218756310038F496 /* Constraint+Distribution.swift */; };
 		F109EE6521E10A4800FCC696 /* SpacingTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE6421E10A4800FCC696 /* SpacingTestView.swift */; };
 		F109EE6721E3771700FCC696 /* SpacingTestView+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE6621E3771700FCC696 /* SpacingTestView+Create.swift */; };
-		F109EE6B21E382D100FCC696 /* Constraint+Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE6A21E382D100FCC696 /* Constraint+Access.swift */; };
-		F109EE6D21E383F000FCC696 /* ConstraintKind+Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE6C21E383F000FCC696 /* ConstraintKind+Access.swift */; };
 		F109EE8821E49AF100FCC696 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE8721E49AF100FCC696 /* MainVC.swift */; };
 		F109EE8A21E49B6600FCC696 /* MainVC+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE8921E49B6600FCC696 /* MainVC+Create.swift */; };
 		F109EE8D21E4D42200FCC696 /* MiddleContent+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE8C21E4D42200FCC696 /* MiddleContent+Create.swift */; };
@@ -45,101 +40,82 @@
 		F109EE9A21E4D5D900FCC696 /* TopBar+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE9921E4D5D900FCC696 /* TopBar+Constant.swift */; };
 		F109EE9D21E5EA9500FCC696 /* CardView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE9C21E5EA9500FCC696 /* CardView+Constant.swift */; };
 		F114AEDC21ABC18F00942A28 /* AnimationTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F114AEDB21ABC18F00942A28 /* AnimationTestView.swift */; };
-		F14FADE121F3980F00ACE5FF /* ConstraintKind+SpaceBetween.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14FADE021F3980F00ACE5FF /* ConstraintKind+SpaceBetween.swift */; };
-		F14FADE321F398C000ACE5FF /* ConstraintKind+SpaceAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14FADE221F398C000ACE5FF /* ConstraintKind+SpaceAround.swift */; };
 		F151DDA921738B2C00AA0ABE /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151DDA821738B2C00AA0ABE /* TopBar.swift */; };
 		F151DDAC21738CAF00AA0ABE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151DDAB21738CAF00AA0ABE /* Constants.swift */; };
-		F151DDB721739BF500AA0ABE /* Spatial.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F1D369D72171FCDC00F498FA /* Spatial.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F151DDBC2173CABC00AA0ABE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151DDBB2173CABC00AA0ABE /* CardView.swift */; };
 		F17E0E2A21DE2EBE00EE3027 /* CardView+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E2921DE2EBE00EE3027 /* CardView+Create.swift */; };
-		F17E0E2C21DE31A800EE3027 /* ConstraintKind+TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E2B21DE31A800EE3027 /* ConstraintKind+TypeAlias.swift */; };
-		F17E0E2E21DE327B00EE3027 /* ConstraintKind+Bulk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E2D21DE327B00EE3027 /* ConstraintKind+Bulk.swift */; };
-		F17E0E3021DE364D00EE3027 /* Constraint+Activate+Bulk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E2F21DE364D00EE3027 /* Constraint+Activate+Bulk.swift */; };
-		F17E0E3221DE36F300EE3027 /* Constraint+TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3121DE36F300EE3027 /* Constraint+TypeAlias.swift */; };
-		F17E0E3621DF29E100EE3027 /* Constraint+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3521DF29E100EE3027 /* Constraint+Anchor.swift */; };
-		F17E0E3821DF2A8D00EE3027 /* Constraint+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3721DF2A8D00EE3027 /* Constraint+Size.swift */; };
-		F17E0E3A21DF33E100EE3027 /* ConstraintKind+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3921DF33E100EE3027 /* ConstraintKind+Update.swift */; };
-		F17E0E3E21DF356900EE3027 /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3D21DF356900EE3027 /* ConstraintView.swift */; };
-		F17E0E4021DF35DF00EE3027 /* ConstraintKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3F21DF35DF00EE3027 /* ConstraintKind.swift */; };
 		F17E0E4321DF467E00EE3027 /* AnimationTestView+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E4221DF467E00EE3027 /* AnimationTestView+Create.swift */; };
 		F17E38732174C15D009C10B2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E38722174C15D009C10B2 /* MainView.swift */; };
-		F185A3A02231974E00AE66B2 /* Hybrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F185A39F2231974E00AE66B2 /* Hybrid.swift */; };
-		F185A3AA22319E8E00AE66B2 /* Spatial_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = F185A3A822319E8E00AE66B2 /* Spatial_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F185A3AE22319EAC00AE66B2 /* Hybrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F185A39F2231974E00AE66B2 /* Hybrid.swift */; };
-		F185A3AF22319EAC00AE66B2 /* ConstraintKind+Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE6C21E383F000FCC696 /* ConstraintKind+Access.swift */; };
-		F185A3B022319EAC00AE66B2 /* ConstraintKind+Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D369FD2172039B00F498FA /* ConstraintKind+Apply.swift */; };
-		F185A3B122319EAC00AE66B2 /* ConstraintKind+Bulk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E2D21DE327B00EE3027 /* ConstraintKind+Bulk.swift */; };
-		F185A3B222319EAC00AE66B2 /* ConstraintKind+TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E2B21DE31A800EE3027 /* ConstraintKind+TypeAlias.swift */; };
-		F185A3B322319EAC00AE66B2 /* ConstraintKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3F21DF35DF00EE3027 /* ConstraintKind.swift */; };
-		F185A3B422319EAC00AE66B2 /* ConstraintKind+SpaceBetween.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14FADE021F3980F00ACE5FF /* ConstraintKind+SpaceBetween.swift */; };
-		F185A3B522319EAC00AE66B2 /* ConstraintKind+SpaceAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14FADE221F398C000ACE5FF /* ConstraintKind+SpaceAround.swift */; };
-		F185A3B622319EAC00AE66B2 /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3D21DF356900EE3027 /* ConstraintView.swift */; };
-		F185A3B722319EAC00AE66B2 /* ConstraintKind+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BD0416219B06F200A4A46F /* ConstraintKind+Animate.swift */; };
-		F185A3B822319EAC00AE66B2 /* ConstraintKind+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3921DF33E100EE3027 /* ConstraintKind+Update.swift */; };
-		F185A3B922319EAC00AE66B2 /* Constraint+Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE6A21E382D100FCC696 /* Constraint+Access.swift */; };
-		F185A3BA22319EAC00AE66B2 /* Constraint+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3521DF29E100EE3027 /* Constraint+Anchor.swift */; };
-		F185A3BB22319EAC00AE66B2 /* Constraint+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3721DF2A8D00EE3027 /* Constraint+Size.swift */; };
-		F185A3BC22319EAC00AE66B2 /* Constraint+Activate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D369FF2172039B00F498FA /* Constraint+Activate.swift */; };
-		F185A3BD22319EAC00AE66B2 /* Constraint+Activate+Bulk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E2F21DE364D00EE3027 /* Constraint+Activate+Bulk.swift */; };
-		F185A3BE22319EAC00AE66B2 /* Constraint+TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3121DE36F300EE3027 /* Constraint+TypeAlias.swift */; };
-		F185A3BF22319EAC00AE66B2 /* Constraint+Distribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10213CB218756310038F496 /* Constraint+Distribution.swift */; };
-		F1AA755D2269F94500D4C272 /* AlignType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA755B2269F94400D4C272 /* AlignType.swift */; };
-		F1AA755E2269F94500D4C272 /* AlignType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA755B2269F94400D4C272 /* AlignType.swift */; };
-		F1AA755F2269F94500D4C272 /* AlignType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA755C2269F94400D4C272 /* AlignType+Extension.swift */; };
-		F1AA75602269F94500D4C272 /* AlignType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA755C2269F94400D4C272 /* AlignType+Extension.swift */; };
-		F1AA75652269F96800D4C272 /* Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA75632269F96800D4C272 /* Alignment.swift */; };
-		F1AA75662269F96800D4C272 /* Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA75632269F96800D4C272 /* Alignment.swift */; };
-		F1AA75672269F96800D4C272 /* Alignment+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA75642269F96800D4C272 /* Alignment+Extension.swift */; };
-		F1AA75682269F96800D4C272 /* Alignment+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA75642269F96800D4C272 /* Alignment+Extension.swift */; };
-		F1AA756F2269F99D00D4C272 /* Axis.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756B2269F99D00D4C272 /* Axis.swift */; };
-		F1AA75702269F99D00D4C272 /* Axis.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756B2269F99D00D4C272 /* Axis.swift */; };
-		F1AA75712269F99D00D4C272 /* AxisType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756C2269F99D00D4C272 /* AxisType.swift */; };
-		F1AA75722269F99D00D4C272 /* AxisType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756C2269F99D00D4C272 /* AxisType.swift */; };
-		F1AA75732269F99D00D4C272 /* VerticalAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756D2269F99D00D4C272 /* VerticalAlign.swift */; };
-		F1AA75742269F99D00D4C272 /* VerticalAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756D2269F99D00D4C272 /* VerticalAlign.swift */; };
-		F1AA75752269F99D00D4C272 /* HorizontalAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756E2269F99D00D4C272 /* HorizontalAlign.swift */; };
-		F1AA75762269F99D00D4C272 /* HorizontalAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756E2269F99D00D4C272 /* HorizontalAlign.swift */; };
+		F18B1617238F2B7900D3E664 /* With in Frameworks */ = {isa = PBXBuildFile; productRef = F18B1616238F2B7900D3E664 /* With */; };
+		F1A16819238F2B9C006EACC4 /* With in Frameworks */ = {isa = PBXBuildFile; productRef = F1A16818238F2B9C006EACC4 /* With */; };
+		F1A1681F238F2C1F006EACC4 /* Hybrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F185A39F2231974E00AE66B2 /* Hybrid.swift */; };
+		F1A16820238F2C1F006EACC4 /* ConstraintKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3F21DF35DF00EE3027 /* ConstraintKind.swift */; };
+		F1A16821238F2C1F006EACC4 /* ConstraintKind+Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE6C21E383F000FCC696 /* ConstraintKind+Access.swift */; };
+		F1A16822238F2C1F006EACC4 /* ConstraintKind+Bulk+Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CDF087225D22F10076EC92 /* ConstraintKind+Bulk+Access.swift */; };
+		F1A16823238F2C1F006EACC4 /* ConstraintKind+Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D369FD2172039B00F498FA /* ConstraintKind+Apply.swift */; };
+		F1A16824238F2C1F006EACC4 /* ConstraintKind+Bulk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E2D21DE327B00EE3027 /* ConstraintKind+Bulk.swift */; };
+		F1A16825238F2C1F006EACC4 /* ConstraintKind+TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E2B21DE31A800EE3027 /* ConstraintKind+TypeAlias.swift */; };
+		F1A16826238F2C1F006EACC4 /* ConstraintKind+SpaceBetween.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14FADE021F3980F00ACE5FF /* ConstraintKind+SpaceBetween.swift */; };
+		F1A16827238F2C1F006EACC4 /* ConstraintKind+SpaceAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14FADE221F398C000ACE5FF /* ConstraintKind+SpaceAround.swift */; };
+		F1A16828238F2C1F006EACC4 /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3D21DF356900EE3027 /* ConstraintView.swift */; };
+		F1A16829238F2C1F006EACC4 /* ConstraintKind+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BD0416219B06F200A4A46F /* ConstraintKind+Animate.swift */; };
+		F1A1682A238F2C1F006EACC4 /* ConstraintKind+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3921DF33E100EE3027 /* ConstraintKind+Update.swift */; };
+		F1A1682B238F2C1F006EACC4 /* Constraint+Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE6A21E382D100FCC696 /* Constraint+Access.swift */; };
+		F1A1682C238F2C1F006EACC4 /* Constraint+Access+Bulk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D81ECE22E329D2008F842A /* Constraint+Access+Bulk.swift */; };
+		F1A1682D238F2C1F006EACC4 /* Constraint+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3521DF29E100EE3027 /* Constraint+Anchor.swift */; };
+		F1A1682E238F2C1F006EACC4 /* Constraint+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3721DF2A8D00EE3027 /* Constraint+Size.swift */; };
+		F1A1682F238F2C1F006EACC4 /* Constraint+Activate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D369FF2172039B00F498FA /* Constraint+Activate.swift */; };
+		F1A16830238F2C1F006EACC4 /* Constraint+Activate+Bulk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E2F21DE364D00EE3027 /* Constraint+Activate+Bulk.swift */; };
+		F1A16831238F2C1F006EACC4 /* Constraint+TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3121DE36F300EE3027 /* Constraint+TypeAlias.swift */; };
+		F1A16832238F2C1F006EACC4 /* Constraint+Distribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10213CB218756310038F496 /* Constraint+Distribution.swift */; };
+		F1A16833238F2C1F006EACC4 /* Align.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E78730230046BA002007EE /* Align.swift */; };
+		F1A16834238F2C1F006EACC4 /* Axis.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756B2269F99D00D4C272 /* Axis.swift */; };
+		F1A16835238F2C1F006EACC4 /* AxisType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756C2269F99D00D4C272 /* AxisType.swift */; };
+		F1A16836238F2C1F006EACC4 /* VerticalAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756D2269F99D00D4C272 /* VerticalAlign.swift */; };
+		F1A16837238F2C1F006EACC4 /* HorizontalAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756E2269F99D00D4C272 /* HorizontalAlign.swift */; };
+		F1A16838238F2C1F006EACC4 /* AlignType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA755B2269F94400D4C272 /* AlignType.swift */; };
+		F1A16839238F2C1F006EACC4 /* AlignType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA755C2269F94400D4C272 /* AlignType+Extension.swift */; };
+		F1A1683A238F2C1F006EACC4 /* Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA75632269F96800D4C272 /* Alignment.swift */; };
+		F1A1683B238F2C1F006EACC4 /* Alignment+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA75642269F96800D4C272 /* Alignment+Extension.swift */; };
+		F1A1683C238F2D09006EACC4 /* Hybrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = F185A39F2231974E00AE66B2 /* Hybrid.swift */; };
+		F1A1683D238F2D09006EACC4 /* ConstraintKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3F21DF35DF00EE3027 /* ConstraintKind.swift */; };
+		F1A1683E238F2D09006EACC4 /* ConstraintKind+Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE6C21E383F000FCC696 /* ConstraintKind+Access.swift */; };
+		F1A1683F238F2D09006EACC4 /* ConstraintKind+Bulk+Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CDF087225D22F10076EC92 /* ConstraintKind+Bulk+Access.swift */; };
+		F1A16840238F2D09006EACC4 /* ConstraintKind+Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D369FD2172039B00F498FA /* ConstraintKind+Apply.swift */; };
+		F1A16841238F2D09006EACC4 /* ConstraintKind+Bulk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E2D21DE327B00EE3027 /* ConstraintKind+Bulk.swift */; };
+		F1A16842238F2D09006EACC4 /* ConstraintKind+TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E2B21DE31A800EE3027 /* ConstraintKind+TypeAlias.swift */; };
+		F1A16843238F2D09006EACC4 /* ConstraintKind+SpaceBetween.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14FADE021F3980F00ACE5FF /* ConstraintKind+SpaceBetween.swift */; };
+		F1A16844238F2D09006EACC4 /* ConstraintKind+SpaceAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14FADE221F398C000ACE5FF /* ConstraintKind+SpaceAround.swift */; };
+		F1A16845238F2D09006EACC4 /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3D21DF356900EE3027 /* ConstraintView.swift */; };
+		F1A16846238F2D09006EACC4 /* ConstraintKind+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BD0416219B06F200A4A46F /* ConstraintKind+Animate.swift */; };
+		F1A16847238F2D0A006EACC4 /* ConstraintKind+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3921DF33E100EE3027 /* ConstraintKind+Update.swift */; };
+		F1A16848238F2D0A006EACC4 /* Constraint+Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE6A21E382D100FCC696 /* Constraint+Access.swift */; };
+		F1A16849238F2D0A006EACC4 /* Constraint+Access+Bulk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D81ECE22E329D2008F842A /* Constraint+Access+Bulk.swift */; };
+		F1A1684A238F2D0A006EACC4 /* Constraint+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3521DF29E100EE3027 /* Constraint+Anchor.swift */; };
+		F1A1684B238F2D0A006EACC4 /* Constraint+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3721DF2A8D00EE3027 /* Constraint+Size.swift */; };
+		F1A1684C238F2D0A006EACC4 /* Constraint+Activate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D369FF2172039B00F498FA /* Constraint+Activate.swift */; };
+		F1A1684D238F2D0A006EACC4 /* Constraint+Activate+Bulk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E2F21DE364D00EE3027 /* Constraint+Activate+Bulk.swift */; };
+		F1A1684E238F2D0A006EACC4 /* Constraint+TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3121DE36F300EE3027 /* Constraint+TypeAlias.swift */; };
+		F1A1684F238F2D0A006EACC4 /* Constraint+Distribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10213CB218756310038F496 /* Constraint+Distribution.swift */; };
+		F1A16850238F2D0A006EACC4 /* Align.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E78730230046BA002007EE /* Align.swift */; };
+		F1A16851238F2D0A006EACC4 /* Axis.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756B2269F99D00D4C272 /* Axis.swift */; };
+		F1A16852238F2D0A006EACC4 /* AxisType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756C2269F99D00D4C272 /* AxisType.swift */; };
+		F1A16853238F2D0A006EACC4 /* VerticalAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756D2269F99D00D4C272 /* VerticalAlign.swift */; };
+		F1A16854238F2D0A006EACC4 /* HorizontalAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756E2269F99D00D4C272 /* HorizontalAlign.swift */; };
+		F1A16855238F2D0A006EACC4 /* AlignType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA755B2269F94400D4C272 /* AlignType.swift */; };
+		F1A16856238F2D0A006EACC4 /* AlignType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA755C2269F94400D4C272 /* AlignType+Extension.swift */; };
+		F1A16857238F2D0A006EACC4 /* Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA75632269F96800D4C272 /* Alignment.swift */; };
+		F1A16858238F2D0A006EACC4 /* Alignment+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA75642269F96800D4C272 /* Alignment+Extension.swift */; };
 		F1B4955423095690001F28F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B4955323095690001F28F2 /* AppDelegate.swift */; };
 		F1B4955623095693001F28F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1B4955523095693001F28F2 /* Assets.xcassets */; };
 		F1B4955923095693001F28F2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1B4955723095693001F28F2 /* MainMenu.xib */; };
-		F1B4955F230956BE001F28F2 /* With.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D2117D82265C7A800EC5A0E /* With.framework */; };
-		F1B49560230956BE001F28F2 /* With.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D2117D82265C7A800EC5A0E /* With.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F1B49561230956BE001F28F2 /* Spatial_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F185A3A622319E8E00AE66B2 /* Spatial_macOS.framework */; };
-		F1B49562230956BE001F28F2 /* Spatial_macOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F185A3A622319E8E00AE66B2 /* Spatial_macOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F1BD0417219B06F200A4A46F /* ConstraintKind+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BD0416219B06F200A4A46F /* ConstraintKind+Animate.swift */; };
 		F1C624FD21C789790082A265 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C624FC21C789790082A265 /* Extension.swift */; };
 		F1C624FF21C789830082A265 /* MainView+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C624FE21C789830082A265 /* MainView+Create.swift */; };
-		F1CDF088225D22F10076EC92 /* ConstraintKind+Bulk+Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CDF087225D22F10076EC92 /* ConstraintKind+Bulk+Access.swift */; };
-		F1CDF089225D22F10076EC92 /* ConstraintKind+Bulk+Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CDF087225D22F10076EC92 /* ConstraintKind+Bulk+Access.swift */; };
-		F1D369DC2171FCDC00F498FA /* Spatial.h in Headers */ = {isa = PBXBuildFile; fileRef = F1D369DA2171FCDC00F498FA /* Spatial.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F1D369E92171FDAE00F498FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D369E82171FDAE00F498FA /* AppDelegate.swift */; };
 		F1D369F02171FDAF00F498FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1D369EF2171FDAF00F498FA /* Assets.xcassets */; };
 		F1D369F32171FDAF00F498FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D369F12171FDAF00F498FA /* LaunchScreen.storyboard */; };
-		F1D36A012172039B00F498FA /* ConstraintKind+Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D369FD2172039B00F498FA /* ConstraintKind+Apply.swift */; };
-		F1D36A032172039B00F498FA /* Constraint+Activate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D369FF2172039B00F498FA /* Constraint+Activate.swift */; };
-		F1D81ECF22E329D2008F842A /* Constraint+Access+Bulk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D81ECE22E329D2008F842A /* Constraint+Access+Bulk.swift */; };
-		F1D81EFE22E46FEC008F842A /* Constraint+Access+Bulk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D81ECE22E329D2008F842A /* Constraint+Access+Bulk.swift */; };
-		F1E78731230046BB002007EE /* Align.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E78730230046BA002007EE /* Align.swift */; };
-		F1E78732230046BB002007EE /* Align.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E78730230046BA002007EE /* Align.swift */; };
 		F1FC84D42174E6B800D01B72 /* MiddleContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FC84D32174E6B800D01B72 /* MiddleContent.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		F151DDB821739BF500AA0ABE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F1D369CE2171FCDC00F498FA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F1D369D62171FCDC00F498FA;
-			remoteInfo = Spatial;
-		};
-		F1B49563230956BE001F28F2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F1D369CE2171FCDC00F498FA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F185A3A522319E8E00AE66B2;
-			remoteInfo = "Spatial-macOS";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		F151DDBA21739BF500AA0ABE /* Embed Frameworks */ = {
@@ -148,8 +124,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9D2117DA2265C7A900EC5A0E /* With.framework in Embed Frameworks */,
-				F151DDB721739BF500AA0ABE /* Spatial.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,8 +134,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F1B49560230956BE001F28F2 /* With.framework in Embed Frameworks */,
-				F1B49562230956BE001F28F2 /* Spatial_macOS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,10 +161,6 @@
 		9D0C0F6322673E7A00B0673D /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		9D1C760C22FAC5BB00120D6C /* SizeTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeTestingView.swift; sourceTree = "<group>"; };
 		9D2117D02265B6D900EC5A0E /* MinMaxTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinMaxTestView.swift; sourceTree = "<group>"; };
-		9D2117D22265C77B00EC5A0E /* With.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = With.framework; path = Carthage/Build/iOS/With.framework; sourceTree = "<group>"; };
-		9D2117D32265C77B00EC5A0E /* Spatial.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Spatial.framework; path = Carthage/Build/iOS/Spatial.framework; sourceTree = "<group>"; };
-		9D2117D62265C78700EC5A0E /* With_mac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = With_mac.framework; path = Carthage/Build/Mac/With_mac.framework; sourceTree = "<group>"; };
-		9D2117D82265C7A800EC5A0E /* With.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = With.framework; path = Carthage/Build/iOS/With.framework; sourceTree = "<group>"; };
 		9D2117DD2265E01700EC5A0E /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		F10213CB218756310038F496 /* Constraint+Distribution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Constraint+Distribution.swift"; sourceTree = "<group>"; };
 		F109EE6421E10A4800FCC696 /* SpacingTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacingTestView.swift; sourceTree = "<group>"; };
@@ -227,9 +195,6 @@
 		F17E0E4221DF467E00EE3027 /* AnimationTestView+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimationTestView+Create.swift"; sourceTree = "<group>"; };
 		F17E38722174C15D009C10B2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F185A39F2231974E00AE66B2 /* Hybrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hybrid.swift; sourceTree = "<group>"; };
-		F185A3A622319E8E00AE66B2 /* Spatial_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Spatial_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F185A3A822319E8E00AE66B2 /* Spatial_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Spatial_macOS.h; sourceTree = "<group>"; };
-		F185A3A922319E8E00AE66B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1AA755B2269F94400D4C272 /* AlignType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlignType.swift; sourceTree = "<group>"; };
 		F1AA755C2269F94400D4C272 /* AlignType+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AlignType+Extension.swift"; sourceTree = "<group>"; };
 		F1AA75632269F96800D4C272 /* Alignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alignment.swift; sourceTree = "<group>"; };
@@ -248,9 +213,6 @@
 		F1C624FC21C789790082A265 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		F1C624FE21C789830082A265 /* MainView+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainView+Create.swift"; sourceTree = "<group>"; };
 		F1CDF087225D22F10076EC92 /* ConstraintKind+Bulk+Access.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConstraintKind+Bulk+Access.swift"; sourceTree = "<group>"; };
-		F1D369D72171FCDC00F498FA /* Spatial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Spatial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1D369DA2171FCDC00F498FA /* Spatial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Spatial.h; sourceTree = "<group>"; };
-		F1D369DB2171FCDC00F498FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1D369E62171FDAE00F498FA /* SpatialExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpatialExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1D369E82171FDAE00F498FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1D369EF2171FDAF00F498FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -264,26 +226,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F185A3A322319E8E00AE66B2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F1B4954E23095690001F28F2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1B4955F230956BE001F28F2 /* With.framework in Frameworks */,
-				F1B49561230956BE001F28F2 /* Spatial_macOS.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F1D369D42171FCDC00F498FA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				F1A16819238F2B9C006EACC4 /* With in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +238,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D2117D92265C7A900EC5A0E /* With.framework in Frameworks */,
+				F18B1617238F2B7900D3E664 /* With in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,13 +440,23 @@
 			path = common;
 			sourceTree = "<group>";
 		};
-		F185A3A722319E8E00AE66B2 /* Spatial-macOS */ = {
+		F1A1681A238F2BD0006EACC4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				F185A3A822319E8E00AE66B2 /* Spatial_macOS.h */,
-				F185A3A922319E8E00AE66B2 /* Info.plist */,
+				F1A1681B238F2BD0006EACC4 /* Spatial */,
 			);
-			path = "Spatial-macOS";
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		F1A1681B238F2BD0006EACC4 /* Spatial */ = {
+			isa = PBXGroup;
+			children = (
+				F185A39E2231969100AE66B2 /* common */,
+				F1BED70D21B7B2F200A0D3D4 /* ConstraintKind */,
+				F1BED70C21B7B2D600A0D3D4 /* Constraint */,
+				F1BED6FD21B7A97300A0D3D4 /* Align */,
+			);
+			path = Spatial;
 			sourceTree = "<group>";
 		};
 		F1AA755A2269F94400D4C272 /* aligntype */ = {
@@ -608,11 +565,8 @@
 		F1D369CD2171FCDC00F498FA = {
 			isa = PBXGroup;
 			children = (
-				9D2117D82265C7A800EC5A0E /* With.framework */,
-				F1D36A04217203AA00F498FA /* src */,
+				F1A1681A238F2BD0006EACC4 /* Sources */,
 				F1D369E72171FDAE00F498FA /* SpatialExample */,
-				F1D369D92171FCDC00F498FA /* Spatial */,
-				F185A3A722319E8E00AE66B2 /* Spatial-macOS */,
 				F1B4955223095690001F28F2 /* SpatialExampleMac */,
 				F1D369D82171FCDC00F498FA /* Products */,
 				F1D369FA2171FECE00F498FA /* Frameworks */,
@@ -622,21 +576,10 @@
 		F1D369D82171FCDC00F498FA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F1D369D72171FCDC00F498FA /* Spatial.framework */,
 				F1D369E62171FDAE00F498FA /* SpatialExample.app */,
-				F185A3A622319E8E00AE66B2 /* Spatial_macOS.framework */,
 				F1B4955123095690001F28F2 /* SpatialExampleMac.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		F1D369D92171FCDC00F498FA /* Spatial */ = {
-			isa = PBXGroup;
-			children = (
-				F1D369DA2171FCDC00F498FA /* Spatial.h */,
-				F1D369DB2171FCDC00F498FA /* Info.plist */,
-			);
-			path = Spatial;
 			sourceTree = "<group>";
 		};
 		F1D369E72171FDAE00F498FA /* SpatialExample */ = {
@@ -655,22 +598,8 @@
 		F1D369FA2171FECE00F498FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9D2117D62265C78700EC5A0E /* With_mac.framework */,
-				9D2117D32265C77B00EC5A0E /* Spatial.framework */,
-				9D2117D22265C77B00EC5A0E /* With.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F1D36A04217203AA00F498FA /* src */ = {
-			isa = PBXGroup;
-			children = (
-				F185A39E2231969100AE66B2 /* common */,
-				F1BED70D21B7B2F200A0D3D4 /* ConstraintKind */,
-				F1BED70C21B7B2D600A0D3D4 /* Constraint */,
-				F1BED6FD21B7A97300A0D3D4 /* Align */,
-			);
-			path = src;
 			sourceTree = "<group>";
 		};
 		F1FC84D22174E6A600D01B72 /* card */ = {
@@ -686,45 +615,7 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		F185A3A122319E8E00AE66B2 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F185A3AA22319E8E00AE66B2 /* Spatial_macOS.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F1D369D22171FCDC00F498FA /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F1D369DC2171FCDC00F498FA /* Spatial.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		F185A3A522319E8E00AE66B2 /* Spatial-macOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F185A3AB22319E8E00AE66B2 /* Build configuration list for PBXNativeTarget "Spatial-macOS" */;
-			buildPhases = (
-				F185A3A122319E8E00AE66B2 /* Headers */,
-				F185A3A222319E8E00AE66B2 /* Sources */,
-				F185A3A322319E8E00AE66B2 /* Frameworks */,
-				F185A3A422319E8E00AE66B2 /* Resources */,
-				F1E787332300487D002007EE /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Spatial-macOS";
-			productName = "Spatial-macOS";
-			productReference = F185A3A622319E8E00AE66B2 /* Spatial_macOS.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		F1B4955023095690001F28F2 /* SpatialExampleMac */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1B4955E23095693001F28F2 /* Build configuration list for PBXNativeTarget "SpatialExampleMac" */;
@@ -737,31 +628,14 @@
 			buildRules = (
 			);
 			dependencies = (
-				F1B49564230956BE001F28F2 /* PBXTargetDependency */,
 			);
 			name = SpatialExampleMac;
+			packageProductDependencies = (
+				F1A16818238F2B9C006EACC4 /* With */,
+			);
 			productName = SpatialExampleMac;
 			productReference = F1B4955123095690001F28F2 /* SpatialExampleMac.app */;
 			productType = "com.apple.product-type.application";
-		};
-		F1D369D62171FCDC00F498FA /* Spatial */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F1D369DF2171FCDC00F498FA /* Build configuration list for PBXNativeTarget "Spatial" */;
-			buildPhases = (
-				F1D369D22171FCDC00F498FA /* Headers */,
-				F1D369D32171FCDC00F498FA /* Sources */,
-				F1D369D42171FCDC00F498FA /* Frameworks */,
-				F1D369D52171FCDC00F498FA /* Resources */,
-				F1E7873423004895002007EE /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Spatial;
-			productName = Spatial;
-			productReference = F1D369D72171FCDC00F498FA /* Spatial.framework */;
-			productType = "com.apple.product-type.framework";
 		};
 		F1D369E52171FDAE00F498FA /* SpatialExample */ = {
 			isa = PBXNativeTarget;
@@ -776,9 +650,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				F151DDB921739BF500AA0ABE /* PBXTargetDependency */,
 			);
 			name = SpatialExample;
+			packageProductDependencies = (
+				F18B1616238F2B7900D3E664 /* With */,
+			);
 			productName = SpatialExample;
 			productReference = F1D369E62171FDAE00F498FA /* SpatialExample.app */;
 			productType = "com.apple.product-type.application";
@@ -793,15 +669,8 @@
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = FutureLab;
 				TargetAttributes = {
-					F185A3A522319E8E00AE66B2 = {
-						CreatedOnToolsVersion = 10.1;
-					};
 					F1B4955023095690001F28F2 = {
 						CreatedOnToolsVersion = 10.2;
-					};
-					F1D369D62171FCDC00F498FA = {
-						CreatedOnToolsVersion = 10.0;
-						LastSwiftMigration = 1000;
 					};
 					F1D369E52171FDAE00F498FA = {
 						CreatedOnToolsVersion = 10.0;
@@ -817,39 +686,26 @@
 				Base,
 			);
 			mainGroup = F1D369CD2171FCDC00F498FA;
+			packageReferences = (
+				F18B1615238F2B7900D3E664 /* XCRemoteSwiftPackageReference "With" */,
+			);
 			productRefGroup = F1D369D82171FCDC00F498FA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F1D369D62171FCDC00F498FA /* Spatial */,
 				F1D369E52171FDAE00F498FA /* SpatialExample */,
-				F185A3A522319E8E00AE66B2 /* Spatial-macOS */,
 				F1B4955023095690001F28F2 /* SpatialExampleMac */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F185A3A422319E8E00AE66B2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F1B4954F23095690001F28F2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F1B4955623095693001F28F2 /* Assets.xcassets in Resources */,
 				F1B4955923095693001F28F2 /* MainMenu.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F1D369D52171FCDC00F498FA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -882,120 +738,43 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		F1E787332300487D002007EE /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		F1E7873423004895002007EE /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F185A3A222319E8E00AE66B2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F185A3BF22319EAC00AE66B2 /* Constraint+Distribution.swift in Sources */,
-				F1AA75702269F99D00D4C272 /* Axis.swift in Sources */,
-				F185A3BA22319EAC00AE66B2 /* Constraint+Anchor.swift in Sources */,
-				F1AA755E2269F94500D4C272 /* AlignType.swift in Sources */,
-				F1AA75762269F99D00D4C272 /* HorizontalAlign.swift in Sources */,
-				F185A3BB22319EAC00AE66B2 /* Constraint+Size.swift in Sources */,
-				F185A3B922319EAC00AE66B2 /* Constraint+Access.swift in Sources */,
-				F185A3BD22319EAC00AE66B2 /* Constraint+Activate+Bulk.swift in Sources */,
-				F185A3B622319EAC00AE66B2 /* ConstraintView.swift in Sources */,
-				F185A3B422319EAC00AE66B2 /* ConstraintKind+SpaceBetween.swift in Sources */,
-				F1AA75682269F96800D4C272 /* Alignment+Extension.swift in Sources */,
-				F1AA75602269F94500D4C272 /* AlignType+Extension.swift in Sources */,
-				F1AA75722269F99D00D4C272 /* AxisType.swift in Sources */,
-				F185A3B722319EAC00AE66B2 /* ConstraintKind+Animate.swift in Sources */,
-				F1D81EFE22E46FEC008F842A /* Constraint+Access+Bulk.swift in Sources */,
-				F185A3BE22319EAC00AE66B2 /* Constraint+TypeAlias.swift in Sources */,
-				F185A3B122319EAC00AE66B2 /* ConstraintKind+Bulk.swift in Sources */,
-				F185A3BC22319EAC00AE66B2 /* Constraint+Activate.swift in Sources */,
-				F1E78732230046BB002007EE /* Align.swift in Sources */,
-				F185A3B022319EAC00AE66B2 /* ConstraintKind+Apply.swift in Sources */,
-				F1AA75662269F96800D4C272 /* Alignment.swift in Sources */,
-				F185A3AF22319EAC00AE66B2 /* ConstraintKind+Access.swift in Sources */,
-				F185A3B822319EAC00AE66B2 /* ConstraintKind+Update.swift in Sources */,
-				F185A3B522319EAC00AE66B2 /* ConstraintKind+SpaceAround.swift in Sources */,
-				F1AA75742269F99D00D4C272 /* VerticalAlign.swift in Sources */,
-				F185A3B222319EAC00AE66B2 /* ConstraintKind+TypeAlias.swift in Sources */,
-				F1CDF089225D22F10076EC92 /* ConstraintKind+Bulk+Access.swift in Sources */,
-				F185A3B322319EAC00AE66B2 /* ConstraintKind.swift in Sources */,
-				F185A3AE22319EAC00AE66B2 /* Hybrid.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F1B4954D23095690001F28F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1A1681F238F2C1F006EACC4 /* Hybrid.swift in Sources */,
+				F1A16820238F2C1F006EACC4 /* ConstraintKind.swift in Sources */,
+				F1A16821238F2C1F006EACC4 /* ConstraintKind+Access.swift in Sources */,
+				F1A16822238F2C1F006EACC4 /* ConstraintKind+Bulk+Access.swift in Sources */,
+				F1A16823238F2C1F006EACC4 /* ConstraintKind+Apply.swift in Sources */,
+				F1A16824238F2C1F006EACC4 /* ConstraintKind+Bulk.swift in Sources */,
+				F1A16825238F2C1F006EACC4 /* ConstraintKind+TypeAlias.swift in Sources */,
+				F1A16826238F2C1F006EACC4 /* ConstraintKind+SpaceBetween.swift in Sources */,
+				F1A16827238F2C1F006EACC4 /* ConstraintKind+SpaceAround.swift in Sources */,
+				F1A16828238F2C1F006EACC4 /* ConstraintView.swift in Sources */,
+				F1A16829238F2C1F006EACC4 /* ConstraintKind+Animate.swift in Sources */,
+				F1A1682A238F2C1F006EACC4 /* ConstraintKind+Update.swift in Sources */,
+				F1A1682B238F2C1F006EACC4 /* Constraint+Access.swift in Sources */,
+				F1A1682C238F2C1F006EACC4 /* Constraint+Access+Bulk.swift in Sources */,
+				F1A1682D238F2C1F006EACC4 /* Constraint+Anchor.swift in Sources */,
+				F1A1682E238F2C1F006EACC4 /* Constraint+Size.swift in Sources */,
+				F1A1682F238F2C1F006EACC4 /* Constraint+Activate.swift in Sources */,
+				F1A16830238F2C1F006EACC4 /* Constraint+Activate+Bulk.swift in Sources */,
+				F1A16831238F2C1F006EACC4 /* Constraint+TypeAlias.swift in Sources */,
+				F1A16832238F2C1F006EACC4 /* Constraint+Distribution.swift in Sources */,
+				F1A16833238F2C1F006EACC4 /* Align.swift in Sources */,
+				F1A16834238F2C1F006EACC4 /* Axis.swift in Sources */,
+				F1A16835238F2C1F006EACC4 /* AxisType.swift in Sources */,
+				F1A16836238F2C1F006EACC4 /* VerticalAlign.swift in Sources */,
+				F1A16837238F2C1F006EACC4 /* HorizontalAlign.swift in Sources */,
+				F1A16838238F2C1F006EACC4 /* AlignType.swift in Sources */,
+				F1A16839238F2C1F006EACC4 /* AlignType+Extension.swift in Sources */,
+				F1A1683A238F2C1F006EACC4 /* Alignment.swift in Sources */,
+				F1A1683B238F2C1F006EACC4 /* Alignment+Extension.swift in Sources */,
 				F1B4955423095690001F28F2 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F1D369D32171FCDC00F498FA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F17E0E3E21DF356900EE3027 /* ConstraintView.swift in Sources */,
-				F1D36A012172039B00F498FA /* ConstraintKind+Apply.swift in Sources */,
-				F1AA756F2269F99D00D4C272 /* Axis.swift in Sources */,
-				F10213CD218756310038F496 /* Constraint+Distribution.swift in Sources */,
-				F1AA755D2269F94500D4C272 /* AlignType.swift in Sources */,
-				F1AA75752269F99D00D4C272 /* HorizontalAlign.swift in Sources */,
-				F1BD0417219B06F200A4A46F /* ConstraintKind+Animate.swift in Sources */,
-				F185A3A02231974E00AE66B2 /* Hybrid.swift in Sources */,
-				F17E0E3221DE36F300EE3027 /* Constraint+TypeAlias.swift in Sources */,
-				F1AA75672269F96800D4C272 /* Alignment+Extension.swift in Sources */,
-				F1AA755F2269F94500D4C272 /* AlignType+Extension.swift in Sources */,
-				F17E0E2E21DE327B00EE3027 /* ConstraintKind+Bulk.swift in Sources */,
-				F109EE6D21E383F000FCC696 /* ConstraintKind+Access.swift in Sources */,
-				F1AA75712269F99D00D4C272 /* AxisType.swift in Sources */,
-				F1D81ECF22E329D2008F842A /* Constraint+Access+Bulk.swift in Sources */,
-				F17E0E2C21DE31A800EE3027 /* ConstraintKind+TypeAlias.swift in Sources */,
-				F1D36A032172039B00F498FA /* Constraint+Activate.swift in Sources */,
-				F14FADE121F3980F00ACE5FF /* ConstraintKind+SpaceBetween.swift in Sources */,
-				F1E78731230046BB002007EE /* Align.swift in Sources */,
-				F17E0E4021DF35DF00EE3027 /* ConstraintKind.swift in Sources */,
-				F14FADE321F398C000ACE5FF /* ConstraintKind+SpaceAround.swift in Sources */,
-				F1AA75652269F96800D4C272 /* Alignment.swift in Sources */,
-				F17E0E3A21DF33E100EE3027 /* ConstraintKind+Update.swift in Sources */,
-				F17E0E3821DF2A8D00EE3027 /* Constraint+Size.swift in Sources */,
-				F1AA75732269F99D00D4C272 /* VerticalAlign.swift in Sources */,
-				F109EE6B21E382D100FCC696 /* Constraint+Access.swift in Sources */,
-				F1CDF088225D22F10076EC92 /* ConstraintKind+Bulk+Access.swift in Sources */,
-				F17E0E3021DE364D00EE3027 /* Constraint+Activate+Bulk.swift in Sources */,
-				F17E0E3621DF29E100EE3027 /* Constraint+Anchor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1003,6 +782,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1A1683C238F2D09006EACC4 /* Hybrid.swift in Sources */,
+				F1A1683D238F2D09006EACC4 /* ConstraintKind.swift in Sources */,
+				F1A1683E238F2D09006EACC4 /* ConstraintKind+Access.swift in Sources */,
+				F1A1683F238F2D09006EACC4 /* ConstraintKind+Bulk+Access.swift in Sources */,
+				F1A16840238F2D09006EACC4 /* ConstraintKind+Apply.swift in Sources */,
+				F1A16841238F2D09006EACC4 /* ConstraintKind+Bulk.swift in Sources */,
+				F1A16842238F2D09006EACC4 /* ConstraintKind+TypeAlias.swift in Sources */,
+				F1A16843238F2D09006EACC4 /* ConstraintKind+SpaceBetween.swift in Sources */,
+				F1A16844238F2D09006EACC4 /* ConstraintKind+SpaceAround.swift in Sources */,
+				F1A16845238F2D09006EACC4 /* ConstraintView.swift in Sources */,
+				F1A16846238F2D09006EACC4 /* ConstraintKind+Animate.swift in Sources */,
+				F1A16847238F2D0A006EACC4 /* ConstraintKind+Update.swift in Sources */,
+				F1A16848238F2D0A006EACC4 /* Constraint+Access.swift in Sources */,
+				F1A16849238F2D0A006EACC4 /* Constraint+Access+Bulk.swift in Sources */,
+				F1A1684A238F2D0A006EACC4 /* Constraint+Anchor.swift in Sources */,
+				F1A1684B238F2D0A006EACC4 /* Constraint+Size.swift in Sources */,
+				F1A1684C238F2D0A006EACC4 /* Constraint+Activate.swift in Sources */,
+				F1A1684D238F2D0A006EACC4 /* Constraint+Activate+Bulk.swift in Sources */,
+				F1A1684E238F2D0A006EACC4 /* Constraint+TypeAlias.swift in Sources */,
+				F1A1684F238F2D0A006EACC4 /* Constraint+Distribution.swift in Sources */,
+				F1A16850238F2D0A006EACC4 /* Align.swift in Sources */,
+				F1A16851238F2D0A006EACC4 /* Axis.swift in Sources */,
+				F1A16852238F2D0A006EACC4 /* AxisType.swift in Sources */,
+				F1A16853238F2D0A006EACC4 /* VerticalAlign.swift in Sources */,
+				F1A16854238F2D0A006EACC4 /* HorizontalAlign.swift in Sources */,
+				F1A16855238F2D0A006EACC4 /* AlignType.swift in Sources */,
+				F1A16856238F2D0A006EACC4 /* AlignType+Extension.swift in Sources */,
+				F1A16857238F2D0A006EACC4 /* Alignment.swift in Sources */,
+				F1A16858238F2D0A006EACC4 /* Alignment+Extension.swift in Sources */,
 				F114AEDC21ABC18F00942A28 /* AnimationTestView.swift in Sources */,
 				F109EE8D21E4D42200FCC696 /* MiddleContent+Create.swift in Sources */,
 				9D0C0F7022673E7A00B0673D /* MatchTeamCellData.swift in Sources */,
@@ -1051,19 +859,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		F151DDB921739BF500AA0ABE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F1D369D62171FCDC00F498FA /* Spatial */;
-			targetProxy = F151DDB821739BF500AA0ABE /* PBXContainerItemProxy */;
-		};
-		F1B49564230956BE001F28F2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F185A3A522319E8E00AE66B2 /* Spatial-macOS */;
-			targetProxy = F1B49563230956BE001F28F2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		F1B4955723095693001F28F2 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
@@ -1084,68 +879,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		F185A3AC22319E8E00AE66B2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "Spatial-macOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.github.futurelab.Spatial-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		F185A3AD22319E8E00AE66B2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "Spatial-macOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.github.futurelab.Spatial-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 		F1B4955C23095693001F28F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1155,10 +888,6 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = SpatialExampleMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1181,10 +910,6 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = SpatialExampleMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1320,75 +1045,12 @@
 			};
 			name = Release;
 		};
-		F1D369E02171FCDC00F498FA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = Spatial/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.futurelab.Spatial;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		F1D369E12171FCDC00F498FA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = Spatial/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.futurelab.Spatial;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
 		F1D369F52171FDAF00F498FA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = SpatialExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1408,10 +1070,6 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = SpatialExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1428,15 +1086,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F185A3AB22319E8E00AE66B2 /* Build configuration list for PBXNativeTarget "Spatial-macOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F185A3AC22319E8E00AE66B2 /* Debug */,
-				F185A3AD22319E8E00AE66B2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		F1B4955E23095693001F28F2 /* Build configuration list for PBXNativeTarget "SpatialExampleMac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1455,15 +1104,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F1D369DF2171FCDC00F498FA /* Build configuration list for PBXNativeTarget "Spatial" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F1D369E02171FCDC00F498FA /* Debug */,
-				F1D369E12171FCDC00F498FA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		F1D369F72171FDAF00F498FA /* Build configuration list for PBXNativeTarget "SpatialExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1474,6 +1114,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F18B1615238F2B7900D3E664 /* XCRemoteSwiftPackageReference "With" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/eonist/With.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F18B1616238F2B7900D3E664 /* With */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F18B1615238F2B7900D3E664 /* XCRemoteSwiftPackageReference "With" */;
+			productName = With;
+		};
+		F1A16818238F2B9C006EACC4 /* With */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F18B1615238F2B7900D3E664 /* XCRemoteSwiftPackageReference "With" */;
+			productName = With;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F1D369CE2171FCDC00F498FA /* Project object */;
 }

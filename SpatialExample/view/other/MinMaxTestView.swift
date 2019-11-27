@@ -1,6 +1,5 @@
 import UIKit
 import With
-import Spatial
 
 class MinMaxTestView: UIView {
    lazy var descLabel: UILabel = createDescLabel()

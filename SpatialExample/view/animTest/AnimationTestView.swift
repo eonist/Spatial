@@ -1,5 +1,4 @@
 import UIKit
-import Spatial
 
 class AnimationTest: UIView {
    lazy var button: Button = createButton()
