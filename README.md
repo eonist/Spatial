@@ -50,6 +50,14 @@ btn1.activateAnchorAndSize{ view in
 }
 ```
 
+```swift
+/*Pin something between something*/
+$0.activateConstraints { view in
+   let tl = Constraint.anchor(view, to: self, align: .topLeft, alignTo: .topLeft)
+   let br = Constraint.anchor(view, to: viewFinderView, align: .bottomRight, alignTo: .topRight)
+   return [tl.x, tl.y, br.x, br.y] // pins a view to the TR of the parent and BL of another sibling-view
+}
+```
 
 ```swift
 /*Animation*/
