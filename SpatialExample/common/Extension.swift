@@ -2,7 +2,8 @@ import UIKit.UIColor
 
 extension UIColor {
    /**
-    * EXAMPLE: let color = UIColor(hex: "ff0000")
+    * ## Examples:
+    * let color = UIColor(hex: "ff0000")
     */
    internal convenience init(hex: String) {
       let scanner = Scanner(string: hex)

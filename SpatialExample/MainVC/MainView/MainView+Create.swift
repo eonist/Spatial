@@ -4,6 +4,7 @@ import With
 extension MainView {
    /**
     * Create the FlowView
+    * - Abstract: tests rounded corners, distribution of items etc
     */
    func createCardView() -> CardView {
       let view: CardView = .init()//.init(frame: .init(origin: .zero, size: screenSize))
@@ -15,6 +16,7 @@ extension MainView {
    }
    /**
     * Create spacing test view
+    * - Abstract tests: distributeAndSize, spaceBetween, spaceAround etc
     */
    func createSpacingTestView() -> SpacingTestView {
       let view: SpacingTestView = .init()
@@ -45,17 +47,8 @@ extension MainView {
       return view
    }
    /**
-    *
-    */
-   func createTableView() -> UIView {
-      let view: CustomTableView = .init(rowData: ["Alpha", "Beta", "Ceta", "Delta", "Setta"], frame: .zero, style: .grouped)
-      self.addSubview(view)
-      view.backgroundColor = .lightGray
-      view.anchorAndSize(to: self)
-      return view
-   }
-   /**
     * sizeTestingView
+    * - Abstract: Creates an inner box with padding of 24px
     */
    func createSizeTestingView() -> SizeTestingView {
       return with(.init()) {

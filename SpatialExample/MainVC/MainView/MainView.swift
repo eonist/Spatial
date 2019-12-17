@@ -5,14 +5,14 @@ class MainView: UIView {
    lazy var spacingTestView: UIView = createSpacingTestView()
    lazy var minMaxTestView: UIView = createMinMaxView()
    lazy var testView: UIView = createTestView()
-   lazy var tableTestView: UIView = createTableView()
    lazy var sizeTestingView: SizeTestingView = createSizeTestingView()
    override init(frame: CGRect) {
       super.init(frame: frame)
-      //_ = minMaxTestView
-//      _ = tableTestView
-      //_ = testView
-      _ = sizeTestingView
+      _ = cardView
+//      _ = spacingTestView
+//      _ = minMaxTestView
+//      _ = testView
+//      _ = sizeTestingView
    }
    /**
     * Boilerplate

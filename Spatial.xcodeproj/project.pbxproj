@@ -7,24 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9D0C0F6422673E7A00B0673D /* CustomTableView+Interaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F4B22673E7A00B0673D /* CustomTableView+Interaction.swift */; };
-		9D0C0F6522673E7A00B0673D /* CustomTableView+Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F4C22673E7A00B0673D /* CustomTableView+Cell.swift */; };
-		9D0C0F6622673E7A00B0673D /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F4D22673E7A00B0673D /* CustomTableView.swift */; };
-		9D0C0F6722673E7A00B0673D /* MatchScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F5022673E7A00B0673D /* MatchScoreCell.swift */; };
-		9D0C0F6822673E7A00B0673D /* InputTextItem+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F5222673E7A00B0673D /* InputTextItem+Constants.swift */; };
-		9D0C0F6922673E7A00B0673D /* InputTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F5322673E7A00B0673D /* InputTextCell.swift */; };
-		9D0C0F6A22673E7A00B0673D /* InputTextItem+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F5422673E7A00B0673D /* InputTextItem+Create.swift */; };
-		9D0C0F6B22673E7A00B0673D /* MatchCell+Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F5622673E7A00B0673D /* MatchCell+Const.swift */; };
-		9D0C0F6C22673E7A00B0673D /* MatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F5722673E7A00B0673D /* MatchCell.swift */; };
-		9D0C0F6D22673E7A00B0673D /* MatchCell+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F5822673E7A00B0673D /* MatchCell+Create.swift */; };
-		9D0C0F6E22673E7A00B0673D /* MatchHighlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F5A22673E7A00B0673D /* MatchHighlightCell.swift */; };
-		9D0C0F6F22673E7A00B0673D /* CellDataKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F5C22673E7A00B0673D /* CellDataKind.swift */; };
-		9D0C0F7022673E7A00B0673D /* MatchTeamCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F5D22673E7A00B0673D /* MatchTeamCellData.swift */; };
-		9D0C0F7122673E7A00B0673D /* LeagueCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F5E22673E7A00B0673D /* LeagueCellData.swift */; };
-		9D0C0F7222673E7A00B0673D /* MatchCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F5F22673E7A00B0673D /* MatchCellData.swift */; };
-		9D0C0F7322673E7A00B0673D /* MatchScoreCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F6022673E7A00B0673D /* MatchScoreCellData.swift */; };
-		9D0C0F7422673E7A00B0673D /* MatchTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F6222673E7A00B0673D /* MatchTeamCell.swift */; };
-		9D0C0F7522673E7A00B0673D /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0F6322673E7A00B0673D /* BaseCell.swift */; };
 		9D1C760D22FAC5BB00120D6C /* SizeTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1C760C22FAC5BB00120D6C /* SizeTestingView.swift */; };
 		9D2117D12265B6D900EC5A0E /* MinMaxTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2117D02265B6D900EC5A0E /* MinMaxTestView.swift */; };
 		9D2117DE2265E01700EC5A0E /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2117DD2265E01700EC5A0E /* TestView.swift */; };
@@ -40,6 +22,7 @@
 		F109EE9A21E4D5D900FCC696 /* TopBar+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE9921E4D5D900FCC696 /* TopBar+Constant.swift */; };
 		F109EE9D21E5EA9500FCC696 /* CardView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE9C21E5EA9500FCC696 /* CardView+Constant.swift */; };
 		F114AEDC21ABC18F00942A28 /* AnimationTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F114AEDB21ABC18F00942A28 /* AnimationTestView.swift */; };
+		F1354EE023A9742F002BBF3C /* TestView+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1354EDF23A9742F002BBF3C /* TestView+Create.swift */; };
 		F151DDA921738B2C00AA0ABE /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151DDA821738B2C00AA0ABE /* TopBar.swift */; };
 		F151DDAC21738CAF00AA0ABE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151DDAB21738CAF00AA0ABE /* Constants.swift */; };
 		F151DDBC2173CABC00AA0ABE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151DDBB2173CABC00AA0ABE /* CardView.swift */; };
@@ -141,24 +124,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9D0C0F4B22673E7A00B0673D /* CustomTableView+Interaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomTableView+Interaction.swift"; sourceTree = "<group>"; };
-		9D0C0F4C22673E7A00B0673D /* CustomTableView+Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomTableView+Cell.swift"; sourceTree = "<group>"; };
-		9D0C0F4D22673E7A00B0673D /* CustomTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
-		9D0C0F5022673E7A00B0673D /* MatchScoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchScoreCell.swift; sourceTree = "<group>"; };
-		9D0C0F5222673E7A00B0673D /* InputTextItem+Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InputTextItem+Constants.swift"; sourceTree = "<group>"; };
-		9D0C0F5322673E7A00B0673D /* InputTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputTextCell.swift; sourceTree = "<group>"; };
-		9D0C0F5422673E7A00B0673D /* InputTextItem+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InputTextItem+Create.swift"; sourceTree = "<group>"; };
-		9D0C0F5622673E7A00B0673D /* MatchCell+Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MatchCell+Const.swift"; sourceTree = "<group>"; };
-		9D0C0F5722673E7A00B0673D /* MatchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
-		9D0C0F5822673E7A00B0673D /* MatchCell+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MatchCell+Create.swift"; sourceTree = "<group>"; };
-		9D0C0F5A22673E7A00B0673D /* MatchHighlightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchHighlightCell.swift; sourceTree = "<group>"; };
-		9D0C0F5C22673E7A00B0673D /* CellDataKind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDataKind.swift; sourceTree = "<group>"; };
-		9D0C0F5D22673E7A00B0673D /* MatchTeamCellData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchTeamCellData.swift; sourceTree = "<group>"; };
-		9D0C0F5E22673E7A00B0673D /* LeagueCellData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeagueCellData.swift; sourceTree = "<group>"; };
-		9D0C0F5F22673E7A00B0673D /* MatchCellData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchCellData.swift; sourceTree = "<group>"; };
-		9D0C0F6022673E7A00B0673D /* MatchScoreCellData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchScoreCellData.swift; sourceTree = "<group>"; };
-		9D0C0F6222673E7A00B0673D /* MatchTeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchTeamCell.swift; sourceTree = "<group>"; };
-		9D0C0F6322673E7A00B0673D /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		9D1C760C22FAC5BB00120D6C /* SizeTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeTestingView.swift; sourceTree = "<group>"; };
 		9D2117D02265B6D900EC5A0E /* MinMaxTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinMaxTestView.swift; sourceTree = "<group>"; };
 		9D2117DD2265E01700EC5A0E /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
@@ -177,6 +142,7 @@
 		F109EE9921E4D5D900FCC696 /* TopBar+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopBar+Constant.swift"; sourceTree = "<group>"; };
 		F109EE9C21E5EA9500FCC696 /* CardView+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+Constant.swift"; sourceTree = "<group>"; };
 		F114AEDB21ABC18F00942A28 /* AnimationTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTestView.swift; sourceTree = "<group>"; };
+		F1354EDF23A9742F002BBF3C /* TestView+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestView+Create.swift"; sourceTree = "<group>"; };
 		F14FADE021F3980F00ACE5FF /* ConstraintKind+SpaceBetween.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConstraintKind+SpaceBetween.swift"; sourceTree = "<group>"; };
 		F14FADE221F398C000ACE5FF /* ConstraintKind+SpaceAround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConstraintKind+SpaceAround.swift"; sourceTree = "<group>"; };
 		F151DDA821738B2C00AA0ABE /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
@@ -245,165 +211,100 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9D0C0F4A22673E7A00B0673D /* table */ = {
-			isa = PBXGroup;
-			children = (
-				9D0C0F4B22673E7A00B0673D /* CustomTableView+Interaction.swift */,
-				9D0C0F4C22673E7A00B0673D /* CustomTableView+Cell.swift */,
-				9D0C0F4D22673E7A00B0673D /* CustomTableView.swift */,
-				9D0C0F4E22673E7A00B0673D /* cell */,
-			);
-			path = table;
-			sourceTree = "<group>";
-		};
-		9D0C0F4E22673E7A00B0673D /* cell */ = {
-			isa = PBXGroup;
-			children = (
-				9D0C0F4F22673E7A00B0673D /* matchscore */,
-				9D0C0F5122673E7A00B0673D /* input */,
-				9D0C0F5522673E7A00B0673D /* match */,
-				9D0C0F5922673E7A00B0673D /* matchhighlight */,
-				9D0C0F5B22673E7A00B0673D /* protocol */,
-				9D0C0F6122673E7A00B0673D /* matchteam */,
-				9D0C0F6322673E7A00B0673D /* BaseCell.swift */,
-			);
-			path = cell;
-			sourceTree = "<group>";
-		};
-		9D0C0F4F22673E7A00B0673D /* matchscore */ = {
-			isa = PBXGroup;
-			children = (
-				9D0C0F5022673E7A00B0673D /* MatchScoreCell.swift */,
-			);
-			path = matchscore;
-			sourceTree = "<group>";
-		};
-		9D0C0F5122673E7A00B0673D /* input */ = {
-			isa = PBXGroup;
-			children = (
-				9D0C0F5322673E7A00B0673D /* InputTextCell.swift */,
-				9D0C0F5222673E7A00B0673D /* InputTextItem+Constants.swift */,
-				9D0C0F5422673E7A00B0673D /* InputTextItem+Create.swift */,
-			);
-			path = input;
-			sourceTree = "<group>";
-		};
-		9D0C0F5522673E7A00B0673D /* match */ = {
-			isa = PBXGroup;
-			children = (
-				9D0C0F5622673E7A00B0673D /* MatchCell+Const.swift */,
-				9D0C0F5722673E7A00B0673D /* MatchCell.swift */,
-				9D0C0F5822673E7A00B0673D /* MatchCell+Create.swift */,
-			);
-			path = match;
-			sourceTree = "<group>";
-		};
-		9D0C0F5922673E7A00B0673D /* matchhighlight */ = {
-			isa = PBXGroup;
-			children = (
-				9D0C0F5A22673E7A00B0673D /* MatchHighlightCell.swift */,
-			);
-			path = matchhighlight;
-			sourceTree = "<group>";
-		};
-		9D0C0F5B22673E7A00B0673D /* protocol */ = {
-			isa = PBXGroup;
-			children = (
-				9D0C0F5C22673E7A00B0673D /* CellDataKind.swift */,
-				9D0C0F5D22673E7A00B0673D /* MatchTeamCellData.swift */,
-				9D0C0F5E22673E7A00B0673D /* LeagueCellData.swift */,
-				9D0C0F5F22673E7A00B0673D /* MatchCellData.swift */,
-				9D0C0F6022673E7A00B0673D /* MatchScoreCellData.swift */,
-			);
-			path = protocol;
-			sourceTree = "<group>";
-		};
-		9D0C0F6122673E7A00B0673D /* matchteam */ = {
-			isa = PBXGroup;
-			children = (
-				9D0C0F6222673E7A00B0673D /* MatchTeamCell.swift */,
-			);
-			path = matchteam;
-			sourceTree = "<group>";
-		};
-		9D2117CF2265B67800EC5A0E /* other */ = {
-			isa = PBXGroup;
-			children = (
-				9D2117D02265B6D900EC5A0E /* MinMaxTestView.swift */,
-				9D2117DD2265E01700EC5A0E /* TestView.swift */,
-				9D1C760C22FAC5BB00120D6C /* SizeTestingView.swift */,
-			);
-			path = other;
-			sourceTree = "<group>";
-		};
-		F109EE6821E3775E00FCC696 /* spaceTest */ = {
+		F109EE6821E3775E00FCC696 /* SpacingTestView */ = {
 			isa = PBXGroup;
 			children = (
 				F109EE6421E10A4800FCC696 /* SpacingTestView.swift */,
 				F109EE6621E3771700FCC696 /* SpacingTestView+Create.swift */,
 			);
-			path = spaceTest;
+			path = SpacingTestView;
 			sourceTree = "<group>";
 		};
-		F109EE8B21E4D40D00FCC696 /* middle */ = {
+		F109EE8B21E4D40D00FCC696 /* MiddleContent */ = {
 			isa = PBXGroup;
 			children = (
 				F1FC84D32174E6B800D01B72 /* MiddleContent.swift */,
 				F109EE8C21E4D42200FCC696 /* MiddleContent+Create.swift */,
-				F109EE9221E4D52E00FCC696 /* itemView */,
+				F109EE9221E4D52E00FCC696 /* ItemView */,
 			);
-			path = middle;
+			path = MiddleContent;
 			sourceTree = "<group>";
 		};
-		F109EE9221E4D52E00FCC696 /* itemView */ = {
+		F109EE9221E4D52E00FCC696 /* ItemView */ = {
 			isa = PBXGroup;
 			children = (
 				F109EE8E21E4D48A00FCC696 /* ItemView.swift */,
 				F109EE9021E4D4B300FCC696 /* ItemView+Create.swift */,
 			);
-			path = itemView;
+			path = ItemView;
 			sourceTree = "<group>";
 		};
-		F109EE9321E4D57100FCC696 /* top */ = {
+		F109EE9321E4D57100FCC696 /* TopBar */ = {
 			isa = PBXGroup;
 			children = (
 				F151DDA821738B2C00AA0ABE /* TopBar.swift */,
 				F109EE9921E4D5D900FCC696 /* TopBar+Constant.swift */,
 			);
-			path = top;
+			path = TopBar;
 			sourceTree = "<group>";
 		};
-		F109EE9421E4D57900FCC696 /* bottom */ = {
+		F109EE9421E4D57900FCC696 /* BottomBar */ = {
 			isa = PBXGroup;
 			children = (
 				F109EE9521E4D58800FCC696 /* BottomBar.swift */,
 				F109EE9721E4D5A500FCC696 /* BottomBar+Constant.swift */,
 			);
-			path = bottom;
+			path = BottomBar;
 			sourceTree = "<group>";
 		};
-		F109EE9B21E5DAC500FCC696 /* main */ = {
+		F109EE9B21E5DAC500FCC696 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				F1FC84D22174E6A600D01B72 /* card */,
+				F1354EE123A97447002BBF3C /* TestView */,
+				F1FC84D22174E6A600D01B72 /* CardView */,
+				F109EE6821E3775E00FCC696 /* SpacingTestView */,
+				F1354EE223A974A2002BBF3C /* SizeTestingView */,
+				F1354EE323A974A9002BBF3C /* MinMaxTestView */,
 				F17E38722174C15D009C10B2 /* MainView.swift */,
 				F1C624FE21C789830082A265 /* MainView+Create.swift */,
 			);
-			path = main;
+			path = MainView;
 			sourceTree = "<group>";
 		};
-		F151DDA721738B1C00AA0ABE /* view */ = {
+		F1354EE123A97447002BBF3C /* TestView */ = {
+			isa = PBXGroup;
+			children = (
+				9D2117DD2265E01700EC5A0E /* TestView.swift */,
+				F1354EDF23A9742F002BBF3C /* TestView+Create.swift */,
+			);
+			path = TestView;
+			sourceTree = "<group>";
+		};
+		F1354EE223A974A2002BBF3C /* SizeTestingView */ = {
+			isa = PBXGroup;
+			children = (
+				9D1C760C22FAC5BB00120D6C /* SizeTestingView.swift */,
+			);
+			path = SizeTestingView;
+			sourceTree = "<group>";
+		};
+		F1354EE323A974A9002BBF3C /* MinMaxTestView */ = {
+			isa = PBXGroup;
+			children = (
+				9D2117D02265B6D900EC5A0E /* MinMaxTestView.swift */,
+			);
+			path = MinMaxTestView;
+			sourceTree = "<group>";
+		};
+		F151DDA721738B1C00AA0ABE /* MainVC */ = {
 			isa = PBXGroup;
 			children = (
 				F109EE8721E49AF100FCC696 /* MainVC.swift */,
 				F109EE8921E49B6600FCC696 /* MainVC+Create.swift */,
-				9D0C0F4A22673E7A00B0673D /* table */,
-				F109EE9B21E5DAC500FCC696 /* main */,
-				F109EE6821E3775E00FCC696 /* spaceTest */,
-				9D2117CF2265B67800EC5A0E /* other */,
-				F17E0E4421DF46B700EE3027 /* animTest */,
+				F109EE9B21E5DAC500FCC696 /* MainView */,
+				F17E0E4421DF46B700EE3027 /* AnimationTestView */,
 			);
-			path = view;
+			path = MainVC;
 			sourceTree = "<group>";
 		};
 		F17E0E3B21DF343500EE3027 /* anim */ = {
@@ -423,13 +324,13 @@
 			path = ConstraintView;
 			sourceTree = "<group>";
 		};
-		F17E0E4421DF46B700EE3027 /* animTest */ = {
+		F17E0E4421DF46B700EE3027 /* AnimationTestView */ = {
 			isa = PBXGroup;
 			children = (
 				F114AEDB21ABC18F00942A28 /* AnimationTestView.swift */,
 				F17E0E4221DF467E00EE3027 /* AnimationTestView+Create.swift */,
 			);
-			path = animTest;
+			path = AnimationTestView;
 			sourceTree = "<group>";
 		};
 		F185A39E2231969100AE66B2 /* common */ = {
@@ -498,16 +399,6 @@
 				F1B4955B23095693001F28F2 /* SpatialExampleMac.entitlements */,
 			);
 			path = SpatialExampleMac;
-			sourceTree = "<group>";
-		};
-		F1BBDD132180B4FD008DBC9B /* content */ = {
-			isa = PBXGroup;
-			children = (
-				F109EE9321E4D57100FCC696 /* top */,
-				F109EE8B21E4D40D00FCC696 /* middle */,
-				F109EE9421E4D57900FCC696 /* bottom */,
-			);
-			path = content;
 			sourceTree = "<group>";
 		};
 		F1BED6FD21B7A97300A0D3D4 /* Align */ = {
@@ -585,7 +476,7 @@
 		F1D369E72171FDAE00F498FA /* SpatialExample */ = {
 			isa = PBXGroup;
 			children = (
-				F151DDA721738B1C00AA0ABE /* view */,
+				F151DDA721738B1C00AA0ABE /* MainVC */,
 				F1D369E82171FDAE00F498FA /* AppDelegate.swift */,
 				F1C624FB21C789790082A265 /* common */,
 				F1D369EF2171FDAF00F498FA /* Assets.xcassets */,
@@ -602,15 +493,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F1FC84D22174E6A600D01B72 /* card */ = {
+		F1FC84D22174E6A600D01B72 /* CardView */ = {
 			isa = PBXGroup;
 			children = (
 				F151DDBB2173CABC00AA0ABE /* CardView.swift */,
 				F17E0E2921DE2EBE00EE3027 /* CardView+Create.swift */,
 				F109EE9C21E5EA9500FCC696 /* CardView+Constant.swift */,
-				F1BBDD132180B4FD008DBC9B /* content */,
+				F109EE9321E4D57100FCC696 /* TopBar */,
+				F109EE8B21E4D40D00FCC696 /* MiddleContent */,
+				F109EE9421E4D57900FCC696 /* BottomBar */,
 			);
-			path = card;
+			path = CardView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -808,51 +701,34 @@
 				F1A16853238F2D0A006EACC4 /* VerticalAlign.swift in Sources */,
 				F1A16854238F2D0A006EACC4 /* HorizontalAlign.swift in Sources */,
 				F1A16855238F2D0A006EACC4 /* AlignType.swift in Sources */,
+				F1354EE023A9742F002BBF3C /* TestView+Create.swift in Sources */,
 				F1A16856238F2D0A006EACC4 /* AlignType+Extension.swift in Sources */,
 				F1A16857238F2D0A006EACC4 /* Alignment.swift in Sources */,
 				F1A16858238F2D0A006EACC4 /* Alignment+Extension.swift in Sources */,
 				F114AEDC21ABC18F00942A28 /* AnimationTestView.swift in Sources */,
 				F109EE8D21E4D42200FCC696 /* MiddleContent+Create.swift in Sources */,
-				9D0C0F7022673E7A00B0673D /* MatchTeamCellData.swift in Sources */,
 				F109EE8821E49AF100FCC696 /* MainVC.swift in Sources */,
-				9D0C0F7222673E7A00B0673D /* MatchCellData.swift in Sources */,
-				9D0C0F6B22673E7A00B0673D /* MatchCell+Const.swift in Sources */,
 				9D2117D12265B6D900EC5A0E /* MinMaxTestView.swift in Sources */,
-				9D0C0F6922673E7A00B0673D /* InputTextCell.swift in Sources */,
-				9D0C0F7322673E7A00B0673D /* MatchScoreCellData.swift in Sources */,
 				9D1C760D22FAC5BB00120D6C /* SizeTestingView.swift in Sources */,
 				F151DDAC21738CAF00AA0ABE /* Constants.swift in Sources */,
-				9D0C0F7122673E7A00B0673D /* LeagueCellData.swift in Sources */,
-				9D0C0F6E22673E7A00B0673D /* MatchHighlightCell.swift in Sources */,
 				F109EE9121E4D4B300FCC696 /* ItemView+Create.swift in Sources */,
-				9D0C0F6422673E7A00B0673D /* CustomTableView+Interaction.swift in Sources */,
 				F17E38732174C15D009C10B2 /* MainView.swift in Sources */,
-				9D0C0F7522673E7A00B0673D /* BaseCell.swift in Sources */,
 				F17E0E4321DF467E00EE3027 /* AnimationTestView+Create.swift in Sources */,
 				F1C624FD21C789790082A265 /* Extension.swift in Sources */,
-				9D0C0F6C22673E7A00B0673D /* MatchCell.swift in Sources */,
 				F151DDBC2173CABC00AA0ABE /* CardView.swift in Sources */,
 				F109EE6721E3771700FCC696 /* SpacingTestView+Create.swift in Sources */,
 				F109EE9A21E4D5D900FCC696 /* TopBar+Constant.swift in Sources */,
-				9D0C0F6722673E7A00B0673D /* MatchScoreCell.swift in Sources */,
 				9D2117DE2265E01700EC5A0E /* TestView.swift in Sources */,
-				9D0C0F6522673E7A00B0673D /* CustomTableView+Cell.swift in Sources */,
 				F17E0E2A21DE2EBE00EE3027 /* CardView+Create.swift in Sources */,
 				F1D369E92171FDAE00F498FA /* AppDelegate.swift in Sources */,
-				9D0C0F6622673E7A00B0673D /* CustomTableView.swift in Sources */,
 				F109EE6521E10A4800FCC696 /* SpacingTestView.swift in Sources */,
 				F109EE8F21E4D48A00FCC696 /* ItemView.swift in Sources */,
-				9D0C0F6D22673E7A00B0673D /* MatchCell+Create.swift in Sources */,
-				9D0C0F6822673E7A00B0673D /* InputTextItem+Constants.swift in Sources */,
-				9D0C0F6A22673E7A00B0673D /* InputTextItem+Create.swift in Sources */,
 				F1FC84D42174E6B800D01B72 /* MiddleContent.swift in Sources */,
 				F109EE9D21E5EA9500FCC696 /* CardView+Constant.swift in Sources */,
-				9D0C0F6F22673E7A00B0673D /* CellDataKind.swift in Sources */,
 				F109EE9621E4D58800FCC696 /* BottomBar.swift in Sources */,
 				F109EE9821E4D5A500FCC696 /* BottomBar+Constant.swift in Sources */,
 				F1C624FF21C789830082A265 /* MainView+Create.swift in Sources */,
 				F151DDA921738B2C00AA0ABE /* TopBar.swift in Sources */,
-				9D0C0F7422673E7A00B0673D /* MatchTeamCell.swift in Sources */,
 				F109EE8A21E49B6600FCC696 /* MainVC+Create.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

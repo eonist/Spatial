@@ -1,6 +1,8 @@
 import UIKit
 import With
-
+/**
+ * Creates an inner box with padding of 24px
+ */
 class SizeTestingView: UIView {
    lazy var box: UIView = createBox()
    override init(frame: CGRect) {
