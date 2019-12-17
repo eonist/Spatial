@@ -23,7 +23,7 @@
 		F109EE9D21E5EA9500FCC696 /* CardView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE9C21E5EA9500FCC696 /* CardView+Constant.swift */; };
 		F114AEDC21ABC18F00942A28 /* AnimationTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F114AEDB21ABC18F00942A28 /* AnimationTestView.swift */; };
 		F1354EE023A9742F002BBF3C /* TestView+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1354EDF23A9742F002BBF3C /* TestView+Create.swift */; };
-		F1354EE623A979D0002BBF3C /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1354EE523A979D0002BBF3C /* Tests.swift */; };
+		F1354EF723A97F7D002BBF3C /* SpatialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1354EED23A97EE0002BBF3C /* SpatialTests.swift */; };
 		F151DDA921738B2C00AA0ABE /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151DDA821738B2C00AA0ABE /* TopBar.swift */; };
 		F151DDAC21738CAF00AA0ABE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151DDAB21738CAF00AA0ABE /* Constants.swift */; };
 		F151DDBC2173CABC00AA0ABE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151DDBB2173CABC00AA0ABE /* CardView.swift */; };
@@ -101,6 +101,16 @@
 		F1FC84D42174E6B800D01B72 /* MiddleContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FC84D32174E6B800D01B72 /* MiddleContent.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F1354EF023A97EE1002BBF3C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1D369CE2171FCDC00F498FA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F1D369E52171FDAE00F498FA;
+			remoteInfo = SpatialExample;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		F151DDBA21739BF500AA0ABE /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -144,7 +154,9 @@
 		F109EE9C21E5EA9500FCC696 /* CardView+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+Constant.swift"; sourceTree = "<group>"; };
 		F114AEDB21ABC18F00942A28 /* AnimationTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTestView.swift; sourceTree = "<group>"; };
 		F1354EDF23A9742F002BBF3C /* TestView+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestView+Create.swift"; sourceTree = "<group>"; };
-		F1354EE523A979D0002BBF3C /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		F1354EEB23A97EE0002BBF3C /* SpatialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpatialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1354EED23A97EE0002BBF3C /* SpatialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpatialTests.swift; sourceTree = "<group>"; };
+		F1354EEF23A97EE1002BBF3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F14FADE021F3980F00ACE5FF /* ConstraintKind+SpaceBetween.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConstraintKind+SpaceBetween.swift"; sourceTree = "<group>"; };
 		F14FADE221F398C000ACE5FF /* ConstraintKind+SpaceAround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConstraintKind+SpaceAround.swift"; sourceTree = "<group>"; };
 		F151DDA821738B2C00AA0ABE /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
@@ -181,7 +193,7 @@
 		F1C624FC21C789790082A265 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		F1C624FE21C789830082A265 /* MainView+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainView+Create.swift"; sourceTree = "<group>"; };
 		F1CDF087225D22F10076EC92 /* ConstraintKind+Bulk+Access.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConstraintKind+Bulk+Access.swift"; sourceTree = "<group>"; };
-		F1D369E62171FDAE00F498FA /* SpatialExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpatialExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1D369E62171FDAE00F498FA /* Spatial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spatial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1D369E82171FDAE00F498FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1D369EF2171FDAF00F498FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1D369F22171FDAF00F498FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -194,6 +206,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F1354EE823A97EE0002BBF3C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F1B4954E23095690001F28F2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -301,9 +320,25 @@
 		F1354EE423A979BC002BBF3C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				F1354EE523A979D0002BBF3C /* Tests.swift */,
+				F1354EF623A97F66002BBF3C /* SpatialTests */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		F1354EEC23A97EE0002BBF3C /* SpatialTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SpatialTests;
+			sourceTree = "<group>";
+		};
+		F1354EF623A97F66002BBF3C /* SpatialTests */ = {
+			isa = PBXGroup;
+			children = (
+				F1354EED23A97EE0002BBF3C /* SpatialTests.swift */,
+				F1354EEF23A97EE1002BBF3C /* Info.plist */,
+			);
+			path = SpatialTests;
 			sourceTree = "<group>";
 		};
 		F151DDA721738B1C00AA0ABE /* MainVC */ = {
@@ -470,6 +505,7 @@
 				F1A1681A238F2BD0006EACC4 /* Sources */,
 				F1D369E72171FDAE00F498FA /* SpatialExample */,
 				F1B4955223095690001F28F2 /* SpatialExampleMac */,
+				F1354EEC23A97EE0002BBF3C /* SpatialTests */,
 				F1D369D82171FCDC00F498FA /* Products */,
 				F1D369FA2171FECE00F498FA /* Frameworks */,
 			);
@@ -478,8 +514,9 @@
 		F1D369D82171FCDC00F498FA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F1D369E62171FDAE00F498FA /* SpatialExample.app */,
+				F1D369E62171FDAE00F498FA /* Spatial.app */,
 				F1B4955123095690001F28F2 /* SpatialExampleMac.app */,
+				F1354EEB23A97EE0002BBF3C /* SpatialTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -520,6 +557,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F1354EEA23A97EE0002BBF3C /* SpatialTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1354EF223A97EE1002BBF3C /* Build configuration list for PBXNativeTarget "SpatialTests" */;
+			buildPhases = (
+				F1354EE723A97EE0002BBF3C /* Sources */,
+				F1354EE823A97EE0002BBF3C /* Frameworks */,
+				F1354EE923A97EE0002BBF3C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F1354EF123A97EE1002BBF3C /* PBXTargetDependency */,
+			);
+			name = SpatialTests;
+			productName = SpatialTests;
+			productReference = F1354EEB23A97EE0002BBF3C /* SpatialTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		F1B4955023095690001F28F2 /* SpatialExampleMac */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1B4955E23095693001F28F2 /* Build configuration list for PBXNativeTarget "SpatialExampleMac" */;
@@ -541,9 +596,9 @@
 			productReference = F1B4955123095690001F28F2 /* SpatialExampleMac.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F1D369E52171FDAE00F498FA /* SpatialExample */ = {
+		F1D369E52171FDAE00F498FA /* Spatial */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F1D369F72171FDAF00F498FA /* Build configuration list for PBXNativeTarget "SpatialExample" */;
+			buildConfigurationList = F1D369F72171FDAF00F498FA /* Build configuration list for PBXNativeTarget "Spatial" */;
 			buildPhases = (
 				F1D369E22171FDAE00F498FA /* Sources */,
 				F1D369E32171FDAE00F498FA /* Frameworks */,
@@ -555,12 +610,12 @@
 			);
 			dependencies = (
 			);
-			name = SpatialExample;
+			name = Spatial;
 			packageProductDependencies = (
 				F18B1616238F2B7900D3E664 /* With */,
 			);
 			productName = SpatialExample;
-			productReference = F1D369E62171FDAE00F498FA /* SpatialExample.app */;
+			productReference = F1D369E62171FDAE00F498FA /* Spatial.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -569,10 +624,14 @@
 		F1D369CE2171FCDC00F498FA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = FutureLab;
 				TargetAttributes = {
+					F1354EEA23A97EE0002BBF3C = {
+						CreatedOnToolsVersion = 11.2;
+						TestTargetID = F1D369E52171FDAE00F498FA;
+					};
 					F1B4955023095690001F28F2 = {
 						CreatedOnToolsVersion = 10.2;
 					};
@@ -597,13 +656,21 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F1D369E52171FDAE00F498FA /* SpatialExample */,
+				F1D369E52171FDAE00F498FA /* Spatial */,
 				F1B4955023095690001F28F2 /* SpatialExampleMac */,
+				F1354EEA23A97EE0002BBF3C /* SpatialTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F1354EE923A97EE0002BBF3C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F1B4954F23095690001F28F2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -645,6 +712,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F1354EE723A97EE0002BBF3C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1354EF723A97F7D002BBF3C /* SpatialTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F1B4954D23095690001F28F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -723,7 +798,6 @@
 				9D1C760D22FAC5BB00120D6C /* SizeTestingView.swift in Sources */,
 				F151DDAC21738CAF00AA0ABE /* Constants.swift in Sources */,
 				F109EE9121E4D4B300FCC696 /* ItemView+Create.swift in Sources */,
-				F1354EE623A979D0002BBF3C /* Tests.swift in Sources */,
 				F17E38732174C15D009C10B2 /* MainView.swift in Sources */,
 				F17E0E4321DF467E00EE3027 /* AnimationTestView+Create.swift in Sources */,
 				F1C624FD21C789790082A265 /* Extension.swift in Sources */,
@@ -747,6 +821,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F1354EF123A97EE1002BBF3C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F1D369E52171FDAE00F498FA /* Spatial */;
+			targetProxy = F1354EF023A97EE1002BBF3C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		F1B4955723095693001F28F2 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
@@ -767,6 +849,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F1354EF323A97EE1002BBF3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Tests/SpatialTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.futurelab.SpatialTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spatial.app/Spatial";
+			};
+			name = Debug;
+		};
+		F1354EF423A97EE1002BBF3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Tests/SpatialTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.futurelab.SpatialTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spatial.app/Spatial";
+			};
+			name = Release;
+		};
 		F1B4955C23095693001F28F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -948,7 +1070,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.futurelab.SpatialExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -967,13 +1089,22 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.futurelab.SpatialExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F1354EF223A97EE1002BBF3C /* Build configuration list for PBXNativeTarget "SpatialTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1354EF323A97EE1002BBF3C /* Debug */,
+				F1354EF423A97EE1002BBF3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F1B4955E23095693001F28F2 /* Build configuration list for PBXNativeTarget "SpatialExampleMac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -992,7 +1123,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F1D369F72171FDAF00F498FA /* Build configuration list for PBXNativeTarget "SpatialExample" */ = {
+		F1D369F72171FDAF00F498FA /* Build configuration list for PBXNativeTarget "Spatial" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F1D369F52171FDAF00F498FA /* Debug */,
