@@ -23,6 +23,7 @@
 		F109EE9D21E5EA9500FCC696 /* CardView+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109EE9C21E5EA9500FCC696 /* CardView+Constant.swift */; };
 		F114AEDC21ABC18F00942A28 /* AnimationTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F114AEDB21ABC18F00942A28 /* AnimationTestView.swift */; };
 		F1354EE023A9742F002BBF3C /* TestView+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1354EDF23A9742F002BBF3C /* TestView+Create.swift */; };
+		F1354EE623A979D0002BBF3C /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1354EE523A979D0002BBF3C /* Tests.swift */; };
 		F151DDA921738B2C00AA0ABE /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151DDA821738B2C00AA0ABE /* TopBar.swift */; };
 		F151DDAC21738CAF00AA0ABE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151DDAB21738CAF00AA0ABE /* Constants.swift */; };
 		F151DDBC2173CABC00AA0ABE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151DDBB2173CABC00AA0ABE /* CardView.swift */; };
@@ -143,6 +144,7 @@
 		F109EE9C21E5EA9500FCC696 /* CardView+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+Constant.swift"; sourceTree = "<group>"; };
 		F114AEDB21ABC18F00942A28 /* AnimationTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTestView.swift; sourceTree = "<group>"; };
 		F1354EDF23A9742F002BBF3C /* TestView+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestView+Create.swift"; sourceTree = "<group>"; };
+		F1354EE523A979D0002BBF3C /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		F14FADE021F3980F00ACE5FF /* ConstraintKind+SpaceBetween.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConstraintKind+SpaceBetween.swift"; sourceTree = "<group>"; };
 		F14FADE221F398C000ACE5FF /* ConstraintKind+SpaceAround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConstraintKind+SpaceAround.swift"; sourceTree = "<group>"; };
 		F151DDA821738B2C00AA0ABE /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
@@ -296,6 +298,14 @@
 			path = MinMaxTestView;
 			sourceTree = "<group>";
 		};
+		F1354EE423A979BC002BBF3C /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F1354EE523A979D0002BBF3C /* Tests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		F151DDA721738B1C00AA0ABE /* MainVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,13 +317,13 @@
 			path = MainVC;
 			sourceTree = "<group>";
 		};
-		F17E0E3B21DF343500EE3027 /* anim */ = {
+		F17E0E3B21DF343500EE3027 /* Animate */ = {
 			isa = PBXGroup;
 			children = (
 				F1BD0416219B06F200A4A46F /* ConstraintKind+Animate.swift */,
 				F17E0E3921DF33E100EE3027 /* ConstraintKind+Update.swift */,
 			);
-			path = anim;
+			path = Animate;
 			sourceTree = "<group>";
 		};
 		F17E0E3C21DF355D00EE3027 /* ConstraintView */ = {
@@ -360,25 +370,25 @@
 			path = Spatial;
 			sourceTree = "<group>";
 		};
-		F1AA755A2269F94400D4C272 /* aligntype */ = {
+		F1AA755A2269F94400D4C272 /* AlignType */ = {
 			isa = PBXGroup;
 			children = (
 				F1AA755B2269F94400D4C272 /* AlignType.swift */,
 				F1AA755C2269F94400D4C272 /* AlignType+Extension.swift */,
 			);
-			path = aligntype;
+			path = AlignType;
 			sourceTree = "<group>";
 		};
-		F1AA75622269F96800D4C272 /* alignment */ = {
+		F1AA75622269F96800D4C272 /* Alignment */ = {
 			isa = PBXGroup;
 			children = (
 				F1AA75632269F96800D4C272 /* Alignment.swift */,
 				F1AA75642269F96800D4C272 /* Alignment+Extension.swift */,
 			);
-			path = alignment;
+			path = Alignment;
 			sourceTree = "<group>";
 		};
-		F1AA756A2269F99D00D4C272 /* axis */ = {
+		F1AA756A2269F99D00D4C272 /* Axis */ = {
 			isa = PBXGroup;
 			children = (
 				F1AA756B2269F99D00D4C272 /* Axis.swift */,
@@ -386,7 +396,7 @@
 				F1AA756D2269F99D00D4C272 /* VerticalAlign.swift */,
 				F1AA756E2269F99D00D4C272 /* HorizontalAlign.swift */,
 			);
-			path = axis;
+			path = Axis;
 			sourceTree = "<group>";
 		};
 		F1B4955223095690001F28F2 /* SpatialExampleMac */ = {
@@ -405,9 +415,9 @@
 			isa = PBXGroup;
 			children = (
 				F1E78730230046BA002007EE /* Align.swift */,
-				F1AA756A2269F99D00D4C272 /* axis */,
-				F1AA755A2269F94400D4C272 /* aligntype */,
-				F1AA75622269F96800D4C272 /* alignment */,
+				F1AA756A2269F99D00D4C272 /* Axis */,
+				F1AA755A2269F94400D4C272 /* AlignType */,
+				F1AA75622269F96800D4C272 /* Alignment */,
 			);
 			path = Align;
 			sourceTree = "<group>";
@@ -439,7 +449,7 @@
 				F14FADE021F3980F00ACE5FF /* ConstraintKind+SpaceBetween.swift */,
 				F14FADE221F398C000ACE5FF /* ConstraintKind+SpaceAround.swift */,
 				F17E0E3C21DF355D00EE3027 /* ConstraintView */,
-				F17E0E3B21DF343500EE3027 /* anim */,
+				F17E0E3B21DF343500EE3027 /* Animate */,
 			);
 			path = ConstraintKind;
 			sourceTree = "<group>";
@@ -456,6 +466,7 @@
 		F1D369CD2171FCDC00F498FA = {
 			isa = PBXGroup;
 			children = (
+				F1354EE423A979BC002BBF3C /* Tests */,
 				F1A1681A238F2BD0006EACC4 /* Sources */,
 				F1D369E72171FDAE00F498FA /* SpatialExample */,
 				F1B4955223095690001F28F2 /* SpatialExampleMac */,
@@ -712,6 +723,7 @@
 				9D1C760D22FAC5BB00120D6C /* SizeTestingView.swift in Sources */,
 				F151DDAC21738CAF00AA0ABE /* Constants.swift in Sources */,
 				F109EE9121E4D4B300FCC696 /* ItemView+Create.swift in Sources */,
+				F1354EE623A979D0002BBF3C /* Tests.swift in Sources */,
 				F17E38732174C15D009C10B2 /* MainView.swift in Sources */,
 				F17E0E4321DF467E00EE3027 /* AnimationTestView+Create.swift in Sources */,
 				F1C624FD21C789790082A265 /* Extension.swift in Sources */,
