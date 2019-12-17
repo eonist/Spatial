@@ -28,10 +28,10 @@ Hassle-free AutoLayout, tailored for interactivity and animation.
 ### Example:
 
 ```swift
-/*One-liner, single*/
+// One-liner, single
 btn1.anchorAndSize(to: self, width: 96, height: 24)
 
-/*Long-hand, single*/
+// Long-hand, single
 btn1.activateAnchorAndSize{ view in
 	let a = Constraint.anchor(view, to: self)
 	let s = Constraint.size(view, width: 96, height: 24)
@@ -40,10 +40,10 @@ btn1.activateAnchorAndSize{ view in
 ```
 
 ```swift
-/*Short-hand, bulk*/
+// Short-hand, bulk
 [btn1, btn2, btn3].distributeAndSize(dir: .vertical, width: 96, height: 24)
 
-/*Long-hand, bulk*/
+// Long-hand, bulk
 [btn1,btn2,btn3].activateAnchorsAndSizes { views in
    let anchors = Constraint.distribute(vertically: views, align: .topLeft)
    let sizes = views.map { $0.size(width: 96, height: 42) }
@@ -52,7 +52,7 @@ btn1.activateAnchorAndSize{ view in
 ```
 
 ```swift
-/*Pin something between something*/
+// Pin something between something
 $0.activateConstraints { view in
    let tl = Constraint.anchor(view, to: self, align: .topLeft, alignTo: .topLeft)
    let br = Constraint.anchor(view, to: viewFinderView, align: .bottomRight, alignTo: .topRight)
@@ -61,7 +61,7 @@ $0.activateConstraints { view in
 ```
 
 ```swift
-/*Animation*/
+// Animation
 btn.animate(to: 100,align: left, alignTo: .left)
 ```
 ### Todo:
