@@ -51,7 +51,7 @@ extension MainView {
     * - Abstract: Creates an inner box with padding of 24px
     */
    func createSizeTestingView() -> SizeTestingView {
-      return with(.init()) {
+      with(.init()) {
          addSubview($0)
          $0.anchorAndSize(to: self)
       }

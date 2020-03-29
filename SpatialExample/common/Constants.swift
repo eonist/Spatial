@@ -8,7 +8,7 @@ class Constants {
    enum Colors: String, CaseIterable {
       case blue = "FB1B4D", yellow = "1DE3E6", red = "22FFA0", green = "FED845"
       var uiColor: UIColor {
-         return .init(hex: self.rawValue)
+         .init(hex: self.rawValue)
       }
    }
 }

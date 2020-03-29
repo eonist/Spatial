@@ -9,5 +9,5 @@ class MainVC: UIViewController {
       //_ = animTestView
       self.view.backgroundColor = .lightGray
    }
-   override var prefersStatusBarHidden: Bool { return true } // hides statusbar
+   override var prefersStatusBarHidden: Bool { true } // hides statusbar
 }

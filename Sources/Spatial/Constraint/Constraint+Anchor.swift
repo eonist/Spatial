@@ -30,7 +30,7 @@ public class Constraint {
     * Horizontal anchoring
     */
     public static func anchor(_ view: View, to: View, align: HorizontalAlign, alignTo: HorizontalAlign, offset: CGFloat = 0, useMargin: Bool = false, relation: NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint {
-      return .init(item: view, attribute: Util.layoutAttr(align: align), relatedBy: relation, toItem: to, attribute: Util.layoutAttr(align: alignTo, useMargin: useMargin), multiplier: 1.0, constant: offset)
+      .init(item: view, attribute: Util.layoutAttr(align: align), relatedBy: relation, toItem: to, attribute: Util.layoutAttr(align: alignTo, useMargin: useMargin), multiplier: 1.0, constant: offset)
    }
    /**
     * Vertical anchoring

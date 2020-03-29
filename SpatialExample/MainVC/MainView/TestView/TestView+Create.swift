@@ -8,7 +8,7 @@ extension TestView {
     * Title
     */
    func createDescLabel() -> UILabel {
-      return with(.init()) {
+      with(.init()) {
          let text = "title"
          $0.text = "title"
          $0.font = .boldSystemFont(ofSize: 20.0)
@@ -26,7 +26,7 @@ extension TestView {
     * TextField
     */
    func createInputTextField() -> UITextField {
-      return with(.init()) {
+      with(.init()) {
          $0.font = .systemFont(ofSize: 16)
          $0.textColor = .gray
          $0.textAlignment = .right

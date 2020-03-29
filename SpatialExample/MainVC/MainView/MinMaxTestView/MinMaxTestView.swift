@@ -26,7 +26,7 @@ extension MinMaxTestView {
     * Title
     */
    func createDescLabel() -> UILabel {
-      return with(.init()) {
+      with(.init()) {
          let text = "Description:"
          $0.text = text
          let font = UIFont.boldSystemFont(ofSize: 20.0)
@@ -50,7 +50,7 @@ extension MinMaxTestView {
     * TextField
     */
    func createInputTextField() -> UITextField {
-      return with(.init()) {
+      with(.init()) {
          $0.font = .systemFont(ofSize: 16)
          $0.textColor = .gray
          $0.textAlignment = .right
