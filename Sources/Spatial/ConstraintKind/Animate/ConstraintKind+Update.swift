@@ -6,6 +6,10 @@ import Cocoa
 #endif
 /**
  * Offset horizontally or vertically
+ * - Note: Remember that the View must:
+ * 1. Extend ConstraintKind
+ * 2. Implement anchor and size variables
+ * 3. Use the applyAnchorAndSize() method
  */
 extension ConstraintKind where Self: View {
    /**
@@ -76,8 +80,8 @@ extension ConstraintKind where Self: View {
     */
    public func update(rect: CGRect, align: Alignment, alignTo: Alignment) {
       guard let superview: View = self.superview else { Swift.print("⚠️️ err superview not available ⚠️️"); return }
-      guard let oldAnchor: AnchorConstraint = self.anchor else { Swift.print("⚠️️ err anchor not available ⚠️️"); return }
-      guard let oldSize: SizeConstraint = self.size else { Swift.print("⚠️️ err size not available ⚠️️"); return }
+      guard let oldAnchor: AnchorConstraint = self.anchor else { Swift.print("⚠️️ err anchor not available, this happends because you havn't used the applyAnchor.. beforehand  ⚠️️"); return }
+      guard let oldSize: SizeConstraint = self.size else { Swift.print("⚠️️ err size not available, this happends because you havn't used the applySize.. beforehand ⚠️️"); return }
       NSLayoutConstraint.deactivate([oldAnchor.y, oldAnchor.x, oldSize.w, oldSize.h])
       let newAnchor: AnchorConstraint = Constraint.anchor(self, to: superview, align: align, alignTo: alignTo, offset: rect.origin)
       let newSize: SizeConstraint = Constraint.size(self, size: rect.size)
@@ -101,7 +105,7 @@ extension ConstraintKind where Self: View {
     */
    fileprivate func updateAnchor(_ closure: UpdateAnchorClosure) {
       guard let superview: View = self.superview else { Swift.print("⚠️️ err superview not available ⚠️️"); return }
-      guard let oldAnchor: AnchorConstraint = self.anchor else { Swift.print("⚠️️ err anchor not available ⚠️️"); return }
+      guard let oldAnchor: AnchorConstraint = self.anchor else { Swift.print("⚠️️ err anchor not available, this happends because you havn't used the applyAnchor.. beforehand ⚠️️"); return }
       closure(superview, oldAnchor)
       #if os(iOS)
       superview.layoutIfNeeded() // The superview is responsible for updating subView constraint updates

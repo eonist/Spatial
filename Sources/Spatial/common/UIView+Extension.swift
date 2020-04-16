@@ -10,6 +10,7 @@ extension UIView {
    /**
     * Animate
     * - parameter onUpdate: is "animateTo this" and on every frame do this at the same time 🤔
+    * - Fixme: ⚠️️ complete doc for this method
     * ## Examples:
     * UIView.animate({ self.update(offset: to, align: align, alignTo: alignTo) }, onComplete: { Swift.print("🎉") })
     */
