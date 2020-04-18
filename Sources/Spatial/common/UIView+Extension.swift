@@ -10,7 +10,9 @@ extension UIView {
    /**
     * Animate
     * - parameter onUpdate: is "animateTo this" and on every frame do this at the same time 🤔
-    * - Fixme: ⚠️️ complete doc for this method
+    * - parameter onComplete: call back closure for when aim is complete
+    * - parameter dur: seconds the anim should last
+    * - parameter easing: the easing curve
     * ## Examples:
     * UIView.animate({ self.update(offset: to, align: align, alignTo: alignTo) }, onComplete: { Swift.print("🎉") })
     */

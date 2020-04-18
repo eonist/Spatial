@@ -4,7 +4,7 @@ import QuartzCore
  * Convenient extension methods for UIView (One-liners)
  * Definition: Convenience the state of being able to proceed with something without difficulty
  * - Fixme: ⚠️️ Make these methods for [UIView] as well
- * - Fixme: Rename Constraint+Access to something more meaningful
+ * - Fixme: ⚠️️ Rename Constraint+Access to something more meaningful: 👉 View+Access etc 👈
  */
 extension View {
    /**
@@ -22,7 +22,7 @@ extension View {
     *    - sizeOffset: offset for the `sizeTo` parameter (use negative values for inset)
     *    - useMargin: aligns to autolayout margins or not
     * ## Examples:
-    * view.anchorAndSize(to: self, height: 100, align: .center, alignTo: .center) // multiplier
+    * view.anchorAndSize(to: self, height: 100, align: .centerCenter, alignTo: .centerCenter) // multiplier
     */
    public func anchorAndSize(to: View, sizeTo: View? = nil, width: CGFloat? = nil, height: CGFloat? = nil, align: Alignment = .topLeft, alignTo: Alignment = .topLeft, multiplier: CGSize = .init(width:1, height:1), offset: CGPoint = .zero, sizeOffset: CGSize = .zero, useMargin: Bool = false) {
       self.activateAnchorAndSize { _ in

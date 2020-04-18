@@ -3,16 +3,15 @@ import QuartzCore
 /**
  * Update constraints (For items that are of type ConstraintKind)
  * - Note: adding a method called activateConstraints doesn't make any sense because you have only anchor and size or either
- * - Fixme: ⚠️️ add anchorAndSize
  */
 extension ConstraintKind where Self: View {
    /**
     * One-liner for applyAnchorAndSize
     * ## Examples:
-    * view.applyAnchorAndSize(to:self, height:100, align:.center, alignTo:.center)
-    * - Fixme: ⚠️️ Needs the same kind of parameters as anchorAndSize uses
+    * view.applyAnchorAndSize(to: self, height: 100, align: .centerCenter, alignTo: .centerCenter)
     * - Parameters:
     *    - to: The instance to apply to
+    *    - sizeTo: provide this if you need to base the size on another view
     *    - width: the width to apply to instance
     *    - height: the height to apply to instance
     *    - align: alignment for the `to` view
@@ -22,10 +21,16 @@ extension ConstraintKind where Self: View {
     *    - sizeOffset: offset for the `sizeTo` parameter (use negative values for inset)
     *    - useMargin: aligns to autolayout margins or not
     */
-   public func applyAnchorAndSize(to: View, width: CGFloat? = nil, height: CGFloat? = nil, align: Alignment = .topLeft, alignTo: Alignment = .topLeft, multiplier: CGSize = .init(width: 1, height: 1), offset: CGPoint = .zero, sizeOffset: CGSize = .zero, useMargin: Bool = false) {
+   public func applyAnchorAndSize(to: View, sizeTo: View? = nil, width: CGFloat? = nil, height: CGFloat? = nil, align: Alignment = .topLeft, alignTo: Alignment = .topLeft, multiplier: CGSize = .init(width: 1, height: 1), offset: CGPoint = .zero, sizeOffset: CGSize = .zero, useMargin: Bool = false) {
       self.applyAnchorAndSize { _ in
          let anchor: AnchorConstraint = Constraint.anchor(self, to: to, align: align, alignTo: alignTo, offset: offset, useMargin: useMargin)
-         let size: SizeConstraint = Constraint.size(self, to: to, width: width, height: height, offset: sizeOffset, multiplier: multiplier)
+         let size: SizeConstraint = {
+            if let width = width, let height = height { // This method exists when you have size, but don't want to set size based on another view, which is the case if you have defined both width and height params
+               return Constraint.size(self, size: .init(width: width, height: height), multiplier: multiplier)
+            } else {
+               return Constraint.size(self, to: sizeTo ?? to, width: width, height: height, offset: sizeOffset, multiplier: multiplier)
+            }
+         }()
          return (anchor, size)
       }
    }
