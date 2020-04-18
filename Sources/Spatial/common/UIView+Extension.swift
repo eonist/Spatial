@@ -9,10 +9,11 @@ extension UIView {
    public static func defaultOnComplete() { Swift.print("default anim completed closure") }
    /**
     * Animate
-    * - parameter onUpdate: is "animateTo this" and on every frame do this at the same time 🤔
-    * - parameter onComplete: call back closure for when aim is complete
-    * - parameter dur: seconds the anim should last
-    * - parameter easing: the easing curve
+    * - Parameters:
+    *   - onUpdate: is "animateTo this" and on every frame do this at the same time 🤔
+    *   - onComplete: call back closure for when aim is complete
+    *   - dur: seconds the anim should last
+    *   - easing: the easing curve
     * ## Examples:
     * UIView.animate({ self.update(offset: to, align: align, alignTo: alignTo) }, onComplete: { Swift.print("🎉") })
     */
