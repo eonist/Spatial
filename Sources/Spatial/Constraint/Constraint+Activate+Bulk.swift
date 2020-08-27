@@ -38,11 +38,7 @@ extension Array where Element: View {
     */
    public func activateAnchors(closure: AnchorConstraintsClosure) {
       self.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
-      let constraints: [NSLayoutConstraint] = {
-         let constraints: [AnchorConstraint] = closure(self)
-         let anchors: [NSLayoutConstraint] = constraints.reduce([]) { $0 + [$1.x, $1.y] }
-         return anchors
-      }()
+      let constraints: [NSLayoutConstraint] = closure(self).reduce([]) { $0 + [$1.x, $1.y] }
       NSLayoutConstraint.activate(constraints)
    }
    /**
@@ -54,11 +50,7 @@ extension Array where Element: View {
     */
    public func activateSizes(closure: SizeConstraintsClosure) {
       self.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
-      let constraints: [NSLayoutConstraint] = {
-         let constraints: [SizeConstraint] = closure(self)
-         let sizes: [NSLayoutConstraint] = constraints.reduce([]) { $0 + [$1.w, $1.h] }
-         return sizes
-      }()
+      let constraints: [NSLayoutConstraint] = closure(self).reduce([]) { $0 + [$1.w, $1.h] }
       NSLayoutConstraint.activate(constraints)
    }
 }

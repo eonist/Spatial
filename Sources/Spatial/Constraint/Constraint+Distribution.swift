@@ -10,6 +10,7 @@ import Cocoa
 extension Constraint {
    /**
     * Horizontal distribution
+    * - Fixme: ⚠️️ make it throw?
     * - Fixme: ⚠️️ Add support for spacing
     * - Fixme: ⚠️️ Add support for alignTo: (because you might want to set a different anchor for the views than for the view to align to)
     * - Fixme: ⚠️️ parent is always superview, then we must use UIView as type, remember your returning constriants, not setting actual anchor or size, you do that in activeConstraint
@@ -39,6 +40,7 @@ extension Constraint {
    /**
     * Vertical distribution
     * - Important: ⚠️️ Sets only anchors not sizes
+    * - Fixme: ⚠️️ make it throw?
     */
    public static func distribute(vertically views: [View], align: Alignment = .topLeft, spacing: CGFloat = 0, offset: CGFloat = 0) -> [AnchorConstraint] {
       let xConstraints: [NSLayoutConstraint] = views.map { view in
@@ -57,7 +59,7 @@ extension Constraint {
 extension Constraint {
    /**
     * Distributes vertically or horizontally
-    * - Fixme: ⚠️️ Remove fatal error?
+    * - Fixme: ⚠️️ Remove fatal error? make it throw?
     */
    fileprivate static func distribute(_ views: [View], axis: Axis, align: Alignment, spacing: CGFloat = 0, offset: CGFloat = 0) -> [NSLayoutConstraint] {
       switch (align.horAlign, align.verAlign) {
@@ -68,7 +70,7 @@ extension Constraint {
    }
    /**
     * Distributes from start to end
-    * - Fixme: ⚠️️ Remove fatal error?
+    * - Fixme: ⚠️️ Remove fatal error? make it throw?
     */
    fileprivate static func distribute(fromStart views: [View], axis: Axis, spacing: CGFloat = 0, offset: CGFloat = 0) -> [NSLayoutConstraint] {
       var anchors: [NSLayoutConstraint] = []
@@ -91,7 +93,7 @@ extension Constraint {
    }
    /**
     * Aligns from end to start
-    * - Fixme: ⚠️️ Remove fatal error?
+    * - Fixme: ⚠️️ Remove fatal error? make it throw?
     */
    fileprivate static func distribute(fromEnd views: [View], axis: Axis, spacing: CGFloat = 0, offset: CGFloat) -> [NSLayoutConstraint] {
       var anchors: [NSLayoutConstraint] = []

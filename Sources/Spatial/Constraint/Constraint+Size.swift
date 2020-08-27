@@ -24,8 +24,8 @@ extension Constraint {
     * let widthConstraint = Constraint.size(square, to: parent).w
     */
    public static func size(_ view: View, to: View, offset: CGSize = .zero, multiplier: CGPoint = .init(x:1, y:1)) -> SizeConstraint {
-      let width = Constraint.width(view, to: to, offset: offset.width, multiplier: multiplier.x)
-      let height = Constraint.height(view, to: to, offset: offset.height, multiplier: multiplier.y)
+      let width: NSLayoutConstraint = Constraint.width(view, to: to, offset: offset.width, multiplier: multiplier.x)
+      let height: NSLayoutConstraint = Constraint.height(view, to: to, offset: offset.height, multiplier: multiplier.y)
       return (width, height)
    }
    /**
@@ -35,8 +35,8 @@ extension Constraint {
     * let sizeConstraint = Constraint.size(square, size: .init(width: 100, height: 100))
     */
    public static func size(_ view: View, size: CGSize, multiplier: CGSize = .init(width: 1, height: 1)) -> SizeConstraint {
-      let width = Constraint.width(view, width: size.width, multiplier: multiplier.width)
-      let height = Constraint.height(view, height: size.height, multiplier: multiplier.height)
+      let width: NSLayoutConstraint = Constraint.width(view, width: size.width, multiplier: multiplier.width)
+      let height: NSLayoutConstraint = Constraint.height(view, height: size.height, multiplier: multiplier.height)
       return (width, height)
    }
    /**
@@ -55,11 +55,11 @@ extension Constraint {
     */
    public static func size(_ view: View, to: View, width: CGFloat? = nil, height: CGFloat? = nil, offset: CGSize = .zero, multiplier: CGSize = .init(width: 1, height: 1)) -> SizeConstraint {
       let width: NSLayoutConstraint = {
-         if let width = width { return Constraint.width(view, width: width, multiplier: multiplier.width) }
+         if let width: CGFloat = width { return Constraint.width(view, width: width, multiplier: multiplier.width) }
          else { return Constraint.width(view, to: to, offset: offset.width, multiplier: multiplier.width) }
       }()
       let height: NSLayoutConstraint = {
-         if let height = height { return Constraint.height(view, height: height, multiplier: multiplier.height) }
+         if let height: CGFloat = height { return Constraint.height(view, height: height, multiplier: multiplier.height) }
          else { return Constraint.height(view, to: to, offset: offset.height, multiplier: multiplier.height) }
       }()
       return (width, height)

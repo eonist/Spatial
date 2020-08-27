@@ -50,7 +50,7 @@
 		F1A1682E238F2C1F006EACC4 /* Constraint+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3721DF2A8D00EE3027 /* Constraint+Size.swift */; };
 		F1A1682F238F2C1F006EACC4 /* Constraint+Activate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D369FF2172039B00F498FA /* Constraint+Activate.swift */; };
 		F1A16830238F2C1F006EACC4 /* Constraint+Activate+Bulk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E2F21DE364D00EE3027 /* Constraint+Activate+Bulk.swift */; };
-		F1A16831238F2C1F006EACC4 /* Constraint+TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3121DE36F300EE3027 /* Constraint+TypeAlias.swift */; };
+		F1A16831238F2C1F006EACC4 /* Constraint+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3121DE36F300EE3027 /* Constraint+Type.swift */; };
 		F1A16832238F2C1F006EACC4 /* Constraint+Distribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10213CB218756310038F496 /* Constraint+Distribution.swift */; };
 		F1A16833238F2C1F006EACC4 /* Align.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E78730230046BA002007EE /* Align.swift */; };
 		F1A16834238F2C1F006EACC4 /* Axis.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756B2269F99D00D4C272 /* Axis.swift */; };
@@ -79,7 +79,7 @@
 		F1A1684B238F2D0A006EACC4 /* Constraint+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3721DF2A8D00EE3027 /* Constraint+Size.swift */; };
 		F1A1684C238F2D0A006EACC4 /* Constraint+Activate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D369FF2172039B00F498FA /* Constraint+Activate.swift */; };
 		F1A1684D238F2D0A006EACC4 /* Constraint+Activate+Bulk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E2F21DE364D00EE3027 /* Constraint+Activate+Bulk.swift */; };
-		F1A1684E238F2D0A006EACC4 /* Constraint+TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3121DE36F300EE3027 /* Constraint+TypeAlias.swift */; };
+		F1A1684E238F2D0A006EACC4 /* Constraint+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3121DE36F300EE3027 /* Constraint+Type.swift */; };
 		F1A1684F238F2D0A006EACC4 /* Constraint+Distribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10213CB218756310038F496 /* Constraint+Distribution.swift */; };
 		F1A16850238F2D0A006EACC4 /* Align.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E78730230046BA002007EE /* Align.swift */; };
 		F1A16851238F2D0A006EACC4 /* Axis.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AA756B2269F99D00D4C272 /* Axis.swift */; };
@@ -168,7 +168,7 @@
 		F17E0E2B21DE31A800EE3027 /* ConstraintKind+TypeAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConstraintKind+TypeAlias.swift"; sourceTree = "<group>"; };
 		F17E0E2D21DE327B00EE3027 /* ConstraintKind+Bulk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConstraintKind+Bulk.swift"; sourceTree = "<group>"; };
 		F17E0E2F21DE364D00EE3027 /* Constraint+Activate+Bulk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constraint+Activate+Bulk.swift"; sourceTree = "<group>"; };
-		F17E0E3121DE36F300EE3027 /* Constraint+TypeAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constraint+TypeAlias.swift"; sourceTree = "<group>"; };
+		F17E0E3121DE36F300EE3027 /* Constraint+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constraint+Type.swift"; sourceTree = "<group>"; };
 		F17E0E3521DF29E100EE3027 /* Constraint+Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constraint+Anchor.swift"; sourceTree = "<group>"; };
 		F17E0E3721DF2A8D00EE3027 /* Constraint+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constraint+Size.swift"; sourceTree = "<group>"; };
 		F17E0E3921DF33E100EE3027 /* ConstraintKind+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConstraintKind+Update.swift"; sourceTree = "<group>"; };
@@ -470,7 +470,7 @@
 				F17E0E3721DF2A8D00EE3027 /* Constraint+Size.swift */,
 				F1D369FF2172039B00F498FA /* Constraint+Activate.swift */,
 				F17E0E2F21DE364D00EE3027 /* Constraint+Activate+Bulk.swift */,
-				F17E0E3121DE36F300EE3027 /* Constraint+TypeAlias.swift */,
+				F17E0E3121DE36F300EE3027 /* Constraint+Type.swift */,
 				F10213CB218756310038F496 /* Constraint+Distribution.swift */,
 			);
 			path = Constraint;
@@ -746,7 +746,7 @@
 				F1A1682E238F2C1F006EACC4 /* Constraint+Size.swift in Sources */,
 				F1A1682F238F2C1F006EACC4 /* Constraint+Activate.swift in Sources */,
 				F1A16830238F2C1F006EACC4 /* Constraint+Activate+Bulk.swift in Sources */,
-				F1A16831238F2C1F006EACC4 /* Constraint+TypeAlias.swift in Sources */,
+				F1A16831238F2C1F006EACC4 /* Constraint+Type.swift in Sources */,
 				F1A16832238F2C1F006EACC4 /* Constraint+Distribution.swift in Sources */,
 				F1A16833238F2C1F006EACC4 /* Align.swift in Sources */,
 				F1A16834238F2C1F006EACC4 /* Axis.swift in Sources */,
@@ -784,7 +784,7 @@
 				F1A1684B238F2D0A006EACC4 /* Constraint+Size.swift in Sources */,
 				F1A1684C238F2D0A006EACC4 /* Constraint+Activate.swift in Sources */,
 				F1A1684D238F2D0A006EACC4 /* Constraint+Activate+Bulk.swift in Sources */,
-				F1A1684E238F2D0A006EACC4 /* Constraint+TypeAlias.swift in Sources */,
+				F1A1684E238F2D0A006EACC4 /* Constraint+Type.swift in Sources */,
 				F1A1684F238F2D0A006EACC4 /* Constraint+Distribution.swift in Sources */,
 				F1A16850238F2D0A006EACC4 /* Align.swift in Sources */,
 				F1A16851238F2D0A006EACC4 /* Axis.swift in Sources */,

@@ -10,14 +10,14 @@ extension Array where Element: View {
     * - Important: ⚠️️ This method can only use it's parent as a size reference, not a different view, maybe in the future we can enable more options
     * - Remark: this method works with regular NSViews
     * - Fixme: ⚠️️ The align part isn't used, try to add it to the code somehow
-    * ## Examples: 🤷
+    * ## Examples:
     * let views: [NSView] = [NSColor.blue, .green, .red].map { color in with (.init()) { $0.wantsLayer = true; $0.layer?.backgroundColor = color.cgColor; self.documentView?.addSubview($0) } // This example is for MacOS
     * views.distributeAndSize(dir: .hor, height: 42)
     */
    public func distributeAndSize(dir: Axis, width: CGFloat? = nil, height: CGFloat? = nil, align: Alignment = .topLeft, alignTo: Alignment = .topLeft, spacing: CGFloat = 0, multiplier: CGSize = .init(width: 1, height: 1), offset: CGFloat = 0, sizeOffset: CGSize = .zero) {
       self.activateAnchorsAndSizes { views in
          let anchors: [AnchorConstraint] = {
-            // Fixme: ⚠️️ this part is a duplicate of the single version of this method, so reuse it somehow
+            // Fixme: ⚠️️ this part is a duplicate of the single version of this method, so maybe reuse it somehow?
             switch dir {
             case .hor: return Constraint.distribute(horizontally: views, align: alignTo, spacing: spacing, offset: offset)
             case .ver: return Constraint.distribute(vertically: views, align: alignTo, spacing: spacing, offset: offset)
