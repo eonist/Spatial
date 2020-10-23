@@ -24,9 +24,8 @@ extension Constraint {
     * let widthConstraint = Constraint.size(square, to: parent).w
     */
    public static func size(_ view: View, to: View, offset: CGSize = .zero, multiplier: CGPoint = .init(x:1, y:1)) -> SizeConstraint {
-      let width: NSLayoutConstraint = Constraint.width(view, to: to, offset: offset.width, multiplier: multiplier.x)
-      let height: NSLayoutConstraint = Constraint.height(view, to: to, offset: offset.height, multiplier: multiplier.y)
-      return (width, height)
+      (Constraint.width(view, to: to, offset: offset.width, multiplier: multiplier.x),
+       Constraint.height(view, to: to, offset: offset.height, multiplier: multiplier.y))
    }
    /**
     * Creates a size constraint
@@ -35,9 +34,8 @@ extension Constraint {
     * let sizeConstraint = Constraint.size(square, size: .init(width: 100, height: 100))
     */
    public static func size(_ view: View, size: CGSize, multiplier: CGSize = .init(width: 1, height: 1)) -> SizeConstraint {
-      let width: NSLayoutConstraint = Constraint.width(view, width: size.width, multiplier: multiplier.width)
-      let height: NSLayoutConstraint = Constraint.height(view, height: size.height, multiplier: multiplier.height)
-      return (width, height)
+      (Constraint.width(view, width: size.width, multiplier: multiplier.width),
+       Constraint.height(view, height: size.height, multiplier: multiplier.height))
    }
    /**
     * Creates a size constraint
@@ -51,7 +49,7 @@ extension Constraint {
     *    - multiplier: Scale the size constraint by this scalar (works with other view and custom size)
     * ## Examples:
     * let s = Constraint.size(view, to: parent, height: 48)
-    * - Fixme: ⚠️️ use named prop for view
+    * - Fixme: ⚠️️ use named prop for view?
     */
    public static func size(_ view: View, to: View, width: CGFloat? = nil, height: CGFloat? = nil, offset: CGSize = .zero, multiplier: CGSize = .init(width: 1, height: 1)) -> SizeConstraint {
       let width: NSLayoutConstraint = {

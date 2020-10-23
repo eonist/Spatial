@@ -40,7 +40,7 @@ extension Constraint {
    /**
     * Vertical distribution
     * - Important: ⚠️️ Sets only anchors not sizes
-    * - Fixme: ⚠️️ make it throw?
+    * - Fixme: ⚠️️ make it throw? yepp
     */
    public static func distribute(vertically views: [View], align: Alignment = .topLeft, spacing: CGFloat = 0, offset: CGFloat = 0) -> [AnchorConstraint] {
       let xConstraints: [NSLayoutConstraint] = views.map { view in
