@@ -29,7 +29,7 @@ Hassle-free AutoLayout, tailored for interactivity and animation.
 ```swift
 // One-liner, single
 btn1.anchorAndSize(to: self, width: 96, height: 24)
-// Explanation about params and their meaning and effects
+// Info regarding parameters and their meaning and effects
 btn1.anchorAndSize(to: button, // to what other AutoLayout element should self anchor and size to
 						sizeTo: self, // inherit size of another AutoLayout element, overrides to param
 						width: 100, // override sizeTo with constant
