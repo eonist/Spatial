@@ -1,4 +1,5 @@
 import UIKit
+import With
 /**
  * UI elements
  */
@@ -7,29 +8,29 @@ extension CardView {
     * Creates topBar
     */
    func createTopBar() -> TopBar {
-      let topBar: TopBar = .init()
-      self.addSubview(topBar)
-      topBar.anchorAndSize(to: self, height: TopBar.topBarHeight)
-      return topBar
+      with(.init()) {
+         self.addSubview($0)
+         $0.anchorAndSize(to: self, height: TopBar.topBarHeight)
+      }
    }
    /**
     * Creates the middle card content view
     */
    func createMiddleContent() -> MiddleContent {
-      let middleContent: MiddleContent = .init()
-      self.addSubview(middleContent)
-      let sizeOffset: CGSize = .init(width: 0, height: -(TopBar.topBarHeight + BottomBar.bottomBarHeight))
-      middleContent.anchorAndSize(to: topBar, sizeTo: self, alignTo: .bottomLeft, sizeOffset: sizeOffset)
-      return middleContent
+      with(.init()) {
+         self.addSubview($0)
+         let sizeOffset: CGSize = .init(width: 0, height: -(TopBar.topBarHeight + BottomBar.bottomBarHeight))
+         $0.anchorAndSize(to: topBar, sizeTo: self, alignTo: .bottomLeft, sizeOffset: sizeOffset)
+      }
    }
    /**
     * Creates bottomBar
     */
    func createBottomBar() -> BottomBar {
-      let bottomBar: BottomBar = .init()
-      self.addSubview(bottomBar)
-      bottomBar.anchorAndSize(to: cardContent, sizeTo: self, height: BottomBar.bottomBarHeight, alignTo: .bottomLeft)
-      return bottomBar
+      with(.init()) {
+         self.addSubview($0)
+         $0.anchorAndSize(to: cardContent, sizeTo: self, height: BottomBar.bottomBarHeight, alignTo: .bottomLeft)
+      }
    }
 }
 /**
