@@ -32,7 +32,7 @@ extension Array where Element: ConstraintKind.ViewConstraintKind {
     * ## Examples:
     * view.applyAnchor(to:self, align:.top, alignTo:.top)
     */
-   public func applyAnchors(to: View, align: VerticalAlign = .top, alignTo: VerticalAlign = .top, offset: CGFloat = 0, useMargin: Bool = false) {
+   public func applyAnchors(to: View, align: VerticalAlign = .top, alignTo: VerticalAlign = .top, offset: CGFloat = .zero, useMargin: Bool = false) {
       self.applyAnchors(axis: .ver) { views in
          views.map {
             Constraint.anchor($0, to: to, align: align, alignTo: alignTo, offset: offset, useMargin: useMargin)
@@ -44,7 +44,7 @@ extension Array where Element: ConstraintKind.ViewConstraintKind {
     * ## Examples:
     * view.applyAnchor(to: self, align: .left, alignTo: .left)
     */
-   public func applyAnchors(to: View, align: HorizontalAlign = .left, alignTo: HorizontalAlign = .left, offset: CGFloat = 0, useMargin: Bool = false) {
+   public func applyAnchors(to: View, align: HorizontalAlign = .left, alignTo: HorizontalAlign = .left, offset: CGFloat = .zero, useMargin: Bool = false) {
       self.applyAnchors(axis: .hor) { views in
          views.map {
             Constraint.anchor($0, to: to, align: align, alignTo: alignTo, offset: offset, useMargin: useMargin)

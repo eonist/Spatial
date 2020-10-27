@@ -10,7 +10,7 @@ extension MiddleContent {
          self.addSubview(itemView)
          return itemView
       }
-      itemViews.distributeAndSize(dir: .ver, width: self.frame.width, height: 48, spacing: 12, offset: 24)
+      itemViews.distributeAndSize(dir: .ver, width: self.frame.width, height: 48, spacing: 12, offset: .init(x: 24, y: 24))
       return itemViews
    }
 }

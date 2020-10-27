@@ -14,7 +14,7 @@ extension Array where Element: View {
     * let views: [NSView] = [NSColor.blue, .green, .red].map { color in with (.init()) { $0.wantsLayer = true; $0.layer?.backgroundColor = color.cgColor; self.documentView?.addSubview($0) } // This example is for MacOS
     * views.distributeAndSize(dir: .hor, height: 42)
     */
-   public func distributeAndSize(dir: Axis, width: CGFloat? = nil, height: CGFloat? = nil, align: Alignment = .topLeft, alignTo: Alignment = .topLeft, spacing: CGFloat = 0, multiplier: CGSize = .init(width: 1, height: 1), offset: CGFloat = 0, sizeOffset: CGSize = .zero) {
+   public func distributeAndSize(dir: Axis, width: CGFloat? = nil, height: CGFloat? = nil, align: Alignment = .topLeft, alignTo: Alignment = .topLeft, spacing: CGFloat = .zero, multiplier: CGSize = .init(width: 1, height: 1), offset: CGPoint = .zero, sizeOffset: CGSize = .zero) {
       self.activateAnchorsAndSizes { views in
          let anchors: [AnchorConstraint] = {
             // Fixme: ⚠️️ this part is a duplicate of the single version of this method, so maybe reuse it somehow?

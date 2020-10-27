@@ -79,13 +79,13 @@ extension Constraint {
    /**
     * Creates a width constraint (based on another views width constraint)
     */
-   public static func width(_ view: View, to: View, offset: CGFloat = 0, multiplier: CGFloat = 1, relation: NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint {
+   public static func width(_ view: View, to: View, offset: CGFloat = .zero, multiplier: CGFloat = 1, relation: NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint {
       .init(item: view, attribute: .width, relatedBy: relation, toItem: to, attribute: .width, multiplier: multiplier, constant: offset)
    }
    /**
     * Creates a height constraint (based on another views width constraint)
     */
-   public static func height(_ view: View, to: View, offset: CGFloat = 0, multiplier: CGFloat = 1, relation: NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint {
+   public static func height(_ view: View, to: View, offset: CGFloat = .zero, multiplier: CGFloat = 1, relation: NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint {
       .init(item: view, attribute: .height, relatedBy: relation, toItem: to, attribute: .height, multiplier: multiplier, constant: offset)
    }
    /**
@@ -105,7 +105,7 @@ extension Constraint {
     * ## Examples:
     * let widthConstraint = Constraint.length(square, viewAxis: .horizontal, axis: .vertical)
     */
-   public static func length(_ view: View, to: View, viewAxis: Axis, toAxis: Axis, offset: CGFloat = 0, multiplier: CGFloat = 1, relation: NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint {
+   public static func length(_ view: View, to: View, viewAxis: Axis, toAxis: Axis, offset: CGFloat = .zero, multiplier: CGFloat = 1, relation: NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint {
       let viewAttr: NSLayoutConstraint.Attribute = viewAxis == .hor ? .width : .height
       let toAttr: NSLayoutConstraint.Attribute = toAxis == .hor ? .width : .height
       return .init(item: view, attribute: viewAttr, relatedBy: relation, toItem: to, attribute: toAttr, multiplier: multiplier, constant: offset)

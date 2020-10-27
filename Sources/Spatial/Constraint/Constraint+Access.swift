@@ -55,7 +55,7 @@ extension View {
     * - Abstract: position views horizontally with AutoLayout with one call
     * - Fixme: ⚠️️ change to horTo
     */
-   public func anchor(horTo: View, align: HorizontalAlign = .left, alignTo: HorizontalAlign = .left, offset: CGFloat = 0, useMargin: Bool = false) {
+   public func anchor(horTo: View, align: HorizontalAlign = .left, alignTo: HorizontalAlign = .left, offset: CGFloat = .zero, useMargin: Bool = false) {
       self.activateConstraints { view in
          [Constraint.anchor(view, to: horTo, align: align, alignTo: alignTo, offset: offset, useMargin: useMargin)]
       }
@@ -65,7 +65,7 @@ extension View {
     * - Abstract: position views vertically with AutoLayout with one call
     *  - Fixme: ⚠️️ Maybe change to verTo
     */
-   public func anchor(verTo: View, align: VerticalAlign = .top, alignTo: VerticalAlign = .top, offset: CGFloat = 0, useMargin: Bool = false) {
+   public func anchor(verTo: View, align: VerticalAlign = .top, alignTo: VerticalAlign = .top, offset: CGFloat = .zero, useMargin: Bool = false) {
       self.activateConstraints { view in
          [Constraint.anchor(view, to: verTo, align: align, alignTo: alignTo, offset: offset, useMargin: useMargin)]
       }
@@ -135,7 +135,7 @@ extension Array where Element: View {
     * ## Examples:
     * views.distribute(dir: .horizontal)
     */
-   public func distribute(dir: Axis, align: Alignment = .topLeft, spacing: CGFloat = 0, offset: CGFloat = 0) {
+   public func distribute(dir: Axis, align: Alignment = .topLeft, spacing: CGFloat = .zero, offset: CGPoint = .zero) {
       self.activateAnchors { views in
          switch dir {
          case .hor:
