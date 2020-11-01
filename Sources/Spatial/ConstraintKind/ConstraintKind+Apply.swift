@@ -32,7 +32,7 @@ extension ConstraintKind where Self: View {
     */
    public func applyAnchor(closure: AnchorClosure) {
       self.translatesAutoresizingMaskIntoConstraints = false
-      let anchorConstraint: AnchorConstraint = closure(self) // the constraints is returned from the closure
+      let anchorConstraint: Spatial.AnchorConstraint = closure(self) // the constraints is returned from the closure
       let constraints: [NSLayoutConstraint] = [anchorConstraint.x, anchorConstraint.y]
       self.anchor = anchorConstraint
       NSLayoutConstraint.activate(constraints)

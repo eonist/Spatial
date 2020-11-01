@@ -7,6 +7,7 @@ import Cocoa
 // Single
 public typealias AnchorConstraint = (x: NSLayoutConstraint, y: NSLayoutConstraint)
 public typealias SizeConstraint = (w: NSLayoutConstraint, h: NSLayoutConstraint)
+public typealias AnchorAndSize = (anchor: AnchorConstraint, size: SizeConstraint)
 // Bulk
 public typealias AnchorConstraintsAndSizeConstraints = (anchorConstraints: [AnchorConstraint], sizeConstraints: [SizeConstraint])
 /**
@@ -20,7 +21,6 @@ extension View {
    public typealias ConstraintsClosure = (_ view: View) -> [NSLayoutConstraint]
    public typealias ConstraintClosure = (_ view: View) -> NSLayoutConstraint
    // Tuple
-   public typealias AnchorAndSize = (anchor: AnchorConstraint, size: SizeConstraint)
    public typealias AnchorAndSizeClosure = (_ view: View) -> AnchorAndSize
    // Single
    public typealias AnchorClosure = (_ view: View) -> AnchorConstraint

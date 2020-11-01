@@ -38,7 +38,7 @@
 		F1A16822238F2C1F006EACC4 /* ConstraintKind+Bulk+Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CDF087225D22F10076EC92 /* ConstraintKind+Bulk+Access.swift */; };
 		F1A16823238F2C1F006EACC4 /* ConstraintKind+Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D369FD2172039B00F498FA /* ConstraintKind+Apply.swift */; };
 		F1A16824238F2C1F006EACC4 /* ConstraintKind+Bulk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E2D21DE327B00EE3027 /* ConstraintKind+Bulk.swift */; };
-		F1A16825238F2C1F006EACC4 /* ConstraintKind+TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E2B21DE31A800EE3027 /* ConstraintKind+TypeAlias.swift */; };
+		F1A16825238F2C1F006EACC4 /* ConstraintKind+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E2B21DE31A800EE3027 /* ConstraintKind+Type.swift */; };
 		F1A16826238F2C1F006EACC4 /* ConstraintKind+SpaceBetween.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14FADE021F3980F00ACE5FF /* ConstraintKind+SpaceBetween.swift */; };
 		F1A16827238F2C1F006EACC4 /* ConstraintKind+SpaceAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14FADE221F398C000ACE5FF /* ConstraintKind+SpaceAround.swift */; };
 		F1A16828238F2C1F006EACC4 /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3D21DF356900EE3027 /* ConstraintView.swift */; };
@@ -67,7 +67,7 @@
 		F1A1683F238F2D09006EACC4 /* ConstraintKind+Bulk+Access.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CDF087225D22F10076EC92 /* ConstraintKind+Bulk+Access.swift */; };
 		F1A16840238F2D09006EACC4 /* ConstraintKind+Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D369FD2172039B00F498FA /* ConstraintKind+Apply.swift */; };
 		F1A16841238F2D09006EACC4 /* ConstraintKind+Bulk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E2D21DE327B00EE3027 /* ConstraintKind+Bulk.swift */; };
-		F1A16842238F2D09006EACC4 /* ConstraintKind+TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E2B21DE31A800EE3027 /* ConstraintKind+TypeAlias.swift */; };
+		F1A16842238F2D09006EACC4 /* ConstraintKind+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E2B21DE31A800EE3027 /* ConstraintKind+Type.swift */; };
 		F1A16843238F2D09006EACC4 /* ConstraintKind+SpaceBetween.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14FADE021F3980F00ACE5FF /* ConstraintKind+SpaceBetween.swift */; };
 		F1A16844238F2D09006EACC4 /* ConstraintKind+SpaceAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14FADE221F398C000ACE5FF /* ConstraintKind+SpaceAround.swift */; };
 		F1A16845238F2D09006EACC4 /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17E0E3D21DF356900EE3027 /* ConstraintView.swift */; };
@@ -165,7 +165,7 @@
 		F151DDAB21738CAF00AA0ABE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F151DDBB2173CABC00AA0ABE /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		F17E0E2921DE2EBE00EE3027 /* CardView+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CardView+Create.swift"; sourceTree = "<group>"; };
-		F17E0E2B21DE31A800EE3027 /* ConstraintKind+TypeAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConstraintKind+TypeAlias.swift"; sourceTree = "<group>"; };
+		F17E0E2B21DE31A800EE3027 /* ConstraintKind+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConstraintKind+Type.swift"; sourceTree = "<group>"; };
 		F17E0E2D21DE327B00EE3027 /* ConstraintKind+Bulk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConstraintKind+Bulk.swift"; sourceTree = "<group>"; };
 		F17E0E2F21DE364D00EE3027 /* Constraint+Activate+Bulk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constraint+Activate+Bulk.swift"; sourceTree = "<group>"; };
 		F17E0E3121DE36F300EE3027 /* Constraint+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constraint+Type.swift"; sourceTree = "<group>"; };
@@ -484,7 +484,7 @@
 				F1CDF087225D22F10076EC92 /* ConstraintKind+Bulk+Access.swift */,
 				F1D369FD2172039B00F498FA /* ConstraintKind+Apply.swift */,
 				F17E0E2D21DE327B00EE3027 /* ConstraintKind+Bulk.swift */,
-				F17E0E2B21DE31A800EE3027 /* ConstraintKind+TypeAlias.swift */,
+				F17E0E2B21DE31A800EE3027 /* ConstraintKind+Type.swift */,
 				F14FADE021F3980F00ACE5FF /* ConstraintKind+SpaceBetween.swift */,
 				F14FADE221F398C000ACE5FF /* ConstraintKind+SpaceAround.swift */,
 				F17E0E3C21DF355D00EE3027 /* ConstraintView */,
@@ -734,7 +734,7 @@
 				F1A16822238F2C1F006EACC4 /* ConstraintKind+Bulk+Access.swift in Sources */,
 				F1A16823238F2C1F006EACC4 /* ConstraintKind+Apply.swift in Sources */,
 				F1A16824238F2C1F006EACC4 /* ConstraintKind+Bulk.swift in Sources */,
-				F1A16825238F2C1F006EACC4 /* ConstraintKind+TypeAlias.swift in Sources */,
+				F1A16825238F2C1F006EACC4 /* ConstraintKind+Type.swift in Sources */,
 				F1A16826238F2C1F006EACC4 /* ConstraintKind+SpaceBetween.swift in Sources */,
 				F1A16827238F2C1F006EACC4 /* ConstraintKind+SpaceAround.swift in Sources */,
 				F1A16828238F2C1F006EACC4 /* ConstraintView.swift in Sources */,
@@ -772,7 +772,7 @@
 				F1A1683F238F2D09006EACC4 /* ConstraintKind+Bulk+Access.swift in Sources */,
 				F1A16840238F2D09006EACC4 /* ConstraintKind+Apply.swift in Sources */,
 				F1A16841238F2D09006EACC4 /* ConstraintKind+Bulk.swift in Sources */,
-				F1A16842238F2D09006EACC4 /* ConstraintKind+TypeAlias.swift in Sources */,
+				F1A16842238F2D09006EACC4 /* ConstraintKind+Type.swift in Sources */,
 				F1A16843238F2D09006EACC4 /* ConstraintKind+SpaceBetween.swift in Sources */,
 				F1A16844238F2D09006EACC4 /* ConstraintKind+SpaceAround.swift in Sources */,
 				F1A16845238F2D09006EACC4 /* ConstraintView.swift in Sources */,

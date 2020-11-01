@@ -32,6 +32,7 @@ extension AnimationTest {
  * Button that has ConstraintKind applied
  */
 class Button: UIButton, ConstraintKind {
-   var anchor: AnchorConstraint?
-   var size: SizeConstraint?
+   var anchorAndSize: AnchorAndSize?
+//   var anchor: AnchorConstraint?
+//   var size: SizeConstraint?
 }
