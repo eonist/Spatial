@@ -50,10 +50,9 @@ extension ConstraintKind where Self: View {
    }
    /**
     * Sets both anchor and size to a ConstraintKind
-    * - Fixme: this could be a variable, but I guess it's not because for some reason?
+    * - Fixme: ⚠️️ this could be a variable, but I guess it's not because for some reason?
     */
    public func setConstraint(anchor: AnchorConstraint, size: SizeConstraint) {
-      self.anchor = anchor
-      self.size = size
+      self.anchorAndSize = (anchor, size)
    }
 }
