@@ -38,6 +38,7 @@ extension View {
     * Animate for macOS
     * - Note: animating to new alignments also works
     * - Fixme: ⚠️️ add support for easing curves, do research etc
+    * - Note: using .animator() https://stackoverflow.com/a/62954619/5389500
     */
    public static func animate(_ onUpdate:@escaping AnimUpdate, onComplete:@escaping AnimComplete = View.defaultOnComplete, dur: Double = 0.3) {
       NSAnimationContext.runAnimationGroup({ context -> Void in
