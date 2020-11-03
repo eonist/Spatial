@@ -13,7 +13,7 @@ extension ConstraintKind where Self: View {
     * - Note: This could be useful in a global domain, for now just access it by: ConstraintKind.UIViewConstraintKind
     */
    public typealias ViewConstraintKind = View & ConstraintKind
-   public typealias AnchorAndSize = (anchor: AnchorConstraint, size: SizeConstraint)
+//   public typealias AnchorAndSize = (anchor: AnchorConstraint, size: SizeConstraint)
 }
 /**
  * Bulk

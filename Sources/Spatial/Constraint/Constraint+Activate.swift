@@ -43,7 +43,7 @@ extension View {
     */
    public func activateAnchorAndSize(closure: AnchorAndSizeClosure) {
       self.translatesAutoresizingMaskIntoConstraints = false
-      let anchorAndSize: Spatial.AnchorAndSize = closure(self) // The constraints is returned from the closure
+      let anchorAndSize: AnchorAndSize = closure(self) // The constraints is returned from the closure
       let constraints: [NSLayoutConstraint] = [anchorAndSize.anchor.x, anchorAndSize.anchor.y, anchorAndSize.size.w, anchorAndSize.size.h]
       NSLayoutConstraint.activate(constraints)
    }

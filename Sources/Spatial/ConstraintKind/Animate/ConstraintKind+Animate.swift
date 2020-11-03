@@ -5,6 +5,7 @@ import UIKit
  * - Description: These are examples how you can animate with Spatial and autolayout
  * - Fixme: ⚠️️ Use animation classes that support earlier versions of iOS
  * - Fixme: ⚠️️ Use UIViewConstraintKind?
+ * - Fixme: ⚠️️ Add support for macOS animation
  */
 extension ConstraintKind where Self: UIView {
    /**

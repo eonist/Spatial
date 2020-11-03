@@ -98,8 +98,8 @@
 		F1D369E92171FDAE00F498FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D369E82171FDAE00F498FA /* AppDelegate.swift */; };
 		F1D369F02171FDAF00F498FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1D369EF2171FDAF00F498FA /* Assets.xcassets */; };
 		F1D369F32171FDAF00F498FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D369F12171FDAF00F498FA /* LaunchScreen.storyboard */; };
-		F1DBE7F12444C8CC0051FB1F /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBE7F02444C8CC0051FB1F /* UIView+Extension.swift */; };
-		F1DBE7F22444C8EF0051FB1F /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBE7F02444C8CC0051FB1F /* UIView+Extension.swift */; };
+		F1DBE7F12444C8CC0051FB1F /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBE7F02444C8CC0051FB1F /* View+Extension.swift */; };
+		F1DBE7F22444C8EF0051FB1F /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBE7F02444C8CC0051FB1F /* View+Extension.swift */; };
 		F1FC84D42174E6B800D01B72 /* MiddleContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FC84D32174E6B800D01B72 /* MiddleContent.swift */; };
 /* End PBXBuildFile section */
 
@@ -203,7 +203,7 @@
 		F1D369FD2172039B00F498FA /* ConstraintKind+Apply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConstraintKind+Apply.swift"; sourceTree = "<group>"; };
 		F1D369FF2172039B00F498FA /* Constraint+Activate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Constraint+Activate.swift"; sourceTree = "<group>"; };
 		F1D81ECE22E329D2008F842A /* Constraint+Access+Bulk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constraint+Access+Bulk.swift"; sourceTree = "<group>"; };
-		F1DBE7F02444C8CC0051FB1F /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		F1DBE7F02444C8CC0051FB1F /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		F1E78730230046BA002007EE /* Align.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Align.swift; sourceTree = "<group>"; };
 		F1FC84D32174E6B800D01B72 /* MiddleContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -328,13 +328,6 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		F1354EEC23A97EE0002BBF3C /* SpatialTests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SpatialTests;
-			sourceTree = "<group>";
-		};
 		F1354EF623A97F66002BBF3C /* SpatialTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,7 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				F185A39F2231974E00AE66B2 /* Hybrid.swift */,
-				F1DBE7F02444C8CC0051FB1F /* UIView+Extension.swift */,
+				F1DBE7F02444C8CC0051FB1F /* View+Extension.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -509,7 +502,6 @@
 				F1A1681A238F2BD0006EACC4 /* Sources */,
 				F1D369E72171FDAE00F498FA /* SpatialExample */,
 				F1B4955223095690001F28F2 /* SpatialExampleMac */,
-				F1354EEC23A97EE0002BBF3C /* SpatialTests */,
 				F1D369D82171FCDC00F498FA /* Products */,
 				F1D369FA2171FECE00F498FA /* Frameworks */,
 			);
@@ -754,7 +746,7 @@
 				F1A16836238F2C1F006EACC4 /* VerticalAlign.swift in Sources */,
 				F1A16837238F2C1F006EACC4 /* HorizontalAlign.swift in Sources */,
 				F1A16838238F2C1F006EACC4 /* AlignType.swift in Sources */,
-				F1DBE7F22444C8EF0051FB1F /* UIView+Extension.swift in Sources */,
+				F1DBE7F22444C8EF0051FB1F /* View+Extension.swift in Sources */,
 				F1A16839238F2C1F006EACC4 /* AlignType+Extension.swift in Sources */,
 				F1A1683A238F2C1F006EACC4 /* Alignment.swift in Sources */,
 				F1A1683B238F2C1F006EACC4 /* Alignment+Extension.swift in Sources */,
@@ -816,7 +808,7 @@
 				F109EE8F21E4D48A00FCC696 /* ItemView.swift in Sources */,
 				F1FC84D42174E6B800D01B72 /* MiddleContent.swift in Sources */,
 				F109EE9D21E5EA9500FCC696 /* CardView+Constant.swift in Sources */,
-				F1DBE7F12444C8CC0051FB1F /* UIView+Extension.swift in Sources */,
+				F1DBE7F12444C8CC0051FB1F /* View+Extension.swift in Sources */,
 				F109EE9621E4D58800FCC696 /* BottomBar.swift in Sources */,
 				F109EE9821E4D5A500FCC696 /* BottomBar+Constant.swift in Sources */,
 				F1C624FF21C789830082A265 /* MainView+Create.swift in Sources */,

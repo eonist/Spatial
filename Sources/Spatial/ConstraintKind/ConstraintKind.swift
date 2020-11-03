@@ -9,7 +9,7 @@ public protocol ConstraintKind: AnyObject {
    var anchor: AnchorConstraint? { get set }
 //   @available(*, deprecated, renamed: "anchorAndSize")
    var size: SizeConstraint? { get set }
-   var anchorAndSize: Spatial.AnchorAndSize? { get set }
+   var anchorAndSize: AnchorAndSize? { get set }
 }
 extension ConstraintKind {
    /**
@@ -38,7 +38,7 @@ extension ConstraintKind {
     * Default anchorAndSize value
     * - Important: ⚠️️ will be deprecated, once anchor and size is deprecated
     */
-   public var anchorAndSize: Spatial.AnchorAndSize? {
+   public var anchorAndSize: AnchorAndSize? {
       get {
          guard let anchor = anchor, let size = size else { return nil }
          return (anchor, size)
