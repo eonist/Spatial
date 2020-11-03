@@ -111,6 +111,7 @@ extension ConstraintKind where Self: View {
       superview.layoutIfNeeded() // The superview is responsible for updating subView constraint updates
       #elseif os(macOS)
       superview.updateConstraintsForSubtreeIfNeeded()
+      self.layoutSubtreeIfNeeded() // must be called for NSAnimationContext.runAnimationGroup to work
       #endif
    }
    /**
@@ -125,6 +126,7 @@ extension ConstraintKind where Self: View {
       superview.layoutIfNeeded() // The superview is responsible for updating subView constraint updates
       #elseif os(macOS)
       superview.updateConstraintsForSubtreeIfNeeded()
+      self.layoutSubtreeIfNeeded() // must be called for NSAnimationContext.runAnimationGroup to work
       #endif
    }
 }

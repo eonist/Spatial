@@ -22,6 +22,9 @@ extension AppDelegate {
 }
 open class MainView: NSView {
    override open var isFlipped: Bool { true }/*TopLeft orientation*/
+   /**
+    * - Note: animating to new alignments also works 
+    */
    override public init(frame: CGRect) {
       super.init(frame: frame)
       Swift.print("hello world")
@@ -30,9 +33,11 @@ open class MainView: NSView {
       addSubview(box)
       box.applyAnchorAndSize(to: self, width: 100, height: 100)
       DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-         View.animate({ box.anchor?.x.animator().constant = 100 }, onComplete: { Swift.print("done") }, dur: 0.2)
+         View.animate({
+            box.update(offset: .init(x: 100, y: 0), align: .topLeft, alignTo: .topLeft)
+         }, onComplete: { Swift.print("done") }, dur: 0.2)
       }
-      // box.update(offset: .init(x: 100, y: 0), align: .topLeft, alignTo: .topLeft)
+      //
    }
    /**
     * Boilerplate

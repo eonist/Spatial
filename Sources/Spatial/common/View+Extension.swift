@@ -36,11 +36,13 @@ import Cocoa
 extension View {
    /**
     * Animate for macOS
-    * - Note: Limited to using constraint.animator() for now
+    * - Note: animating to new alignments also works
+    * - Fixme: ⚠️️ add support for easing curves, do research etc
     */
    public static func animate(_ onUpdate:@escaping AnimUpdate, onComplete:@escaping AnimComplete = View.defaultOnComplete, dur: Double = 0.3) {
       NSAnimationContext.runAnimationGroup({ context -> Void in
          context.duration = dur // length of the animation time in seconds
+         context.allowsImplicitAnimation = true // must be activated, for constraints to be able to animate, or else must use .animator().constnat etc
          onUpdate()
       }, completionHandler: { () -> Void in
          onComplete() // insert any completion code here
