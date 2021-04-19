@@ -56,7 +56,7 @@ btn1.activateAnchorAndSize { view in
 // Long-hand, bulk
 [btn1,btn2,btn3].activateAnchorsAndSizes { views in
    let anchors = Constraint.distribute(vertically: views, align: .topLeft)
-   let sizes = views.map { $0.size(width: 96, height: 42) }
+   let sizes = views.map { Constraint.size($0, size: .init(width: 96, height: 42)) }
    return (anchors, sizes)
 }
 ```
