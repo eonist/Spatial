@@ -22,7 +22,7 @@ public final class Constraint {
     *    return (a,s)
     * }
     */
-   public static func anchor(_ view: View, to: View, align: Alignment, alignTo: Alignment, offset: CGPoint = .zero, useMargin: Bool = false) -> AnchorConstraint {
+   public static func anchor(_ view: View, to: View, align: Alignment = .topLeft, alignTo: Alignment = .topLeft, offset: CGPoint = .zero, useMargin: Bool = false) -> AnchorConstraint {
       let hor: NSLayoutConstraint = anchor(view, to: to, align: align.horAlign, alignTo: alignTo.horAlign, offset: offset.x, useMargin: useMargin)
       let ver: NSLayoutConstraint = anchor(view, to: to, align: align.verAlign, alignTo: alignTo.verAlign, offset: offset.y, useMargin: useMargin)
       return (hor, ver)
@@ -30,13 +30,13 @@ public final class Constraint {
    /**
     * Horizontal anchoring
     */
-   public static func anchor(_ view: View, to: View, align: HorizontalAlign, alignTo: HorizontalAlign, offset: CGFloat = .zero, useMargin: Bool = false, relation: NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint {
+   public static func anchor(_ view: View, to: View, align: HorizontalAlign = .left, alignTo: HorizontalAlign = .left, offset: CGFloat = .zero, useMargin: Bool = false, relation: NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint {
       .init(item: view, attribute: layoutAttr(align: align), relatedBy: relation, toItem: to, attribute: layoutAttr(align: alignTo, useMargin: useMargin), multiplier: 1.0, constant: offset)
    }
    /**
     * Vertical anchoring
     */
-   public static func anchor(_ view: View, to: View, align: VerticalAlign, alignTo: VerticalAlign, offset: CGFloat = .zero, useMargin: Bool = false, relation: NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint {
+   public static func anchor(_ view: View, to: View, align: VerticalAlign = .top, alignTo: VerticalAlign = .top, offset: CGFloat = .zero, useMargin: Bool = false, relation: NSLayoutConstraint.Relation = .equal) -> NSLayoutConstraint {
       let attr: NSLayoutConstraint.Attribute = layoutAttr(align: align)
       let relatedByAttr: NSLayoutConstraint.Attribute = layoutAttr(align: alignTo, useMargin: useMargin)
       return .init(item:view, attribute:attr, relatedBy: relation, toItem: to, attribute: relatedByAttr, multiplier: 1.0, constant: offset)
