@@ -53,7 +53,6 @@ extension View {
    /**
     * Horizontally align a UIView instance
     * - Abstract: position views horizontally with AutoLayout with one call
-    * - Fixme: ⚠️️ change to horTo
     */
    public func anchor(horTo: View, align: HorizontalAlign = .left, alignTo: HorizontalAlign = .left, offset: CGFloat = .zero, useMargin: Bool = false) {
       self.activateConstraints { view in
@@ -63,7 +62,6 @@ extension View {
    /**
     * Vertically align a UIView instance
     * - Abstract: position views vertically with AutoLayout with one call
-    *  - Fixme: ⚠️️ Maybe change to verTo
     */
    public func anchor(verTo: View, align: VerticalAlign = .top, alignTo: VerticalAlign = .top, offset: CGFloat = .zero, useMargin: Bool = false) {
       self.activateConstraints { view in
