@@ -6,6 +6,7 @@ import Cocoa
 #endif
 /**
  * Update constraints (For items that are of type ConstraintKind)
+ * - Fixme: ⚠️️ Make Apply for width only etc
  * - Note: adding a method called activateConstraints doesn't make any sense because you have only anchor and size or either
  */
 extension ConstraintKind where Self: View {
