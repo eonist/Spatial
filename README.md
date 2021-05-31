@@ -12,7 +12,7 @@
 Definition: **Spatial** | ˈspeɪʃ(ə)l | adjective | **describes how objects fit together in space**
 
 ### What is it
-Hassle-free AutoLayout, tailored for interactivity and animation.
+Hassle-free AutoLayout, tailored for interactivity and animation. Created for how our mental model thinks autolayout works. Not optimized for brevity.
 
 ### How does it work
 - Spatial is just extensions and enums which enable you to write less boilerplate code
