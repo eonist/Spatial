@@ -78,7 +78,7 @@ btn.animate(to: 100,align: left, alignTo: .left)
 ```swift
 // Distribute
 // |[--][--][--][--][--]|
-[label1, label2, label3].applyAnchorsAndSizes { views in
+[label1, label2, label3].activateAnchorsAndSizes { views in // for anim: applyAnchorsAndSizes
    let anchors = Constraint.distribute(vertically: views, align: .left) // there is also: horizontally
    let sizes = views.map{ Constraint.size($0, toView: self.frame.width, height: 48)) }
    return (anchors, sizes)
