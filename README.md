@@ -74,6 +74,39 @@ $0.activateConstraints { view in
 // Animation
 btn.animate(to: 100,align: left, alignTo: .left)
 ```
+
+```swift
+// Distribute
+// |[--][--][--][--][--]|
+[label1, label2, label3].applyAnchorsAndSizes { views in
+   let anchors = Constraint.distribute(vertically: views, align: .left) // there is also: horizontally
+   let sizes = views.map{ Constraint.size($0, toView: self.frame.width, height: 48)) }
+   return (anchors, sizes)
+}
+```
+
+```swift
+// SpaceAround
+// |--[]--[]--[]--[]--[]--|
+let views: [ConstraintView] = [UIColor.purple, .orange, .red].map {
+   let view: ConstraintView = .init(frame: .zero)
+   self.addSubview(view)
+   view.backgroundColor = $0
+   return view
+}
+views.applySizes(width: 120, height: 48)
+views.applyAnchors(to: self, align: .top, alignTo: .top, offset: 20)
+views.spaceAround(dir: .hor, parent: self)
+```
+
+```swift
+// Space between
+// |[]--[]--[]--[]--[]|
+views.applySizes(width: 120, height: 48)
+views.applyAnchors(to: self, align: .top, alignTo: .top, offset: 20)
+views.spaceBetween(dir: .horizontal, parent: self, inset:x)
+```
+
 ### Todo:
 - Complete the spaceAround and spaceBetween methods ✅
 - Add macOS support ✅
