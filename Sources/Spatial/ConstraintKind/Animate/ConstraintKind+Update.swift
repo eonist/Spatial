@@ -17,13 +17,14 @@ extension ConstraintKind where Self: View {
     */
    typealias UpdateAnchorClosure = (_ superView: View, _ oldAnchor: AnchorConstraint) -> Void
    typealias UpdateSizeClosure = (_ superView: View, _ sizeConstraint: SizeConstraint) -> Void
-   typealias UpdateAnchorAndSizeClosure = (_ superView: View, _ oldAnchor: AnchorConstraint, _ sizeConstraint: SizeConstraint) -> Void
+   typealias UpdateAnchorAndSizeClosure = (_ superView: View?, _ oldAnchor: AnchorConstraint?, _ sizeConstraint: SizeConstraint?) -> Void
    /**
     * - Fixme: ⚠️️ Add offset and size offset etc later
     */
    public func update(to: View, align: Alignment = .topLeft, alignTo: Alignment = .topLeft) {
       updateAnchorAndSize { superview, oldAnchor, oldSize in
-         NSLayoutConstraint.deactivate([oldAnchor.x, oldAnchor.y, oldSize.w, oldSize.h])
+         let constraints = [oldAnchor?.x, oldAnchor?.y, oldSize?.w, oldSize?.h].compactMap { $0 }
+         NSLayoutConstraint.deactivate(constraints)
          let newAnchor: AnchorConstraint = Constraint.anchor(self, to: to, align: align, alignTo: alignTo)
          let newSize: SizeConstraint = Constraint.size(self, to: to)
          NSLayoutConstraint.activate([newAnchor.x, newAnchor.y, newSize.w, newSize.h])
@@ -118,15 +119,12 @@ extension ConstraintKind where Self: View {
     * - Note: used in conjunction with animation
     */
    fileprivate func updateAnchorAndSize(_ closure: UpdateAnchorAndSizeClosure) {
-      guard let superview: View = self.superview else { Swift.print("⚠️️ err superview not available ⚠️️"); return }
-      guard let oldAnchor: AnchorConstraint = self.anchor else { Swift.print("⚠️️ err anchor not available, this happends because you havn't used the applyAnchor.. beforehand ⚠️️"); return }
-      guard let oldSize: SizeConstraint = self.size else { Swift.print("⚠️️ err sice not available ⚠️️"); return }
-      closure(superview, oldAnchor, oldSize)
+      closure(superview, self.anchor, self.size)
       #if os(iOS)
-      superview.layoutIfNeeded() // The superview is responsible for updating subView constraint updates
+      self.superview?.layoutIfNeeded() // The superview is responsible for updating subView constraint updates
       #elseif os(macOS)
-      superview.updateConstraintsForSubtreeIfNeeded()
-      superview.subviews.forEach { $0.layoutSubtreeIfNeeded() } // must be called for NSAnimationContext.runAnimationGroup to work
+      self.superview?.updateConstraintsForSubtreeIfNeeded()
+      self.superview?.subviews.forEach { $0.layoutSubtreeIfNeeded() } // must be called for NSAnimationContext.runAnimationGroup to work
       #endif
    }
    /**
