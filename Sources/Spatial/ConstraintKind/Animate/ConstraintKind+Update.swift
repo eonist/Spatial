@@ -21,7 +21,7 @@ extension ConstraintKind where Self: View {
    /**
     * - Fixme: ⚠️️ Add offset and size offset etc later
     */
-   public func update(to: View, align: Alignment, alignTo: Alignment) {
+   public func update(to: View, align: Alignment = .topLeft, alignTo: Alignment = .topLeft) {
       updateAnchorAndSize { superview, oldAnchor, oldSize in
          NSLayoutConstraint.deactivate([oldAnchor.x, oldAnchor.y, oldSize.w, oldSize.h])
          let newAnchor: AnchorConstraint = Constraint.anchor(self, to: to, align: align, alignTo: alignTo)
