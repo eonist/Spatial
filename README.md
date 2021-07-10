@@ -31,15 +31,15 @@ Hassle-free AutoLayout, tailored for interactivity and animation. Created for ho
 btn1.anchorAndSize(to: self, width: 96, height: 24)
 // Info regarding parameters and their meaning and effects
 btn1.anchorAndSize(to: button, // to what other AutoLayout element should self anchor and size to
-						sizeTo: self, // inherit size of another AutoLayout element, overrides to param
-						width: 100, // override sizeTo with constant
-						height: 50, // override sizeTo with constant
-						align: .topCenter, // decides where the pivot of self should be
-						alignTo: .bottomCenter, // decides to where self should pivot to
-						multiplier: .init(width: 1, height: 1), // multiply sizeTo, or constants
-						offset: .init(x: 0, y: 20), // append constant to current position
-						sizeOffset: .init(width: -20, height: 0), // append constant to current size
-					   useMargin: false) // adher to other autolayouts margin
+		sizeTo: self, // inherit size of another AutoLayout element, overrides to param
+		width: 100, // override sizeTo with constant
+		height: 50, // override sizeTo with constant
+		align: .topCenter, // decides where the pivot of self should be
+		alignTo: .bottomCenter, // decides to where self should pivot to
+		multiplier: .init(width: 1, height: 1), // multiply sizeTo, or constants
+		offset: .init(x: 0, y: 20), // append constant to current position
+		sizeOffset: .init(width: -20, height: 0), // append constant to current size
+	   	useMargin: false) // adher to other autolayouts margin
 
 // Long-hand, single
 btn1.activateAnchorAndSize { view in
